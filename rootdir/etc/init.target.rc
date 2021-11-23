@@ -220,6 +220,10 @@ on property:init.svc.vendor.charger=running
     setprop sys.usb.configfs 1
     start leds-sh
 
+on property:sys.boot_completed=1
+    # Enable ZRAM on boot_complete
+    swapon_all /vendor/etc/fstab.qcom
+
 on property:vendor.audio.cit.spkcal.copy=true
     copy /data/vendor/cit/cs35l41_cal.bin /mnt/vendor/persist/audio/cs35l41_cal.bin
     copy /data/vendor/cit/cs35l41_cal_right.bin /mnt/vendor/persist/audio/cs35l41_cal_right.bin
