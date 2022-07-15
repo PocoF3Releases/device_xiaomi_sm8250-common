@@ -34,6 +34,7 @@ binder_call(vendor_displayfeature, system_server)
 binder_call(vendor_hal_displayfeature_xiaomi, hal_graphics_composer_default)
 binder_call(vendor_hal_displayfeature_xiaomi_default, system_server)
 binder_call(vendor_hal_displayfeature_xiaomi_default, vendor_hal_display_color_default)
+binder_call(vendor_hal_displayfeature_xiaomi_default, vendor_hal_citsensorservice_xiaomi_default)
 
 r_dir_file(vendor_hal_displayfeature_xiaomi, vendor_sysfs_graphics)
 
