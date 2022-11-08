@@ -14,3 +14,6 @@ vendor.xiaomi.hardware.displayfeature::IDisplayFeature       u:object_r:vendor_h
 
 # CIT Sensors
 vendor.xiaomi.hardware.citsensorservice::ICitSensorService                    u:object_r:vendor_hal_citsensorservice_xiaomi_hwservice:s0
+
+# Vibrator Feature
+vendor.xiaomi.hardware.vibratorfeature::IVibratorFeature            u:object_r:vendor_hal_vibratorfeature_hwservice:s0

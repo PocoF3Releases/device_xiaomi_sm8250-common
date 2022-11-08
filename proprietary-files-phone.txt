@@ -36,3 +36,11 @@ vendor/lib64/libmlipay@1.1.so
 
 # Soter service (Tencent)
 -vendor/app/SoterService/SoterService.apk
+
+# Vibrator (Xiaomi)
+vendor/bin/hw/vendor.xiaomi.hardware.vibratorfeature.service
+vendor/etc/init/vendor.xiaomi.hardware.vibratorfeature.service.rc
+vendor/etc/init/vendor.xiaomi.hardware.vibratorfeature@1.0-service.rc
+vendor/etc/vintf/manifest/vendor.xiaomi.hardware.vibratorfeature.service.xml
+vendor/lib64/vendor.hardware.vibratorfeature.IVibratorExt-V1-ndk_platform.so
+vendor/lib64/vendor.xiaomi.hardware.vibratorfeature@1.0.so
