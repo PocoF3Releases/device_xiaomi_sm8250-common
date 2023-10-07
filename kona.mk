@@ -154,6 +154,8 @@ PRODUCT_COPY_FILES += \
 endif
 
 # Device-specific settings
+include hardware/xiaomi/dolby/dolby.mk
+
 PRODUCT_PACKAGES += \
     XiaomiParts
 
@@ -247,6 +249,9 @@ PRODUCT_PACKAGES += \
     media_codecs_kona.xml \
     media_codecs_performance_kona.xml \
     video_system_specs.json
+
+
+
 
 # NFC
 PRODUCT_PACKAGES += \
