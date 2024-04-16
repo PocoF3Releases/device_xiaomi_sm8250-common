@@ -48,6 +48,11 @@
         </activity>
 
         <service
+            android:name=".display.ColorService"
+            android:permission="ColorService">
+        </service>
+
+        <service
             android:name=".thermal.ThermalService"
             android:exported="true"
             android:permission="ThermalService" />
