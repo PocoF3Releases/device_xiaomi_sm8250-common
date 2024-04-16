@@ -1,0 +1,4 @@
+# Displayfeature
+attribute vendor_hal_displayfeature_xiaomi;
+attribute vendor_hal_displayfeature_xiaomi_client;
+attribute vendor_hal_displayfeature_xiaomi_server;
