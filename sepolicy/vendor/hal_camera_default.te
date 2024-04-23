@@ -31,3 +31,6 @@ allow hal_camera_default proc_stat:file r_file_perms;
 
 # Camera HAL wants to search on /mnt/vendor
 allow hal_camera_default mnt_vendor_file:dir search;
+
+# Allow Camera Hal to read DisplayFeature Props
+get_prop(hal_camera_default, vendor_displayfeature_prop)
