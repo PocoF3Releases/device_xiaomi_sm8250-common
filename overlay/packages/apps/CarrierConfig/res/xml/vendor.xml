@@ -2701,7 +2701,17 @@
         <boolean name="config_support_change_and_cancel_cb" value="false" />
         <boolean name="config_restore_participants_presentation" value="true" />
     </carrier_config>
+    <!-- Lifecell Ukraine Configurations -->
     <carrier_config mcc="255" mnc="06">
+        <!-- Flag specifying whether VoLTE should be available for carrier, independent of carrier provisioning. -->
+        <boolean name="carrier_volte_available_bool" value="true" />
+        <!-- Flag specifying whether WFC over IMS should be available for carrier: independent of carrier provisioning. -->
+        <boolean name="carrier_wfc_ims_available_bool" value="true" />
+        <!-- Flag specifying whether video telephony is available for carrier. -->
+        <boolean name="carrier_vt_available_bool" value="true" />
+        <!-- Default WFC_IMS_enabled: true VoWiFi by default is on -->
+        <boolean name="carrier_default_wfc_ims_enabled_bool" value="true" />
+        <!-- Default mode for WFC over IMS on home network: 2: prefer Wi-Fi -->
         <int name="carrier_default_wfc_ims_mode_int" value="2" />
     </carrier_config>
     <carrier_config mcc="238" mnc="01">
