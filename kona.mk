@@ -157,6 +157,7 @@ endif
 include hardware/xiaomi/dolby/dolby.mk
 
 PRODUCT_PACKAGES += \
+    XiaomiDolby \
     XiaomiParts
 
 # Dolby Props
