@@ -153,6 +153,13 @@ PRODUCT_PACKAGES += \
     XiaomiDolby \
     XiaomiParts
 
+# Dolby Props
+PRODUCT_VENDOR_PROPERTIES += \
+    ro.vendor.dolby.dax.version=DAX3_3.6.1.6_r1 \
+    ro.vendor.audio.dolby.dax.version=DAX3_3.6 \
+    ro.vendor.audio.dolby.dax.support=true \
+    ro.vendor.audio.dolby.surround.enable=true
+
 # Display
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.display.composer-service
