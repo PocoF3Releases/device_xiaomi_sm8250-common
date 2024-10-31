@@ -166,6 +166,11 @@ PRODUCT_VENDOR_PROPERTIES += \
     ro.vendor.audio.dolby.dax.support=true \
     ro.vendor.audio.dolby.surround.enable=true
 
+# Dolby MediaCodecs Dependenices
+PRODUCT_PACKAGES += \
+    libstagefright_softomx.vendor \
+    libstagefright_softomx_plugin.vendor
+
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.mapper@3.0-impl-qti-display \
@@ -260,9 +265,6 @@ PRODUCT_PACKAGES += \
     media_codecs_kona.xml \
     media_codecs_performance_kona.xml \
     video_system_specs.json
-
-
-
 
 # NFC
 PRODUCT_PACKAGES += \
