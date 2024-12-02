@@ -94,6 +94,14 @@ function blob_fixup() {
             [ "$2" = "" ] && return 0
             echo 'gettid: 1' >> ${2}
             ;;
+        vendor/etc/seccomp_policy/codec2.vendor.base-arm.policy)
+            [ "$2" = "" ] && return 0
+            sed -i "/futex: 1/d" "${2}" && echo 'futex: 1' >> ${2}
+            ;;
+        vendor/etc/seccomp_policy/codec2.vendor.ext-arm.policy)
+            [ "$2" = "" ] && return 0
+            sed -i "/_llseek: 1/d" "${2}" && sed -i "/getdents64: 1/d" "${2}"
+            ;;
         *)
             return 1
             ;;
