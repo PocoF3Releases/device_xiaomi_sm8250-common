@@ -77,6 +77,7 @@ function blob_fixup() {
         system_ext/lib64/libwfdnative.so)
             [ "$2" = "" ] && return 0
             "${PATCHELF}" --add-needed "libinput_shim.so" "${2}"
+            "${PATCHELF}" --add-needed "libbinder_shim.so" "${2}"
             ;;
         vendor/etc/init/init.mi_thermald.rc)
             [ "$2" = "" ] && return 0
