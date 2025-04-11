@@ -158,7 +158,8 @@ include hardware/xiaomi/dolby/dolby.mk
 
 PRODUCT_PACKAGES += \
     XiaomiDolby \
-    XiaomiParts
+    XiaomiParts \
+    DSPVolumeSynchronizer
 
 # Dolby Props
 PRODUCT_VENDOR_PROPERTIES += \
