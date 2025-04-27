@@ -383,10 +383,6 @@ PRODUCT_BOOT_JARS += \
     telephony-ext \
     xiaomi-telephony-stub
 
-# Thermal
-PRODUCT_PACKAGES += \
-    android.hardware.thermal-service.qti
-
 # USB
 PRODUCT_PACKAGES += \
     android.hardware.usb-service.qti \
