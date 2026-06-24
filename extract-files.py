@@ -40,6 +40,8 @@ blob_fixups: blob_fixups_user_type = {
      'vendor/lib64/libstagefrightdolby.so'
      ): blob_fixup()
         .replace_needed('libstagefright_foundation.so', 'libstagefright_foundation-v33.so'),
+    'system_ext/lib64/libwfdservice.so': blob_fixup()
+        .replace_needed('android.media.audio.common.types-V4-cpp.so', 'android.media.audio.common.types-V5-cpp.so'),
 }  # fmt: skip
 
 
