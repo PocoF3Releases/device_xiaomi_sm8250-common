@@ -111,4 +111,8 @@
     <string name="hbm_mode_summary">High Brightness Mode allows the display panel brightness to go above the maximum stock value. Which helps in improving visibility in direct sunlight</string>
     <string name="hbm_enable_summary_not_supported">HBM is not currently supported by the kernel</string>
 
+    <string name="dirac_unavailable">MiSound is temporarily unavailable</string>
+    <string name="dirac_apply_failed">Could not apply MiSound settings. Please try again.</string>
+    <string name="dirac_speaker_title">Speaker output</string>
+    <string name="dirac_speaker_summary">Speaker processing follows the active audio route and vendor support. The headphone profile below applies to headphones; it does not select a speaker mode.</string>
 </resources>

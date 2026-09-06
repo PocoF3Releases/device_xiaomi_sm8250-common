@@ -24,6 +24,12 @@
         android:key="dirac_enable"
         android:title="@string/dirac_enable" />
 
+    <Preference
+        android:key="dirac_speaker_info"
+        android:title="@string/dirac_speaker_title"
+        android:summary="@string/dirac_speaker_summary"
+        android:selectable="false" />
+
     <ListPreference
         android:key="dirac_headset_pref"
         android:entries="@array/dirac_headset_pref_entries"
