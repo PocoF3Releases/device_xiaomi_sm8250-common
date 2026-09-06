@@ -21,6 +21,8 @@
     android:versionName="1.0"
     android:sharedUserId="android.uid.system">
 
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_ROUTING" />
     <uses-permission android:name="android.permission.GET_TASKS" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
@@ -31,6 +33,7 @@
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
 
     <application
+        android:name=".PartsApplication"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/device_settings_app_name"
         android:persistent="true"
@@ -63,8 +66,7 @@
 
         <service
             android:name=".thermal.ThermalService"
-            android:exported="true"
-            android:permission="ThermalService" />
+            android:exported="false" />
 
         <service
             android:name=".dirac.DiracTileService"
@@ -134,8 +136,7 @@
 
         <service
             android:name=".refreshrate.RefreshService"
-            android:exported="true"
-            android:permission="RefreshService">
+            android:exported="false">
         </service>
 
         <activity

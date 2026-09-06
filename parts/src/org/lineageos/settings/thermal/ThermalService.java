@@ -63,6 +63,7 @@ public class ThermalService extends Service {
 
     @Override
     public void onCreate() {
+        super.onCreate();
         if (DEBUG) Log.d(TAG, "Creating service");
         try {
             mActivityTaskManager = ActivityTaskManager.getService();
@@ -72,7 +73,19 @@ public class ThermalService extends Service {
         }
         mThermalUtils = new ThermalUtils(this);
         registerReceiver();
-        super.onCreate();
+    }
+
+    @Override
+    public void onDestroy() {
+        unregisterReceiver(mIntentReceiver);
+        if (mActivityTaskManager != null) {
+            try {
+                mActivityTaskManager.unregisterTaskStackListener(mTaskListener);
+            } catch (RemoteException e) {
+                Log.w(TAG, "Cannot unregister task listener", e);
+            }
+        }
+        super.onDestroy();
     }
 
     @Override
@@ -96,7 +109,7 @@ public class ThermalService extends Service {
         IntentFilter filter = new IntentFilter();
         filter.addAction(Intent.ACTION_SCREEN_OFF);
         filter.addAction(Intent.ACTION_SCREEN_ON);
-        this.registerReceiver(mIntentReceiver, filter);
+        this.registerReceiver(mIntentReceiver, filter, Context.RECEIVER_NOT_EXPORTED);
     }
 
     private void setThermalProfile() {

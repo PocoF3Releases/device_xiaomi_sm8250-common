@@ -42,12 +42,15 @@ public class BootCompletedReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(final Context context, Intent intent) {
+        if (intent == null || !Intent.ACTION_LOCKED_BOOT_COMPLETED.equals(intent.getAction())) {
+            return;
+        }
         if (DEBUG)
             Log.d(TAG, "Received boot completed intent");
         try {
             DiracUtils.getInstance(context);
         } catch (Exception e) {
-            Log.d(TAG, "Dirac is not present in system");
+            Log.w(TAG, "Cannot initialize MiSound", e);
         }
         ThermalUtils.startService(context);
         RefreshUtils.startService(context);

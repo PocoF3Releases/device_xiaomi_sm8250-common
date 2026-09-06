@@ -42,7 +42,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.android.settingslib.applications.ApplicationsState;
-import com.android.settingslib.widget.SettingsBasePreferenceFragment;
+import androidx.fragment.app.Fragment;
 
 import org.lineageos.settings.R;
 
@@ -52,7 +52,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class ThermalSettingsFragment extends SettingsBasePreferenceFragment
+public class ThermalSettingsFragment extends Fragment
         implements ApplicationsState.Callbacks {
 
     private AllPackagesAdapter mAllPackagesAdapter;
@@ -67,16 +67,11 @@ public class ThermalSettingsFragment extends SettingsBasePreferenceFragment
     private ThermalUtils mThermalUtils;
 
     @Override
-    public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-    }
-
-    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         mApplicationsState = ApplicationsState.getInstance(getActivity().getApplication());
         mSession = mApplicationsState.newSession(this);
-        mSession.onResume();
         mActivityFilter = new ActivityFilter(getActivity().getPackageManager());
 
         mAllPackagesAdapter = new AllPackagesAdapter(getActivity());
@@ -104,14 +99,27 @@ public class ThermalSettingsFragment extends SettingsBasePreferenceFragment
     public void onResume() {
         super.onResume();
         getActivity().setTitle(getResources().getString(R.string.thermal_title));
+        mSession.onResume();
         rebuild();
+    }
+
+    @Override
+    public void onPause() {
+        mSession.onPause();
+        super.onPause();
+    }
+
+    @Override
+    public void onDestroyView() {
+        mAppsRecyclerView.setAdapter(null);
+        mAppsRecyclerView = null;
+        super.onDestroyView();
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
 
-        mSession.onPause();
         mSession.onDestroy();
     }
 
@@ -123,7 +131,7 @@ public class ThermalSettingsFragment extends SettingsBasePreferenceFragment
 
     @Override
     public void onRebuildComplete(ArrayList<ApplicationsState.AppEntry> entries) {
-        if (entries != null) {
+        if (entries != null && isAdded()) {
             handleAppEntries(entries);
             mAllPackagesAdapter.notifyDataSetChanged();
         }
@@ -154,20 +162,6 @@ public class ThermalSettingsFragment extends SettingsBasePreferenceFragment
     public void onRunningStateChanged(boolean running) {
     }
 
-    @Override
-    public void setDivider(@androidx.annotation.Nullable final Drawable divider) {
-        RecyclerView list = getListView();
-        if (list == null) {
-            View root = getView();
-            if (root != null) {
-                root.post(() -> setDivider(divider));
-            }
-            return;
-        }
-
-        super.setDivider(divider);
-    }
-
     private void handleAppEntries(List<ApplicationsState.AppEntry> entries) {
         final ArrayList<String> sections = new ArrayList<String>();
         final ArrayList<Integer> positions = new ArrayList<Integer>();
@@ -177,7 +171,7 @@ public class ThermalSettingsFragment extends SettingsBasePreferenceFragment
 
         for (int i = 0; i < entries.size(); i++) {
             final ApplicationInfo info = entries.get(i).info;
-            final String label = (String) info.loadLabel(pm);
+            final String label = info.loadLabel(pm).toString();
             final String sectionIndex;
 
             if (!info.enabled) {
@@ -348,7 +342,7 @@ public class ThermalSettingsFragment extends SettingsBasePreferenceFragment
                     bundle.putString("packageName", entry.info.packageName);
                     touchSettingsFragment.setArguments(bundle);
                     getActivity().getSupportFragmentManager().beginTransaction()
-                            .replace(R.id.content_frame, touchSettingsFragment, "touchSettingsFragment")
+                            .replace(com.android.settingslib.collapsingtoolbar.R.id.content_frame, touchSettingsFragment, "touchSettingsFragment")
                             .addToBackStack(null)
                             .commit();
                 }
@@ -359,8 +353,10 @@ public class ThermalSettingsFragment extends SettingsBasePreferenceFragment
             mApplicationsState.ensureIcon(entry);
             holder.icon.setImageDrawable(entry.icon);
             int packageState = mThermalUtils.getStateForPackage(entry.info.packageName);
-            holder.mode.setSelection(packageState, false);
+            holder.mode.setOnItemSelectedListener(null);
             holder.mode.setTag(entry);
+            holder.mode.setSelection(packageState, false);
+            holder.mode.setOnItemSelectedListener(this);
             int stateIconDawable = getStateDrawable(mThermalUtils.getStateForPackage(
                     entry.info.packageName));
             if (stateIconDawable == R.drawable.ic_thermal_gaming ||
@@ -387,6 +383,7 @@ public class ThermalSettingsFragment extends SettingsBasePreferenceFragment
         @Override
         public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
             final ApplicationsState.AppEntry entry = (ApplicationsState.AppEntry) parent.getTag();
+            if (entry == null) return;
             int currentState = mThermalUtils.getStateForPackage(entry.info.packageName);
             if (currentState != position) {
                 mThermalUtils.writePackage(entry.info.packageName, position);
