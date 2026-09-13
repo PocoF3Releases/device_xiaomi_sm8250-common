@@ -952,8 +952,6 @@ function configure_memory_parameters() {
     low_ram=`getprop ro.config.low_ram`
 
     if true; then
-        echo 0 > /proc/sys/vm/page-cluster
-
         #add memory limit to camera cgroup
         MemTotalStr=`cat /proc/meminfo | grep MemTotal`
         MemTotal=${MemTotalStr:16:8}

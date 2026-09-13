@@ -44,6 +44,8 @@ on early-init
     chmod 0620 /dev/kmsg
 
 on init
+    # Zram swap-in needs no disk read-ahead; vendor_init owns this sysctl.
+    write /proc/sys/vm/page-cluster 0
 
     # Support legacy paths
     symlink /sdcard /mnt/sdcard
