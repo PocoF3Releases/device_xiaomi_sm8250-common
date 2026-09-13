@@ -98,7 +98,13 @@ public final class ThermalUtils {
 
         if (value != null) {
              String[] modes = value.split(":");
-             if (modes.length < 5) value = null;
+             if (modes.length == 5) {
+                 // Preserve assignments made before the Streaming profile existed.
+                 value += ":" + THERMAL_STREAMING;
+                 writeValue(value);
+             } else if (modes.length != 6) {
+                 value = null;
+             }
          }
 
         if (value == null || value.isEmpty()) {
@@ -202,15 +208,26 @@ public final class ThermalUtils {
         String values = mSharedPrefs.getString(packageName, null);
         resetTouchModes();
 
-        if (values == null || values.isEmpty()) {
+        if (mTouchFeature == null || values == null || values.isEmpty()) {
             return;
         }
 
         String[] value = values.split(",");
-        int gameMode = Integer.parseInt(value[Constants.TOUCH_GAME_MODE]);
-        int touchResponse = Integer.parseInt(value[Constants.TOUCH_RESPONSE]);
-        int touchSensitivity = Integer.parseInt(value[Constants.TOUCH_SENSITIVITY]);
-        int touchResistant = Integer.parseInt(value[Constants.TOUCH_RESISTANT]);
+        if (value.length != 4) {
+            return;
+        }
+        final int gameMode;
+        final int touchResponse;
+        final int touchSensitivity;
+        final int touchResistant;
+        try {
+            gameMode = Integer.parseInt(value[Constants.TOUCH_GAME_MODE]);
+            touchResponse = Integer.parseInt(value[Constants.TOUCH_RESPONSE]);
+            touchSensitivity = Integer.parseInt(value[Constants.TOUCH_SENSITIVITY]);
+            touchResistant = Integer.parseInt(value[Constants.TOUCH_RESISTANT]);
+        } catch (NumberFormatException e) {
+            return;
+        }
         int touchActiveMode = (touchResponse != 0 && touchSensitivity != 0 && touchResistant != 0)
                 ? 1 : 0;
         try {
