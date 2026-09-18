@@ -22,6 +22,9 @@ blob_fixups: blob_fixups_user_type = {
         .add_needed('libinput_shim.so'),
     'vendor/etc/init/init.mi_thermald.rc': blob_fixup()
         .regex_replace('.*seclabel u:r:mi_thermald:s0\n', ''),
+    'vendor/etc/init/vendor.xiaomi.hardware.touchfeature@1.0-service.rc': blob_fixup()
+        .regex_replace(r'(service toucheventcheck /vendor/bin/toucheventcheck\n)(?!    disabled)',
+                       r'\1    disabled\n'),
     'vendor/etc/seccomp_policy/atfwd@2.0.policy': blob_fixup()
         .add_line_if_missing('gettid: 1'),
     'vendor/lib64/libril-qc-hal-qmi.so': blob_fixup()
