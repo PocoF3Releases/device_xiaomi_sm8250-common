@@ -259,12 +259,10 @@ public class RefreshSettingsFragment extends SettingsBasePreferenceFragment
             if (convertView != null) {
                 view = (TextView) convertView;
             } else {
-                view = (TextView) inflater.inflate(android.R.layout.simple_spinner_dropdown_item,
-                        parent, false);
+                view = (TextView) inflater.inflate(R.layout.parts_spinner_item, parent, false);
             }
 
             view.setText(items[position]);
-            view.setTextSize(14f);
 
             return view;
         }
