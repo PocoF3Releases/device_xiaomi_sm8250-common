@@ -23,14 +23,12 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.SectionIndexer;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -46,9 +44,7 @@ import org.lineageos.settings.R;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class RefreshSettingsFragment extends SettingsBasePreferenceFragment
     implements ApplicationsState.Callbacks {
@@ -57,9 +53,6 @@ public class RefreshSettingsFragment extends SettingsBasePreferenceFragment
     private ApplicationsState mApplicationsState;
     private ApplicationsState.Session mSession;
     private ActivityFilter mActivityFilter;
-    private Map<String, ApplicationsState.AppEntry> mEntryMap =
-            new HashMap<String, ApplicationsState.AppEntry>();
-
     private RefreshUtils mRefreshUtils;
     private RecyclerView mAppsRecyclerView;
 
@@ -73,7 +66,6 @@ public class RefreshSettingsFragment extends SettingsBasePreferenceFragment
 
         mApplicationsState = ApplicationsState.getInstance(getActivity().getApplication());
         mSession = mApplicationsState.newSession(this);
-        mSession.onResume();
         mActivityFilter = new ActivityFilter(getActivity().getPackageManager());
 
         mAllPackagesAdapter = new AllPackagesAdapter(getActivity());
@@ -101,15 +93,29 @@ public class RefreshSettingsFragment extends SettingsBasePreferenceFragment
     public void onResume() {
         super.onResume();
         getActivity().setTitle(getResources().getString(R.string.refresh_title));
+        mSession.onResume();
         rebuild();
     }
 
     @Override
-    public void onDestroy() {
-        super.onDestroy();
-
+    public void onPause() {
         mSession.onPause();
+        super.onPause();
+    }
+
+    @Override
+    public void onDestroyView() {
+        if (mAppsRecyclerView != null) {
+            mAppsRecyclerView.setAdapter(null);
+            mAppsRecyclerView = null;
+        }
+        super.onDestroyView();
+    }
+
+    @Override
+    public void onDestroy() {
         mSession.onDestroy();
+        super.onDestroy();
     }
 
     @Override
@@ -182,10 +188,6 @@ public class RefreshSettingsFragment extends SettingsBasePreferenceFragment
         }
 
         mAllPackagesAdapter.setEntries(entries, sections, positions);
-        mEntryMap.clear();
-        for (ApplicationsState.AppEntry e : entries) {
-            mEntryMap.put(e.info.packageName, e);
-        }
     }
 
     private void rebuild() {
@@ -305,14 +307,15 @@ public class RefreshSettingsFragment extends SettingsBasePreferenceFragment
                 return;
             }
             holder.mode.setAdapter(new ModeAdapter(context));
-            holder.mode.setOnItemSelectedListener(this);
             holder.title.setText(entry.label);
             holder.title.setOnClickListener(v -> holder.mode.performClick());
             mApplicationsState.ensureIcon(entry);
             holder.icon.setImageDrawable(entry.icon);
             int packageState = mRefreshUtils.getStateForPackage(entry.info.packageName);
-            holder.mode.setSelection(packageState, false);
+            holder.mode.setOnItemSelectedListener(null);
             holder.mode.setTag(entry);
+            holder.mode.setSelection(packageState, false);
+            holder.mode.setOnItemSelectedListener(this);
             holder.stateIcon.setImageResource(getStateDrawable(packageState));
         }
 

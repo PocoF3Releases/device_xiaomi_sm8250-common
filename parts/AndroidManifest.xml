@@ -143,9 +143,7 @@
 
         <service
             android:name=".refreshrate.RefreshService"
-            android:exported="true"
-            android:permission="RefreshService">
-        </service>
+            android:exported="false" />
 
         <activity
             android:name=".touchsampling.TouchSamplingSettingsActivity"
