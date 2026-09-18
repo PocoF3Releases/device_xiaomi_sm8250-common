@@ -115,4 +115,5 @@
     <string name="dirac_apply_failed">Could not apply MiSound settings. Please try again.</string>
     <string name="dirac_speaker_title">Speaker output</string>
     <string name="dirac_speaker_summary">Speaker processing follows the active audio route and vendor support. The headphone profile below applies to headphones; it does not select a speaker mode.</string>
+    <string name="parts_apply_failed">Could not apply this setting. Please try again.</string>
 </resources>
