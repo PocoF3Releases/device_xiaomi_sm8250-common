@@ -145,3 +145,6 @@ genfscon sysfs /devices/platform/soc/soc:goodix_fp/wakeup                       
 genfscon sysfs /devices/platform/soc/soc:maxim_ds28e16/power_supply/batt_verify/wakeup                                                             u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/soc:maxim_ds28e16_slave/power_supply/batt_verify_slave/wakeup                                                 u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/soc:oem_rf_cable/wakeup                                                                                       u:object_r:sysfs_wakeup:s0
+
+# Awinic haptic resonance calibration (stock sysfs_f0_value).
+genfscon sysfs /devices/platform/soc/a8c000.i2c/i2c-2/2-005a/f0_value u:object_r:vendor_sysfs_f0_value:s0
