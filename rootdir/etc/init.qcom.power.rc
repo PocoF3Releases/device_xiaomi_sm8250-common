@@ -151,9 +151,8 @@ on init
     write /dev/stune/camera-daemon/schedtune.prefer_idle 1
     write /dev/stune/camera-daemon/schedtune.boost 0
 
-    # report max frequency to unity tasks.
-    write /proc/sys/kernel/sched_lib_name "UnityMain,libunity.so,libil2cpp.so,com.miHoYo.,com.pubg.imobile,com.pubg.,com.activision.,com.gryphline."
-    write /proc/sys/kernel/sched_lib_mask_force 255
+    # Keep CPU frequency reporting accurate for all apps.
+    write /proc/sys/kernel/sched_lib_mask_force 0
 
 on charger
     # Enable UFS powersaving
