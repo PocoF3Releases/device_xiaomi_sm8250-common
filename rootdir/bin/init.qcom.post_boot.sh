@@ -961,7 +961,10 @@ function configure_memory_parameters() {
             let LimitSize=524288000
         fi
 
-        echo $LimitSize > /dev/memcg/camera/memory.soft_limit_in_bytes
+        # This limit is a cgroup v1 interface; newer releases use cgroup v2.
+        if [ -f /dev/memcg/camera/memory.soft_limit_in_bytes ]; then
+            echo $LimitSize > /dev/memcg/camera/memory.soft_limit_in_bytes
+        fi
     else
 
         # Read adj series and set adj threshold for PPR and ALMK.
