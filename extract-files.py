@@ -18,6 +18,12 @@ from extract_utils.fixups_lib import (
 )
 
 blob_fixups: blob_fixups_user_type = {
+    'vendor/etc/init/android.hardware.neuralnetworks@1.3-service-qti.rc': blob_fixup()
+        .regex_replace(r'writepid /dev/stune/nnapi-hal/tasks', 'task_profiles NNApiHALPerformance'),
+    'vendor/etc/init/vendor.qti.media.c2@1.0-service.rc': blob_fixup()
+        .regex_replace(r'writepid /dev/cpuset/foreground/tasks', 'task_profiles ProcessCapacityHigh'),
+    'vendor/etc/init/android.hardware.drm@1.3-service.widevine.rc': blob_fixup()
+        .regex_replace(r'writepid /dev/cpuset/foreground/tasks', 'task_profiles ProcessCapacityHigh'),
     'system_ext/lib64/libwfdnative.so': blob_fixup()
         .add_needed('libinput_shim.so'),
     'vendor/etc/init/init.mi_thermald.rc': blob_fixup()
