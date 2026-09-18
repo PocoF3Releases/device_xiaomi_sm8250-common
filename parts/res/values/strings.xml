@@ -16,8 +16,8 @@
 -->
 <resources>
     <!-- Thermal Profiles -->
-    <string name="thermal_title">Thermal Profiles</string>
-    <string name="thermal_summary">Adjust per-app thermal profiles for optimum performance</string>
+    <string name="thermal_title">Thermal profiles</string>
+    <string name="thermal_summary">Choose a thermal profile for each app</string>
     <string name="thermal_default">Default</string>
     <string name="thermal_benchmark">Benchmark</string>
     <string name="thermal_browser">Browser</string>
@@ -27,29 +27,29 @@
     <string name="thermal_streaming">Streaming</string>
 
     <!-- Refresh Rate Settings -->
-    <string name="refresh_rate_tile_title">Refresh Rate</string>
+    <string name="refresh_rate_tile_title">Refresh rate</string>
 
     <!-- Touch Control Settings -->
-    <string name="touch_control_title">Touch Control</string>
-    <string name="touch_game_mode_title">Enable</string>
-    <string name="touch_response_title">Responsivity</string>
-    <string name="touch_response_summary">Controls touch response</string>
-    <string name="touch_sensitivity_title">Sensitivity</string>
-    <string name="touch_sensitivity_summary">Controls touch sensitivity for repeated taps</string>
-    <string name="touch_resistant_title">Resistant area</string>
-    <string name="touch_resistant_summary">Reduce touch sensitivity near the edges to avoid triggering touch controls</string>
+    <string name="touch_control_title">Game touch controls</string>
+    <string name="touch_game_mode_title">Use game touch controls</string>
+    <string name="touch_response_title">Touch response</string>
+    <string name="touch_response_summary">Adjust tap response for the selected app</string>
+    <string name="touch_sensitivity_title">Touch sensitivity</string>
+    <string name="touch_sensitivity_summary">Adjust sensitivity for repeated taps</string>
+    <string name="touch_resistant_title">Edge resistance</string>
+    <string name="touch_resistant_summary">Reduce edge sensitivity to prevent accidental touches</string>
 
     <!-- Per-app refresh rate -->
     <string name="refresh_title">Per-app refresh rate</string>
-    <string name="refresh_summary">Set the maximum refresh rate for a specific application</string>
+    <string name="refresh_summary">Set the maximum refresh rate for each app</string>
     <string name="refresh_default">Default</string>
     <string name="refresh_standard">60Hz</string>    
     <string name="refresh_extreme">120Hz</string>    
 
     <!-- Clear Speaker -->
     <string name="clear_speaker_title">Clear speaker</string>
-    <string name="clear_speaker_summary">Play a 30-second audio to clear the speaker</string>
-    <string name="clear_speaker_description">Run this feature once or twice if you find that your speaker is lightly blocked by dust. Set media volume to maximum.\n\nIf the speaker is blocked heavily, run this feature 2–5 times while shaking your device with the speaker facing downwards.\n\nWARNING: Ensure that any headphones are unplugged.</string>
+    <string name="clear_speaker_summary">Play a 30-second speaker-cleaning tone</string>
+    <string name="clear_speaker_description">Play the cleaning tone with the speaker facing down. For stubborn dust, repeat it a few times while gently moving the phone.\n\nDisconnect headphones before starting.</string>
 
     <!-- Dirac settings: Headset types -->
     <string name="dirac_headset_earbuds">Mi Earbuds</string>
@@ -93,23 +93,23 @@
     <string name="music_headset_scenario_vocal">Voice</string>
 
     <!-- High Touch Polling -->
-    <string name="htsr_title">Touch Responsiveness</string>
-    <string name="htsr_enable_title">Increase Touch Responsiveness</string>
-    <string name="htsr_enable_summary">Increases touch polling rate to decrease latency</string>    
+    <string name="htsr_title">Touch responsiveness</string>
+    <string name="htsr_enable_title">Increase touch responsiveness</string>
+    <string name="htsr_enable_summary">Increase touch polling rate to reduce input latency</string>    
 
     <!-- DC dimming settings -->
-    <string name="dc_dimming_enable_title">Anti-Flicker Mode</string>
-    <string name="dc_dimming_enable_summary">DC Dimming reduces eye strain in low light conditions (Note: reduce image quality)</string>
-    <string name="dc_dimming_enable_summary_not_supported">DC Dimming is not currently supported by the kernel</string>
+    <string name="dc_dimming_enable_title">Anti-flicker mode</string>
+    <string name="dc_dimming_enable_summary">Reduce low-brightness flicker. Color accuracy may be affected.</string>
+    <string name="dc_dimming_enable_summary_not_supported">Anti-flicker mode is not supported by the current kernel</string>
 
     <!--Display settings fragment -->
-    <string name="display_settings_title">Custom display settings</string>
-    <string name="display_settings_summary">DC Dimming, High Brightness Mode</string>
+    <string name="display_settings_title">Display enhancements</string>
+    <string name="display_settings_summary">Anti-flicker and high brightness mode</string>
 
     <!-- HBM settings -->
-    <string name="hbm_mode_title">High Brightness Mode</string>
-    <string name="hbm_mode_summary">High Brightness Mode allows the display panel brightness to go above the maximum stock value. Which helps in improving visibility in direct sunlight</string>
-    <string name="hbm_enable_summary_not_supported">HBM is not currently supported by the kernel</string>
+    <string name="hbm_mode_title">High brightness mode</string>
+    <string name="hbm_mode_summary">Allow higher display brightness for better visibility in direct sunlight. Uses more power.</string>
+    <string name="hbm_enable_summary_not_supported">High brightness mode is not supported by the current kernel</string>
 
     <string name="dirac_unavailable">MiSound is temporarily unavailable</string>
     <string name="dirac_apply_failed">Could not apply MiSound settings. Please try again.</string>
