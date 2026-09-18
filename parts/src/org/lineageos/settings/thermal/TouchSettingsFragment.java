@@ -17,11 +17,14 @@ package org.lineageos.settings.thermal;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+
 import androidx.preference.Preference;
 import androidx.preference.PreferenceManager;
-import androidx.preference.SeekBarPreference;
+
 import com.android.settingslib.widget.MainSwitchPreference;
 import com.android.settingslib.widget.SettingsBasePreferenceFragment;
+import com.android.settingslib.widget.SliderPreference;
+
 import org.lineageos.settings.R;
 
 /** Edits the existing package-specific four-value touch profile. */
@@ -30,7 +33,7 @@ public class TouchSettingsFragment extends SettingsBasePreferenceFragment
     private SharedPreferences mPrefs;
     private String mPackageName;
     private MainSwitchPreference mGameMode;
-    private SeekBarPreference mResponse, mSensitivity, mResistance;
+    private SliderPreference mResponse, mSensitivity, mResistance;
     private final int[] mValues = new int[4];
 
     @Override
@@ -46,6 +49,9 @@ public class TouchSettingsFragment extends SettingsBasePreferenceFragment
             pref.setPersistent(false);
             pref.setOnPreferenceChangeListener(this);
         }
+        mResponse.setHapticFeedbackMode(SliderPreference.HAPTIC_FEEDBACK_MODE_ON_TICKS);
+        mSensitivity.setHapticFeedbackMode(SliderPreference.HAPTIC_FEEDBACK_MODE_ON_TICKS);
+        mResistance.setHapticFeedbackMode(SliderPreference.HAPTIC_FEEDBACK_MODE_ON_TICKS);
         mGameMode.setSummary(requireArguments().getString("appName", mPackageName));
     }
 
