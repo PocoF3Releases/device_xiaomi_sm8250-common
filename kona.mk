@@ -147,6 +147,8 @@ PRODUCT_COPY_FILES += \
 endif
 
 # Device-specific settings
+include hardware/xiaomi/dolby/dolby.mk
+
 PRODUCT_PACKAGES += \
     XiaomiDolby \
     XiaomiParts \
