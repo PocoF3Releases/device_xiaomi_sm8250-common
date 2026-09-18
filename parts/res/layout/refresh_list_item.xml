@@ -7,7 +7,8 @@
     android:gravity="center_vertical"
     android:minHeight="88dp"
     android:orientation="horizontal"
-    android:padding="16dp">
+    android:paddingHorizontal="16dp"
+    android:paddingVertical="12dp">
 
     <ImageView
         android:id="@+id/app_icon"
@@ -33,13 +34,20 @@
             android:textAppearance="@style/TextAppearance.SettingsLib.TitleMedium"
             android:textColor="@color/settingslib_materialColorOnSurface" />
 
-        <Spinner
+        <TextView
             android:id="@+id/app_mode"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="48dp"
-            android:spinnerMode="dialog"
-            android:prompt="@string/refresh_title" />
+            android:layout_height="48dp"
+            android:background="@drawable/parts_icon_button_background"
+            android:clickable="true"
+            android:drawableEnd="@drawable/ic_expand_more"
+            android:drawablePadding="8dp"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:paddingStart="16dp"
+            android:paddingEnd="12dp"
+            android:textAppearance="@style/TextAppearance.SettingsLib.BodyMedium"
+            android:textColor="@color/settingslib_materialColorOnSecondaryContainer" />
     </LinearLayout>
 
     <ImageView
