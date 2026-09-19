@@ -151,9 +151,9 @@ public final class ThermalUtils {
         mSharedPrefs.edit().putString(THERMAL_CONTROL, profiles).apply();
     }
 
-    private static boolean isValidProfiles(String[] modes, int expectedCount) {
-        if (modes.length != expectedCount) return false;
-        for (int i = 0; i < expectedCount; i++) {
+    private static boolean hasValidProfilePrefixes(String[] modes) {
+        if (modes.length == 0 || modes.length > PROFILE_PREFIXES.length) return false;
+        for (int i = 0; i < modes.length; i++) {
             if (!modes[i].startsWith(PROFILE_PREFIXES[i])) return false;
         }
         return true;
@@ -167,26 +167,13 @@ public final class ThermalUtils {
 
     private String getValue() {
         String value = mSharedPrefs.getString(THERMAL_CONTROL, null);
-        boolean migrated = false;
         if (value != null && !value.isEmpty()) {
             String[] modes = value.split(":", -1);
-            if (isValidProfiles(modes, 5)) {
-                value = appendProfiles(value, 5, 6);
-                modes = value.split(":", -1);
-                migrated = true;
-            }
-            if (isValidProfiles(modes, 6)) {
-                value = appendProfiles(value, 6, 8);
-                modes = value.split(":", -1);
-                migrated = true;
-            }
-            if (isValidProfiles(modes, 8)) {
-                value = appendProfiles(value, 8, PROFILE_PREFIXES.length);
-                modes = value.split(":", -1);
-                migrated = true;
-            }
-            if (isValidProfiles(modes, PROFILE_PREFIXES.length)) {
-                if (migrated) writeValue(value);
+            if (hasValidProfilePrefixes(modes)) {
+                if (modes.length < PROFILE_PREFIXES.length) {
+                    value = appendProfiles(value, modes.length, PROFILE_PREFIXES.length);
+                    writeValue(value);
+                }
             } else {
                 value = null;
             }

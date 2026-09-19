@@ -111,8 +111,9 @@ public class ThermalProfileDetailFragment extends Fragment {
                     .append(" ≈ ").append(formatGpuMhz(p.gpuState[i]));
             if (i + 1 < p.gpuTrigger.length && i + 1 < p.gpuState.length) out.append('\n');
         }
-        out.append("\n\nAlioth kona-v2 GPU states used here: "
-                + "0≈670 MHz, 1≈587 MHz, 2≈525 MHz.");
+        out.append("\n\nOn Alioth's 670 MHz GPU bin: "
+                + "state 0≈670 MHz, 1≈587 MHz, 2≈525 MHz. "
+                + "Other speed bins may start lower; the cooling state is authoritative.");
         return out.toString();
     }
 
