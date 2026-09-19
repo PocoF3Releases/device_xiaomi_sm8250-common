@@ -29,6 +29,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.SectionIndexer;
@@ -47,21 +48,32 @@ import org.lineageos.settings.R;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Locale;
 
 public class ThermalSettingsFragment extends Fragment
         implements ApplicationsState.Callbacks {
+
+    private static final String UI_PREFS = "thermal_ui";
+    private static final String PREF_SYSTEM_EXPANDED = "system_controls_expanded";
 
     private AllPackagesAdapter mAllPackagesAdapter;
     private ApplicationsState mApplicationsState;
     private ApplicationsState.Session mSession;
     private ActivityFilter mActivityFilter;
     private RecyclerView mAppsRecyclerView;
+    private View mSystemHeader;
+    private View mSystemContent;
+    private TextView mSystemHeaderSummary;
+    private ImageView mSystemExpand;
     private TextView mBaseProfile;
     private RadioGroup mRegionGroup;
     private RadioButton mRegionGlobal;
     private RadioButton mRegionIndia;
     private ThermalUtils mThermalUtils;
     private boolean mBindingRegion;
+    private boolean mSystemExpanded;
+    private String mSearchQuery = "";
+    private List<ApplicationsState.AppEntry> mAllEntries = new ArrayList<>();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -85,13 +97,24 @@ public class ThermalSettingsFragment extends Fragment
         super.onViewCreated(view, savedInstanceState);
 
         mAppsRecyclerView = view.findViewById(R.id.thermal_rv_view);
+        mSystemHeader = view.findViewById(R.id.thermal_system_header);
+        mSystemContent = view.findViewById(R.id.thermal_system_content);
+        mSystemHeaderSummary = view.findViewById(R.id.thermal_system_header_summary);
+        mSystemExpand = view.findViewById(R.id.thermal_system_expand);
         mBaseProfile = view.findViewById(R.id.thermal_base_profile);
         mRegionGroup = view.findViewById(R.id.thermal_region_group);
         mRegionGlobal = view.findViewById(R.id.thermal_region_global);
         mRegionIndia = view.findViewById(R.id.thermal_region_india);
 
         mAppsRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        mAppsRecyclerView.setItemAnimator(null);
         mAppsRecyclerView.setAdapter(mAllPackagesAdapter);
+
+        mSystemExpanded = requireContext().getSharedPreferences(UI_PREFS, Context.MODE_PRIVATE)
+                .getBoolean(PREF_SYSTEM_EXPANDED, false);
+        mSystemHeader.setOnClickListener(v ->
+                setSystemControlsExpanded(!mSystemExpanded, true));
+        setSystemControlsExpanded(mSystemExpanded, false);
 
         mBaseProfile.setOnClickListener(v -> showBaseProfileDialog());
         mRegionGroup.setOnCheckedChangeListener((group, checkedId) -> {
@@ -178,36 +201,53 @@ public class ThermalSettingsFragment extends Fragment
     }
 
     private void handleAppEntries(List<ApplicationsState.AppEntry> entries) {
-        final ArrayList<String> sections = new ArrayList<String>();
-        final ArrayList<Integer> positions = new ArrayList<Integer>();
-        final PackageManager pm = getActivity().getPackageManager();
+        mAllEntries = new ArrayList<>(entries);
+        filterAndDisplayEntries();
+    }
+
+    void setSearchQuery(String query) {
+        mSearchQuery = query == null ? "" : query.trim().toLowerCase(Locale.getDefault());
+        if (isAdded()) {
+            filterAndDisplayEntries();
+        }
+    }
+
+    private void filterAndDisplayEntries() {
+        final ArrayList<ApplicationsState.AppEntry> filteredEntries = new ArrayList<>();
+        final ArrayList<String> sections = new ArrayList<>();
+        final ArrayList<Integer> positions = new ArrayList<>();
+        final PackageManager pm = requireActivity().getPackageManager();
         String lastSectionIndex = null;
-        int offset = 0;
 
-        for (int i = 0; i < entries.size(); i++) {
-            final ApplicationInfo info = entries.get(i).info;
+        for (ApplicationsState.AppEntry entry : mAllEntries) {
+            final ApplicationInfo info = entry.info;
             final String label = info.loadLabel(pm).toString();
-            final String sectionIndex;
 
+            if (!TextUtils.isEmpty(mSearchQuery)
+                    && !label.toLowerCase(Locale.getDefault()).contains(mSearchQuery)
+                    && !info.packageName.toLowerCase(Locale.ROOT).contains(mSearchQuery)) {
+                continue;
+            }
+
+            final String sectionIndex;
             if (!info.enabled) {
                 sectionIndex = "--"; // XXX
             } else if (TextUtils.isEmpty(label)) {
                 sectionIndex = "";
             } else {
-                sectionIndex = label.substring(0, 1).toUpperCase();
+                sectionIndex = label.substring(0, 1).toUpperCase(Locale.getDefault());
             }
 
             if (lastSectionIndex == null
                     || !TextUtils.equals(sectionIndex, lastSectionIndex)) {
                 sections.add(sectionIndex);
-                positions.add(offset);
+                positions.add(filteredEntries.size());
                 lastSectionIndex = sectionIndex;
             }
-
-            offset++;
+            filteredEntries.add(entry);
         }
 
-        mAllPackagesAdapter.setEntries(entries, sections, positions);
+        mAllPackagesAdapter.setEntries(filteredEntries, sections, positions);
     }
 
     private void rebuild() {
@@ -227,40 +267,90 @@ public class ThermalSettingsFragment extends Fragment
 
         ThermalProfiles.Profile base =
                 ThermalProfiles.findBySconfig(region, mThermalUtils.getBaseSconfig());
-        mBaseProfile.setText(base == null ? R.string.thermal_normal : base.titleRes);
+        int baseTitle = base == null ? R.string.thermal_normal : base.titleRes;
+        mBaseProfile.setText(baseTitle);
+        if (mSystemHeaderSummary != null) {
+            int regionTitle = region == ThermalProfiles.REGION_INDIA
+                    ? R.string.thermal_region_india : R.string.thermal_region_global;
+            mSystemHeaderSummary.setText(getString(R.string.thermal_system_compact_summary,
+                    getString(baseTitle), getString(regionTitle)));
+        }
+    }
+
+    private void setSystemControlsExpanded(boolean expanded, boolean persist) {
+        mSystemExpanded = expanded;
+        if (mSystemContent != null) {
+            mSystemContent.setVisibility(expanded ? View.VISIBLE : View.GONE);
+        }
+        if (mSystemExpand != null) {
+            mSystemExpand.setRotation(expanded ? 180f : 0f);
+            mSystemExpand.setContentDescription(getString(expanded
+                    ? R.string.thermal_system_collapse : R.string.thermal_system_expand));
+        }
+        if (persist && isAdded()) {
+            requireContext().getSharedPreferences(UI_PREFS, Context.MODE_PRIVATE)
+                    .edit().putBoolean(PREF_SYSTEM_EXPANDED, expanded).apply();
+        }
     }
 
     private void showBaseProfileDialog() {
         ThermalProfileAdapter adapter = new ThermalProfileAdapter(
                 requireContext(), false, STATE_UNUSED, mThermalUtils.getBaseSconfig());
-        new AlertDialog.Builder(requireContext())
+        AlertDialog dialog = new AlertDialog.Builder(requireContext())
                 .setTitle(R.string.thermal_system_profile_title)
-                .setAdapter(adapter, (dialog, which) -> {
+                .setAdapter(adapter, (selectedDialog, which) -> {
                     ThermalProfiles.Profile profile = adapter.getProfile(which);
                     if (profile != null && mThermalUtils.setBaseSconfig(profile.sconfig)) {
                         refreshHeader();
                     }
-                    dialog.dismiss();
+                    selectedDialog.dismiss();
                 })
                 .setNegativeButton(android.R.string.cancel, null)
-                .show();
+                .create();
+        showProfileDialog(dialog);
     }
 
     private void showModeDialog(ApplicationsState.AppEntry entry, int selectedState) {
         ThermalProfileAdapter adapter =
                 new ThermalProfileAdapter(requireContext(), true, selectedState, -1);
-        new AlertDialog.Builder(requireContext())
+        AlertDialog dialog = new AlertDialog.Builder(requireContext())
                 .setTitle(R.string.thermal_profile_dialog_title)
-                .setAdapter(adapter, (dialog, which) -> {
+                .setAdapter(adapter, (selectedDialog, which) -> {
                     int state = adapter.getStorageState(which);
                     if (state != selectedState) {
                         mThermalUtils.writePackage(entry.info.packageName, state);
                         mAllPackagesAdapter.notifyDataSetChanged();
                     }
-                    dialog.dismiss();
+                    selectedDialog.dismiss();
                 })
                 .setNegativeButton(android.R.string.cancel, null)
-                .show();
+                .create();
+        showProfileDialog(dialog);
+    }
+
+    private void showProfileDialog(AlertDialog dialog) {
+        dialog.setOnShowListener(unused -> {
+            ListView list = dialog.getListView();
+            if (list == null) return;
+
+            // Expressive dialogs place the button bar over the scrolling list. Reserve that
+            // area and clip children so the last profile never renders underneath Cancel.
+            list.setClipToPadding(true);
+            list.setOverScrollMode(View.OVER_SCROLL_NEVER);
+            list.post(() -> {
+                View cancel = dialog.getButton(AlertDialog.BUTTON_NEGATIVE);
+                int buttonHeight = cancel == null ? 0 : cancel.getHeight();
+                int minimumInset = dpToPx(72);
+                int bottomInset = Math.max(minimumInset, buttonHeight + dpToPx(16));
+                list.setPaddingRelative(list.getPaddingStart(), list.getPaddingTop(),
+                        list.getPaddingEnd(), Math.max(list.getPaddingBottom(), bottomInset));
+            });
+        });
+        dialog.show();
+    }
+
+    private int dpToPx(int dp) {
+        return Math.round(dp * getResources().getDisplayMetrics().density);
     }
 
     private static class ThermalProfileAdapter extends BaseAdapter {
