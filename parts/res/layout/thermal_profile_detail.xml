@@ -25,6 +25,8 @@
             <TextView android:id="@+id/thermal_detail_meta"
                 android:layout_width="match_parent" android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
+                android:ellipsize="end"
+                android:maxLines="2"
                 android:textAppearance="@style/TextAppearance.SettingsLib.BodyMedium"
                 android:textColor="@color/settingslib_materialColorOnSurfaceVariant" />
             <TextView

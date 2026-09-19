@@ -43,9 +43,11 @@ public class ThermalProfileDetailFragment extends Fragment {
 
         requireActivity().setTitle(profile.titleRes);
         ((TextView) view.findViewById(R.id.thermal_detail_summary)).setText(profile.summaryRes);
+        String regionName = getString(region == ThermalProfiles.REGION_INDIA
+                ? R.string.thermal_region_india : R.string.thermal_region_global);
         ((TextView) view.findViewById(R.id.thermal_detail_meta)).setText(
-                (region == ThermalProfiles.REGION_INDIA ? "India" : "Global")
-                        + " • sconfig " + profile.sconfig + " • " + profile.policy.configName);
+                getString(R.string.thermal_detail_meta,
+                        regionName, profile.sconfig, profile.policy.configName));
         ((TextView) view.findViewById(R.id.thermal_detail_cpu)).setText(formatCpu(profile.policy));
         ((TextView) view.findViewById(R.id.thermal_detail_gpu)).setText(formatGpu(profile.policy));
         ((TextView) view.findViewById(R.id.thermal_detail_controls))
@@ -54,41 +56,51 @@ public class ThermalProfileDetailFragment extends Fragment {
                 .setText(formatSensor(profile.policy));
     }
 
-    private static String formatCpu(ThermalProfiles.Policy p) {
+    private String formatCpu(ThermalProfiles.Policy p) {
         StringBuilder out = new StringBuilder();
-        appendCpuCurve(out, "CPU4 / performance cluster", p.cpu4Trigger, p.cpu4Clear, p.cpu4Khz);
+        appendCpuCurve(out, getString(R.string.thermal_cpu_performance_cluster),
+                p.cpu4Trigger, p.cpu4Clear, p.cpu4Khz);
         out.append("\n\n");
-        appendCpuCurve(out, "CPU7 / prime core", p.cpu7Trigger, p.cpu7Clear, p.cpu7Khz);
+        appendCpuCurve(out, getString(R.string.thermal_cpu_prime_core),
+                p.cpu7Trigger, p.cpu7Clear, p.cpu7Khz);
         return out.toString();
     }
 
-    private static void appendCpuCurve(StringBuilder out, String label,
+    private void appendCpuCurve(StringBuilder out, String label,
             int[] trigger, int[] clear, int[] khz) {
         out.append(label).append('\n');
         if (trigger.length == 0 || khz.length == 0) {
-            out.append("No explicit profile ceiling");
+            out.append(getString(R.string.thermal_no_profile_ceiling));
             return;
         }
         int min = khz[0], max = khz[0];
-        for (int value : khz) { min = Math.min(min, value); max = Math.max(max, value); }
-        out.append("Below ").append(trigger[0]).append("°C: no explicit profile cap\n");
+        for (int value : khz) {
+            min = Math.min(min, value);
+            max = Math.max(max, value);
+        }
+        out.append(getString(R.string.thermal_below_no_cap, trigger[0])).append('\n');
         if (min == max) {
-            out.append("Configured thermal ceiling: ").append(formatMhz(max)).append('\n');
+            out.append(getString(R.string.thermal_configured_ceiling, formatMhz(max)))
+                    .append('\n');
         } else {
-            out.append("Configured ceiling range: ")
-                    .append(formatMhz(min)).append(" – ").append(formatMhz(max)).append('\n');
+            out.append(getString(R.string.thermal_configured_range,
+                    formatMhz(min), formatMhz(max))).append('\n');
         }
         for (int i = 0; i < trigger.length && i < khz.length; i++) {
-            out.append(trigger[i]).append("°C");
-            if (i < clear.length) out.append(" (clear ").append(clear[i]).append("°C)");
-            out.append(" → ").append(formatMhz(khz[i]));
+            if (i < clear.length) {
+                out.append(getString(R.string.thermal_trigger_clear_cap,
+                        trigger[i], clear[i], formatMhz(khz[i])));
+            } else {
+                out.append(getString(R.string.thermal_trigger_cap,
+                        trigger[i], formatMhz(khz[i])));
+            }
             if (i + 1 < trigger.length && i + 1 < khz.length) out.append('\n');
         }
     }
 
-    private static String formatGpu(ThermalProfiles.Policy p) {
+    private String formatGpu(ThermalProfiles.Policy p) {
         if (p.gpuTrigger.length == 0 || p.gpuState.length == 0) {
-            return "No explicit GPU thermal ceiling";
+            return getString(R.string.thermal_no_gpu_ceiling);
         }
         double min = gpuMhzValue(p.gpuState[0]), max = min;
         for (int state : p.gpuState) {
@@ -97,65 +109,91 @@ public class ThermalProfileDetailFragment extends Fragment {
             max = Math.max(max, mhz);
         }
         StringBuilder out = new StringBuilder();
-        out.append("Below ").append(p.gpuTrigger[0]).append("°C: no explicit profile cap\n");
+        out.append(getString(R.string.thermal_below_no_cap, p.gpuTrigger[0])).append('\n');
         if (Double.compare(min, max) == 0) {
-            out.append("Configured thermal ceiling: ").append(formatGpuMhzValue(max)).append('\n');
+            out.append(getString(R.string.thermal_configured_ceiling,
+                    formatGpuMhzValue(max))).append('\n');
         } else {
-            out.append("Configured ceiling range: ").append(formatGpuMhzValue(min))
-                    .append(" – ").append(formatGpuMhzValue(max)).append('\n');
+            out.append(getString(R.string.thermal_configured_range,
+                    formatGpuMhzValue(min), formatGpuMhzValue(max))).append('\n');
         }
         for (int i = 0; i < p.gpuTrigger.length && i < p.gpuState.length; i++) {
-            out.append(p.gpuTrigger[i]).append("°C");
-            if (i < p.gpuClear.length) out.append(" (clear ").append(p.gpuClear[i]).append("°C)");
-            out.append(" → state ").append(p.gpuState[i])
-                    .append(" ≈ ").append(formatGpuMhz(p.gpuState[i]));
+            if (i < p.gpuClear.length) {
+                out.append(getString(R.string.thermal_gpu_trigger_clear_cap,
+                        p.gpuTrigger[i], p.gpuClear[i], p.gpuState[i],
+                        formatGpuMhz(p.gpuState[i])));
+            } else {
+                out.append(getString(R.string.thermal_gpu_trigger_cap,
+                        p.gpuTrigger[i], p.gpuState[i], formatGpuMhz(p.gpuState[i])));
+            }
             if (i + 1 < p.gpuTrigger.length && i + 1 < p.gpuState.length) out.append('\n');
         }
-        out.append("\n\nOn Alioth's 670 MHz GPU bin: "
-                + "state 0≈670 MHz, 1≈587 MHz, 2≈525 MHz. "
-                + "Other speed bins may start lower; the cooling state is authoritative.");
+        out.append("\n\n").append(getString(R.string.thermal_gpu_bin_note));
         return out.toString();
     }
 
-    private static String formatControls(ThermalProfiles.Policy p) {
+    private String formatControls(ThermalProfiles.Policy p) {
         StringBuilder out = new StringBuilder();
-        if (p.hasControl(ThermalProfiles.CONTROL_BATTERY)) appendRange(out, "Battery cooling", p.batteryTrigger);
-        if (p.hasControl(ThermalProfiles.CONTROL_TEMP_STATE)) appendRange(out, "Thermal state", p.tempStateTrigger);
-        if (p.hasControl(ThermalProfiles.CONTROL_HOTPLUG)) appendLine(out, "Big-core hotplug", "50°C");
-        if (p.hasControl(ThermalProfiles.CONTROL_BOOST_LIMIT)) appendLine(out, "Boost limit", "55°C");
-        if (p.hasControl(ThermalProfiles.CONTROL_LOW_BATTERY)) appendLine(out, "Low-battery CPU/core protection", "5% SOC");
-        if (p.hasControl(ThermalProfiles.CONTROL_HBM)) appendLine(out, "HBM disable", "40°C");
-        if (p.hasControl(ThermalProfiles.CONTROL_BACKLIGHT)) appendLine(out, "Backlight cooling", "37–49°C");
-        if (p.hasControl(ThermalProfiles.CONTROL_MODEM)) appendLine(out, "Modem UL/DL cooling", "48°C");
-        if (p.hasControl(ThermalProfiles.CONTROL_WIRELESS)) appendLine(out, "Wireless charging cooling", "20°C and 60°C");
-        return out.length() == 0 ? "No additional controls in this config." : out.toString();
+        if (p.hasControl(ThermalProfiles.CONTROL_BATTERY)) {
+            appendRange(out, getString(R.string.thermal_control_battery), p.batteryTrigger);
+        }
+        if (p.hasControl(ThermalProfiles.CONTROL_TEMP_STATE)) {
+            appendRange(out, getString(R.string.thermal_control_state), p.tempStateTrigger);
+        }
+        if (p.hasControl(ThermalProfiles.CONTROL_HOTPLUG)) {
+            appendLine(out, getString(R.string.thermal_control_hotplug),
+                    getString(R.string.thermal_temperature_value, 50));
+        }
+        if (p.hasControl(ThermalProfiles.CONTROL_BOOST_LIMIT)) {
+            appendLine(out, getString(R.string.thermal_control_boost),
+                    getString(R.string.thermal_temperature_value, 55));
+        }
+        if (p.hasControl(ThermalProfiles.CONTROL_LOW_BATTERY)) {
+            appendLine(out, getString(R.string.thermal_control_low_battery),
+                    getString(R.string.thermal_control_low_battery_value));
+        }
+        if (p.hasControl(ThermalProfiles.CONTROL_HBM)) {
+            appendLine(out, getString(R.string.thermal_control_hbm),
+                    getString(R.string.thermal_temperature_value, 40));
+        }
+        if (p.hasControl(ThermalProfiles.CONTROL_BACKLIGHT)) {
+            appendLine(out, getString(R.string.thermal_control_backlight),
+                    getString(R.string.thermal_temperature_range, 37, 49));
+        }
+        if (p.hasControl(ThermalProfiles.CONTROL_MODEM)) {
+            appendLine(out, getString(R.string.thermal_control_modem),
+                    getString(R.string.thermal_temperature_value, 48));
+        }
+        if (p.hasControl(ThermalProfiles.CONTROL_WIRELESS)) {
+            appendLine(out, getString(R.string.thermal_control_wireless),
+                    getString(R.string.thermal_control_wireless_value));
+        }
+        return out.length() == 0 ? getString(R.string.thermal_control_none) : out.toString();
     }
 
-    private static void appendRange(StringBuilder out, String label, int[] values) {
+    private void appendRange(StringBuilder out, String label, int[] values) {
         if (values.length == 0) return;
-        String value = values.length == 1 ? values[0] + "°C"
-                : values[0] + "–" + values[values.length - 1] + "°C";
+        String value = values.length == 1
+                ? getString(R.string.thermal_temperature_value, values[0])
+                : getString(R.string.thermal_temperature_range,
+                        values[0], values[values.length - 1]);
         appendLine(out, label, value);
     }
 
-    private static void appendLine(StringBuilder out, String label, String value) {
+    private void appendLine(StringBuilder out, String label, String value) {
         if (out.length() > 0) out.append('\n');
-        out.append(label).append(": ").append(value);
+        out.append(getString(R.string.thermal_control_line, label, value));
     }
 
-    private static String formatSensor(ThermalProfiles.Policy p) {
-        String base = "CPU/GPU triggers reference VIRTUAL-SENSOR0. "
-                + "The Normal-family configs define it from quiet_therm, cpu_therm, battery, "
-                + "wifi_therm, pa_therm0, pa_therm1 and charger_therm0 with weights "
-                + "362, 229, 108, -111, -224, 734 and -159 "
-                + "(sum 1000, compensation 2169).";
-        return base + (p.definesVirtualSensor
-                ? "\n\nThis config contains the VIRTUAL-SENSOR0 definition."
-                : "\n\nThis config references the active VIRTUAL-SENSOR0 definition.");
+    private String formatSensor(ThermalProfiles.Policy p) {
+        return getString(R.string.thermal_sensor_model) + "\n\n"
+                + getString(p.definesVirtualSensor
+                        ? R.string.thermal_sensor_defined
+                        : R.string.thermal_sensor_referenced);
     }
 
     private static String formatMhz(int khz) {
-        return String.format(Locale.US, "%.1f MHz", khz / 1000f);
+        return String.format(Locale.getDefault(), "%.1f MHz", khz / 1000f);
     }
 
     private static double gpuMhzValue(int state) {
@@ -171,10 +209,14 @@ public class ThermalProfileDetailFragment extends Fragment {
         }
     }
 
-    private static String formatGpuMhz(int state) { return formatGpuMhzValue(gpuMhzValue(state)); }
+    private static String formatGpuMhz(int state) {
+        return formatGpuMhzValue(gpuMhzValue(state));
+    }
+
     private static String formatGpuMhzValue(double mhz) {
         return Math.rint(mhz) == mhz
-                ? String.format(Locale.US, "%.0f MHz", mhz)
-                : String.format(Locale.US, "%.1f MHz", mhz);
+                ? String.format(Locale.getDefault(), "%.0f MHz", mhz)
+                : String.format(Locale.getDefault(), "%.1f MHz", mhz);
     }
+
 }
