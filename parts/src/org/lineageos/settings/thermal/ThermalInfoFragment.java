@@ -31,13 +31,16 @@ public class ThermalInfoFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         int region = ThermalUtils.getSelectedRegion();
         mProfiles = ThermalProfiles.getProfiles(region);
+        String regionName = getString(region == ThermalProfiles.REGION_INDIA
+                ? R.string.thermal_region_india : R.string.thermal_region_global);
+        TextView headerTitle = view.findViewById(R.id.thermal_info_header_title);
         TextView header = view.findViewById(R.id.thermal_info_header);
-        header.setText(getString(R.string.thermal_info_header,
-                getString(region == ThermalProfiles.REGION_INDIA
-                        ? R.string.thermal_region_india : R.string.thermal_region_global)));
+        headerTitle.setText(getString(R.string.thermal_info_header_title, regionName));
+        header.setText(getString(R.string.thermal_info_header, mProfiles.length));
 
         RecyclerView list = view.findViewById(R.id.thermal_info_list);
         list.setLayoutManager(new LinearLayoutManager(requireContext()));
+        list.setItemAnimator(null);
         list.setAdapter(new ProfileAdapter());
     }
 
