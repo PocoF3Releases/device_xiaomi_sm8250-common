@@ -30,6 +30,8 @@
             android:id="@+id/profile_info_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
             android:textAppearance="@style/TextAppearance.SettingsLib.TitleMedium"
             android:textColor="@color/settingslib_materialColorOnSurface" />
 
@@ -38,6 +40,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
+            android:ellipsize="end"
+            android:maxLines="2"
             android:textAppearance="@style/TextAppearance.SettingsLib.BodyMedium"
             android:textColor="@color/settingslib_materialColorOnSurfaceVariant" />
 
@@ -46,6 +50,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
+            android:ellipsize="end"
+            android:maxLines="1"
             android:textAppearance="@style/TextAppearance.SettingsLib.BodySmall"
             android:textColor="@color/settingslib_materialColorOnSurfaceVariant" />
     </LinearLayout>
