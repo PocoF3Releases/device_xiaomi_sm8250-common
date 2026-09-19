@@ -27,7 +27,9 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.RadioButton;
 import android.widget.SectionIndexer;
 import android.widget.TextView;
 
@@ -49,12 +51,26 @@ public class ThermalSettingsFragment extends Fragment
 
     private static final int[] MODE_LABELS = {
             R.string.thermal_default,
-            R.string.thermal_benchmark,
-            R.string.thermal_browser,
+            R.string.thermal_performance,
+            R.string.thermal_class0,
             R.string.thermal_camera,
-            R.string.thermal_dialer,
+            R.string.thermal_calls,
             R.string.thermal_gaming,
-            R.string.thermal_streaming
+            R.string.thermal_video,
+            R.string.thermal_navigation,
+            R.string.thermal_alt_gaming
+    };
+
+    private static final int[] MODE_SUMMARIES = {
+            R.string.thermal_default_summary,
+            R.string.thermal_performance_summary,
+            R.string.thermal_class0_summary,
+            R.string.thermal_camera_summary,
+            R.string.thermal_calls_summary,
+            R.string.thermal_gaming_summary,
+            R.string.thermal_video_summary,
+            R.string.thermal_navigation_summary,
+            R.string.thermal_alt_gaming_summary
     };
 
     private AllPackagesAdapter mAllPackagesAdapter;
@@ -200,14 +216,12 @@ public class ThermalSettingsFragment extends Fragment
     }
 
     private void showModeDialog(ApplicationsState.AppEntry entry, int selectedState) {
-        final String[] labels = new String[MODE_LABELS.length];
-        for (int i = 0; i < MODE_LABELS.length; i++) {
-            labels[i] = getString(MODE_LABELS[i]);
-        }
+        ThermalProfileAdapter adapter =
+                new ThermalProfileAdapter(requireContext(), selectedState);
 
         new AlertDialog.Builder(requireContext())
-                .setTitle(R.string.thermal_title)
-                .setSingleChoiceItems(labels, selectedState, (dialog, which) -> {
+                .setTitle(R.string.thermal_profile_dialog_title)
+                .setAdapter(adapter, (dialog, which) -> {
                     if (which != selectedState) {
                         mThermalUtils.writePackage(entry.info.packageName, which);
                         mAllPackagesAdapter.notifyDataSetChanged();
@@ -220,21 +234,67 @@ public class ThermalSettingsFragment extends Fragment
 
     private int getStateDrawable(int state) {
         switch (state) {
-            case ThermalUtils.STATE_BENCHMARK:
+            case ThermalUtils.STATE_PERFORMANCE:
                 return R.drawable.ic_thermal_benchmark;
-            case ThermalUtils.STATE_BROWSER:
-                return R.drawable.ic_thermal_browser;
+            case ThermalUtils.STATE_CLASS0:
+                return R.drawable.ic_thermal_default;
             case ThermalUtils.STATE_CAMERA:
                 return R.drawable.ic_thermal_camera;
-            case ThermalUtils.STATE_DIALER:
+            case ThermalUtils.STATE_CALLS:
                 return R.drawable.ic_thermal_dialer;
             case ThermalUtils.STATE_GAMING:
+            case ThermalUtils.STATE_ALT_GAMING:
                 return R.drawable.ic_thermal_gaming;
-            case ThermalUtils.STATE_STREAMING:
+            case ThermalUtils.STATE_VIDEO:
                 return R.drawable.ic_thermal_streaming;
+            case ThermalUtils.STATE_NAVIGATION:
+                return R.drawable.ic_thermal_browser;
             case ThermalUtils.STATE_DEFAULT:
             default:
                 return R.drawable.ic_thermal_default;
+        }
+    }
+
+    private static class ThermalProfileAdapter extends BaseAdapter {
+        private final Context mContext;
+        private final int mSelectedState;
+
+        private ThermalProfileAdapter(Context context, int selectedState) {
+            mContext = context;
+            mSelectedState = selectedState;
+        }
+
+        @Override
+        public int getCount() {
+            return MODE_LABELS.length;
+        }
+
+        @Override
+        public Integer getItem(int position) {
+            return position;
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return position;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            View view = convertView;
+            if (view == null) {
+                view = LayoutInflater.from(mContext)
+                        .inflate(R.layout.thermal_profile_dialog_item, parent, false);
+            }
+
+            TextView title = view.findViewById(R.id.profile_title);
+            TextView summary = view.findViewById(R.id.profile_summary);
+            RadioButton radio = view.findViewById(R.id.profile_radio);
+
+            title.setText(MODE_LABELS[position]);
+            summary.setText(MODE_SUMMARIES[position]);
+            radio.setChecked(position == mSelectedState);
+            return view;
         }
     }
 
@@ -314,8 +374,7 @@ public class ThermalSettingsFragment extends Fragment
             });
 
             int stateIconDrawable = getStateDrawable(packageState);
-            boolean hasTouchControls = stateIconDrawable == R.drawable.ic_thermal_gaming
-                    || stateIconDrawable == R.drawable.ic_thermal_benchmark;
+            boolean hasTouchControls = ThermalUtils.supportsTouchControls(packageState);
             holder.touchIcon.setVisibility(hasTouchControls ? View.VISIBLE : View.GONE);
             holder.stateIcon.setImageResource(stateIconDrawable);
         }

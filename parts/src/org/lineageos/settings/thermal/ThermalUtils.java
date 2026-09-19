@@ -25,31 +25,43 @@ public final class ThermalUtils {
     private static final String TAG = "ThermalUtils";
 
     protected static final int STATE_DEFAULT = 0;
-    protected static final int STATE_BENCHMARK = 1;
-    protected static final int STATE_BROWSER = 2;
+    protected static final int STATE_PERFORMANCE = 1;
+    protected static final int STATE_CLASS0 = 2;
     protected static final int STATE_CAMERA = 3;
-    protected static final int STATE_DIALER = 4;
+    protected static final int STATE_CALLS = 4;
     protected static final int STATE_GAMING = 5;
-    protected static final int STATE_STREAMING = 6;
+    protected static final int STATE_VIDEO = 6;
+    protected static final int STATE_NAVIGATION = 7;
+    protected static final int STATE_ALT_GAMING = 8;
 
     private static final String THERMAL_CONTROL = "thermal_control";
     private static final String THERMAL_STATE_DEFAULT = "0";
-    private static final String THERMAL_STATE_BENCHMARK = "10";
-    private static final String THERMAL_STATE_BROWSER = "11";
-    private static final String THERMAL_STATE_CAMERA = "12";
-    private static final String THERMAL_STATE_DIALER = "8";
-    private static final String THERMAL_STATE_GAMING = "9";
-    private static final String THERMAL_STATE_STREAMING = "14";
 
-    private static final String THERMAL_BENCHMARK = "thermal.benchmark=";
-    private static final String THERMAL_BROWSER = "thermal.browser=";
+    // Alioth stock thermal-map.conf entries backed by configs shipped in vendor.
+    private static final String[] THERMAL_PROFILE_STATES = {
+            "10", // thermal-nolimits.conf
+            "11", // thermal-class0.conf
+            "12", // thermal-camera.conf
+            "8",  // thermal-phone.conf
+            "9",  // thermal-tgame.conf
+            "21", // thermal-video.conf
+            "19", // thermal-navigation.conf
+            "20"  // thermal-mgame.conf
+    };
+
+    // Keep the original preference prefixes for the first six profiles so existing
+    // per-app assignments survive upgrades without being rewritten or dropped.
+    private static final String THERMAL_PERFORMANCE = "thermal.benchmark=";
+    private static final String THERMAL_CLASS0 = "thermal.browser=";
     private static final String THERMAL_CAMERA = "thermal.camera=";
-    private static final String THERMAL_DIALER = "thermal.dialer=";
+    private static final String THERMAL_CALLS = "thermal.dialer=";
     private static final String THERMAL_GAMING = "thermal.gaming=";
-    private static final String THERMAL_STREAMING = "thermal.streaming=";
+    private static final String THERMAL_VIDEO = "thermal.streaming=";
+    private static final String THERMAL_NAVIGATION = "thermal.navigation=";
+    private static final String THERMAL_ALT_GAMING = "thermal.alt_gaming=";
     private static final String[] PROFILE_PREFIXES = {
-            THERMAL_BENCHMARK, THERMAL_BROWSER, THERMAL_CAMERA,
-            THERMAL_DIALER, THERMAL_GAMING, THERMAL_STREAMING
+            THERMAL_PERFORMANCE, THERMAL_CLASS0, THERMAL_CAMERA, THERMAL_CALLS,
+            THERMAL_GAMING, THERMAL_VIDEO, THERMAL_NAVIGATION, THERMAL_ALT_GAMING
     };
 
     private static final String THERMAL_SCONFIG =
@@ -101,10 +113,24 @@ public final class ThermalUtils {
         String value = mSharedPrefs.getString(THERMAL_CONTROL, null);
         if (value != null && !value.isEmpty()) {
             String[] modes = value.split(":", -1);
+            boolean migrated = false;
+
+            // Preserve both historical layouts: the original five profiles and the
+            // later six-profile layout that added Streaming.
             if (isValidProfiles(modes, 5)) {
-                value += ":" + THERMAL_STREAMING;
-                writeValue(value);
-            } else if (!isValidProfiles(modes, PROFILE_PREFIXES.length)) {
+                value += ":" + THERMAL_VIDEO;
+                modes = value.split(":", -1);
+                migrated = true;
+            }
+            if (isValidProfiles(modes, 6)) {
+                value += ":" + THERMAL_NAVIGATION + ":" + THERMAL_ALT_GAMING;
+                modes = value.split(":", -1);
+                migrated = true;
+            }
+
+            if (isValidProfiles(modes, PROFILE_PREFIXES.length)) {
+                if (migrated) writeValue(value);
+            } else {
                 value = null;
             }
         }
@@ -146,7 +172,7 @@ public final class ThermalUtils {
             modes[i] = removePackage(modes[i], packageName);
         }
 
-        if (mode >= STATE_BENCHMARK && mode <= STATE_STREAMING) {
+        if (mode > STATE_DEFAULT && mode <= PROFILE_PREFIXES.length) {
             modes[mode - 1] += packageName + ",";
         }
         writeValue(String.join(":", modes));
@@ -162,15 +188,16 @@ public final class ThermalUtils {
     }
 
     private static String stateForProfile(int profile) {
-        switch (profile) {
-            case STATE_BENCHMARK: return THERMAL_STATE_BENCHMARK;
-            case STATE_BROWSER: return THERMAL_STATE_BROWSER;
-            case STATE_CAMERA: return THERMAL_STATE_CAMERA;
-            case STATE_DIALER: return THERMAL_STATE_DIALER;
-            case STATE_GAMING: return THERMAL_STATE_GAMING;
-            case STATE_STREAMING: return THERMAL_STATE_STREAMING;
-            default: return THERMAL_STATE_DEFAULT;
+        if (profile <= STATE_DEFAULT || profile > THERMAL_PROFILE_STATES.length) {
+            return THERMAL_STATE_DEFAULT;
         }
+        return THERMAL_PROFILE_STATES[profile - 1];
+    }
+
+    protected static boolean supportsTouchControls(int profile) {
+        return profile == STATE_PERFORMANCE
+                || profile == STATE_GAMING
+                || profile == STATE_ALT_GAMING;
     }
 
     private void writeThermalState(String state) {
@@ -188,7 +215,7 @@ public final class ThermalUtils {
         String state = stateForProfile(profile);
         writeThermalState(state);
 
-        if (profile == STATE_BENCHMARK || profile == STATE_GAMING) {
+        if (supportsTouchControls(profile)) {
             updateTouchModes(packageName);
         } else {
             resetTouchModes();
