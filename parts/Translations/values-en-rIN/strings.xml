@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="device_settings_app_name">Advanced settings</string>
+    <string name="dirac_headset_piston_color">Colour Edition</string>
+    <string name="dirac_headset_title">Choose headphones type</string>
+    <string name="dirac_title">Mi Sound Enhancer</string>
+    </resources>
