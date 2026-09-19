@@ -30,8 +30,10 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.SectionIndexer;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -49,36 +51,17 @@ import java.util.List;
 public class ThermalSettingsFragment extends Fragment
         implements ApplicationsState.Callbacks {
 
-    private static final int[] MODE_LABELS = {
-            R.string.thermal_default,
-            R.string.thermal_performance,
-            R.string.thermal_class0,
-            R.string.thermal_camera,
-            R.string.thermal_calls,
-            R.string.thermal_gaming,
-            R.string.thermal_video,
-            R.string.thermal_navigation,
-            R.string.thermal_alt_gaming
-    };
-
-    private static final int[] MODE_SUMMARIES = {
-            R.string.thermal_default_summary,
-            R.string.thermal_performance_summary,
-            R.string.thermal_class0_summary,
-            R.string.thermal_camera_summary,
-            R.string.thermal_calls_summary,
-            R.string.thermal_gaming_summary,
-            R.string.thermal_video_summary,
-            R.string.thermal_navigation_summary,
-            R.string.thermal_alt_gaming_summary
-    };
-
     private AllPackagesAdapter mAllPackagesAdapter;
     private ApplicationsState mApplicationsState;
     private ApplicationsState.Session mSession;
     private ActivityFilter mActivityFilter;
     private RecyclerView mAppsRecyclerView;
+    private TextView mBaseProfile;
+    private RadioGroup mRegionGroup;
+    private RadioButton mRegionGlobal;
+    private RadioButton mRegionIndia;
     private ThermalUtils mThermalUtils;
+    private boolean mBindingRegion;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -102,14 +85,34 @@ public class ThermalSettingsFragment extends Fragment
         super.onViewCreated(view, savedInstanceState);
 
         mAppsRecyclerView = view.findViewById(R.id.thermal_rv_view);
+        mBaseProfile = view.findViewById(R.id.thermal_base_profile);
+        mRegionGroup = view.findViewById(R.id.thermal_region_group);
+        mRegionGlobal = view.findViewById(R.id.thermal_region_global);
+        mRegionIndia = view.findViewById(R.id.thermal_region_india);
+
         mAppsRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         mAppsRecyclerView.setAdapter(mAllPackagesAdapter);
+
+        mBaseProfile.setOnClickListener(v -> showBaseProfileDialog());
+        mRegionGroup.setOnCheckedChangeListener((group, checkedId) -> {
+            if (mBindingRegion) return;
+            int region = checkedId == R.id.thermal_region_india
+                    ? ThermalProfiles.REGION_INDIA : ThermalProfiles.REGION_GLOBAL;
+            if (!mThermalUtils.setSelectedRegion(region)) {
+                Toast.makeText(requireContext(), R.string.parts_apply_failed,
+                        Toast.LENGTH_SHORT).show();
+            }
+            refreshHeader();
+            mAllPackagesAdapter.notifyDataSetChanged();
+        });
+        refreshHeader();
     }
 
     @Override
     public void onResume() {
         super.onResume();
         getActivity().setTitle(getResources().getString(R.string.thermal_title));
+        refreshHeader();
         mSession.onResume();
         rebuild();
     }
@@ -211,19 +214,47 @@ public class ThermalSettingsFragment extends Fragment
         mSession.rebuild(mActivityFilter, ApplicationsState.ALPHA_COMPARATOR);
     }
 
-    private int clampState(int state) {
-        return Math.max(0, Math.min(state, MODE_LABELS.length - 1));
+    private static final int STATE_UNUSED = -1;
+
+    private void refreshHeader() {
+        if (!isAdded() || mBaseProfile == null) return;
+        int region = ThermalUtils.getSelectedRegion();
+        mBindingRegion = true;
+        mRegionGlobal.setChecked(region == ThermalProfiles.REGION_GLOBAL);
+        mRegionIndia.setChecked(region == ThermalProfiles.REGION_INDIA);
+        mRegionIndia.setEnabled(ThermalUtils.isIndiaMapAvailable());
+        mBindingRegion = false;
+
+        ThermalProfiles.Profile base =
+                ThermalProfiles.findBySconfig(region, mThermalUtils.getBaseSconfig());
+        mBaseProfile.setText(base == null ? R.string.thermal_normal : base.titleRes);
+    }
+
+    private void showBaseProfileDialog() {
+        ThermalProfileAdapter adapter = new ThermalProfileAdapter(
+                requireContext(), false, STATE_UNUSED, mThermalUtils.getBaseSconfig());
+        new AlertDialog.Builder(requireContext())
+                .setTitle(R.string.thermal_system_profile_title)
+                .setAdapter(adapter, (dialog, which) -> {
+                    ThermalProfiles.Profile profile = adapter.getProfile(which);
+                    if (profile != null && mThermalUtils.setBaseSconfig(profile.sconfig)) {
+                        refreshHeader();
+                    }
+                    dialog.dismiss();
+                })
+                .setNegativeButton(android.R.string.cancel, null)
+                .show();
     }
 
     private void showModeDialog(ApplicationsState.AppEntry entry, int selectedState) {
         ThermalProfileAdapter adapter =
-                new ThermalProfileAdapter(requireContext(), selectedState);
-
+                new ThermalProfileAdapter(requireContext(), true, selectedState, -1);
         new AlertDialog.Builder(requireContext())
                 .setTitle(R.string.thermal_profile_dialog_title)
                 .setAdapter(adapter, (dialog, which) -> {
-                    if (which != selectedState) {
-                        mThermalUtils.writePackage(entry.info.packageName, which);
+                    int state = adapter.getStorageState(which);
+                    if (state != selectedState) {
+                        mThermalUtils.writePackage(entry.info.packageName, state);
                         mAllPackagesAdapter.notifyDataSetChanged();
                     }
                     dialog.dismiss();
@@ -232,51 +263,39 @@ public class ThermalSettingsFragment extends Fragment
                 .show();
     }
 
-    private int getStateDrawable(int state) {
-        switch (state) {
-            case ThermalUtils.STATE_PERFORMANCE:
-                return R.drawable.ic_thermal_benchmark;
-            case ThermalUtils.STATE_CLASS0:
-                return R.drawable.ic_thermal_default;
-            case ThermalUtils.STATE_CAMERA:
-                return R.drawable.ic_thermal_camera;
-            case ThermalUtils.STATE_CALLS:
-                return R.drawable.ic_thermal_dialer;
-            case ThermalUtils.STATE_GAMING:
-            case ThermalUtils.STATE_ALT_GAMING:
-                return R.drawable.ic_thermal_gaming;
-            case ThermalUtils.STATE_VIDEO:
-                return R.drawable.ic_thermal_streaming;
-            case ThermalUtils.STATE_NAVIGATION:
-                return R.drawable.ic_thermal_browser;
-            case ThermalUtils.STATE_DEFAULT:
-            default:
-                return R.drawable.ic_thermal_default;
-        }
-    }
-
     private static class ThermalProfileAdapter extends BaseAdapter {
         private final Context mContext;
+        private final ThermalProfiles.Profile[] mProfiles;
+        private final boolean mIncludeSystemDefault;
         private final int mSelectedState;
+        private final int mSelectedSconfig;
 
-        private ThermalProfileAdapter(Context context, int selectedState) {
+        private ThermalProfileAdapter(Context context, boolean includeSystemDefault,
+                int selectedState, int selectedSconfig) {
             mContext = context;
+            mProfiles = ThermalProfiles.getProfiles(ThermalUtils.getSelectedRegion());
+            mIncludeSystemDefault = includeSystemDefault;
             mSelectedState = selectedState;
+            mSelectedSconfig = selectedSconfig;
         }
 
-        @Override
-        public int getCount() {
-            return MODE_LABELS.length;
+        @Override public int getCount() {
+            return mProfiles.length + (mIncludeSystemDefault ? 1 : 0);
+        }
+        @Override public Object getItem(int position) { return getProfile(position); }
+        @Override public long getItemId(int position) {
+            ThermalProfiles.Profile profile = getProfile(position);
+            return profile == null ? 0 : profile.sconfig;
         }
 
-        @Override
-        public Integer getItem(int position) {
-            return position;
+        private ThermalProfiles.Profile getProfile(int position) {
+            int index = position - (mIncludeSystemDefault ? 1 : 0);
+            return index >= 0 && index < mProfiles.length ? mProfiles[index] : null;
         }
 
-        @Override
-        public long getItemId(int position) {
-            return position;
+        private int getStorageState(int position) {
+            ThermalProfiles.Profile profile = getProfile(position);
+            return profile == null ? ThermalUtils.STATE_DEFAULT : profile.storageState;
         }
 
         @Override
@@ -286,14 +305,21 @@ public class ThermalSettingsFragment extends Fragment
                 view = LayoutInflater.from(mContext)
                         .inflate(R.layout.thermal_profile_dialog_item, parent, false);
             }
-
             TextView title = view.findViewById(R.id.profile_title);
             TextView summary = view.findViewById(R.id.profile_summary);
             RadioButton radio = view.findViewById(R.id.profile_radio);
-
-            title.setText(MODE_LABELS[position]);
-            summary.setText(MODE_SUMMARIES[position]);
-            radio.setChecked(position == mSelectedState);
+            ThermalProfiles.Profile profile = getProfile(position);
+            if (profile == null) {
+                title.setText(R.string.thermal_system_default);
+                summary.setText(R.string.thermal_system_default_summary);
+                radio.setChecked(mSelectedState == ThermalUtils.STATE_DEFAULT);
+            } else {
+                title.setText(profile.titleRes);
+                summary.setText(profile.summaryRes);
+                radio.setChecked(mIncludeSystemDefault
+                        ? profile.storageState == mSelectedState
+                        : profile.sconfig == mSelectedSconfig);
+            }
             return view;
         }
     }
@@ -354,9 +380,12 @@ public class ThermalSettingsFragment extends Fragment
             mApplicationsState.ensureIcon(entry);
             holder.icon.setImageDrawable(entry.icon);
 
-            int packageState = clampState(
-                    mThermalUtils.getStateForPackage(entry.info.packageName));
-            holder.mode.setText(MODE_LABELS[packageState]);
+            int packageState =
+                    mThermalUtils.getStateForPackage(entry.info.packageName);
+            ThermalProfiles.Profile profile = ThermalProfiles.findByStorageState(
+                    ThermalUtils.getSelectedRegion(), packageState);
+            holder.mode.setText(profile == null
+                    ? R.string.thermal_system_default : profile.titleRes);
             holder.mode.setOnClickListener(v -> showModeDialog(entry, packageState));
             holder.title.setOnClickListener(v -> holder.mode.performClick());
 
@@ -373,10 +402,9 @@ public class ThermalSettingsFragment extends Fragment
                         .commit();
             });
 
-            int stateIconDrawable = getStateDrawable(packageState);
-            boolean hasTouchControls = ThermalUtils.supportsTouchControls(packageState);
-            holder.touchIcon.setVisibility(hasTouchControls ? View.VISIBLE : View.GONE);
-            holder.stateIcon.setImageResource(stateIconDrawable);
+            holder.touchIcon.setVisibility(View.VISIBLE);
+            holder.stateIcon.setImageResource(profile == null
+                    ? R.drawable.ic_thermal_default : profile.iconRes);
         }
 
         private void setEntries(List<ApplicationsState.AppEntry> entries,

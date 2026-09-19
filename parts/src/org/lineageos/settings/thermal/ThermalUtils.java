@@ -8,7 +8,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.hardware.display.DisplayManager;
+import android.os.Handler;
+import android.os.Looper;
 import android.os.RemoteException;
+import android.os.SystemProperties;
 import android.util.Log;
 import android.view.Display;
 import android.view.Surface;
@@ -25,47 +28,33 @@ public final class ThermalUtils {
     private static final String TAG = "ThermalUtils";
 
     protected static final int STATE_DEFAULT = 0;
-    protected static final int STATE_PERFORMANCE = 1;
-    protected static final int STATE_CLASS0 = 2;
-    protected static final int STATE_CAMERA = 3;
-    protected static final int STATE_CALLS = 4;
-    protected static final int STATE_GAMING = 5;
-    protected static final int STATE_VIDEO = 6;
-    protected static final int STATE_NAVIGATION = 7;
-    protected static final int STATE_ALT_GAMING = 8;
 
     private static final String THERMAL_CONTROL = "thermal_control";
-    private static final String THERMAL_STATE_DEFAULT = "0";
+    private static final String PREF_BASE_SCONFIG = "thermal_base_sconfig";
 
-    // Alioth stock thermal-map.conf entries backed by configs shipped in vendor.
-    private static final String[] THERMAL_PROFILE_STATES = {
-            "10", // thermal-nolimits.conf
-            "11", // thermal-class0.conf
-            "12", // thermal-camera.conf
-            "8",  // thermal-phone.conf
-            "9",  // thermal-tgame.conf
-            "21", // thermal-video.conf
-            "19", // thermal-navigation.conf
-            "20"  // thermal-mgame.conf
-    };
-
-    // Keep the original preference prefixes for the first six profiles so existing
-    // per-app assignments survive upgrades without being rewritten or dropped.
-    private static final String THERMAL_PERFORMANCE = "thermal.benchmark=";
-    private static final String THERMAL_CLASS0 = "thermal.browser=";
-    private static final String THERMAL_CAMERA = "thermal.camera=";
-    private static final String THERMAL_CALLS = "thermal.dialer=";
-    private static final String THERMAL_GAMING = "thermal.gaming=";
-    private static final String THERMAL_VIDEO = "thermal.streaming=";
-    private static final String THERMAL_NAVIGATION = "thermal.navigation=";
-    private static final String THERMAL_ALT_GAMING = "thermal.alt_gaming=";
+    // Keep historical buckets in place; only append new ones.
     private static final String[] PROFILE_PREFIXES = {
-            THERMAL_PERFORMANCE, THERMAL_CLASS0, THERMAL_CAMERA, THERMAL_CALLS,
-            THERMAL_GAMING, THERMAL_VIDEO, THERMAL_NAVIGATION, THERMAL_ALT_GAMING
+            "thermal.benchmark=",
+            "thermal.browser=",
+            "thermal.camera=",
+            "thermal.dialer=",
+            "thermal.gaming=",
+            "thermal.streaming=",
+            "thermal.navigation=",
+            "thermal.alt_gaming=",
+            "thermal.per_normal=",
+            "thermal.per_class0=",
+            "thermal.per_navigation=",
+            "thermal.per_video=",
+            "thermal.normal="
     };
 
     private static final String THERMAL_SCONFIG =
             "/sys/class/thermal/thermal_message/sconfig";
+    private static final String INDIA_MAP = "/vendor/etc/thermal-map-india.conf";
+    private static final String PROP_THERMAL_MAP = "persist.vendor.thermal.map";
+    private static final String MAP_GLOBAL = "global";
+    private static final String MAP_INDIA = "india";
 
     private final Context mContext;
     private final SharedPreferences mSharedPrefs;
@@ -83,9 +72,70 @@ public final class ThermalUtils {
     }
 
     public static void startService(Context context) {
+        ensureRegion();
         if (FileUtils.isFileWritable(THERMAL_SCONFIG)) {
             context.startService(new Intent(context, ThermalService.class));
         }
+    }
+
+    static void ensureRegion() {
+        String map = SystemProperties.get(PROP_THERMAL_MAP, "");
+        if (MAP_GLOBAL.equals(map)) return;
+        if (MAP_INDIA.equals(map) && isIndiaMapAvailable()) return;
+
+        String hwVersion = SystemProperties.get("ro.boot.hwversion", "");
+        String initial = isIndiaHardware(hwVersion) && isIndiaMapAvailable()
+                ? MAP_INDIA : MAP_GLOBAL;
+        try {
+            SystemProperties.set(PROP_THERMAL_MAP, initial);
+        } catch (RuntimeException e) {
+            Log.w(TAG, "Cannot initialize thermal map selection", e);
+        }
+    }
+
+    private static boolean isIndiaHardware(String hwVersion) {
+        return hwVersion.startsWith("9.21")
+                || hwVersion.startsWith("9.22")
+                || hwVersion.startsWith("9.29");
+    }
+
+    static boolean isIndiaMapAvailable() {
+        return FileUtils.fileExists(INDIA_MAP);
+    }
+
+    static int getSelectedRegion() {
+        String map = SystemProperties.get(PROP_THERMAL_MAP, "");
+        if (MAP_INDIA.equals(map) && isIndiaMapAvailable()) {
+            return ThermalProfiles.REGION_INDIA;
+        }
+        return ThermalProfiles.REGION_GLOBAL;
+    }
+
+    protected boolean setSelectedRegion(int region) {
+        if (region == ThermalProfiles.REGION_INDIA && !isIndiaMapAvailable()) {
+            return false;
+        }
+        String value = region == ThermalProfiles.REGION_INDIA ? MAP_INDIA : MAP_GLOBAL;
+        try {
+            SystemProperties.set(PROP_THERMAL_MAP, value);
+        } catch (RuntimeException e) {
+            Log.w(TAG, "Cannot change thermal map", e);
+            return false;
+        }
+        new Handler(Looper.getMainLooper()).postDelayed(() -> startService(mContext), 350);
+        return value.equals(SystemProperties.get(PROP_THERMAL_MAP, ""));
+    }
+
+    protected int getBaseSconfig() {
+        int sconfig = mSharedPrefs.getInt(PREF_BASE_SCONFIG, 0);
+        return ThermalProfiles.findBySconfig(getSelectedRegion(), sconfig) != null ? sconfig : 0;
+    }
+
+    protected boolean setBaseSconfig(int sconfig) {
+        if (ThermalProfiles.findBySconfig(getSelectedRegion(), sconfig) == null) return false;
+        mSharedPrefs.edit().putInt(PREF_BASE_SCONFIG, sconfig).apply();
+        startService(mContext);
+        return true;
     }
 
     private ITouchFeature getTouchFeature() {
@@ -109,32 +159,38 @@ public final class ThermalUtils {
         return true;
     }
 
+    private static String appendProfiles(String value, int from, int to) {
+        StringBuilder result = new StringBuilder(value);
+        for (int i = from; i < to; i++) result.append(':').append(PROFILE_PREFIXES[i]);
+        return result.toString();
+    }
+
     private String getValue() {
         String value = mSharedPrefs.getString(THERMAL_CONTROL, null);
+        boolean migrated = false;
         if (value != null && !value.isEmpty()) {
             String[] modes = value.split(":", -1);
-            boolean migrated = false;
-
-            // Preserve both historical layouts: the original five profiles and the
-            // later six-profile layout that added Streaming.
             if (isValidProfiles(modes, 5)) {
-                value += ":" + THERMAL_VIDEO;
+                value = appendProfiles(value, 5, 6);
                 modes = value.split(":", -1);
                 migrated = true;
             }
             if (isValidProfiles(modes, 6)) {
-                value += ":" + THERMAL_NAVIGATION + ":" + THERMAL_ALT_GAMING;
+                value = appendProfiles(value, 6, 8);
                 modes = value.split(":", -1);
                 migrated = true;
             }
-
+            if (isValidProfiles(modes, 8)) {
+                value = appendProfiles(value, 8, PROFILE_PREFIXES.length);
+                modes = value.split(":", -1);
+                migrated = true;
+            }
             if (isValidProfiles(modes, PROFILE_PREFIXES.length)) {
                 if (migrated) writeValue(value);
             } else {
                 value = null;
             }
         }
-
         if (value == null || value.isEmpty()) {
             value = String.join(":", PROFILE_PREFIXES);
             writeValue(value);
@@ -158,22 +214,20 @@ public final class ThermalUtils {
         if (separator < 0) return profile;
         StringBuilder result = new StringBuilder(profile.substring(0, separator + 1));
         for (String entry : profile.substring(separator + 1).split(",")) {
-            if (!entry.isEmpty() && !packageName.equals(entry)) {
-                result.append(entry).append(',');
-            }
+            if (!entry.isEmpty() && !packageName.equals(entry)) result.append(entry).append(',');
         }
         return result.toString();
     }
 
-    protected void writePackage(String packageName, int mode) {
+    protected void writePackage(String packageName, int state) {
         if (packageName == null || packageName.isEmpty()) return;
-        String[] modes = getValue().split(":", -1);
-        for (int i = 0; i < modes.length; i++) {
-            modes[i] = removePackage(modes[i], packageName);
-        }
+        if (state != STATE_DEFAULT
+                && ThermalProfiles.findByStorageState(getSelectedRegion(), state) == null) return;
 
-        if (mode > STATE_DEFAULT && mode <= PROFILE_PREFIXES.length) {
-            modes[mode - 1] += packageName + ",";
+        String[] modes = getValue().split(":", -1);
+        for (int i = 0; i < modes.length; i++) modes[i] = removePackage(modes[i], packageName);
+        if (state > STATE_DEFAULT && state <= PROFILE_PREFIXES.length) {
+            modes[state - 1] += packageName + ",";
         }
         writeValue(String.join(":", modes));
         startService(mContext);
@@ -187,52 +241,37 @@ public final class ThermalUtils {
         return STATE_DEFAULT;
     }
 
-    private static String stateForProfile(int profile) {
-        if (profile <= STATE_DEFAULT || profile > THERMAL_PROFILE_STATES.length) {
-            return THERMAL_STATE_DEFAULT;
-        }
-        return THERMAL_PROFILE_STATES[profile - 1];
+    private int sconfigForState(int state) {
+        if (state == STATE_DEFAULT) return getBaseSconfig();
+        ThermalProfiles.Profile profile =
+                ThermalProfiles.findByStorageState(getSelectedRegion(), state);
+        return profile == null ? getBaseSconfig() : profile.sconfig;
     }
 
-    protected static boolean supportsTouchControls(int profile) {
-        return profile == STATE_PERFORMANCE
-                || profile == STATE_GAMING
-                || profile == STATE_ALT_GAMING;
-    }
-
-    private void writeThermalState(String state) {
-        if (!FileUtils.writeLine(THERMAL_SCONFIG, state)) {
+    private void writeThermalState(int state) {
+        if (!FileUtils.writeLine(THERMAL_SCONFIG, Integer.toString(state))) {
             Log.w(TAG, "Cannot write thermal state " + state);
         }
     }
 
     protected void setDefaultThermalProfile() {
-        writeThermalState(THERMAL_STATE_DEFAULT);
+        writeThermalState(getBaseSconfig());
     }
 
     protected void setThermalProfile(String packageName) {
-        int profile = getStateForPackage(packageName);
-        String state = stateForProfile(profile);
-        writeThermalState(state);
-
-        if (supportsTouchControls(profile)) {
-            updateTouchModes(packageName);
-        } else {
-            resetTouchModes();
-        }
+        writeThermalState(sconfigForState(getStateForPackage(packageName)));
+        updateTouchModes(packageName);
     }
 
     private void updateTouchModes(String packageName) {
         String values = mSharedPrefs.getString(packageName, null);
         resetTouchModes();
-
         if (values == null || values.isEmpty()) return;
         if (mTouchFeature == null) mTouchFeature = getTouchFeature();
         if (mTouchFeature == null) return;
 
         String[] value = values.split(",", -1);
         if (value.length != 4) return;
-
         final int gameMode;
         final int touchResponse;
         final int touchSensitivity;
@@ -290,24 +329,14 @@ public final class ThermalUtils {
 
     protected void updateTouchRotation() {
         if (!mTouchModeChanged || mDisplay == null || mTouchFeature == null) return;
-
         final int touchRotation;
         switch (mDisplay.getRotation()) {
-            case Surface.ROTATION_90:
-                touchRotation = 1;
-                break;
-            case Surface.ROTATION_180:
-                touchRotation = 2;
-                break;
-            case Surface.ROTATION_270:
-                touchRotation = 3;
-                break;
+            case Surface.ROTATION_90: touchRotation = 1; break;
+            case Surface.ROTATION_180: touchRotation = 2; break;
+            case Surface.ROTATION_270: touchRotation = 3; break;
             case Surface.ROTATION_0:
-            default:
-                touchRotation = 0;
-                break;
+            default: touchRotation = 0; break;
         }
-
         try {
             mTouchFeature.setTouchMode(Constants.MODE_TOUCH_ROTATION, touchRotation);
         } catch (RemoteException e) {

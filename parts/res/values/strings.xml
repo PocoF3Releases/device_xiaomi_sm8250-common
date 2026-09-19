@@ -17,26 +17,52 @@
 <resources>
     <!-- Thermal Profiles -->
     <string name="thermal_title">Thermal profiles</string>
-    <string name="thermal_summary">Choose a thermal profile for each app</string>
+    <string name="thermal_summary">System and per-app Xiaomi thermal policies</string>
     <string name="thermal_profile_dialog_title">Thermal profile</string>
-    <string name="thermal_default">Default</string>
-    <string name="thermal_default_summary">Use Xiaomi’s standard thermal policy.</string>
-    <string name="thermal_performance">Performance</string>
-    <string name="thermal_performance_summary">Uses Xiaomi’s no-limits profile. May increase heat and power use.</string>
+    <string name="thermal_system_profile_title">System profile</string>
+    <string name="thermal_system_profile_summary">Used when an app has no override</string>
+    <string name="thermal_profile_set_title">Profile set</string>
+    <string name="thermal_profile_set_summary">Select Xiaomi’s Global or India thermal map</string>
+    <string name="thermal_region_global">Global</string>
+    <string name="thermal_region_india">India</string>
+    <string name="thermal_app_overrides">App overrides</string>
+    <string name="thermal_system_default">System profile</string>
+    <string name="thermal_system_default_summary">Use the profile selected above</string>
+
+    <string name="thermal_normal">Normal</string>
+    <string name="thermal_normal_summary">Balanced stock policy</string>
     <string name="thermal_class0">Class 0</string>
-    <string name="thermal_class0_summary">Use Xiaomi’s Class 0 thermal policy.</string>
-    <string name="thermal_camera">Camera</string>
-    <string name="thermal_camera_summary">Use Xiaomi’s camera thermal policy.</string>
+    <string name="thermal_class0_summary">Earlier CPU caps</string>
     <string name="thermal_calls">Calls</string>
-    <string name="thermal_calls_summary">Use Xiaomi’s call thermal policy.</string>
+    <string name="thermal_calls_summary">Lower caps for calls</string>
+    <string name="thermal_camera">Camera</string>
+    <string name="thermal_camera_summary">Camera-specific limits</string>
     <string name="thermal_gaming">Gaming</string>
-    <string name="thermal_gaming_summary">Use Xiaomi’s game thermal policy.</string>
+    <string name="thermal_gaming_summary">High thermal headroom</string>
+    <string name="thermal_sustained_gaming">Sustained gaming</string>
+    <string name="thermal_sustained_gaming_summary">Lower CPU caps for long games</string>
     <string name="thermal_video">Video</string>
-    <string name="thermal_video_summary">Use Xiaomi’s video playback thermal policy.</string>
+    <string name="thermal_video_summary">Video-specific limits</string>
     <string name="thermal_navigation">Navigation</string>
-    <string name="thermal_navigation_summary">Use Xiaomi’s navigation thermal policy.</string>
-    <string name="thermal_alt_gaming">Alternate gaming</string>
-    <string name="thermal_alt_gaming_summary">Use Xiaomi’s alternate game thermal policy.</string>
+    <string name="thermal_navigation_summary">Navigation-specific limits</string>
+    <string name="thermal_no_limits">No limits</string>
+    <string name="thermal_no_limits_summary">Reduced thermal controls; higher heat</string>
+    <string name="thermal_per_normal">Performance normal</string>
+    <string name="thermal_per_normal_summary">Normal with delayed CPU caps</string>
+    <string name="thermal_per_class0">Performance Class 0</string>
+    <string name="thermal_per_class0_summary">Class 0 with delayed caps</string>
+    <string name="thermal_per_navigation">Performance navigation</string>
+    <string name="thermal_per_navigation_summary">Navigation with delayed caps</string>
+    <string name="thermal_per_video">Performance video</string>
+    <string name="thermal_per_video_summary">Video with delayed caps</string>
+
+    <string name="thermal_info_title">Thermal profile details</string>
+    <string name="thermal_info_header">%1$s profile set. Only entries backed by shipped Alioth configs are shown; duplicate aliases and missing-config entries are omitted.</string>
+    <string name="thermal_detail_cpu_title">CPU thermal ceilings</string>
+    <string name="thermal_detail_gpu_title">GPU thermal ceilings</string>
+    <string name="thermal_detail_controls_title">Other thermal controls</string>
+    <string name="thermal_detail_sensor_title">Sensor model</string>
+    <string name="thermal_detail_clock_note">These are thermal ceilings, not fixed clocks. DVFS may choose lower frequencies. CPU4 is the performance cluster and CPU7 is the prime core; these configs do not directly set a CPU0–3 ceiling.</string>
 
     <!-- Refresh Rate Settings -->
     <string name="refresh_rate_tile_title">Refresh rate</string>
