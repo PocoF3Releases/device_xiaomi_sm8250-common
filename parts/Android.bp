@@ -15,7 +15,6 @@ android_app {
     privileged: true,
 
     static_libs: [
-        "org.lineageos.settings.resources",
         "SettingsLib",
         "SettingsLibSliderPreference",
         "//hardware/xiaomi:vendor.xiaomi.hardware.touchfeature-V1.0-java",

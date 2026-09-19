@@ -63,7 +63,8 @@ public class ThermalInfoFragment extends Fragment {
             holder.icon.setImageResource(profile.iconRes);
             holder.title.setText(profile.titleRes);
             holder.summary.setText(profile.summaryRes);
-            holder.meta.setText("sconfig " + profile.sconfig + " • " + profile.policy.configName);
+            holder.meta.setText(getString(R.string.thermal_info_meta,
+                    profile.sconfig, profile.policy.compactConfigName()));
             holder.itemView.setOnClickListener(v -> {
                 ThermalProfileDetailFragment fragment =
                         ThermalProfileDetailFragment.newInstance(profile.storageState);
