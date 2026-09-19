@@ -15,6 +15,30 @@
      limitations under the License.
 -->
 <resources>
+    <!-- App -->
+    <string name="device_settings_app_name">Device settings</string>
+
+    <!-- MiSound core strings kept local to XiaomiParts -->
+    <string name="dirac_title">MiSound</string>
+    <string name="dirac_summary">Enhance audio quality</string>
+    <string name="dirac_enable">Enable</string>
+    <string name="dirac_headset_title">Headset type</string>
+    <string name="dirac_preset_title">Preset</string>
+    <string name="dirac_hifi_title">Hi-Fi</string>
+    <string name="dirac_hifi_summary">Enable high-fidelity mode on supported devices</string>
+    <string name="dirac_preset_default">Default</string>
+    <string name="dirac_preset_rock">Rock</string>
+    <string name="dirac_preset_jazz">Jazz</string>
+    <string name="dirac_preset_pop">Pop</string>
+    <string name="dirac_preset_classical">Classical</string>
+    <string name="dirac_preset_hiphop">Hip Hop</string>
+    <string name="dirac_preset_blues">Blues</string>
+    <string name="dirac_preset_electronic">Electronic</string>
+    <string name="dirac_preset_country">Country</string>
+    <string name="dirac_preset_dance">Dance</string>
+    <string name="dirac_preset_metal">Metal</string>
+    <string name="dirac_preset_bass_booster">Bass Booster</string>
+
     <!-- Thermal Profiles -->
     <string name="thermal_title">Thermal profiles</string>
     <string name="thermal_summary">System and per-app Xiaomi thermal policies</string>
@@ -34,27 +58,27 @@
     <string name="thermal_class0">Class 0</string>
     <string name="thermal_class0_summary">Earlier CPU caps</string>
     <string name="thermal_calls">Calls</string>
-    <string name="thermal_calls_summary">Lower caps for calls</string>
+    <string name="thermal_calls_summary">Call-oriented caps</string>
     <string name="thermal_camera">Camera</string>
-    <string name="thermal_camera_summary">Camera-specific limits</string>
+    <string name="thermal_camera_summary">Camera-oriented caps</string>
     <string name="thermal_gaming">Gaming</string>
-    <string name="thermal_gaming_summary">High thermal headroom</string>
-    <string name="thermal_sustained_gaming">Sustained gaming</string>
-    <string name="thermal_sustained_gaming_summary">Lower CPU caps for long games</string>
+    <string name="thermal_gaming_summary">Highest game headroom</string>
+    <string name="thermal_sustained_gaming">Long gaming</string>
+    <string name="thermal_sustained_gaming_summary">Long-session game caps</string>
     <string name="thermal_video">Video</string>
-    <string name="thermal_video_summary">Video-specific limits</string>
+    <string name="thermal_video_summary">Playback-oriented caps</string>
     <string name="thermal_navigation">Navigation</string>
-    <string name="thermal_navigation_summary">Navigation-specific limits</string>
+    <string name="thermal_navigation_summary">Navigation-oriented caps</string>
     <string name="thermal_no_limits">No limits</string>
-    <string name="thermal_no_limits_summary">Reduced thermal controls; higher heat</string>
-    <string name="thermal_per_normal">Performance normal</string>
-    <string name="thermal_per_normal_summary">Normal with delayed CPU caps</string>
-    <string name="thermal_per_class0">Performance Class 0</string>
-    <string name="thermal_per_class0_summary">Class 0 with delayed caps</string>
-    <string name="thermal_per_navigation">Performance navigation</string>
-    <string name="thermal_per_navigation_summary">Navigation with delayed caps</string>
-    <string name="thermal_per_video">Performance video</string>
-    <string name="thermal_per_video_summary">Video with delayed caps</string>
+    <string name="thermal_no_limits_summary">Minimal limits; more heat</string>
+    <string name="thermal_per_normal">Perf. normal</string>
+    <string name="thermal_per_normal_summary">Later caps than Normal</string>
+    <string name="thermal_per_class0">Perf. Class 0</string>
+    <string name="thermal_per_class0_summary">Later caps than Class 0</string>
+    <string name="thermal_per_navigation">Perf. nav</string>
+    <string name="thermal_per_navigation_summary">Later navigation caps</string>
+    <string name="thermal_per_video">Perf. video</string>
+    <string name="thermal_per_video_summary">Later video caps</string>
 
     <string name="thermal_info_title">Thermal profile details</string>
     <string name="thermal_info_header">%1$s profile set. Only entries backed by shipped Alioth configs are shown; duplicate aliases and missing-config entries are omitted.</string>
@@ -63,6 +87,38 @@
     <string name="thermal_detail_controls_title">Other thermal controls</string>
     <string name="thermal_detail_sensor_title">Sensor model</string>
     <string name="thermal_detail_clock_note">These are thermal ceilings, not fixed clocks. DVFS may choose lower frequencies. CPU4 is the performance cluster and CPU7 is the prime core; these configs do not directly set a CPU0–3 ceiling.</string>
+    <string name="thermal_info_meta">ID %1$d • %2$s</string>
+    <string name="thermal_detail_meta">%1$s • ID %2$d\n%3$s</string>
+    <string name="thermal_cpu_performance_cluster">CPU4 / performance cluster</string>
+    <string name="thermal_cpu_prime_core">CPU7 / prime core</string>
+    <string name="thermal_no_profile_ceiling">No explicit profile ceiling</string>
+    <string name="thermal_below_no_cap">Below %1$d°C: no explicit profile cap</string>
+    <string name="thermal_configured_ceiling">Configured thermal ceiling: %1$s</string>
+    <string name="thermal_configured_range">Configured ceiling range: %1$s – %2$s</string>
+    <string name="thermal_trigger_clear_cap">%1$d°C (clear %2$d°C) → %3$s</string>
+    <string name="thermal_trigger_cap">%1$d°C → %2$s</string>
+    <string name="thermal_no_gpu_ceiling">No explicit GPU thermal ceiling</string>
+    <string name="thermal_gpu_trigger_clear_cap">%1$d°C (clear %2$d°C) → state %3$d ≈ %4$s</string>
+    <string name="thermal_gpu_trigger_cap">%1$d°C → state %2$d ≈ %3$s</string>
+    <string name="thermal_gpu_bin_note">On Alioth’s 670 MHz GPU bin: state 0≈670 MHz, 1≈587 MHz, 2≈525 MHz. Other speed bins may start lower; the cooling state is authoritative.</string>
+    <string name="thermal_control_battery">Battery cooling</string>
+    <string name="thermal_control_state">Thermal state</string>
+    <string name="thermal_control_hotplug">Big-core hotplug</string>
+    <string name="thermal_control_boost">Boost limit</string>
+    <string name="thermal_control_low_battery">Low-battery CPU/core protection</string>
+    <string name="thermal_control_hbm">HBM disable</string>
+    <string name="thermal_control_backlight">Backlight cooling</string>
+    <string name="thermal_control_modem">Modem UL/DL cooling</string>
+    <string name="thermal_control_wireless">Wireless charging cooling</string>
+    <string name="thermal_control_none">No additional controls in this config.</string>
+    <string name="thermal_control_line">%1$s: %2$s</string>
+    <string name="thermal_temperature_value">%1$d°C</string>
+    <string name="thermal_temperature_range">%1$d–%2$d°C</string>
+    <string name="thermal_control_low_battery_value">5% SOC</string>
+    <string name="thermal_control_wireless_value">20°C and 60°C</string>
+    <string name="thermal_sensor_model">CPU/GPU triggers reference VIRTUAL-SENSOR0. The Normal-family configs define it from quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 and charger_therm0 with weights 362, 229, 108, -111, -224, 734 and -159 (sum 1000, compensation 2169).</string>
+    <string name="thermal_sensor_defined">This config contains the VIRTUAL-SENSOR0 definition.</string>
+    <string name="thermal_sensor_referenced">This config references the active VIRTUAL-SENSOR0 definition.</string>
 
     <!-- Refresh Rate Settings -->
     <string name="refresh_rate_tile_title">Refresh rate</string>

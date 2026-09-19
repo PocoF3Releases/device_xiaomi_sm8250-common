@@ -52,6 +52,19 @@ final class ThermalProfiles {
         boolean hasControl(int control) {
             return (controls & control) != 0;
         }
+
+        String compactConfigName() {
+            String name = configName;
+            if (name.startsWith("thermal-india-")) {
+                name = name.substring("thermal-india-".length());
+            } else if (name.startsWith("thermal-")) {
+                name = name.substring("thermal-".length());
+            }
+            if (name.endsWith(".conf")) {
+                name = name.substring(0, name.length() - ".conf".length());
+            }
+            return name;
+        }
     }
 
     static final class Profile {
