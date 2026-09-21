@@ -19,7 +19,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:title="@string/dirac_title">
 
-    <com.android.settingslib.widget.MainSwitchPreference
+    <com.android.settingslib.widget.LayoutPreference
+        android:key="misound_logo"
+        android:layout="@layout/misound_logo_header"
+        android:selectable="false" />
+
+    <org.lineageos.settings.dirac.MiSoundMainSwitchPreference
         android:defaultValue="false"
         android:key="dirac_enable"
         android:title="@string/dirac_enable" />
