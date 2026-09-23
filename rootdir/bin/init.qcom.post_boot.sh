@@ -30,16 +30,8 @@
 target=`getprop ro.board.platform`
 
 
-function configure_zram_parameters() {
-    # Never change the compressor or reformat an initialized ZRAM device.
-    [ -r /sys/block/zram0/disksize ] || return 0
-    disksize=$(cat /sys/block/zram0/disksize) || return 1
-    case "$disksize" in
-        ''|*[!0-9]*) return 1 ;;
-    esac
-    [ "$disksize" -eq 0 ] || return 0
-
-    # Parse the value, not a fixed-width slice of /proc/meminfo.
+# Read MemTotal without fixed-width assumptions or spawning cat/grep.
+function read_mem_total() {
     MemTotal=
     while read -r key value unit; do
         if [ "$key" = "MemTotal:" ]; then
@@ -50,7 +42,19 @@ function configure_zram_parameters() {
     case "$MemTotal" in
         ''|*[!0-9]*) return 1 ;;
     esac
-    [ "$MemTotal" -gt 0 ] || return 1
+    [ "$MemTotal" -gt 0 ]
+}
+
+function configure_zram_parameters() {
+    # Never change the compressor or reformat an initialized ZRAM device.
+    [ -r /sys/block/zram0/disksize ] || return 0
+    disksize=$(cat /sys/block/zram0/disksize) || return 1
+    case "$disksize" in
+        ''|*[!0-9]*) return 1 ;;
+    esac
+    [ "$disksize" -eq 0 ] || return 0
+
+    read_mem_total || return 1
 
     # Preserve the existing capacity policy: 75% at <=2 GiB, otherwise
     # half the rounded RAM tier, capped at 4 GiB (3/4 GiB on 6/8 GiB phones).
@@ -85,16 +89,7 @@ function configure_zram_parameters() {
 }
 
 function configure_read_ahead_kb_values() {
-    MemTotal=
-    while read -r key value unit; do
-        if [ "$key" = "MemTotal:" ]; then
-            MemTotal=$value
-            break
-        fi
-    done < /proc/meminfo
-    case "$MemTotal" in
-        ''|*[!0-9]*) return 1 ;;
-    esac
+    read_mem_total || return 1
 
     # Preserve 128 KiB at <=3 GiB and 512 KiB above it.
     read_ahead=512
@@ -108,8 +103,7 @@ function configure_read_ahead_kb_values() {
 }
 
 function enable_swap() {
-    MemTotalStr=`cat /proc/meminfo | grep MemTotal`
-    MemTotal=${MemTotalStr:16:8}
+    read_mem_total || return 1
 
     SWAP_ENABLE_THRESHOLD=1048576
     swap_enable=`getprop ro.vendor.qti.config.swap`
@@ -130,11 +124,8 @@ function enable_swap() {
 }
 
 function configure_memory_parameters() {
-    ProductName=`getprop ro.product.name`
-
     #add memory limit to camera cgroup
-    MemTotalStr=`cat /proc/meminfo | grep MemTotal`
-    MemTotal=${MemTotalStr:16:8}
+    read_mem_total || return 1
     if [ $MemTotal -gt 8388608 ]; then
         let LimitSize=838860800
     else
@@ -146,26 +137,14 @@ function configure_memory_parameters() {
         echo $LimitSize > /dev/memcg/camera/memory.soft_limit_in_bytes
     fi
 
-    if [[ "$ProductName" == "bengal"* ]]; then
-        #Set PPR nomap parameters for bengal targets
-        echo 1 > /sys/module/process_reclaim/parameters/enable_process_reclaim
-        echo 50 > /sys/module/process_reclaim/parameters/pressure_min
-        echo 70 > /sys/module/process_reclaim/parameters/pressure_max
-        echo 30 > /sys/module/process_reclaim/parameters/swap_opt_eff
-        echo 0 > /sys/module/process_reclaim/parameters/per_swap_size
-        echo 7680 > /sys/module/process_reclaim/parameters/tsk_nomap_swap_sz
-    fi
-
     # Set swappiness to 60 for all targets
     echo 60 > /proc/sys/vm/swappiness
 
-    # Disable wsf for all targets beacause we are using efk.
-    # wsf Range : 1..1000 So set to bare minimum value 1.
+    # Preserve the existing device watermark policy; retune only with workload data.
     echo 1 > /proc/sys/vm/watermark_scale_factor
 
     # Disable the feature of watermark boost for 8G and below device
-    MemTotalStr=`cat /proc/meminfo | grep MemTotal`
-    MemTotal=${MemTotalStr:16:8}
+    read_mem_total || return 1
 
     if [ $MemTotal -le 8388608 ]; then
         echo 0 > /proc/sys/vm/watermark_boost_factor
@@ -272,6 +251,7 @@ case "$target" in
 	do
 	    for cpubw in $device/*cpu-cpu-llcc-bw/devfreq/*cpu-cpu-llcc-bw
 	    do
+		[ -d "${cpubw}" ] || continue
 		echo "bw_hwmon" > $cpubw/governor
 		echo "4577 7110 9155 12298 14236 15258" > $cpubw/bw_hwmon/mbps_zones
 		echo 4 > $cpubw/bw_hwmon/sample_ms
@@ -288,6 +268,7 @@ case "$target" in
 
 	    for llccbw in $device/*cpu-llcc-ddr-bw/devfreq/*cpu-llcc-ddr-bw
 	    do
+		[ -d "${llccbw}" ] || continue
 		echo "bw_hwmon" > $llccbw/governor
 		if [ ${ddr_type:4:2} == $ddr_type4 ]; then
 			echo "1720 2086 2929 3879 5161 5931 6881 7980" > $llccbw/bw_hwmon/mbps_zones
@@ -308,6 +289,8 @@ case "$target" in
 
 	    for npubw in $device/*npu*-ddr-bw/devfreq/*npu*-ddr-bw
 	    do
+		[ -d "${npubw}" ] || continue
+		[ -w /sys/devices/virtual/npu/msm_npu/pwr ] || continue
 		echo 1 > /sys/devices/virtual/npu/msm_npu/pwr
 		echo "bw_hwmon" > $npubw/governor
 		if [ ${ddr_type:4:2} == $ddr_type4 ]; then
@@ -329,6 +312,8 @@ case "$target" in
 
 	    for npullccbw in $device/*npu*-llcc-bw/devfreq/*npu*-llcc-bw
 	    do
+		[ -d "${npullccbw}" ] || continue
+		[ -w /sys/devices/virtual/npu/msm_npu/pwr ] || continue
 		echo 1 > /sys/devices/virtual/npu/msm_npu/pwr
 		echo "bw_hwmon" > $npullccbw/governor
 		echo "4577 7110 9155 12298 14236 15258" > $npullccbw/bw_hwmon/mbps_zones
