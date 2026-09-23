@@ -661,14 +661,6 @@ on charger
     mount ext4 /dev/block/bootdevice/by-name/system / ro barrier=1
     setprop sys.usb.config adb
 
-#add poweroffhandler
-service poweroffhandler /system/vendor/bin/poweroffhandler
-    class core
-    user media
-    group graphics audio
-    disabled
-    oneshot
-
 on property:ro.vendor.radio.noril=*
     setprop ro.radio.noril ${ro.vendor.radio.noril}
 
