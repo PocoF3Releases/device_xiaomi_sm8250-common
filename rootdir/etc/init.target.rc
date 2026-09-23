@@ -105,7 +105,6 @@ on post-fs-data
     #sensors diag2bugreport log dir
     mkdir /data/vendor/sensor_log
     chown system system /data/vendor/sensor_log
-    chown system system /vendor/etc/sensors/sensor_diag.cfg
     chown system system /dev/ir_spi
     mkdir /data/vendor/wlan_logs 0777 root shell
     mkdir /data/vendor/nfc 0770 nfc nfc
