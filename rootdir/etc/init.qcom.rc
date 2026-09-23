@@ -649,15 +649,6 @@ on property:persist.vendor.radio.diag_log_trriger=audio
     setprop debug.offline_log.module ${persist.vendor.radio.diag_log_trriger}
     start diag_mdlog_auto_start
 
-service qlogd /system/xbin/qlogd
-    socket qlogd stream 0662 system system
-    class main
-    disabled
-on property:persist.sys.qlogd=1
-    start qlogd
-on property:persist.sys.qlogd=0
-    stop qlogd
-
 service vm_bms /vendor/bin/vm_bms
     user root
     group root
