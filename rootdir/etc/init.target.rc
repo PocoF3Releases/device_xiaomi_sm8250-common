@@ -293,13 +293,6 @@ on property:vendor.audio.cit.spkcal.copy=true
     chmod 666 /mnt/vendor/persist/audio/cs35l41_cal_spk8.bin
     chmod 666 /mnt/vendor/persist/audio/cs35l41_cal_spk8.txt
 
-service audioshell_service /vendor/bin/audioshell_service
-    oneshot
-    disabled
-
-on property:ro.vendor.miui.region=*
-    start audioshell_service
-
 service vendor.lowi /vendor/bin/sscrpcd
    class core
    user system
