@@ -29,10 +29,6 @@
 
 target=`getprop ro.board.platform`
 
-KernelVersionStr=`cat /proc/sys/kernel/osrelease`
-KernelVersionS=${KernelVersionStr:2:2}
-KernelVersionA=${KernelVersionStr:0:1}
-KernelVersionB=${KernelVersionS%.*}
 
 function configure_zram_parameters() {
     # Never change the compressor or reformat an initialized ZRAM device.
@@ -111,14 +107,6 @@ function configure_read_ahead_kb_values() {
     fi
 }
 
-function disable_core_ctl() {
-    if [ -f /sys/devices/system/cpu/cpu0/core_ctl/enable ]; then
-        echo 0 > /sys/devices/system/cpu/cpu0/core_ctl/enable
-    else
-        echo 1 > /sys/devices/system/cpu/cpu0/core_ctl/disable
-    fi
-}
-
 function enable_swap() {
     MemTotalStr=`cat /proc/meminfo | grep MemTotal`
     MemTotal=${MemTotalStr:16:8}
@@ -141,125 +129,21 @@ function enable_swap() {
     fi
 }
 
-function disable_ppr()
-{
-   if [ -f  /sys/module/process_reclaim/parameters/enable_process_reclaim ]; then
-       echo 0 > /sys/module/process_reclaim/parameters/enable_process_reclaim
-   fi
-}
-
 function configure_memory_parameters() {
-    # Set Memory parameters.
-    #
-    # Set per_process_reclaim tuning parameters
-    # All targets will use vmpressure range 50-70,
-    # All targets will use 512 pages swap size.
-    #
-    # Set Low memory killer minfree parameters
-    # 32 bit Non-Go, all memory configurations will use 15K series
-    # 32 bit Go, all memory configurations will use uLMK + Memcg
-    # 64 bit will use Google default LMK series.
-    #
-    # Set ALMK parameters (usually above the highest minfree values)
-    # vmpressure_file_min threshold is always set slightly higher
-    # than LMK minfree's last bin value for all targets. It is calculated as
-    # vmpressure_file_min = (last bin - second last bin ) + last bin
-    #
-    # Set allocstall_threshold to 0 for all targets.
-    #
-
     ProductName=`getprop ro.product.name`
-    low_ram=`getprop ro.config.low_ram`
 
-    if true; then
-        #add memory limit to camera cgroup
-        MemTotalStr=`cat /proc/meminfo | grep MemTotal`
-        MemTotal=${MemTotalStr:16:8}
-        if [ $MemTotal -gt 8388608 ]; then
-            let LimitSize=838860800
-        else
-            let LimitSize=524288000
-        fi
-
-        # This limit is a cgroup v1 interface; newer releases use cgroup v2.
-        if [ -f /dev/memcg/camera/memory.soft_limit_in_bytes ]; then
-            echo $LimitSize > /dev/memcg/camera/memory.soft_limit_in_bytes
-        fi
+    #add memory limit to camera cgroup
+    MemTotalStr=`cat /proc/meminfo | grep MemTotal`
+    MemTotal=${MemTotalStr:16:8}
+    if [ $MemTotal -gt 8388608 ]; then
+        let LimitSize=838860800
     else
+        let LimitSize=524288000
+    fi
 
-        # Read adj series and set adj threshold for PPR and ALMK.
-        # This is required since adj values change from framework to framework.
-        adj_series=`cat /sys/module/lowmemorykiller/parameters/adj`
-        adj_1="${adj_series#*,}"
-        set_almk_ppr_adj="${adj_1%%,*}"
-
-        # PPR and ALMK should not act on HOME adj and below.
-        # Normalized ADJ for HOME is 6. Hence multiply by 6
-        # ADJ score represented as INT in LMK params, actual score can be in decimal
-        # Hence add 6 considering a worst case of 0.9 conversion to INT (0.9*6).
-        # For uLMK + Memcg, this will be set as 6 since adj is zero.
-        set_almk_ppr_adj=$(((set_almk_ppr_adj * 6) + 6))
-        echo $set_almk_ppr_adj > /sys/module/lowmemorykiller/parameters/adj_max_shift
-
-        # Calculate vmpressure_file_min as below & set for 64 bit:
-        # vmpressure_file_min = last_lmk_bin + (last_lmk_bin - last_but_one_lmk_bin)
-        if [ "$arch_type" == "aarch64" ]; then
-            minfree_series=`cat /sys/module/lowmemorykiller/parameters/minfree`
-            minfree_1="${minfree_series#*,}" ; rem_minfree_1="${minfree_1%%,*}"
-            minfree_2="${minfree_1#*,}" ; rem_minfree_2="${minfree_2%%,*}"
-            minfree_3="${minfree_2#*,}" ; rem_minfree_3="${minfree_3%%,*}"
-            minfree_4="${minfree_3#*,}" ; rem_minfree_4="${minfree_4%%,*}"
-            minfree_5="${minfree_4#*,}"
-
-            vmpres_file_min=$((minfree_5 + (minfree_5 - rem_minfree_4)))
-            echo $vmpres_file_min > /sys/module/lowmemorykiller/parameters/vmpressure_file_min
-        else
-            # Set LMK series, vmpressure_file_min for 32 bit non-go targets.
-            # Disable Core Control, enable KLMK for non-go 8909.
-            if [ "$ProductName" == "msm8909" ]; then
-                disable_core_ctl
-                echo 1 > /sys/module/lowmemorykiller/parameters/enable_lmk
-            fi
-        echo "15360,19200,23040,26880,34415,43737" > /sys/module/lowmemorykiller/parameters/minfree
-        echo 53059 > /sys/module/lowmemorykiller/parameters/vmpressure_file_min
-        fi
-
-        # Enable adaptive LMK for all targets &
-        # use Google default LMK series for all 64-bit targets >=2GB.
-        echo 1 > /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk
-
-        # Enable oom_reaper
-        if [ -f /sys/module/lowmemorykiller/parameters/oom_reaper ]; then
-            echo 1 > /sys/module/lowmemorykiller/parameters/oom_reaper
-        fi
-
-        if [[ "$ProductName" != "bengal"* ]]; then
-            #bengal has appcompaction enabled. So not needed
-            # Set PPR parameters for other targets
-            if [ -f /sys/devices/soc0/soc_id ]; then
-                soc_id=`cat /sys/devices/soc0/soc_id`
-            else
-                soc_id=`cat /sys/devices/system/soc/soc0/id`
-            fi
-
-            case "$soc_id" in
-              # Do not set PPR parameters for premium targets
-              # sdm845 - 321, 341
-              # msm8998 - 292, 319
-              # msm8996 - 246, 291, 305, 312
-              "321" | "341" | "292" | "319" | "246" | "291" | "305" | "312")
-                ;;
-              *)
-                #Set PPR parameters for all other targets.
-                echo $set_almk_ppr_adj > /sys/module/process_reclaim/parameters/min_score_adj
-                echo 0 > /sys/module/process_reclaim/parameters/enable_process_reclaim
-                echo 50 > /sys/module/process_reclaim/parameters/pressure_min
-                echo 70 > /sys/module/process_reclaim/parameters/pressure_max
-                echo 30 > /sys/module/process_reclaim/parameters/swap_opt_eff
-                echo 512 > /sys/module/process_reclaim/parameters/per_swap_size
-                ;;
-            esac
-        fi
+    # This limit is a cgroup v1 interface; newer releases use cgroup v2.
+    if [ -f /dev/memcg/camera/memory.soft_limit_in_bytes ]; then
+        echo $LimitSize > /dev/memcg/camera/memory.soft_limit_in_bytes
     fi
 
     if [[ "$ProductName" == "bengal"* ]]; then
@@ -296,23 +180,7 @@ function configure_memory_parameters() {
     enable_swap
 }
 
-function enable_memory_features()
-{
-    MemTotalStr=`cat /proc/meminfo | grep MemTotal`
-    MemTotal=${MemTotalStr:16:8}
-
-    if [ $MemTotal -le 2097152 ]; then
-        #Enable B service adj transition for 2GB or less memory
-        setprop ro.vendor.qti.sys.fw.bservice_enable true
-        setprop ro.vendor.qti.sys.fw.bservice_limit 5
-        setprop ro.vendor.qti.sys.fw.bservice_age 5000
-
-        #Enable Delay Service Restart
-        setprop ro.vendor.qti.am.reschedule_service true
-    fi
-}
-
-#Apply settings for atoll
+# Apply settings for Kona
 
 case "$target" in
 	"kona")
