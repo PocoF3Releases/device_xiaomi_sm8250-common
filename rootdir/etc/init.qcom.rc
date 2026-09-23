@@ -392,9 +392,7 @@ service vendor.ssr_setup /vendor/bin/ssr_setup
     disabled
 
 on property:ro.vendor.iocgrp.config=1
-    mkdir /dev/blkio
-    mount cgroup none /dev/blkio blkio
-    chown system system /dev/blkio
+    # The platform cgroups.json mounts and owns /dev/blkio during early-init.
     chown system system /dev/blkio/tasks
     chmod 0664 /dev/blkio/tasks
     mkdir /dev/blkio/bg 0755 system system
