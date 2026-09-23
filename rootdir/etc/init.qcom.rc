@@ -567,20 +567,6 @@ service hostapd_fst /vendor/bin/hw/hostapd -dd -g /data/vendor/wifi/hostapd/glob
     disabled
     oneshot
 
-service vendor.ril-daemon2 /vendor/bin/hw/rild -c 2
-    class main
-    user radio
-    disabled
-    group radio cache inet misc audio sdcard_r sdcard_rw diag oem_2901 log
-    capabilities BLOCK_SUSPEND NET_ADMIN NET_RAW
-
-service vendor.ril-daemon3 /vendor/bin/hw/rild -c 3
-    class main
-    user radio
-    disabled
-    group radio cache inet misc audio sdcard_r sdcard_rw diag oem_2901 log
-    capabilities BLOCK_SUSPEND NET_ADMIN NET_RAW
-
 service diag_mdlog_start /vendor/bin/diag_mdlog -u -c -n 20
     class late_start
     user shell
