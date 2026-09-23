@@ -385,13 +385,6 @@ service nqnfcinfo /system/vendor/bin/nqnfcinfo
     user system
     oneshot
 
-service iop /system/vendor/bin/iop
-    class main
-    user root
-    group root
-    disabled
-    socket iop seqpacket 0666 root system
-
 service vendor.ssr_setup /vendor/bin/ssr_setup
     user root
     group root
