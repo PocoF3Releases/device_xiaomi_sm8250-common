@@ -649,11 +649,6 @@ on property:persist.vendor.radio.diag_log_trriger=audio
     setprop debug.offline_log.module ${persist.vendor.radio.diag_log_trriger}
     start diag_mdlog_auto_start
 
-service vm_bms /vendor/bin/vm_bms
-    user root
-    group root
-    disabled
-
 service vendor.msm_irqbalance /vendor/bin/msm_irqbalance -f /system/vendor/etc/msm_irqbalance.conf
     class core
     user root
