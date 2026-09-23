@@ -559,14 +559,6 @@ service vendor.atfwd /vendor/bin/ATFWD-daemon
     user system
     group system radio
 
-service hostapd_fst /vendor/bin/hw/hostapd -dd -g /data/vendor/wifi/hostapd/global
-    class main
-    capabilities NET_ADMIN NET_RAW
-    user wifi
-    group wifi
-    disabled
-    oneshot
-
 service diag_mdlog_start /vendor/bin/diag_mdlog -u -c -n 20
     class late_start
     user shell
