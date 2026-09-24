@@ -17,8 +17,12 @@
 package org.lineageos.settings.dirac;
 
 import android.os.Bundle;
+import android.view.ViewGroup;
 
 import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity;
+
+import com.google.android.material.appbar.AppBarLayout;
+import com.google.android.material.appbar.CollapsingToolbarLayout;
 
 public class DiracActivity extends CollapsingToolbarBaseActivity {
 
@@ -27,6 +31,20 @@ public class DiracActivity extends CollapsingToolbarBaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // The logo header provides the page branding; retain only toolbar navigation.
+        if (getActionBar() != null) {
+            getActionBar().setDisplayShowTitleEnabled(false);
+        }
+        CollapsingToolbarLayout toolbar = getCollapsingToolbarLayout();
+        if (toolbar != null) {
+            toolbar.setTitleEnabled(false);
+            AppBarLayout.LayoutParams params =
+                    (AppBarLayout.LayoutParams) toolbar.getLayoutParams();
+            params.height = ViewGroup.LayoutParams.WRAP_CONTENT;
+            params.setScrollFlags(0);
+            toolbar.setLayoutParams(params);
+        }
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(com.android.settingslib.collapsingtoolbar.R.id.content_frame,
