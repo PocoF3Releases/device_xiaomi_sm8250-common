@@ -333,24 +333,12 @@ public class ThermalSettingsFragment extends Fragment
             ListView list = dialog.getListView();
             if (list == null) return;
 
-            // Expressive dialogs place the button bar over the scrolling list. Reserve that
-            // area and clip children so the last profile never renders underneath Cancel.
+            // AlertDialog reserves space for its button panel separately. Adding a
+            // button-height inset here leaves a large empty area above Cancel.
             list.setClipToPadding(true);
             list.setOverScrollMode(View.OVER_SCROLL_NEVER);
-            list.post(() -> {
-                View cancel = dialog.getButton(AlertDialog.BUTTON_NEGATIVE);
-                int buttonHeight = cancel == null ? 0 : cancel.getHeight();
-                int minimumInset = dpToPx(72);
-                int bottomInset = Math.max(minimumInset, buttonHeight + dpToPx(16));
-                list.setPaddingRelative(list.getPaddingStart(), list.getPaddingTop(),
-                        list.getPaddingEnd(), Math.max(list.getPaddingBottom(), bottomInset));
-            });
         });
         dialog.show();
-    }
-
-    private int dpToPx(int dp) {
-        return Math.round(dp * getResources().getDisplayMetrics().density);
     }
 
     private static class ThermalProfileAdapter extends BaseAdapter {
