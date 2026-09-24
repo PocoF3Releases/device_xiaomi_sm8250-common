@@ -333,10 +333,42 @@ public class ThermalSettingsFragment extends Fragment
             ListView list = dialog.getListView();
             if (list == null) return;
 
-            // AlertDialog reserves space for its button panel separately. Adding a
-            // button-height inset here leaves a large empty area above Cancel.
             list.setClipToPadding(true);
             list.setOverScrollMode(View.OVER_SCROLL_NEVER);
+            final int originalTop = list.getPaddingTop();
+            final int originalBottom = list.getPaddingBottom();
+            View decor = dialog.getWindow().getDecorView();
+            View titlePanel = decor.findViewById(getResources().getIdentifier(
+                    "topPanel", "id", "android"));
+            View buttonPanel = decor.findViewById(getResources().getIdentifier(
+                    "buttonPanel", "id", "android"));
+            // Some themes overlay the title and actions on the list. Clip to their
+            // measured bounds, and reserve only the overlap so every row is reachable.
+            list.getViewTreeObserver().addOnGlobalLayoutListener(() -> {
+                if (!dialog.isShowing() || list.getHeight() == 0) return;
+                int[] location = new int[2];
+                list.getLocationInWindow(location);
+                int listTop = location[1];
+                int top = 0;
+                int bottom = list.getHeight();
+                if (titlePanel != null && titlePanel.getVisibility() == View.VISIBLE) {
+                    titlePanel.getLocationInWindow(location);
+                    top = Math.min(bottom, Math.max(0,
+                            location[1] + titlePanel.getHeight() - listTop));
+                }
+                if (buttonPanel != null && buttonPanel.getVisibility() == View.VISIBLE) {
+                    buttonPanel.getLocationInWindow(location);
+                    bottom = Math.max(top, Math.min(bottom, location[1] - listTop));
+                }
+                int paddingTop = Math.max(originalTop, top);
+                int paddingBottom = Math.max(originalBottom, list.getHeight() - bottom);
+                if (list.getPaddingTop() != paddingTop
+                        || list.getPaddingBottom() != paddingBottom) {
+                    list.setPaddingRelative(list.getPaddingStart(), paddingTop,
+                            list.getPaddingEnd(), paddingBottom);
+                }
+                list.setClipBounds(new android.graphics.Rect(0, top, list.getWidth(), bottom));
+            });
         });
         dialog.show();
     }
