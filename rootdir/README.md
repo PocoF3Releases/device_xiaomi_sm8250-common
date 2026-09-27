@@ -1,4 +1,4 @@
-# Rootdir maintenance for Android 17 / SM8250
+# Rootdir maintenance for Android 16 / SM8250
 
 This tree targets Kona and keeps the Qualcomm 4.19 vendor interfaces required
 by the supported devices. A new Android release alone does not justify changing
@@ -16,12 +16,30 @@ scheduler, CPU, ZRAM capacity, watermark, or power values.
 - Post-boot memory setup validates MemTotal by key rather than column width.
   It never reformats an already initialized ZRAM device. Devfreq loops skip
   unmatched directories, and NPU loops require the power control to be writable.
-- Android 17 mmd is an alternative ZRAM owner, not an additional tuning script.
+- mmd is an alternative ZRAM owner, not an additional tuning script.
   It is not enabled on the audited device. Before enabling it, migrate ZRAM
   configuration and remove competing legacy setup; validate kernel support for
   the selected maintenance features. No mmd/writeback migration is made here.
 
-## Validation and boundaries
+## Android 16 source compatibility
+
+The `aosp-16` branch uses the Evolution X Android 16 platform. Its
+`ProcessCapacityHigh` and `HighPerformance` task profiles exist, as do the
+fs_mgr wrapped-key and filesystem-checkpoint paths. The four imported init
+files have install rules. All 27 service executable paths declared in rootdir
+have corresponding generated install rules; this is packaging evidence, not
+proof that each service runs successfully.
+
+Remove controls for services that are not defined in the product. The stale
+`wcnss-service`, `leds-sh`, `bridgemgrd` and `chre` controls were removed. This
+does not remove Wi-Fi firmware setup, the sensors HAL or an active context-hub
+service. Keep logical AVB first-stage mounts and the current ZRAM owner.
+
+All six init scripts pass the available host init verifier and all seven shell
+scripts pass `bash -n`. These checks do not verify runtime sysfs paths or SELinux
+access. No Android 16 boot or full policy/build validation is claimed here.
+
+## Historical validation and boundaries
 
 The September 23 audit used the connected alioth user build with SELinux
 Enforcing, the checked-out platform source, and the references below. PSI,
@@ -40,6 +58,6 @@ allows or treating every debug-access denial as a functional defect.
 ## Primary references
 
 - [AOSP cgroups and task profiles](https://source.android.com/docs/core/perf/cgroups)
-- [Android 17 init reference](https://android.googlesource.com/platform/system/core/+/android17-release/init/README.md)
+- [Android 16 init reference](https://android.googlesource.com/platform/system/core/+/android16-release/init/README.md)
 - [AOSP memory management daemon](https://source.android.com/docs/core/perf/mmd)
 - [AOSP LMKD](https://source.android.com/docs/core/perf/lmkd)
