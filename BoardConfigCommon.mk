@@ -87,9 +87,6 @@ endif
 TARGET_FS_CONFIG_GEN := $(COMMON_PATH)/config.fs
 
 # Kernel
-TARGET_KERNEL_CLANG_VERSION := r563880c
-TARGET_KERNEL_CLANG_PATH := $(abspath .)/prebuilts/clang/host/linux-x86/clang-$(TARGET_KERNEL_CLANG_VERSION)
-
 ifeq ($(PRODUCT_VIRTUAL_AB_OTA),true)
 BOARD_BOOT_HEADER_VERSION := 3
 else
@@ -183,7 +180,10 @@ VENDOR_SECURITY_PATCH := 2025-04-01
 
 # Sepolicy
 include device/qcom/sepolicy_vndr/SEPolicy.mk
+# Android 16 still provides ion policy in system/sepolicy.
+ifneq ($(wildcard device/lineage/sepolicy/libion/sepolicy.mk),)
 include device/lineage/sepolicy/libion/sepolicy.mk
+endif
 include device/lineage/sepolicy/libperfmgr/sepolicy.mk
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/private
 SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/public
