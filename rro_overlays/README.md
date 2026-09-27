@@ -33,7 +33,7 @@ We add `.lineage` and increase priority only when we overlay LineageOS additions
 ## Framework defaults
 
 Do not override SQLite journal or synchronization modes for device performance
-tuning. The Android 17 framework in this tree defaults to `TRUNCATE`, `FULL`
+tuning. The Android 16 framework in this branch defaults to `TRUNCATE`, `FULL`
 (non-WAL), and `NORMAL` (WAL). Inherit these resources so future framework
 changes apply automatically. `MEMORY` journaling and `OFF` synchronization
 weaken crash/power-loss recovery; apps may still choose their own database policy.
