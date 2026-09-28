@@ -145,4 +145,10 @@
     <string name="thermal_system_expand">"הצגת פקדי פרופיל המערכת"</string>
     <string name="thermal_system_collapse">"הסתרת פקדי פרופיל המערכת"</string>
     <string name="thermal_search_apps">"חיפוש אפליקציות"</string>
+    <string name="alioth_touch_aim">רגישות הכוונת</string>
+    <string name="alioth_touch_aim_summary">0: ברירת המחדל של הקושחה. רמות 1–5 מתאימות את תגובת המגע בעת הכוונת.</string>
+    <string name="alioth_touch_stability">יציבות הקשות</string>
+    <string name="alioth_touch_stability_summary">0: ברירת המחדל של הקושחה. רמות 1–5 מתאימות את יציבות ההקשות.</string>
+    <string name="alioth_touch_expert">הגדרת מגע קבועה מראש</string>
+    <string name="alioth_touch_expert_summary">0: פקדים נפרדים. הגדרות 1–3 מחליפות את התגובה, הרגישות, רגישות הכוונת ויציבות ההקשות; סינון הקצוות נשאר נפרד.</string>
 </resources>

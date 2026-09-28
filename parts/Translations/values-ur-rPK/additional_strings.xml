@@ -146,4 +146,10 @@
     <string name="thermal_system_expand">"سسٹم پروفائل کنٹرولز دکھائیں"</string>
     <string name="thermal_system_collapse">"سسٹم پروفائل کنٹرولز چھپائیں"</string>
     <string name="thermal_search_apps">"ایپس تلاش کریں"</string>
+    <string name="alioth_touch_aim">نشانہ لگانے کی حساسیت</string>
+    <string name="alioth_touch_aim_summary">0: فرم ویئر کی طے شدہ قدر۔ سطحیں 1–5 نشانہ لگاتے وقت لمس کے ردعمل کو ایڈجسٹ کرتی ہیں۔</string>
+    <string name="alioth_touch_stability">ٹیپ کا استحکام</string>
+    <string name="alioth_touch_stability_summary">0: فرم ویئر کی طے شدہ قدر۔ سطحیں 1–5 ٹیپ کے استحکام کو ایڈجسٹ کرتی ہیں۔</string>
+    <string name="alioth_touch_expert">لمس کی پیش سیٹ</string>
+    <string name="alioth_touch_expert_summary">0: الگ کنٹرولز۔ پیش سیٹس 1–3 ردعمل، حساسیت، نشانہ لگانے کی حساسیت اور ٹیپ کے استحکام کی جگہ لیتی ہیں؛ کناروں کی فلٹرنگ الگ رہتی ہے۔</string>
 </resources>

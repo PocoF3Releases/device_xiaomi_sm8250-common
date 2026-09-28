@@ -146,4 +146,10 @@
     <string name="thermal_system_expand">"စနစ်ပရိုဖိုင် ထိန်းချုပ်မှုများကို ပြပါ"</string>
     <string name="thermal_system_collapse">"စနစ်ပရိုဖိုင် ထိန်းချုပ်မှုများကို ဖျောက်ပါ"</string>
     <string name="thermal_search_apps">"အက်ပ်များကို ရှာပါ"</string>
+    <string name="alioth_touch_aim">ချိန်ရွယ်မှု အာရုံခံနိုင်စွမ်း</string>
+    <string name="alioth_touch_aim_summary">0: ဖမ်ဝဲ၏ မူလတန်ဖိုး။ အဆင့် 1–5 သည် ချိန်ရွယ်ချိန် ထိတွေ့တုံ့ပြန်မှုကို ချိန်ညှိပေးသည်။</string>
+    <string name="alioth_touch_stability">တို့ထိမှု တည်ငြိမ်မှု</string>
+    <string name="alioth_touch_stability_summary">0: ဖမ်ဝဲ၏ မူလတန်ဖိုး။ အဆင့် 1–5 သည် တို့ထိမှု တည်ငြိမ်မှုကို ချိန်ညှိပေးသည်။</string>
+    <string name="alioth_touch_expert">ကြိုတင်သတ်မှတ်ထားသော ထိတွေ့မှု</string>
+    <string name="alioth_touch_expert_summary">0: သီးခြားထိန်းချုပ်မှုများ။ ကြိုတင်သတ်မှတ်ချက် 1–3 သည် တုံ့ပြန်မှု၊ အာရုံခံနိုင်စွမ်း၊ ချိန်ရွယ်မှု အာရုံခံနိုင်စွမ်းနှင့် တို့ထိမှု တည်ငြိမ်မှုတို့ကို အစားထိုးသည်။ အစွန်းစစ်ထုတ်မှုကို သီးခြားထားသည်။</string>
 </resources>

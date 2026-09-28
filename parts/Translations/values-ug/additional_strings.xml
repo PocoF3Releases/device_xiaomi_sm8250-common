@@ -145,4 +145,10 @@
     <string name="thermal_system_expand">"سىستېما ئارخىپىنىڭ كونتروللىرىنى كۆرسەت"</string>
     <string name="thermal_system_collapse">"سىستېما ئارخىپىنىڭ كونتروللىرىنى يوشۇر"</string>
     <string name="thermal_search_apps">"ئەپ ئىزدە"</string>
+    <string name="alioth_touch_aim">نىشانلاش سەزگۈرلۈكى</string>
+    <string name="alioth_touch_aim_summary">0: مۇقىم دېتالنىڭ سۈكۈتتىكى قىممىتى. 1–5 دەرىجىلەر نىشانلىغاندا سېزىمچان ئىنكاسنى تەڭشەيدۇ.</string>
+    <string name="alioth_touch_stability">چېكىش مۇقىملىقى</string>
+    <string name="alioth_touch_stability_summary">0: مۇقىم دېتالنىڭ سۈكۈتتىكى قىممىتى. 1–5 دەرىجىلەر چېكىش مۇقىملىقىنى تەڭشەيدۇ.</string>
+    <string name="alioth_touch_expert">سېزىمچان ئالدىن تەڭشەك</string>
+    <string name="alioth_touch_expert_summary">0: ئايرىم كونتروللار. 1–3 ئالدىن تەڭشەكلەر ئىنكاس، سەزگۈرلۈك، نىشانلاش سەزگۈرلۈكى ۋە چېكىش مۇقىملىقىنىڭ ئورنىنى ئالىدۇ؛ گىرۋەك سۈزۈش ئايرىم ساقلىنىدۇ.</string>
 </resources>

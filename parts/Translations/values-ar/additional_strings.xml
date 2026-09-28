@@ -146,4 +146,10 @@
     <string name="thermal_system_expand">"إظهار عناصر تحكم ملف تعريف النظام"</string>
     <string name="thermal_system_collapse">"إخفاء عناصر تحكم ملف تعريف النظام"</string>
     <string name="thermal_search_apps">"البحث عن التطبيقات"</string>
+    <string name="alioth_touch_aim">حساسية التصويب</string>
+    <string name="alioth_touch_aim_summary">0: الإعداد الافتراضي للبرنامج الثابت. تضبط المستويات 1–5 استجابة اللمس أثناء التصويب.</string>
+    <string name="alioth_touch_stability">ثبات النقر</string>
+    <string name="alioth_touch_stability_summary">0: الإعداد الافتراضي للبرنامج الثابت. تضبط المستويات 1–5 ثبات النقر.</string>
+    <string name="alioth_touch_expert">إعداد لمس مسبق</string>
+    <string name="alioth_touch_expert_summary">0: عناصر تحكم منفصلة. تستبدل الإعدادات المسبقة 1–3 الاستجابة والحساسية وحساسية التصويب وثبات النقر؛ تبقى تصفية الحواف منفصلة.</string>
 </resources>

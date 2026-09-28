@@ -146,4 +146,10 @@
     <string name="thermal_system_expand">"Tunjukkan kawalan profil sistem"</string>
     <string name="thermal_system_collapse">"Sembunyikan kawalan profil sistem"</string>
     <string name="thermal_search_apps">"Cari aplikasi"</string>
+    <string name="alioth_touch_aim">Kepekaan membidik</string>
+    <string name="alioth_touch_aim_summary">0: lalai perisian tegar. Tahap 1–5 melaraskan respons sentuhan semasa membidik.</string>
+    <string name="alioth_touch_stability">Kestabilan ketikan</string>
+    <string name="alioth_touch_stability_summary">0: lalai perisian tegar. Tahap 1–5 melaraskan kestabilan ketikan.</string>
+    <string name="alioth_touch_expert">Pratetap sentuhan</string>
+    <string name="alioth_touch_expert_summary">0: kawalan berasingan. Pratetap 1–3 menggantikan respons, kepekaan, kepekaan membidik dan kestabilan ketikan; penapisan tepi kekal berasingan.</string>
 </resources>
