@@ -146,4 +146,10 @@
     <string name="thermal_system_expand">"Ցուցադրել համակարգի պրոֆիլի կառավարման տարրերը"</string>
     <string name="thermal_system_collapse">"Թաքցնել համակարգի պրոֆիլի կառավարման տարրերը"</string>
     <string name="thermal_search_apps">"Որոնել հավելվածներ"</string>
+    <string name="alioth_touch_aim">Նշանառության զգայունություն</string>
+    <string name="alioth_touch_aim_summary">0՝ որոնվածի լռելյայն արժեքը։ 1–5 մակարդակները կարգավորում են հպման արձագանքը նշանառության ժամանակ։</string>
+    <string name="alioth_touch_stability">Հպումների կայունություն</string>
+    <string name="alioth_touch_stability_summary">0՝ որոնվածի լռելյայն արժեքը։ 1–5 մակարդակները կարգավորում են հպումների կայունությունը։</string>
+    <string name="alioth_touch_expert">Հպման նախադրվածք</string>
+    <string name="alioth_touch_expert_summary">0՝ առանձին կարգավորումներ։ 1–3 նախադրվածքները փոխարինում են արձագանքը, զգայունությունը, նշանառության զգայունությունն ու հպումների կայունությունը․ եզրերի զտումը մնում է առանձին։</string>
 </resources>

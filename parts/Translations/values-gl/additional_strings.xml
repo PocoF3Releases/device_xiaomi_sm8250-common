@@ -145,4 +145,10 @@
     <string name="thermal_system_expand">"Mostrar os controis do perfil do sistema"</string>
     <string name="thermal_system_collapse">"Ocultar os controis do perfil do sistema"</string>
     <string name="thermal_search_apps">"Buscar aplicacións"</string>
+    <string name="alioth_touch_aim">Sensibilidade ao apuntar</string>
+    <string name="alioth_touch_aim_summary">0: valor predeterminado do firmware. Os niveis 1–5 axustan a resposta táctil ao apuntar.</string>
+    <string name="alioth_touch_stability">Estabilidade dos toques</string>
+    <string name="alioth_touch_stability_summary">0: valor predeterminado do firmware. Os niveis 1–5 axustan a estabilidade dos toques.</string>
+    <string name="alioth_touch_expert">Preaxuste táctil</string>
+    <string name="alioth_touch_expert_summary">0: controis individuais. Os preaxustes 1–3 substitúen a resposta, a sensibilidade, a sensibilidade ao apuntar e a estabilidade dos toques; o filtrado dos bordos segue separado.</string>
 </resources>

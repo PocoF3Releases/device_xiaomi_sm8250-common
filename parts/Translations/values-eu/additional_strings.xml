@@ -145,4 +145,10 @@
     <string name="thermal_system_expand">"Erakutsi sistemaren profilaren kontrolak"</string>
     <string name="thermal_system_collapse">"Ezkutatu sistemaren profilaren kontrolak"</string>
     <string name="thermal_search_apps">"Bilatu aplikazioak"</string>
+    <string name="alioth_touch_aim">Apuntatzeko sentikortasuna</string>
+    <string name="alioth_touch_aim_summary">0: firmwarearen balio lehenetsia. 1–5 mailek apuntatzean ukipen-erantzuna doitzen dute.</string>
+    <string name="alioth_touch_stability">Ukitzeen egonkortasuna</string>
+    <string name="alioth_touch_stability_summary">0: firmwarearen balio lehenetsia. 1–5 mailek ukitzeen egonkortasuna doitzen dute.</string>
+    <string name="alioth_touch_expert">Ukipen-aurrezarpena</string>
+    <string name="alioth_touch_expert_summary">0: banakako kontrolak. 1–3 aurrezarpenek erantzuna, sentikortasuna, apuntatzeko sentikortasuna eta ukitzeen egonkortasuna ordezten dituzte; ertzen iragazketa bereiz mantentzen da.</string>
 </resources>

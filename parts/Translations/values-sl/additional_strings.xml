@@ -145,4 +145,10 @@
     <string name="thermal_system_expand">"Prikaži kontrolnike sistemskega profila"</string>
     <string name="thermal_system_collapse">"Skrij kontrolnike sistemskega profila"</string>
     <string name="thermal_search_apps">"Išči aplikacije"</string>
+    <string name="alioth_touch_aim">Občutljivost merjenja</string>
+    <string name="alioth_touch_aim_summary">0: privzeta vrednost vdelane programske opreme. Ravni 1–5 prilagodijo odziv na dotik pri merjenju.</string>
+    <string name="alioth_touch_stability">Stabilnost dotikov</string>
+    <string name="alioth_touch_stability_summary">0: privzeta vrednost vdelane programske opreme. Ravni 1–5 prilagodijo stabilnost dotikov.</string>
+    <string name="alioth_touch_expert">Prednastavitev dotika</string>
+    <string name="alioth_touch_expert_summary">0: posamezne nastavitve. Prednastavitve 1–3 nadomestijo odziv, občutljivost, občutljivost merjenja in stabilnost dotikov; filtriranje robov ostane ločeno.</string>
 </resources>
