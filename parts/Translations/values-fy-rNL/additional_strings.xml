@@ -174,4 +174,10 @@
     <string name="thermal_system_expand">"Bestjoeringseleminten fan it systeemprofyl sjen litte"</string>
     <string name="thermal_system_collapse">"Bestjoeringseleminten fan it systeemprofyl ferbergje"</string>
     <string name="thermal_search_apps">"Apps sykje"</string>
+    <string name="alioth_touch_aim">Rjochtsensitiviteit</string>
+    <string name="alioth_touch_aim_summary">0: standert fan de firmware. Nivo’s 1–5 passe de oanraakreaksje by it rjochtsjen oan.</string>
+    <string name="alioth_touch_stability">Tikstabiliteit</string>
+    <string name="alioth_touch_stability_summary">0: standert fan de firmware. Nivo’s 1–5 passe de tikstabiliteit oan.</string>
+    <string name="alioth_touch_expert">Oanraakfoarynstelling</string>
+    <string name="alioth_touch_expert_summary">0: aparte ynstellingen. Foarynstellingen 1–3 ferfange reaksje, sensitiviteit, rjochtsensitiviteit en tikstabiliteit; rânefiltering bliuwt apart.</string>
 </resources>

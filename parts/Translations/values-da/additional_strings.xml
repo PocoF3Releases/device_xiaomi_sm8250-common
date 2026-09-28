@@ -145,4 +145,10 @@
     <string name="thermal_system_expand">"Vis kontroller for systemprofil"</string>
     <string name="thermal_system_collapse">"Skjul kontroller for systemprofil"</string>
     <string name="thermal_search_apps">"Søg efter apps"</string>
+    <string name="alioth_touch_aim">Sigtefølsomhed</string>
+    <string name="alioth_touch_aim_summary">0: firmwarens standard. Niveau 1–5 justerer berøringsresponsen ved sigtning.</string>
+    <string name="alioth_touch_stability">Trykstabilitet</string>
+    <string name="alioth_touch_stability_summary">0: firmwarens standard. Niveau 1–5 justerer trykstabiliteten.</string>
+    <string name="alioth_touch_expert">Berøringsforvalg</string>
+    <string name="alioth_touch_expert_summary">0: individuelle indstillinger. Forvalg 1–3 erstatter respons, følsomhed, sigtefølsomhed og trykstabilitet; kantfiltrering forbliver separat.</string>
 </resources>

@@ -146,4 +146,10 @@
     <string name="thermal_system_expand">"ਸਿਸਟਮ ਪ੍ਰੋਫਾਈਲ ਕੰਟਰੋਲ ਦਿਖਾਓ"</string>
     <string name="thermal_system_collapse">"ਸਿਸਟਮ ਪ੍ਰੋਫਾਈਲ ਕੰਟਰੋਲ ਲੁਕਾਓ"</string>
     <string name="thermal_search_apps">"ਐਪਾਂ ਖੋਜੋ"</string>
+    <string name="alioth_touch_aim">ਨਿਸ਼ਾਨੇ ਦੀ ਸੰਵੇਦਨਸ਼ੀਲਤਾ</string>
+    <string name="alioth_touch_aim_summary">0: ਫਰਮਵੇਅਰ ਦਾ ਪੂਰਵ-ਨਿਰਧਾਰਤ ਮੁੱਲ। ਪੱਧਰ 1–5 ਨਿਸ਼ਾਨਾ ਲਾਉਂਦੇ ਸਮੇਂ ਛੋਹ ਦਾ ਪ੍ਰਤੀਕਰਮ ਬਦਲਦੇ ਹਨ।</string>
+    <string name="alioth_touch_stability">ਟੈਪ ਦੀ ਸਥਿਰਤਾ</string>
+    <string name="alioth_touch_stability_summary">0: ਫਰਮਵੇਅਰ ਦਾ ਪੂਰਵ-ਨਿਰਧਾਰਤ ਮੁੱਲ। ਪੱਧਰ 1–5 ਟੈਪ ਦੀ ਸਥਿਰਤਾ ਬਦਲਦੇ ਹਨ।</string>
+    <string name="alioth_touch_expert">ਛੋਹ ਪ੍ਰੀਸੈੱਟ</string>
+    <string name="alioth_touch_expert_summary">0: ਵੱਖਰੇ ਕੰਟਰੋਲ। ਪ੍ਰੀਸੈੱਟ 1–3 ਪ੍ਰਤੀਕਰਮ, ਸੰਵੇਦਨਸ਼ੀਲਤਾ, ਨਿਸ਼ਾਨੇ ਦੀ ਸੰਵੇਦਨਸ਼ੀਲਤਾ ਅਤੇ ਟੈਪ ਦੀ ਸਥਿਰਤਾ ਬਦਲਦੇ ਹਨ; ਕਿਨਾਰਿਆਂ ਦੀ ਫਿਲਟਰਿੰਗ ਵੱਖਰੀ ਰਹਿੰਦੀ ਹੈ।</string>
 </resources>

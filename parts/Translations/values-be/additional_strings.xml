@@ -145,4 +145,10 @@
     <string name="thermal_system_expand">"Паказаць элементы кіравання сістэмным профілем"</string>
     <string name="thermal_system_collapse">"Схаваць элементы кіравання сістэмным профілем"</string>
     <string name="thermal_search_apps">"Пошук праграм"</string>
+    <string name="alioth_touch_aim">Адчувальнасць прыцэльвання</string>
+    <string name="alioth_touch_aim_summary">0: стандарт прашыўкі. Узроўні 1–5 рэгулююць сэнсарны водгук пры прыцэльванні.</string>
+    <string name="alioth_touch_stability">Стабільнасць націсканняў</string>
+    <string name="alioth_touch_stability_summary">0: стандарт прашыўкі. Узроўні 1–5 рэгулююць стабільнасць націсканняў.</string>
+    <string name="alioth_touch_expert">Сэнсарны профіль</string>
+    <string name="alioth_touch_expert_summary">0: асобныя налады. Профілі 1–3 замяняюць водгук, адчувальнасць, адчувальнасць прыцэльвання і стабільнасць націсканняў; фільтрацыя краёў застаецца асобнай.</string>
 </resources>

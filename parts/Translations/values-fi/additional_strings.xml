@@ -145,4 +145,10 @@
     <string name="thermal_system_expand">"Näytä järjestelmäprofiilin säätimet"</string>
     <string name="thermal_system_collapse">"Piilota järjestelmäprofiilin säätimet"</string>
     <string name="thermal_search_apps">"Hae sovelluksia"</string>
+    <string name="alioth_touch_aim">Tähtäysherkkyys</string>
+    <string name="alioth_touch_aim_summary">0: laiteohjelmiston oletus. Tasot 1–5 säätävät kosketusvastetta tähdättäessä.</string>
+    <string name="alioth_touch_stability">Napautusten vakaus</string>
+    <string name="alioth_touch_stability_summary">0: laiteohjelmiston oletus. Tasot 1–5 säätävät napautusten vakautta.</string>
+    <string name="alioth_touch_expert">Kosketuksen esiasetus</string>
+    <string name="alioth_touch_expert_summary">0: erilliset säädöt. Esiasetukset 1–3 korvaavat vasteen, herkkyyden, tähtäysherkkyyden ja napautusten vakauden; reunasuodatus pysyy erillisenä.</string>
 </resources>

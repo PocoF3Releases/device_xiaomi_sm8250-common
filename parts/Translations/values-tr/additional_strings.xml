@@ -146,4 +146,10 @@
     <string name="thermal_system_expand">"Sistem profili denetimlerini göster"</string>
     <string name="thermal_system_collapse">"Sistem profili denetimlerini gizle"</string>
     <string name="thermal_search_apps">"Uygulama ara"</string>
+    <string name="alioth_touch_aim">Nişan hassasiyeti</string>
+    <string name="alioth_touch_aim_summary">0: donanım yazılımı varsayılanı. 1–5 düzeyleri nişan alırken dokunma tepkisini ayarlar.</string>
+    <string name="alioth_touch_stability">Dokunma kararlılığı</string>
+    <string name="alioth_touch_stability_summary">0: donanım yazılımı varsayılanı. 1–5 düzeyleri dokunma kararlılığını ayarlar.</string>
+    <string name="alioth_touch_expert">Dokunma ön ayarı</string>
+    <string name="alioth_touch_expert_summary">0: ayrı kontroller. 1–3 ön ayarları tepki, hassasiyet, nişan hassasiyeti ve dokunma kararlılığının yerini alır; kenar filtreleme ayrı kalır.</string>
 </resources>

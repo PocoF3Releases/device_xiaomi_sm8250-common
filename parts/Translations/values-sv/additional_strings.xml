@@ -145,4 +145,10 @@
     <string name="thermal_system_expand">"Visa kontroller för systemprofil"</string>
     <string name="thermal_system_collapse">"Dölj kontroller för systemprofil"</string>
     <string name="thermal_search_apps">"Sök efter appar"</string>
+    <string name="alioth_touch_aim">Sikteskänslighet</string>
+    <string name="alioth_touch_aim_summary">0: standardvärde i den fasta programvaran. Nivå 1–5 justerar pekresponsen vid siktning.</string>
+    <string name="alioth_touch_stability">Tryckstabilitet</string>
+    <string name="alioth_touch_stability_summary">0: standardvärde i den fasta programvaran. Nivå 1–5 justerar tryckstabiliteten.</string>
+    <string name="alioth_touch_expert">Pekförinställning</string>
+    <string name="alioth_touch_expert_summary">0: individuella inställningar. Förinställningarna 1–3 ersätter respons, känslighet, sikteskänslighet och tryckstabilitet; kantfiltrering förblir separat.</string>
 </resources>

@@ -146,4 +146,10 @@
     <string name="thermal_system_expand">"Bediening van systeemprofiel tonen"</string>
     <string name="thermal_system_collapse">"Bediening van systeemprofiel verbergen"</string>
     <string name="thermal_search_apps">"Apps zoeken"</string>
+    <string name="alioth_touch_aim">Richtgevoeligheid</string>
+    <string name="alioth_touch_aim_summary">0: firmwarestandaard. Niveaus 1–5 passen de aanraakreactie tijdens het richten aan.</string>
+    <string name="alioth_touch_stability">Tikstabiliteit</string>
+    <string name="alioth_touch_stability_summary">0: firmwarestandaard. Niveaus 1–5 passen de tikstabiliteit aan.</string>
+    <string name="alioth_touch_expert">Aanraakvoorinstelling</string>
+    <string name="alioth_touch_expert_summary">0: afzonderlijke instellingen. Voorinstellingen 1–3 vervangen reactie, gevoeligheid, richtgevoeligheid en tikstabiliteit; randfiltering blijft afzonderlijk.</string>
 </resources>

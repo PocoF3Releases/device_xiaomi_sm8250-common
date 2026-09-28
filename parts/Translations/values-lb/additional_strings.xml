@@ -174,4 +174,10 @@
     <string name="thermal_system_expand">"Steierelementer vum Systemprofil weisen"</string>
     <string name="thermal_system_collapse">"Steierelementer vum Systemprofil verstoppen"</string>
     <string name="thermal_search_apps">"Apps sichen"</string>
+    <string name="alioth_touch_aim">Zilempfindlechkeet</string>
+    <string name="alioth_touch_aim_summary">0: Standardwäert vun der Firmware. Stufen 1–5 passen d’Touchreaktioun beim Zilen un.</string>
+    <string name="alioth_touch_stability">Tippstabilitéit</string>
+    <string name="alioth_touch_stability_summary">0: Standardwäert vun der Firmware. Stufen 1–5 passen d’Tippstabilitéit un.</string>
+    <string name="alioth_touch_expert">Touchvirastellung</string>
+    <string name="alioth_touch_expert_summary">0: eenzel Astellungen. Virastellungen 1–3 ersetzen d’Reaktioun, d’Empfindlechkeet, d’Zilempfindlechkeet an d’Tippstabilitéit; d’Randfilterung bleift separat.</string>
 </resources>

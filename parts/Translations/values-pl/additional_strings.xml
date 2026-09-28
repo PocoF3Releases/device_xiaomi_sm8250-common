@@ -146,4 +146,10 @@
     <string name="thermal_system_expand">"Pokaż elementy sterujące profilem systemowym"</string>
     <string name="thermal_system_collapse">"Ukryj elementy sterujące profilem systemowym"</string>
     <string name="thermal_search_apps">"Szukaj aplikacji"</string>
+    <string name="alioth_touch_aim">Czułość celowania</string>
+    <string name="alioth_touch_aim_summary">0: domyślna wartość oprogramowania sprzętowego. Poziomy 1–5 regulują reakcję na dotyk podczas celowania.</string>
+    <string name="alioth_touch_stability">Stabilność dotknięć</string>
+    <string name="alioth_touch_stability_summary">0: domyślna wartość oprogramowania sprzętowego. Poziomy 1–5 regulują stabilność dotknięć.</string>
+    <string name="alioth_touch_expert">Profil dotyku</string>
+    <string name="alioth_touch_expert_summary">0: osobne ustawienia. Profile 1–3 zastępują reakcję, czułość, czułość celowania i stabilność dotknięć; filtrowanie krawędzi pozostaje osobne.</string>
 </resources>
