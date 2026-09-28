@@ -146,4 +146,10 @@
     <string name="thermal_system_expand">"प्रणाली प्रोफाइलका नियन्त्रणहरू देखाउनुहोस्"</string>
     <string name="thermal_system_collapse">"प्रणाली प्रोफाइलका नियन्त्रणहरू लुकाउनुहोस्"</string>
     <string name="thermal_search_apps">"एपहरू खोज्नुहोस्"</string>
+    <string name="alioth_touch_aim">निशानाको संवेदनशीलता</string>
+    <string name="alioth_touch_aim_summary">0: फर्मवेयरको पूर्वनिर्धारित मान। तह 1–5 ले निशाना लगाउँदा स्पर्शको प्रतिक्रिया मिलाउँछन्।</string>
+    <string name="alioth_touch_stability">ट्यापको स्थिरता</string>
+    <string name="alioth_touch_stability_summary">0: फर्मवेयरको पूर्वनिर्धारित मान। तह 1–5 ले ट्यापको स्थिरता मिलाउँछन्।</string>
+    <string name="alioth_touch_expert">स्पर्श प्रिसेट</string>
+    <string name="alioth_touch_expert_summary">0: छुट्टाछुट्टै नियन्त्रणहरू। प्रिसेट 1–3 ले प्रतिक्रिया, संवेदनशीलता, निशानाको संवेदनशीलता र ट्यापको स्थिरता प्रतिस्थापन गर्छन्; किनाराको फिल्टरिङ अलग रहन्छ।</string>
 </resources>

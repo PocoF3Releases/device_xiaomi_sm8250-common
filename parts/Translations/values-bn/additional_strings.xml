@@ -145,4 +145,10 @@
     <string name="thermal_system_expand">"সিস্টেম প্রোফাইল নিয়ন্ত্রণ দেখান"</string>
     <string name="thermal_system_collapse">"সিস্টেম প্রোফাইল নিয়ন্ত্রণ লুকান"</string>
     <string name="thermal_search_apps">"অ্যাপ খুঁজুন"</string>
+    <string name="alioth_touch_aim">নিশানার সংবেদনশীলতা</string>
+    <string name="alioth_touch_aim_summary">0: ফার্মওয়্যারের ডিফল্ট মান। 1–5 স্তর নিশানা করার সময় স্পর্শের প্রতিক্রিয়া নিয়ন্ত্রণ করে।</string>
+    <string name="alioth_touch_stability">ট্যাপের স্থিতিশীলতা</string>
+    <string name="alioth_touch_stability_summary">0: ফার্মওয়্যারের ডিফল্ট মান। 1–5 স্তর ট্যাপের স্থিতিশীলতা নিয়ন্ত্রণ করে।</string>
+    <string name="alioth_touch_expert">স্পর্শের প্রিসেট</string>
+    <string name="alioth_touch_expert_summary">0: পৃথক নিয়ন্ত্রণ। প্রিসেট 1–3 প্রতিক্রিয়া, সংবেদনশীলতা, নিশানার সংবেদনশীলতা ও ট্যাপের স্থিতিশীলতা প্রতিস্থাপন করে; প্রান্তের ফিল্টার আলাদা থাকে।</string>
 </resources>

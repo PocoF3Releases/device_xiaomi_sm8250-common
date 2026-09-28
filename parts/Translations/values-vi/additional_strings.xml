@@ -145,4 +145,10 @@
     <string name="thermal_system_expand">"Hiện các điều khiển hồ sơ hệ thống"</string>
     <string name="thermal_system_collapse">"Ẩn các điều khiển hồ sơ hệ thống"</string>
     <string name="thermal_search_apps">"Tìm kiếm ứng dụng"</string>
+    <string name="alioth_touch_aim">Độ nhạy khi ngắm</string>
+    <string name="alioth_touch_aim_summary">0: mặc định của phần sụn. Các mức 1–5 điều chỉnh phản hồi cảm ứng khi ngắm.</string>
+    <string name="alioth_touch_stability">Độ ổn định khi chạm</string>
+    <string name="alioth_touch_stability_summary">0: mặc định của phần sụn. Các mức 1–5 điều chỉnh độ ổn định khi chạm.</string>
+    <string name="alioth_touch_expert">Cấu hình cảm ứng</string>
+    <string name="alioth_touch_expert_summary">0: điều khiển riêng lẻ. Cấu hình 1–3 thay thế phản hồi, độ nhạy, độ nhạy khi ngắm và độ ổn định khi chạm; bộ lọc cạnh vẫn độc lập.</string>
 </resources>

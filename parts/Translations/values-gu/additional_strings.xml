@@ -145,4 +145,10 @@
     <string name="thermal_system_expand">"સિસ્ટમ પ્રોફાઇલ નિયંત્રણો બતાવો"</string>
     <string name="thermal_system_collapse">"સિસ્ટમ પ્રોફાઇલ નિયંત્રણો છુપાવો"</string>
     <string name="thermal_search_apps">"ઍપ શોધો"</string>
+    <string name="alioth_touch_aim">નિશાન સાધવાની સંવેદનશીલતા</string>
+    <string name="alioth_touch_aim_summary">0: ફર્મવેરનું ડિફૉલ્ટ મૂલ્ય. સ્તર 1–5 નિશાન સાધતી વખતે સ્પર્શનો પ્રતિસાદ ગોઠવે છે.</string>
+    <string name="alioth_touch_stability">ટૅપની સ્થિરતા</string>
+    <string name="alioth_touch_stability_summary">0: ફર્મવેરનું ડિફૉલ્ટ મૂલ્ય. સ્તર 1–5 ટૅપની સ્થિરતા ગોઠવે છે.</string>
+    <string name="alioth_touch_expert">સ્પર્શ પ્રીસેટ</string>
+    <string name="alioth_touch_expert_summary">0: અલગ નિયંત્રણો. પ્રીસેટ 1–3 પ્રતિસાદ, સંવેદનશીલતા, નિશાન સાધવાની સંવેદનશીલતા અને ટૅપની સ્થિરતાને બદલે છે; કિનારીનું ફિલ્ટરિંગ અલગ રહે છે.</string>
 </resources>

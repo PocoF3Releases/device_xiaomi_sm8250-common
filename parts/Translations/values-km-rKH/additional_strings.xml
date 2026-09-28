@@ -146,4 +146,10 @@
     <string name="thermal_system_expand">"បង្ហាញការគ្រប់គ្រងប្រវត្តិរូបប្រព័ន្ធ"</string>
     <string name="thermal_system_collapse">"លាក់ការគ្រប់គ្រងប្រវត្តិរូបប្រព័ន្ធ"</string>
     <string name="thermal_search_apps">"ស្វែងរកកម្មវិធី"</string>
+    <string name="alioth_touch_aim">ភាពរសើបពេលតម្រង់</string>
+    <string name="alioth_touch_aim_summary">0៖ តម្លៃលំនាំដើមរបស់កម្មវិធីបង្កប់។ កម្រិត 1–5 កែសម្រួលការឆ្លើយតបនៃការប៉ះពេលតម្រង់។</string>
+    <string name="alioth_touch_stability">ស្ថិរភាពនៃការចុច</string>
+    <string name="alioth_touch_stability_summary">0៖ តម្លៃលំនាំដើមរបស់កម្មវិធីបង្កប់។ កម្រិត 1–5 កែសម្រួលស្ថិរភាពនៃការចុច។</string>
+    <string name="alioth_touch_expert">ការកំណត់ប៉ះជាមុន</string>
+    <string name="alioth_touch_expert_summary">0៖ ការគ្រប់គ្រងដាច់ដោយឡែក។ ការកំណត់ជាមុន 1–3 ជំនួសការឆ្លើយតប ភាពរសើប ភាពរសើបពេលតម្រង់ និងស្ថិរភាពនៃការចុច។ ការត្រងគែមនៅតែដាច់ដោយឡែក។</string>
 </resources>

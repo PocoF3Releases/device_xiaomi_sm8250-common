@@ -145,4 +145,10 @@
     <string name="thermal_system_expand">"ସିଷ୍ଟମ୍ ପ୍ରୋଫାଇଲ୍ ନିୟନ୍ତ୍ରଣଗୁଡ଼ିକ ଦେଖାନ୍ତୁ"</string>
     <string name="thermal_system_collapse">"ସିଷ୍ଟମ୍ ପ୍ରୋଫାଇଲ୍ ନିୟନ୍ତ୍ରଣଗୁଡ଼ିକ ଲୁଚାନ୍ତୁ"</string>
     <string name="thermal_search_apps">"ଆପ୍‌ଗୁଡ଼ିକ ଖୋଜନ୍ତୁ"</string>
+    <string name="alioth_touch_aim">ଲକ୍ଷ୍ୟ ସାଧନ ସମ୍ବେଦନଶୀଳତା</string>
+    <string name="alioth_touch_aim_summary">0: ଫର୍ମୱେୟାରର ଡିଫଲ୍ଟ ମାନ। ସ୍ତର 1–5 ଲକ୍ଷ୍ୟ ସାଧନ ସମୟରେ ସ୍ପର୍ଶ ପ୍ରତିକ୍ରିୟା ସଜାଡ଼େ।</string>
+    <string name="alioth_touch_stability">ଟ୍ୟାପ୍ ସ୍ଥିରତା</string>
+    <string name="alioth_touch_stability_summary">0: ଫର୍ମୱେୟାରର ଡିଫଲ୍ଟ ମାନ। ସ୍ତର 1–5 ଟ୍ୟାପ୍ ସ୍ଥିରତା ସଜାଡ଼େ।</string>
+    <string name="alioth_touch_expert">ସ୍ପର୍ଶ ପ୍ରିସେଟ୍</string>
+    <string name="alioth_touch_expert_summary">0: ଅଲଗା ନିୟନ୍ତ୍ରଣ। ପ୍ରିସେଟ୍ 1–3 ପ୍ରତିକ୍ରିୟା, ସମ୍ବେଦନଶୀଳତା, ଲକ୍ଷ୍ୟ ସାଧନ ସମ୍ବେଦନଶୀଳତା ଓ ଟ୍ୟାପ୍ ସ୍ଥିରତା ବଦଳାଏ; ଧାର ଫିଲ୍ଟରିଂ ଅଲଗା ରହେ।</string>
 </resources>

@@ -146,4 +146,10 @@
     <string name="thermal_system_expand">"顯示系統設定檔控制項"</string>
     <string name="thermal_system_collapse">"隱藏系統設定檔控制項"</string>
     <string name="thermal_search_apps">"搜尋應用程式"</string>
+    <string name="alioth_touch_aim">瞄準靈敏度</string>
+    <string name="alioth_touch_aim_summary">0：韌體預設值。1–5 級可調整瞄準時的觸控反應。</string>
+    <string name="alioth_touch_stability">輕觸穩定性</string>
+    <string name="alioth_touch_stability_summary">0：韌體預設值。1–5 級可調整輕觸穩定性。</string>
+    <string name="alioth_touch_expert">觸控預設組合</string>
+    <string name="alioth_touch_expert_summary">0：獨立調整。預設組合 1–3 會取代反應、靈敏度、瞄準靈敏度及輕觸穩定性設定；邊緣過濾仍獨立設定。</string>
 </resources>

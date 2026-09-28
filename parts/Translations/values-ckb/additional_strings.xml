@@ -174,4 +174,10 @@
     <string name="thermal_system_expand">"کۆنترۆڵەکانی پڕۆفایلی سیستەم پیشان بدە"</string>
     <string name="thermal_system_collapse">"کۆنترۆڵەکانی پڕۆفایلی سیستەم بشارەوە"</string>
     <string name="thermal_search_apps">"گەڕان بەدوای ئەپەکاندا"</string>
+    <string name="alioth_touch_aim">هەستیاریی نیشانەگرتن</string>
+    <string name="alioth_touch_aim_summary">0: بنەڕەتی فێرموێر. ئاستەکانی 1–5 وەڵامی دەستدان لە کاتی نیشانەگرتن ڕێک دەخەن.</string>
+    <string name="alioth_touch_stability">جێگیریی لێدان</string>
+    <string name="alioth_touch_stability_summary">0: بنەڕەتی فێرموێر. ئاستەکانی 1–5 جێگیریی لێدان ڕێک دەخەن.</string>
+    <string name="alioth_touch_expert">پێشڕێکخستنی دەستدان</string>
+    <string name="alioth_touch_expert_summary">0: کۆنترۆڵە جیاوازەکان. پێشڕێکخستنەکانی 1–3 جێگەی وەڵام، هەستیاری، هەستیاریی نیشانەگرتن و جێگیریی لێدان دەگرنەوە؛ پاڵاوتنی لێوارەکان جیا دەمێنێتەوە.</string>
 </resources>
