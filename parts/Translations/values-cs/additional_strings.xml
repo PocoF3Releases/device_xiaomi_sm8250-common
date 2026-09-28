@@ -145,4 +145,10 @@
     <string name="thermal_system_expand">"Zobrazit ovládací prvky systémového profilu"</string>
     <string name="thermal_system_collapse">"Skrýt ovládací prvky systémového profilu"</string>
     <string name="thermal_search_apps">"Hledat aplikace"</string>
+    <string name="alioth_touch_aim">Citlivost míření</string>
+    <string name="alioth_touch_aim_summary">0: výchozí hodnota firmwaru. Úrovně 1–5 upravují odezvu dotyku při míření.</string>
+    <string name="alioth_touch_stability">Stabilita klepnutí</string>
+    <string name="alioth_touch_stability_summary">0: výchozí hodnota firmwaru. Úrovně 1–5 upravují stabilitu klepnutí.</string>
+    <string name="alioth_touch_expert">Dotyková předvolba</string>
+    <string name="alioth_touch_expert_summary">0: jednotlivé ovládací prvky. Předvolby 1–3 nahrazují odezvu, citlivost, citlivost míření a stabilitu klepnutí; filtrování okrajů zůstává samostatné.</string>
 </resources>

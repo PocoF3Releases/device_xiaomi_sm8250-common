@@ -145,4 +145,10 @@
     <string name="thermal_system_expand">"Afișează comenzile profilului de sistem"</string>
     <string name="thermal_system_collapse">"Ascunde comenzile profilului de sistem"</string>
     <string name="thermal_search_apps">"Caută aplicații"</string>
+    <string name="alioth_touch_aim">Sensibilitatea țintirii</string>
+    <string name="alioth_touch_aim_summary">0: valoarea implicită a firmware-ului. Nivelurile 1–5 ajustează răspunsul tactil la țintire.</string>
+    <string name="alioth_touch_stability">Stabilitatea atingerilor</string>
+    <string name="alioth_touch_stability_summary">0: valoarea implicită a firmware-ului. Nivelurile 1–5 ajustează stabilitatea atingerilor.</string>
+    <string name="alioth_touch_expert">Presetare tactilă</string>
+    <string name="alioth_touch_expert_summary">0: comenzi individuale. Presetările 1–3 înlocuiesc răspunsul, sensibilitatea, sensibilitatea țintirii și stabilitatea atingerilor; filtrarea marginilor rămâne separată.</string>
 </resources>

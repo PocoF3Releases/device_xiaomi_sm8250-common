@@ -146,4 +146,10 @@
     <string name="thermal_system_expand">"Mostrar controlos do perfil do sistema"</string>
     <string name="thermal_system_collapse">"Ocultar controlos do perfil do sistema"</string>
     <string name="thermal_search_apps">"Pesquisar aplicações"</string>
+    <string name="alioth_touch_aim">Sensibilidade da mira</string>
+    <string name="alioth_touch_aim_summary">0: predefinição do firmware. Os níveis 1–5 ajustam a resposta ao toque ao apontar.</string>
+    <string name="alioth_touch_stability">Estabilidade dos toques</string>
+    <string name="alioth_touch_stability_summary">0: predefinição do firmware. Os níveis 1–5 ajustam a estabilidade dos toques.</string>
+    <string name="alioth_touch_expert">Predefinição de toque</string>
+    <string name="alioth_touch_expert_summary">0: controlos individuais. As predefinições 1–3 substituem a resposta, a sensibilidade, a sensibilidade da mira e a estabilidade dos toques; a filtragem das margens mantém-se separada.</string>
 </resources>

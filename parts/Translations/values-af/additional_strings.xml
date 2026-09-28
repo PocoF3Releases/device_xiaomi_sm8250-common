@@ -174,4 +174,10 @@
     <string name="thermal_system_expand">"Wys stelselprofielkontroles"</string>
     <string name="thermal_system_collapse">"Versteek stelselprofielkontroles"</string>
     <string name="thermal_search_apps">"Soek programme"</string>
+    <string name="alioth_touch_aim">Miksensitiwiteit</string>
+    <string name="alioth_touch_aim_summary">0: fermwareverstek. Vlakke 1–5 pas die raakreaksie tydens mik aan.</string>
+    <string name="alioth_touch_stability">Tikstabiliteit</string>
+    <string name="alioth_touch_stability_summary">0: fermwareverstek. Vlakke 1–5 pas tikstabiliteit aan.</string>
+    <string name="alioth_touch_expert">Raakvoorinstelling</string>
+    <string name="alioth_touch_expert_summary">0: afsonderlike kontroles. Voorinstellings 1–3 vervang reaksie, sensitiwiteit, miksensitiwiteit en tikstabiliteit; randfiltrering bly afsonderlik.</string>
 </resources>

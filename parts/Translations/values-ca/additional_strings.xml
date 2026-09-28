@@ -145,4 +145,10 @@
     <string name="thermal_system_expand">"Mostra els controls del perfil del sistema"</string>
     <string name="thermal_system_collapse">"Amaga els controls del perfil del sistema"</string>
     <string name="thermal_search_apps">"Cerca aplicacions"</string>
+    <string name="alioth_touch_aim">Sensibilitat en apuntar</string>
+    <string name="alioth_touch_aim_summary">0: valor predeterminat del microprogramari. Els nivells 1–5 ajusten la resposta tàctil en apuntar.</string>
+    <string name="alioth_touch_stability">Estabilitat dels tocs</string>
+    <string name="alioth_touch_stability_summary">0: valor predeterminat del microprogramari. Els nivells 1–5 ajusten l’estabilitat dels tocs.</string>
+    <string name="alioth_touch_expert">Predefinició tàctil</string>
+    <string name="alioth_touch_expert_summary">0: controls individuals. Les predefinicions 1–3 substitueixen la resposta, la sensibilitat, la sensibilitat en apuntar i l’estabilitat dels tocs; el filtratge de les vores continua separat.</string>
 </resources>

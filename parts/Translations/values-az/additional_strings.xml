@@ -145,4 +145,10 @@
     <string name="thermal_system_expand">"Sistem profili idarəetmələrini göstər"</string>
     <string name="thermal_system_collapse">"Sistem profili idarəetmələrini gizlət"</string>
     <string name="thermal_search_apps">"Tətbiqləri axtar"</string>
+    <string name="alioth_touch_aim">Nişanalma həssaslığı</string>
+    <string name="alioth_touch_aim_summary">0: proqram təminatının standart dəyəri. 1–5 səviyyələri nişanalma zamanı toxunma reaksiyasını tənzimləyir.</string>
+    <string name="alioth_touch_stability">Toxunuş sabitliyi</string>
+    <string name="alioth_touch_stability_summary">0: proqram təminatının standart dəyəri. 1–5 səviyyələri toxunuş sabitliyini tənzimləyir.</string>
+    <string name="alioth_touch_expert">Toxunma profili</string>
+    <string name="alioth_touch_expert_summary">0: ayrı idarəetmələr. 1–3 profilləri reaksiyanı, həssaslığı, nişanalma həssaslığını və toxunuş sabitliyini əvəz edir; kənar filtrləmə ayrı qalır.</string>
 </resources>

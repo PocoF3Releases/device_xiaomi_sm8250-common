@@ -145,4 +145,10 @@
     <string name="thermal_system_expand">"Shfaq kontrollet e profilit të sistemit"</string>
     <string name="thermal_system_collapse">"Fshih kontrollet e profilit të sistemit"</string>
     <string name="thermal_search_apps">"Kërko aplikacione"</string>
+    <string name="alioth_touch_aim">Ndjeshmëria e shënjestrimit</string>
+    <string name="alioth_touch_aim_summary">0: vlera e parazgjedhur e firmuerit. Nivelet 1–5 rregullojnë reagimin ndaj prekjes gjatë shënjestrimit.</string>
+    <string name="alioth_touch_stability">Qëndrueshmëria e prekjeve</string>
+    <string name="alioth_touch_stability_summary">0: vlera e parazgjedhur e firmuerit. Nivelet 1–5 rregullojnë qëndrueshmërinë e prekjeve.</string>
+    <string name="alioth_touch_expert">Paracaktim i prekjes</string>
+    <string name="alioth_touch_expert_summary">0: kontrolle individuale. Paracaktimet 1–3 zëvendësojnë reagimin, ndjeshmërinë, ndjeshmërinë e shënjestrimit dhe qëndrueshmërinë e prekjeve; filtrimi i skajeve mbetet i veçantë.</string>
 </resources>

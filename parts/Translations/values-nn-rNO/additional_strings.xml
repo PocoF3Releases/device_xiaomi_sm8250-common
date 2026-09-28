@@ -174,4 +174,10 @@
     <string name="thermal_system_expand">"Vis kontrollar for systemprofil"</string>
     <string name="thermal_system_collapse">"Skjul kontrollar for systemprofil"</string>
     <string name="thermal_search_apps">"Søk etter appar"</string>
+    <string name="alioth_touch_aim">Siktefølsemd</string>
+    <string name="alioth_touch_aim_summary">0: standard frå fastvara. Nivå 1–5 justerer berøringsresponsen ved sikting.</string>
+    <string name="alioth_touch_stability">Trykkstabilitet</string>
+    <string name="alioth_touch_stability_summary">0: standard frå fastvara. Nivå 1–5 justerer trykkstabiliteten.</string>
+    <string name="alioth_touch_expert">Berøringsføreval</string>
+    <string name="alioth_touch_expert_summary">0: individuelle innstillingar. Føreval 1–3 erstattar respons, følsemd, siktefølsemd og trykkstabilitet; kantfiltrering er framleis separat.</string>
 </resources>
