@@ -24,7 +24,7 @@ public class RefreshService extends Service {
     private static final String TAG = "RefreshService";
 
     private final Handler mHandler = new Handler(Looper.getMainLooper());
-    private boolean mDestroyed;
+    private volatile boolean mDestroyed;
     private boolean mScreenOn;
     private boolean mReceiverRegistered;
     private boolean mTaskListenerRegistered;
