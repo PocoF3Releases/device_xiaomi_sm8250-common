@@ -145,4 +145,10 @@
     <string name="thermal_system_expand">"సిస్టమ్ ప్రొఫైల్ నియంత్రణలను చూపండి"</string>
     <string name="thermal_system_collapse">"సిస్టమ్ ప్రొఫైల్ నియంత్రణలను దాచండి"</string>
     <string name="thermal_search_apps">"యాప్‌లను వెతకండి"</string>
+    <string name="alioth_touch_aim">గురిపెట్టే సున్నితత్వం</string>
+    <string name="alioth_touch_aim_summary">0: ఫర్మ్‌వేర్ డిఫాల్ట్ విలువ. 1–5 స్థాయులు గురిపెట్టేటప్పుడు స్పర్శ ప్రతిస్పందనను సర్దుబాటు చేస్తాయి.</string>
+    <string name="alioth_touch_stability">ట్యాప్ స్థిరత్వం</string>
+    <string name="alioth_touch_stability_summary">0: ఫర్మ్‌వేర్ డిఫాల్ట్ విలువ. 1–5 స్థాయులు ట్యాప్ స్థిరత్వాన్ని సర్దుబాటు చేస్తాయి.</string>
+    <string name="alioth_touch_expert">స్పర్శ ప్రీసెట్</string>
+    <string name="alioth_touch_expert_summary">0: వేర్వేరు నియంత్రణలు. ప్రీసెట్‌లు 1–3 ప్రతిస్పందన, సున్నితత్వం, గురిపెట్టే సున్నితత్వం, ట్యాప్ స్థిరత్వాన్ని భర్తీ చేస్తాయి; అంచుల ఫిల్టరింగ్ వేరుగా ఉంటుంది.</string>
 </resources>

@@ -145,4 +145,10 @@
     <string name="thermal_system_expand">"സിസ്റ്റം പ്രൊഫൈൽ നിയന്ത്രണങ്ങൾ കാണിക്കുക"</string>
     <string name="thermal_system_collapse">"സിസ്റ്റം പ്രൊഫൈൽ നിയന്ത്രണങ്ങൾ മറയ്ക്കുക"</string>
     <string name="thermal_search_apps">"ആപ്പുകൾ തിരയുക"</string>
+    <string name="alioth_touch_aim">ലക്ഷ്യമിടൽ സംവേദനക്ഷമത</string>
+    <string name="alioth_touch_aim_summary">0: ഫേംവെയറിന്റെ ഡിഫോൾട്ട് മൂല്യം. 1–5 നിലകൾ ലക്ഷ്യമിടുമ്പോഴുള്ള സ്പർശ പ്രതികരണം ക്രമീകരിക്കുന്നു.</string>
+    <string name="alioth_touch_stability">ടാപ്പ് സ്ഥിരത</string>
+    <string name="alioth_touch_stability_summary">0: ഫേംവെയറിന്റെ ഡിഫോൾട്ട് മൂല്യം. 1–5 നിലകൾ ടാപ്പ് സ്ഥിരത ക്രമീകരിക്കുന്നു.</string>
+    <string name="alioth_touch_expert">സ്പർശ പ്രീസെറ്റ്</string>
+    <string name="alioth_touch_expert_summary">0: വേർതിരിച്ച നിയന്ത്രണങ്ങൾ. പ്രീസെറ്റുകൾ 1–3 പ്രതികരണം, സംവേദനക്ഷമത, ലക്ഷ്യമിടൽ സംവേദനക്ഷമത, ടാപ്പ് സ്ഥിരത എന്നിവയ്ക്ക് പകരമാകും; അരികിലെ ഫിൽട്ടറിംഗ് വേർതിരിച്ച് തുടരും.</string>
 </resources>

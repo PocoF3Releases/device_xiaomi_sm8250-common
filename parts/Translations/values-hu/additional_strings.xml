@@ -145,4 +145,10 @@
     <string name="thermal_system_expand">"Rendszerprofil vezérlőinek megjelenítése"</string>
     <string name="thermal_system_collapse">"Rendszerprofil vezérlőinek elrejtése"</string>
     <string name="thermal_search_apps">"Alkalmazások keresése"</string>
+    <string name="alioth_touch_aim">Célzási érzékenység</string>
+    <string name="alioth_touch_aim_summary">0: firmware-alapérték. Az 1–5. szint a célzás közbeni érintési reakciót állítja.</string>
+    <string name="alioth_touch_stability">Koppintás stabilitása</string>
+    <string name="alioth_touch_stability_summary">0: firmware-alapérték. Az 1–5. szint a koppintás stabilitását állítja.</string>
+    <string name="alioth_touch_expert">Érintési előbeállítás</string>
+    <string name="alioth_touch_expert_summary">0: egyéni beállítások. Az 1–3. előbeállítás felülírja a reakciót, az érzékenységet, a célzási érzékenységet és a koppintás stabilitását; a szélszűrés külön marad.</string>
 </resources>

@@ -145,4 +145,10 @@
     <string name="thermal_system_expand">"Прикажи контроле системског профила"</string>
     <string name="thermal_system_collapse">"Сакриј контроле системског профила"</string>
     <string name="thermal_search_apps">"Претражи апликације"</string>
+    <string name="alioth_touch_aim">Осетљивост нишањења</string>
+    <string name="alioth_touch_aim_summary">0: подразумевана вредност фирмвера. Нивои 1–5 подешавају одзив додира при нишањењу.</string>
+    <string name="alioth_touch_stability">Стабилност додира</string>
+    <string name="alioth_touch_stability_summary">0: подразумевана вредност фирмвера. Нивои 1–5 подешавају стабилност додира.</string>
+    <string name="alioth_touch_expert">Профил додира</string>
+    <string name="alioth_touch_expert_summary">0: појединачне контроле. Профили 1–3 замењују одзив, осетљивост, осетљивост нишањења и стабилност додира; филтрирање ивица остаје засебно.</string>
 </resources>

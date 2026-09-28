@@ -52,4 +52,34 @@
         android:defaultValue="@integer/smoothness_default"
         android:max="@integer/smoothness_max" />
 
+    <com.android.settingslib.widget.SliderPreference
+        android:key="touch_aim"
+        android:title="@string/alioth_touch_aim"
+        android:summary="@string/alioth_touch_aim_summary"
+        app:showSeekBarValue="true"
+        app:updatesContinuously="false"
+        app:min="0"
+        android:defaultValue="0"
+        android:max="5" />
+
+    <com.android.settingslib.widget.SliderPreference
+        android:key="touch_stability"
+        android:title="@string/alioth_touch_stability"
+        android:summary="@string/alioth_touch_stability_summary"
+        app:showSeekBarValue="true"
+        app:updatesContinuously="false"
+        app:min="0"
+        android:defaultValue="0"
+        android:max="5" />
+
+    <com.android.settingslib.widget.SliderPreference
+        android:key="touch_expert"
+        android:title="@string/alioth_touch_expert"
+        android:summary="@string/alioth_touch_expert_summary"
+        app:showSeekBarValue="true"
+        app:updatesContinuously="false"
+        app:min="0"
+        android:defaultValue="0"
+        android:max="3" />
+
 </PreferenceScreen>

@@ -145,4 +145,10 @@
     <string name="thermal_system_expand">"Εμφάνιση στοιχείων ελέγχου προφίλ συστήματος"</string>
     <string name="thermal_system_collapse">"Απόκρυψη στοιχείων ελέγχου προφίλ συστήματος"</string>
     <string name="thermal_search_apps">"Αναζήτηση εφαρμογών"</string>
+    <string name="alioth_touch_aim">Ευαισθησία στόχευσης</string>
+    <string name="alioth_touch_aim_summary">0: προεπιλογή υλικολογισμικού. Τα επίπεδα 1–5 ρυθμίζουν την απόκριση αφής κατά τη στόχευση.</string>
+    <string name="alioth_touch_stability">Σταθερότητα πατήματος</string>
+    <string name="alioth_touch_stability_summary">0: προεπιλογή υλικολογισμικού. Τα επίπεδα 1–5 ρυθμίζουν τη σταθερότητα πατήματος.</string>
+    <string name="alioth_touch_expert">Προεπιλογή αφής</string>
+    <string name="alioth_touch_expert_summary">0: μεμονωμένες ρυθμίσεις. Οι προεπιλογές 1–3 αντικαθιστούν την απόκριση, την ευαισθησία, την ευαισθησία στόχευσης και τη σταθερότητα πατήματος· το φιλτράρισμα άκρων παραμένει ξεχωριστό.</string>
 </resources>

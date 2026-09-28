@@ -146,4 +146,10 @@
     <string name="thermal_system_expand">"Steuerung des Systemprofils anzeigen"</string>
     <string name="thermal_system_collapse">"Steuerung des Systemprofils ausblenden"</string>
     <string name="thermal_search_apps">"Apps suchen"</string>
+    <string name="alioth_touch_aim">Zielempfindlichkeit</string>
+    <string name="alioth_touch_aim_summary">0: Firmware-Standard. Stufen 1–5 passen die Berührungsreaktion beim Zielen an.</string>
+    <string name="alioth_touch_stability">Tippstabilität</string>
+    <string name="alioth_touch_stability_summary">0: Firmware-Standard. Stufen 1–5 passen die Tippstabilität an.</string>
+    <string name="alioth_touch_expert">Berührungsvoreinstellung</string>
+    <string name="alioth_touch_expert_summary">0: einzelne Einstellungen. Voreinstellungen 1–3 ersetzen Reaktion, Empfindlichkeit, Zielempfindlichkeit und Tippstabilität; die Randfilterung bleibt separat.</string>
 </resources>

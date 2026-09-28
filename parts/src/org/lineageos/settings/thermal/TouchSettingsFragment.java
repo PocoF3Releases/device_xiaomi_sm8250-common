@@ -27,13 +27,14 @@ import com.android.settingslib.widget.SliderPreference;
 
 import org.lineageos.settings.R;
 
-/** Edits the existing package-specific four-value touch profile. */
+/** Edits package-specific touch profiles, including Alioth firmware controls. */
 public class TouchSettingsFragment extends SettingsBasePreferenceFragment
         implements Preference.OnPreferenceChangeListener {
     private SharedPreferences mPrefs;
     private String mPackageName;
     private MainSwitchPreference mGameMode;
     private SliderPreference mResponse, mSensitivity, mResistance;
+    private SliderPreference mAim, mStability, mExpert;
     private final int[] mValues = new int[4];
 
     @Override
@@ -45,6 +46,19 @@ public class TouchSettingsFragment extends SettingsBasePreferenceFragment
         mResponse = findPreference(Constants.PREF_TOUCH_RESPONSE);
         mSensitivity = findPreference(Constants.PREF_TOUCH_SENSITIVITY);
         mResistance = findPreference(Constants.PREF_TOUCH_RESISTANT);
+        if (AliothTouchProfile.isSupported()) {
+            mResponse.setMax(5);
+            mSensitivity.setMax(5);
+        }
+        mAim = findPreference("touch_aim");
+        mStability = findPreference("touch_stability");
+        mExpert = findPreference("touch_expert");
+        for (SliderPreference pref : new SliderPreference[]{mAim, mStability, mExpert}) {
+            pref.setVisible(AliothTouchProfile.isSupported());
+            pref.setPersistent(false);
+            pref.setOnPreferenceChangeListener(this);
+            pref.setHapticFeedbackMode(SliderPreference.HAPTIC_FEEDBACK_MODE_ON_TICKS);
+        }
         for (Preference pref : new Preference[]{mGameMode, mResponse, mSensitivity, mResistance}) {
             pref.setPersistent(false);
             pref.setOnPreferenceChangeListener(this);
@@ -66,8 +80,13 @@ public class TouchSettingsFragment extends SettingsBasePreferenceFragment
                 if (saved.length == 4) value = Integer.parseInt(saved[i]);
             } catch (NumberFormatException ignored) { }
             mValues[i] = Math.max(0, Math.min(i == Constants.TOUCH_GAME_MODE ? 1
+                    : AliothTouchProfile.isSupported() && (i == Constants.TOUCH_RESPONSE
+                            || i == Constants.TOUCH_SENSITIVITY) ? 5
                     : getResources().getInteger(R.integer.smoothness_max), value));
         }
+        mAim.setValue(AliothTouchProfile.read(mPrefs, mPackageName, "touch_aim", 5));
+        mStability.setValue(AliothTouchProfile.read(mPrefs, mPackageName, "touch_stability", 5));
+        mExpert.setValue(AliothTouchProfile.read(mPrefs, mPackageName, "touch_expert", 3));
         mGameMode.setChecked(mValues[Constants.TOUCH_GAME_MODE] == 1);
         mResponse.setValue(mValues[Constants.TOUCH_RESPONSE]);
         mSensitivity.setValue(mValues[Constants.TOUCH_SENSITIVITY]);
@@ -78,14 +97,27 @@ public class TouchSettingsFragment extends SettingsBasePreferenceFragment
 
     private void updateEnabled() {
         boolean enabled = !mPackageName.isEmpty() && mValues[Constants.TOUCH_GAME_MODE] == 1;
-        mResponse.setEnabled(enabled);
-        mSensitivity.setEnabled(enabled);
+        boolean manual = !AliothTouchProfile.isSupported()
+                || AliothTouchProfile.read(mPrefs, mPackageName, "touch_expert", 3) == 0;
+        mAim.setEnabled(enabled && manual);
+        mStability.setEnabled(enabled && manual);
+        mExpert.setEnabled(enabled);
+        mResponse.setEnabled(enabled && manual);
+        mSensitivity.setEnabled(enabled && manual);
         mResistance.setEnabled(enabled);
     }
 
     @Override
     public boolean onPreferenceChange(Preference pref, Object value) {
         if (mPackageName.isEmpty()) return false;
+        if (pref == mAim || pref == mStability || pref == mExpert) {
+            if (!AliothTouchProfile.isSupported()) return false;
+            mPrefs.edit().putInt(AliothTouchProfile.key(mPackageName, pref.getKey()),
+                    (Integer) value).apply();
+            ThermalUtils.startService(requireContext());
+            updateEnabled();
+            return true;
+        }
         if (pref == mGameMode) mValues[Constants.TOUCH_GAME_MODE] = (Boolean) value ? 1 : 0;
         else if (pref == mResponse) mValues[Constants.TOUCH_RESPONSE] = (Integer) value;
         else if (pref == mSensitivity) mValues[Constants.TOUCH_SENSITIVITY] = (Integer) value;

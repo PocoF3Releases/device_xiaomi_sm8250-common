@@ -145,4 +145,10 @@
     <string name="thermal_system_expand">"Показване на контролите за системния профил"</string>
     <string name="thermal_system_collapse">"Скриване на контролите за системния профил"</string>
     <string name="thermal_search_apps">"Търсене на приложения"</string>
+    <string name="alioth_touch_aim">Чувствителност при прицелване</string>
+    <string name="alioth_touch_aim_summary">0: по подразбиране от фърмуера. Нива 1–5 настройват реакцията при докосване за прицелване.</string>
+    <string name="alioth_touch_stability">Стабилност на докосването</string>
+    <string name="alioth_touch_stability_summary">0: по подразбиране от фърмуера. Нива 1–5 настройват стабилността на докосването.</string>
+    <string name="alioth_touch_expert">Профил за докосване</string>
+    <string name="alioth_touch_expert_summary">0: отделни настройки. Профили 1–3 заменят реакцията, чувствителността, чувствителността при прицелване и стабилността на докосването; филтрирането по краищата остава отделно.</string>
 </resources>

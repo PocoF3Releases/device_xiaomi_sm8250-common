@@ -145,4 +145,10 @@
     <string name="thermal_system_expand">"ছিষ্টেম প্ৰ'ফাইলৰ নিয়ন্ত্ৰণসমূহ দেখুৱাওক"</string>
     <string name="thermal_system_collapse">"ছিষ্টেম প্ৰ'ফাইলৰ নিয়ন্ত্ৰণসমূহ লুকুৱাওক"</string>
     <string name="thermal_search_apps">"এপসমূহ সন্ধান কৰক"</string>
+    <string name="alioth_touch_aim">নিশানা কৰাৰ সংবেদনশীলতা</string>
+    <string name="alioth_touch_aim_summary">0: ফাৰ্মৱেৰৰ অবিকল্পিত মান। 1–5 স্তৰে নিশানা কৰাৰ সময়ত স্পৰ্শৰ সঁহাৰি নিয়ন্ত্ৰণ কৰে।</string>
+    <string name="alioth_touch_stability">টেপৰ স্থিৰতা</string>
+    <string name="alioth_touch_stability_summary">0: ফাৰ্মৱেৰৰ অবিকল্পিত মান। 1–5 স্তৰে টেপৰ স্থিৰতা নিয়ন্ত্ৰণ কৰে।</string>
+    <string name="alioth_touch_expert">স্পৰ্শৰ পূৰ্বনিৰ্ধাৰিত ছেটিং</string>
+    <string name="alioth_touch_expert_summary">0: পৃথক নিয়ন্ত্ৰণ। 1–3 পূৰ্বনিৰ্ধাৰিত ছেটিঙে সঁহাৰি, সংবেদনশীলতা, নিশানাৰ সংবেদনশীলতা আৰু টেপৰ স্থিৰতা সলনি কৰে; প্ৰান্তৰ ফিল্টাৰ পৃথক থাকে।</string>
 </resources>

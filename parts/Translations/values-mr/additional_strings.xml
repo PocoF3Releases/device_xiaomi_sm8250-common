@@ -145,4 +145,10 @@
     <string name="thermal_system_expand">"सिस्टम प्रोफाइल नियंत्रणे दाखवा"</string>
     <string name="thermal_system_collapse">"सिस्टम प्रोफाइल नियंत्रणे लपवा"</string>
     <string name="thermal_search_apps">"अॅप्स शोधा"</string>
+    <string name="alioth_touch_aim">नेम धरण्याची संवेदनशीलता</string>
+    <string name="alioth_touch_aim_summary">0: फर्मवेअरचे डीफॉल्ट मूल्य. स्तर 1–5 नेम धरताना स्पर्शाचा प्रतिसाद समायोजित करतात.</string>
+    <string name="alioth_touch_stability">टॅपची स्थिरता</string>
+    <string name="alioth_touch_stability_summary">0: फर्मवेअरचे डीफॉल्ट मूल्य. स्तर 1–5 टॅपची स्थिरता समायोजित करतात.</string>
+    <string name="alioth_touch_expert">स्पर्श प्रीसेट</string>
+    <string name="alioth_touch_expert_summary">0: स्वतंत्र नियंत्रणे. प्रीसेट 1–3 प्रतिसाद, संवेदनशीलता, नेम धरण्याची संवेदनशीलता आणि टॅपची स्थिरता बदलतात; कडांचे फिल्टरिंग स्वतंत्र राहते.</string>
 </resources>

@@ -145,4 +145,10 @@
     <string name="thermal_system_expand">"სისტემური პროფილის მართვის ელემენტების ჩვენება"</string>
     <string name="thermal_system_collapse">"სისტემური პროფილის მართვის ელემენტების დამალვა"</string>
     <string name="thermal_search_apps">"აპების ძიება"</string>
+    <string name="alioth_touch_aim">დამიზნების მგრძნობელობა</string>
+    <string name="alioth_touch_aim_summary">0: მიკროპროგრამის ნაგულისხმევი მნიშვნელობა. დონეები 1–5 არეგულირებს შეხების რეაქციას დამიზნებისას.</string>
+    <string name="alioth_touch_stability">შეხების სტაბილურობა</string>
+    <string name="alioth_touch_stability_summary">0: მიკროპროგრამის ნაგულისხმევი მნიშვნელობა. დონეები 1–5 არეგულირებს შეხების სტაბილურობას.</string>
+    <string name="alioth_touch_expert">შეხების წინასწარი პარამეტრები</string>
+    <string name="alioth_touch_expert_summary">0: ცალკეული მართვა. ნაკრებები 1–3 ცვლის რეაქციას, მგრძნობელობას, დამიზნების მგრძნობელობასა და შეხების სტაბილურობას; კიდეების გაფილტვრა ცალკე რჩება.</string>
 </resources>

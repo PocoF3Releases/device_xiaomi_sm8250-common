@@ -145,4 +145,10 @@
     <string name="thermal_system_expand">"نمایش کنترل‌های نمایه سیستم"</string>
     <string name="thermal_system_collapse">"پنهان کردن کنترل‌های نمایه سیستم"</string>
     <string name="thermal_search_apps">"جستجوی برنامه‌ها"</string>
+    <string name="alioth_touch_aim">حساسیت نشانه‌گیری</string>
+    <string name="alioth_touch_aim_summary">0: پیش‌فرض میان‌افزار. سطح‌های 1–5 پاسخ لمسی هنگام نشانه‌گیری را تنظیم می‌کنند.</string>
+    <string name="alioth_touch_stability">پایداری ضربه</string>
+    <string name="alioth_touch_stability_summary">0: پیش‌فرض میان‌افزار. سطح‌های 1–5 پایداری ضربه را تنظیم می‌کنند.</string>
+    <string name="alioth_touch_expert">پیش‌تنظیم لمس</string>
+    <string name="alioth_touch_expert_summary">0: کنترل‌های جداگانه. پیش‌تنظیم‌های 1–3 جایگزین پاسخ، حساسیت، حساسیت نشانه‌گیری و پایداری ضربه می‌شوند؛ پالایش لبه‌ها جدا می‌ماند.</string>
 </resources>

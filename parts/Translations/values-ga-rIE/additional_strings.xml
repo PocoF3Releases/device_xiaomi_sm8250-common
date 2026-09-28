@@ -174,4 +174,10 @@
     <string name="thermal_system_expand">"Taispeáin rialuithe phróifíl an chórais"</string>
     <string name="thermal_system_collapse">"Folaigh rialuithe phróifíl an chórais"</string>
     <string name="thermal_search_apps">"Cuardaigh aipeanna"</string>
+    <string name="alioth_touch_aim">Íogaireacht dírithe</string>
+    <string name="alioth_touch_aim_summary">0: réamhshocrú an fhirmware. Coigeartaíonn leibhéil 1–5 an fhreagairt tadhaill agus tú ag díriú.</string>
+    <string name="alioth_touch_stability">Cobhsaíocht tapála</string>
+    <string name="alioth_touch_stability_summary">0: réamhshocrú an fhirmware. Coigeartaíonn leibhéil 1–5 cobhsaíocht tapála.</string>
+    <string name="alioth_touch_expert">Réamhshocrú tadhaill</string>
+    <string name="alioth_touch_expert_summary">0: rialuithe aonair. Tagann réamhshocruithe 1–3 in áit na freagartha, na híogaireachta, na híogaireachta dírithe agus na cobhsaíochta tapála; fanann scagadh na n-imill ar leithligh.</string>
 </resources>

@@ -146,4 +146,10 @@
     <string name="thermal_system_expand">"Afficher les commandes du profil système"</string>
     <string name="thermal_system_collapse">"Masquer les commandes du profil système"</string>
     <string name="thermal_search_apps">"Rechercher des applications"</string>
+    <string name="alioth_touch_aim">Sensibilité de visée</string>
+    <string name="alioth_touch_aim_summary">0 : valeur par défaut du micrologiciel. Les niveaux 1–5 règlent la réponse tactile lors de la visée.</string>
+    <string name="alioth_touch_stability">Stabilité des appuis</string>
+    <string name="alioth_touch_stability_summary">0 : valeur par défaut du micrologiciel. Les niveaux 1–5 règlent la stabilité des appuis.</string>
+    <string name="alioth_touch_expert">Préréglage tactile</string>
+    <string name="alioth_touch_expert_summary">0 : réglages individuels. Les préréglages 1–3 remplacent la réponse, la sensibilité, la sensibilité de visée et la stabilité des appuis ; le filtrage des bords reste séparé.</string>
 </resources>

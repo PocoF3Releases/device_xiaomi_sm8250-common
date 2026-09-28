@@ -145,4 +145,10 @@
     <string name="thermal_system_expand">"显示系统配置文件控件"</string>
     <string name="thermal_system_collapse">"隐藏系统配置文件控件"</string>
     <string name="thermal_search_apps">"搜索应用"</string>
+    <string name="alioth_touch_aim">瞄准灵敏度</string>
+    <string name="alioth_touch_aim_summary">0：固件默认值。1–5 级可调整瞄准时的触控响应。</string>
+    <string name="alioth_touch_stability">点击稳定性</string>
+    <string name="alioth_touch_stability_summary">0：固件默认值。1–5 级可调整点击稳定性。</string>
+    <string name="alioth_touch_expert">触控预设</string>
+    <string name="alioth_touch_expert_summary">0：单独调整。预设 1–3 会替代响应、灵敏度、瞄准灵敏度和点击稳定性设置；边缘过滤仍独立设置。</string>
 </resources>

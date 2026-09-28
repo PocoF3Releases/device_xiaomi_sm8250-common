@@ -145,4 +145,10 @@
     <string name="thermal_system_expand">"システムプロファイルのコントロールを表示"</string>
     <string name="thermal_system_collapse">"システムプロファイルのコントロールを非表示"</string>
     <string name="thermal_search_apps">"アプリを検索"</string>
+    <string name="alioth_touch_aim">照準感度</string>
+    <string name="alioth_touch_aim_summary">0: ファームウェアの既定値。レベル1–5で照準時のタッチ応答を調整します。</string>
+    <string name="alioth_touch_stability">タップの安定性</string>
+    <string name="alioth_touch_stability_summary">0: ファームウェアの既定値。レベル1–5でタップの安定性を調整します。</string>
+    <string name="alioth_touch_expert">タッチプリセット</string>
+    <string name="alioth_touch_expert_summary">0: 個別に調整。プリセット1–3は応答、感度、照準感度、タップの安定性を置き換えます。エッジフィルタリングは個別設定のままです。</string>
 </resources>

@@ -145,4 +145,10 @@
     <string name="thermal_system_expand">"시스템 프로필 컨트롤 표시"</string>
     <string name="thermal_system_collapse">"시스템 프로필 컨트롤 숨기기"</string>
     <string name="thermal_search_apps">"앱 검색"</string>
+    <string name="alioth_touch_aim">조준 감도</string>
+    <string name="alioth_touch_aim_summary">0: 펌웨어 기본값. 1–5단계로 조준 시 터치 반응을 조절합니다.</string>
+    <string name="alioth_touch_stability">탭 안정성</string>
+    <string name="alioth_touch_stability_summary">0: 펌웨어 기본값. 1–5단계로 탭 안정성을 조절합니다.</string>
+    <string name="alioth_touch_expert">터치 프리셋</string>
+    <string name="alioth_touch_expert_summary">0: 개별 조절. 프리셋 1–3은 반응, 감도, 조준 감도 및 탭 안정성을 대체하며 가장자리 필터링은 별도로 유지됩니다.</string>
 </resources>

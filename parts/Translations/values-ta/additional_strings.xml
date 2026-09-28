@@ -145,4 +145,10 @@
     <string name="thermal_system_expand">"அமைப்பு சுயவிவரக் கட்டுப்பாடுகளைக் காட்டு"</string>
     <string name="thermal_system_collapse">"அமைப்பு சுயவிவரக் கட்டுப்பாடுகளை மறை"</string>
     <string name="thermal_search_apps">"பயன்பாடுகளைத் தேடு"</string>
+    <string name="alioth_touch_aim">குறிவைக்கும் உணர்திறன்</string>
+    <string name="alioth_touch_aim_summary">0: நிலைபொருளின் இயல்புநிலை. நிலைகள் 1–5 குறிவைக்கும்போது தொடு எதிர்வினையைச் சரிசெய்கின்றன.</string>
+    <string name="alioth_touch_stability">தட்டுதல் நிலைத்தன்மை</string>
+    <string name="alioth_touch_stability_summary">0: நிலைபொருளின் இயல்புநிலை. நிலைகள் 1–5 தட்டுதல் நிலைத்தன்மையைச் சரிசெய்கின்றன.</string>
+    <string name="alioth_touch_expert">தொடு முன்னமைவு</string>
+    <string name="alioth_touch_expert_summary">0: தனித்தனி கட்டுப்பாடுகள். முன்னமைவுகள் 1–3 எதிர்வினை, உணர்திறன், குறிவைக்கும் உணர்திறன் மற்றும் தட்டுதல் நிலைத்தன்மையை மாற்றுகின்றன; விளிம்பு வடிகட்டுதல் தனியாக இருக்கும்.</string>
 </resources>
