@@ -18,6 +18,8 @@ package org.lineageos.settings.speaker;
 
 import android.content.res.AssetFileDescriptor;
 import android.media.AudioAttributes;
+import android.media.AudioDeviceInfo;
+import android.media.AudioFocusRequest;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -43,6 +45,8 @@ public class ClearSpeakerFragment extends SettingsBasePreferenceFragment impleme
 
     private Handler mHandler = new Handler(Looper.getMainLooper());
     private MediaPlayer mMediaPlayer;
+    private AudioManager mAudioManager;
+    private AudioFocusRequest mFocusRequest;
     private SwitchPreferenceCompat mClearSpeakerPref;
 
     @Override
@@ -80,15 +84,53 @@ public class ClearSpeakerFragment extends SettingsBasePreferenceFragment impleme
 
     public boolean startPlaying() {
         stopPlaying();
+        mAudioManager = requireContext().getSystemService(AudioManager.class);
+        if (mAudioManager == null || mAudioManager.getMode() != AudioManager.MODE_NORMAL) {
+            return false;
+        }
+        AudioDeviceInfo speaker = null;
+        for (AudioDeviceInfo device : mAudioManager.getDevices(AudioManager.GET_DEVICES_OUTPUTS)) {
+            if (device.getType() == AudioDeviceInfo.TYPE_BUILTIN_SPEAKER) {
+                speaker = device;
+                break;
+            }
+        }
+        if (speaker == null) return false;
         getActivity().setVolumeControlStream(AudioManager.STREAM_MUSIC);
-        mMediaPlayer = new MediaPlayer();
-        mMediaPlayer.setAudioAttributes(new AudioAttributes.Builder()
+        AudioAttributes attributes = new AudioAttributes.Builder()
                 .setUsage(AudioAttributes.USAGE_MEDIA)
                 .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
-                .build());
-        mMediaPlayer.setLooping(true);
+                .build();
         try (AssetFileDescriptor afd = getResources().openRawResourceFd(
                 R.raw.clear_speaker_sound)) {
+            mFocusRequest = new AudioFocusRequest.Builder(AudioManager.AUDIOFOCUS_GAIN_TRANSIENT)
+                    .setAudioAttributes(attributes)
+                    .setOnAudioFocusChangeListener(change -> {
+                        if (change != AudioManager.AUDIOFOCUS_GAIN) stopPlaying();
+                    }, mHandler)
+                    .build();
+            if (mAudioManager.requestAudioFocus(mFocusRequest)
+                    != AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
+                stopPlaying();
+                return false;
+            }
+            mMediaPlayer = new MediaPlayer();
+            mMediaPlayer.setAudioAttributes(attributes);
+            if (!mMediaPlayer.setPreferredDevice(speaker)) {
+                stopPlaying();
+                return false;
+            }
+            mMediaPlayer.addOnRoutingChangedListener(router -> {
+                AudioDeviceInfo routed = router.getRoutedDevice();
+                if (routed != null && routed.getType() != AudioDeviceInfo.TYPE_BUILTIN_SPEAKER) {
+                    stopPlaying();
+                }
+            }, mHandler);
+            mMediaPlayer.setOnErrorListener((player, what, extra) -> {
+                stopPlaying();
+                return true;
+            });
+            mMediaPlayer.setLooping(true);
             mMediaPlayer.setDataSource(afd);
             mMediaPlayer.setVolume(1.0f, 1.0f);
             mMediaPlayer.prepare();
@@ -107,6 +149,10 @@ public class ClearSpeakerFragment extends SettingsBasePreferenceFragment impleme
             // release() also handles failed prepare/start and already stopped players.
             mMediaPlayer.release();
             mMediaPlayer = null;
+        }
+        if (mFocusRequest != null) {
+            mAudioManager.abandonAudioFocusRequest(mFocusRequest);
+            mFocusRequest = null;
         }
         if (mClearSpeakerPref != null) mClearSpeakerPref.setChecked(false);
     }
