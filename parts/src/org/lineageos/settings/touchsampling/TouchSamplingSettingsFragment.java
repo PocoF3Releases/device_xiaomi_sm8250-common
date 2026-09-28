@@ -42,6 +42,9 @@ public class TouchSamplingSettingsFragment extends SettingsBasePreferenceFragmen
         if (!applied) {
             Toast.makeText(requireContext(), R.string.parts_apply_failed, Toast.LENGTH_SHORT).show();
         }
+        if (applied) {
+            org.lineageos.settings.thermal.ThermalUtils.startService(requireContext());
+        }
         return applied;
     }
 }

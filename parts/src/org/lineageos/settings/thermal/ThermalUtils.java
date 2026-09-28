@@ -251,6 +251,12 @@ public final class ThermalUtils {
     }
 
     private void updateTouchModes(String packageName) {
+        // The global sampling preset owns the same firmware modes.
+        if (AliothTouchProfile.isSupported()
+                && org.lineageos.settings.touchsampling.TouchSamplingUtils.isEnabled(mContext)) {
+            mTouchModeChanged = false;
+            return;
+        }
         String values = mSharedPrefs.getString(packageName, null);
         resetTouchModes();
         if (values == null || values.isEmpty()) return;
@@ -272,14 +278,15 @@ public final class ThermalUtils {
             return;
         }
 
-        int touchActiveMode =
-                (touchResponse != 0 && touchSensitivity != 0 && touchResistant != 0) ? 1 : 0;
+        int touchActiveMode = AliothTouchProfile.isSupported() ? gameMode
+                : (touchResponse != 0 && touchSensitivity != 0 && touchResistant != 0) ? 1 : 0;
         try {
             mTouchFeature.setTouchMode(Constants.MODE_TOUCH_TOLERANCE, touchSensitivity);
             mTouchFeature.setTouchMode(Constants.MODE_TOUCH_UP_THRESHOLD, touchResponse);
             mTouchFeature.setTouchMode(Constants.MODE_TOUCH_EDGE_FILTER, touchResistant);
             mTouchFeature.setTouchMode(Constants.MODE_TOUCH_GAME_MODE, gameMode);
             mTouchFeature.setTouchMode(Constants.MODE_TOUCH_ACTIVE_MODE, touchActiveMode);
+            if (gameMode == 1) AliothTouchProfile.apply(mTouchFeature, mSharedPrefs, packageName);
             mTouchModeChanged = true;
             updateTouchRotation();
         } catch (RemoteException e) {
@@ -310,6 +317,11 @@ public final class ThermalUtils {
 
     protected void resetTouchModes() {
         if (!mTouchModeChanged) return;
+        if (AliothTouchProfile.isSupported()
+                && org.lineageos.settings.touchsampling.TouchSamplingUtils.isEnabled(mContext)) {
+            mTouchModeChanged = false;
+            return;
+        }
         resetTouchModesBestEffort();
         mTouchModeChanged = false;
     }
