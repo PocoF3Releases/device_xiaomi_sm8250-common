@@ -142,8 +142,8 @@
     <string name="refresh_title">Per-app refresh rate</string>
     <string name="refresh_summary">Set the maximum refresh rate for each app</string>
     <string name="refresh_default">Default</string>
-    <string name="refresh_standard">60Hz</string>    
-    <string name="refresh_extreme">120Hz</string>    
+    <string name="refresh_standard">60Hz</string>
+    <string name="refresh_extreme">120Hz</string>
 
     <!-- Clear Speaker -->
     <string name="clear_speaker_title">Clear speaker</string>
@@ -194,7 +194,7 @@
     <!-- High Touch Polling -->
     <string name="htsr_title">Touch responsiveness</string>
     <string name="htsr_enable_title">Increase touch responsiveness</string>
-    <string name="htsr_enable_summary">Increase touch polling rate to reduce input latency</string>    
+    <string name="htsr_enable_summary">Increase touch polling rate to reduce input latency</string>
 
     <!-- DC dimming settings -->
     <string name="dc_dimming_enable_title">Anti-flicker mode</string>
