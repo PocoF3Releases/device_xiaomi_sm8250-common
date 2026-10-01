@@ -313,6 +313,11 @@ public final class ThermalUtils {
         resetTouchModeBestEffort(Constants.MODE_TOUCH_TOLERANCE);
         resetTouchModeBestEffort(Constants.MODE_TOUCH_EDGE_FILTER);
         resetTouchModeBestEffort(Constants.MODE_TOUCH_ROTATION);
+        if (AliothTouchProfile.isSupported()) {
+            resetTouchModeBestEffort(4); // Aim sensitivity
+            resetTouchModeBestEffort(5); // Tap stability
+            resetTouchModeBestEffort(6); // Expert preset
+        }
     }
 
     protected void resetTouchModes() {
