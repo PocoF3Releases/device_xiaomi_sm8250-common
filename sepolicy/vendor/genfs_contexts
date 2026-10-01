@@ -148,3 +148,7 @@ genfscon sysfs /devices/platform/soc/soc:oem_rf_cable/wakeup                    
 
 # Sensor
 genfscon sysfs /devices/virtual/touch/touch_dev/palm_sensor                                   u:object_r:vendor_sysfs_palm_sensor:s0
+
+
+# Class attribute: this is not a power_supply device symlink.
+genfscon sysfs /class/qcom-battery/restrict_chg u:object_r:vendor_sysfs_charging_speed:s0

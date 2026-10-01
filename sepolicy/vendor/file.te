@@ -25,3 +25,7 @@ type vendor_sysfs_palm_sensor, fs_type, sysfs_type;
 type vendor_thermal_data_file, file_type, data_file_type;
 
 type mdm_tombstone_data_file, data_file_type, file_type;
+
+
+# Lineage charging-speed preference (restrict_chg only).
+type vendor_sysfs_charging_speed, fs_type, sysfs_type;
