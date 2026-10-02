@@ -52,7 +52,7 @@ public final class ThermalUtils {
     private static final String THERMAL_SCONFIG =
             "/sys/class/thermal/thermal_message/sconfig";
     private static final String INDIA_MAP = "/vendor/etc/thermal-map-india.conf";
-    private static final String PROP_THERMAL_MAP = "persist.vendor.thermal.map";
+    private static final String PROP_THERMAL_MAP = "persist.sys.xiaomi.thermal.map";
     private static final String MAP_GLOBAL = "global";
     private static final String MAP_INDIA = "india";
 
