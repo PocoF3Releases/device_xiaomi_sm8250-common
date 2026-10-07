@@ -358,6 +358,7 @@ PRODUCT_PACKAGES += \
     init.class_main.sh \
     init.mdm.sh \
     init.mi.btmac.sh \
+    init.mi.thermal-map.sh \
     init.qcom.early_boot.sh \
     init.qcom.post_boot.sh \
     init.qcom.sh \
@@ -400,10 +401,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_BOOT_JARS += \
     telephony-ext \
     xiaomi-telephony-stub
-
-# Thermal
-PRODUCT_PACKAGES += \
-    android.hardware.thermal-service.qti
 
 # USB
 PRODUCT_PACKAGES += \
