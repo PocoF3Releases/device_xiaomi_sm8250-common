@@ -23,6 +23,8 @@ public final class RefreshUtils {
     private static final String PREF_OVERRIDE_ACTIVE = "refresh_override_active";
     private static final String PREF_BASE_MIN = "refresh_base_min";
     private static final String PREF_BASE_PEAK = "refresh_base_peak";
+    private static final String PREF_APPLIED_MIN = "refresh_applied_min";
+    private static final String PREF_APPLIED_PEAK = "refresh_applied_peak";
 
     protected static final int STATE_DEFAULT = 0;
     protected static final int STATE_STANDARD = 1;
@@ -149,6 +151,7 @@ public final class RefreshUtils {
     protected boolean restoreDefaultRates() {
         if (!mSharedPrefs.getBoolean(PREF_OVERRIDE_ACTIVE, false)) return true;
 
+        preserveExternalChanges();
         float min = mSharedPrefs.getFloat(PREF_BASE_MIN, 0f);
         float peak = mSharedPrefs.getFloat(PREF_BASE_PEAK, REFRESH_STATE_EXTREME);
         if (!writeRates(min, peak)) {
@@ -160,8 +163,28 @@ public final class RefreshUtils {
                 .remove(PREF_OVERRIDE_ACTIVE)
                 .remove(PREF_BASE_MIN)
                 .remove(PREF_BASE_PEAK)
+                .remove(PREF_APPLIED_MIN)
+                .remove(PREF_APPLIED_PEAK)
                 .apply();
         return true;
+    }
+
+    // Compare against the last successful override, rather than observing our own
+    // asynchronous Settings writes. Persist these values for process recreation.
+    private void preserveExternalChanges() {
+        if (!mSharedPrefs.getBoolean(PREF_OVERRIDE_ACTIVE, false)) return;
+        SharedPreferences.Editor editor = mSharedPrefs.edit();
+        float min = currentMin();
+        float peak = currentPeak();
+        if (mSharedPrefs.contains(PREF_APPLIED_MIN)
+                && Float.compare(min, mSharedPrefs.getFloat(PREF_APPLIED_MIN, min)) != 0) {
+            editor.putFloat(PREF_BASE_MIN, min);
+        }
+        if (mSharedPrefs.contains(PREF_APPLIED_PEAK)
+                && Float.compare(peak, mSharedPrefs.getFloat(PREF_APPLIED_PEAK, peak)) != 0) {
+            editor.putFloat(PREF_BASE_PEAK, peak);
+        }
+        editor.apply();
     }
 
     public static void updateUserBaseline(Context context, float min, float peak) {
@@ -176,6 +199,7 @@ public final class RefreshUtils {
         int state = getStateForPackage(packageName);
         if (state == STATE_DEFAULT) return restoreDefaultRates();
 
+        preserveExternalChanges();
         captureBaselineIfNeeded();
         float baseMin = mSharedPrefs.getFloat(PREF_BASE_MIN, 0f);
         float targetPeak = state == STATE_STANDARD
@@ -187,6 +211,10 @@ public final class RefreshUtils {
             restoreDefaultRates();
             return false;
         }
+        mSharedPrefs.edit()
+                .putFloat(PREF_APPLIED_MIN, targetMin)
+                .putFloat(PREF_APPLIED_PEAK, targetPeak)
+                .apply();
         return true;
     }
 }
