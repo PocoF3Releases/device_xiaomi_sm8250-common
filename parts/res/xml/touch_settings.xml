@@ -1,19 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-     Copyright (C) 2020 The LineageOS Project
-
-     Licensed under the Apache License, Version 2.0 (the "License"
-     you may not use this file except in compliance with the License.
-     You may obtain a copy of the License at
-
-          http://www.apache.org/licenses/LICENSE-2.0
-
-     Unless required by applicable law or agreed to in writing, software
-     distributed under the License is distributed on an "AS IS" BASIS,
-     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     See the License for the specific language governing permissions and
-     limitations under the License.
--->
+<!-- SPDX-License-Identifier: Apache-2.0 -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
@@ -22,64 +8,73 @@
         android:key="touch_game_mode"
         android:title="@string/touch_game_mode_title" />
 
-    <com.android.settingslib.widget.SliderPreference
-        android:key="touch_response"
-        android:title="@string/touch_response_title"
-        android:summary="@string/touch_response_summary"
-        app:showSeekBarValue="true"
-        app:updatesContinuously="false"
-        app:min="@integer/smoothness_min"
-        android:defaultValue="@integer/smoothness_default"
-        android:max="@integer/smoothness_max" />
+    <Preference
+        android:key="touch_status"
+        android:icon="@drawable/ic_info"
+        android:selectable="false"
+        android:title="@string/touch_controls_start_title"
+        android:summary="@string/touch_controls_start_summary" />
 
-    <com.android.settingslib.widget.SliderPreference
-        android:key="touch_sensitivity"
-        android:title="@string/touch_sensitivity_title"
-        android:summary="@string/touch_sensitivity_summary"
-        app:showSeekBarValue="true"
-        app:updatesContinuously="false"
-        app:min="@integer/smoothness_min"
-        android:defaultValue="@integer/smoothness_default"
-        android:max="@integer/smoothness_max" />
+    <PreferenceCategory android:key="touch_mode_group"
+        android:title="@string/touch_controls_mode_group">
+        <ListPreference
+            android:key="touch_expert"
+            android:title="@string/touch_controls_mode_title"
+            android:entries="@array/touch_controls_mode_entries"
+            android:entryValues="@array/touch_controls_mode_values"
+            android:defaultValue="0" />
+        <Preference
+            android:selectable="false"
+            android:title="@string/touch_controls_mode_help_title"
+            android:summary="@string/touch_controls_mode_help" />
+    </PreferenceCategory>
 
-    <com.android.settingslib.widget.SliderPreference
-        android:key="touch_resistant"
-        android:title="@string/touch_resistant_title"
-        android:summary="@string/touch_resistant_summary"
-        app:showSeekBarValue="true"
-        app:updatesContinuously="false"
-        app:min="@integer/smoothness_min"
-        android:defaultValue="@integer/smoothness_default"
-        android:max="@integer/smoothness_max" />
+    <PreferenceCategory android:key="touch_manual_group"
+        android:title="@string/touch_controls_manual_group">
+        <com.android.settingslib.widget.SliderPreference
+            android:key="touch_response"
+            android:title="@string/touch_response_title"
+            android:summary="@string/touch_controls_response_summary"
+            app:showSeekBarValue="true" app:updatesContinuously="false"
+            app:min="0" android:defaultValue="0"
+            android:max="@integer/smoothness_max" />
+        <com.android.settingslib.widget.SliderPreference
+            android:key="touch_sensitivity"
+            android:title="@string/touch_sensitivity_title"
+            android:summary="@string/touch_controls_sensitivity_summary"
+            app:showSeekBarValue="true" app:updatesContinuously="false"
+            app:min="0" android:defaultValue="0"
+            android:max="@integer/smoothness_max" />
+    </PreferenceCategory>
 
-    <com.android.settingslib.widget.SliderPreference
-        android:key="touch_aim"
-        android:title="@string/alioth_touch_aim"
-        android:summary="@string/alioth_touch_aim_summary"
-        app:showSeekBarValue="true"
-        app:updatesContinuously="false"
-        app:min="0"
-        android:defaultValue="0"
-        android:max="5" />
+    <PreferenceCategory android:key="touch_advanced_group"
+        android:title="@string/touch_controls_advanced_group">
+        <com.android.settingslib.widget.SliderPreference
+            android:key="touch_aim"
+            android:title="@string/alioth_touch_aim"
+            android:summary="@string/touch_controls_aim_summary"
+            app:showSeekBarValue="true" app:updatesContinuously="false"
+            app:min="0" android:defaultValue="0" android:max="5" />
+        <com.android.settingslib.widget.SliderPreference
+            android:key="touch_stability"
+            android:title="@string/alioth_touch_stability"
+            android:summary="@string/touch_controls_stability_summary"
+            app:showSeekBarValue="true" app:updatesContinuously="false"
+            app:min="0" android:defaultValue="0" android:max="5" />
+    </PreferenceCategory>
 
-    <com.android.settingslib.widget.SliderPreference
-        android:key="touch_stability"
-        android:title="@string/alioth_touch_stability"
-        android:summary="@string/alioth_touch_stability_summary"
-        app:showSeekBarValue="true"
-        app:updatesContinuously="false"
-        app:min="0"
-        android:defaultValue="0"
-        android:max="5" />
+    <PreferenceCategory android:key="touch_edge_group"
+        android:title="@string/touch_controls_edge_group">
+        <com.android.settingslib.widget.SliderPreference
+            android:key="touch_resistant"
+            android:title="@string/touch_resistant_title"
+            android:summary="@string/touch_controls_edge_summary"
+            app:showSeekBarValue="true" app:updatesContinuously="false"
+            app:min="0" android:defaultValue="0"
+            android:max="@integer/smoothness_max" />
+    </PreferenceCategory>
 
-    <com.android.settingslib.widget.SliderPreference
-        android:key="touch_expert"
-        android:title="@string/alioth_touch_expert"
-        android:summary="@string/alioth_touch_expert_summary"
-        app:showSeekBarValue="true"
-        app:updatesContinuously="false"
-        app:min="0"
-        android:defaultValue="0"
-        android:max="3" />
-
+    <Preference android:key="touch_reset"
+        android:title="@string/touch_controls_reset_title"
+        android:summary="@string/touch_controls_reset_summary" />
 </PreferenceScreen>

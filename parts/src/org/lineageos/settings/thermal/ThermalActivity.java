@@ -24,6 +24,7 @@ public class ThermalActivity extends CollapsingToolbarBaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportFragmentManager().addOnBackStackChangedListener(this::invalidateOptionsMenu);
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(
                     com.android.settingslib.collapsingtoolbar.R.id.content_frame,
@@ -35,10 +36,16 @@ public class ThermalActivity extends CollapsingToolbarBaseActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
 
+        Fragment current = getSupportFragmentManager().findFragmentById(
+                com.android.settingslib.collapsingtoolbar.R.id.content_frame);
+        boolean touchControls = current instanceof TouchSettingsFragment;
+
         // Keep information immediately to the left of search.
-        MenuItem info = menu.add(Menu.NONE, MENU_INFO, 1, R.string.thermal_info_title);
+        MenuItem info = menu.add(Menu.NONE, MENU_INFO, 1, touchControls
+                ? R.string.touch_controls_help_title : R.string.thermal_info_title);
         info.setIcon(R.drawable.ic_info);
         info.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+        if (touchControls) return true;
 
         MenuItem searchItem =
                 menu.add(Menu.NONE, MENU_SEARCH, 2, R.string.thermal_search_apps);
@@ -90,6 +97,12 @@ public class ThermalActivity extends CollapsingToolbarBaseActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == MENU_INFO) {
+            Fragment current = getSupportFragmentManager().findFragmentById(
+                    com.android.settingslib.collapsingtoolbar.R.id.content_frame);
+            if (current instanceof TouchSettingsFragment) {
+                ((TouchSettingsFragment) current).showHelp();
+                return true;
+            }
             startActivity(new Intent(this, ThermalInfoActivity.class));
             return true;
         }
