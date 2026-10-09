@@ -281,8 +281,17 @@ public final class ThermalUtils {
         int touchActiveMode = AliothTouchProfile.isSupported() ? gameMode
                 : (touchResponse != 0 && touchSensitivity != 0 && touchResistant != 0) ? 1 : 0;
         try {
-            mTouchFeature.setTouchMode(Constants.MODE_TOUCH_TOLERANCE, touchSensitivity);
-            mTouchFeature.setTouchMode(Constants.MODE_TOUCH_UP_THRESHOLD, touchResponse);
+            if (AliothTouchProfile.isSupported()) {
+                // Alioth's FocalTech modes 2/3 start at 1. The UI's zero means
+                // firmware default, so a raw zero would be clamped to the minimum.
+                AliothTouchProfile.applyMode(mTouchFeature,
+                        Constants.MODE_TOUCH_TOLERANCE, touchSensitivity);
+                AliothTouchProfile.applyMode(mTouchFeature,
+                        Constants.MODE_TOUCH_UP_THRESHOLD, touchResponse);
+            } else {
+                mTouchFeature.setTouchMode(Constants.MODE_TOUCH_TOLERANCE, touchSensitivity);
+                mTouchFeature.setTouchMode(Constants.MODE_TOUCH_UP_THRESHOLD, touchResponse);
+            }
             mTouchFeature.setTouchMode(Constants.MODE_TOUCH_EDGE_FILTER, touchResistant);
             mTouchFeature.setTouchMode(Constants.MODE_TOUCH_GAME_MODE, gameMode);
             mTouchFeature.setTouchMode(Constants.MODE_TOUCH_ACTIVE_MODE, touchActiveMode);

@@ -36,7 +36,7 @@ final class AliothTouchProfile {
         if (expert > 0) applyMode(hal, 6, expert);
     }
 
-    private static void applyMode(ITouchFeature hal, int mode, int value)
+    static void applyMode(ITouchFeature hal, int mode, int value)
             throws RemoteException {
         // Zero means firmware default, never a raw out-of-range mode value.
         if (value == 0) {
