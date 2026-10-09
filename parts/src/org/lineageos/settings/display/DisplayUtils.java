@@ -79,8 +79,13 @@ public final class DisplayUtils {
             if (!FileUtils.writeLine(DisplayNodes.getHbmNode(), "0")) return false;
             if (prefs.contains(PREF_HBM_PREVIOUS_BRIGHTNESS)) {
                 int previous = prefs.getInt(PREF_HBM_PREVIOUS_BRIGHTNESS, 255);
-                Settings.System.putInt(context.getContentResolver(),
-                        Settings.System.SCREEN_BRIGHTNESS, previous);
+                if (!Settings.System.putInt(context.getContentResolver(),
+                        Settings.System.SCREEN_BRIGHTNESS, previous)) {
+                    // HBM is already off. Keep the brightness backup for a retry,
+                    // but do not re-enable HBM at the next boot.
+                    prefs.edit().putBoolean(DisplayNodes.getHbmEnableKey(), false).apply();
+                    return false;
+                }
                 prefs.edit().remove(PREF_HBM_PREVIOUS_BRIGHTNESS).apply();
             }
         }
@@ -103,8 +108,8 @@ public final class DisplayUtils {
             boolean enabled = prefs.getBoolean(DisplayNodes.getHbmEnableKey(), false);
             if (enabled) {
                 if (!setHbm(context, true)) Log.w(TAG, "Cannot restore HBM");
-            } else if (!FileUtils.writeLine(DisplayNodes.getHbmNode(), "0")) {
-                Log.w(TAG, "Cannot restore HBM off state");
+            } else if (!setHbm(context, false)) {
+                Log.w(TAG, "Cannot restore HBM off state or previous brightness");
             }
         }
     }
