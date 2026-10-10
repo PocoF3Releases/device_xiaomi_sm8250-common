@@ -331,7 +331,8 @@ fun TouchScreen(packageName: String, appName: String, back: () -> Unit) {
                     stringResource(
                         if (reset) R.string.touch_controls_reset_title
                         else R.string.touch_controls_help_title
-                    )
+                    ),
+                    style = MaterialTheme.typography.titleLarge,
                 )
             },
             text = {

@@ -102,7 +102,12 @@ class ThermalActivity : PartsActivity() {
                             ),
                     ) {
                         Row(
-                            Modifier.fillMaxWidth().heightIn(min = 72.dp).padding(16.dp),
+                            Modifier.fillMaxWidth()
+                                .heightIn(min = if (expanded) 48.dp else 72.dp)
+                                .padding(
+                                    horizontal = 16.dp,
+                                    vertical = if (expanded) 8.dp else 16.dp,
+                                ),
                             verticalAlignment = Alignment.CenterVertically,
                         ) {
                             Column(
@@ -113,18 +118,22 @@ class ThermalActivity : PartsActivity() {
                                     stringResource(R.string.thermal_system_profile_title),
                                     style = MaterialTheme.typography.titleMedium,
                                 )
-                                Text(
-                                    stringResource(
-                                        R.string.thermal_system_compact_summary,
-                                        stringResource(base?.titleRes ?: R.string.thermal_normal),
+                                if (!expanded) {
+                                    Text(
                                         stringResource(
-                                            if (region == 1) R.string.thermal_region_india
-                                            else R.string.thermal_region_global
+                                            R.string.thermal_system_compact_summary,
+                                            stringResource(
+                                                base?.titleRes ?: R.string.thermal_normal
+                                            ),
+                                            stringResource(
+                                                if (region == 1) R.string.thermal_region_india
+                                                else R.string.thermal_region_global
+                                            ),
                                         ),
-                                    ),
-                                    style = MaterialTheme.typography.bodyMedium,
-                                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                                )
+                                        style = MaterialTheme.typography.bodyMedium,
+                                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                    )
+                                }
                             }
                             Icon(
                                 PartsIcons.Chevron,
@@ -167,7 +176,7 @@ class ThermalActivity : PartsActivity() {
                         }
                         PreferenceRow(2, 3) {
                             ChoiceCard(
-                                stringResource(R.string.thermal_system_profile_title),
+                                stringResource(R.string.thermal_profile_dialog_title),
                                 utils.getBaseSconfig().toString(),
                                 profiles.map {
                                     it.sconfig.toString() to stringResource(it.titleRes)
@@ -183,7 +192,7 @@ class ThermalActivity : PartsActivity() {
                                             ThermalProfileIcon(
                                                 it.iconRes,
                                                 compact = true,
-                                                selected = selected
+                                                selected = selected,
                                             )
                                         }
                                 },
@@ -234,9 +243,7 @@ class ThermalActivity : PartsActivity() {
                     ) {
                         Icon(
                             PartsIcons.Tune,
-                            stringResource(R.string.touch_controls_screen_title) +
-                                " · " +
-                                app.label,
+                            stringResource(R.string.touch_controls_screen_title) + " · " + app.label,
                         )
                     }
                 },
