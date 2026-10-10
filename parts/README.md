@@ -17,16 +17,6 @@ Device settings use the checkout's Kotlin and Jetpack Compose/Material 3 modules
 
 Retain manifest entry points, permissions, translated resources, preference keys and hardware policy contracts. Compose owns layout and insets. Artwork provenance and licenses are in `licenses/`.
 
-## Regression checks
-
-Host fixtures compile the actual Kotlin owners against simulated Android/HAL boundaries in disposable temporary directories. From this repository, use the checkout JDK, for example:
-
-```sh
-python3 -B tests/test_hbm_restore.py --jdk ../../../prebuilts/jdk/jdk21/linux-x86
-```
-
-Related checks cover Alioth touch defaults, touch controller state/reset, thermal detail formatting and haptic settings/capability fallback. These do not establish rendered UI, production SELinux access or peripheral behavior. Device acceptance records are maintained in the Agents.md workhub.
-
 ## Build and device verification
 
 Preserve the existing ROM configuration and incremental output. For app-only verification, reuse existing dependencies with temporary compiler/package outputs; do not clean output or invoke an unconstrained ROM build graph.
