@@ -34,8 +34,6 @@ object ThermalProfiles {
     ) {
         fun hasControl(control: Int) = (controls and control) != 0
 
-        fun compactConfigName() =
-            configName.removePrefix("thermal-india-").removePrefix("thermal-").removeSuffix(".conf")
     }
 
     data class Profile(

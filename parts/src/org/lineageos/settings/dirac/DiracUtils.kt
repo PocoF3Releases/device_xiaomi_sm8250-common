@@ -332,16 +332,6 @@ class DiracUtils private constructor(context: Context) {
             false
         }
 
-    @Synchronized
-    fun isDiracEnabled(): Boolean =
-        try {
-            requireEffect().let { it.getEnabled() && it.getMusic() == 1 }
-        } catch (error: RuntimeException) {
-            Log.w("DiracUtils", "Cannot read MiSound", error)
-            releaseEffect()
-            false
-        }
-
     @Synchronized fun isEnabledRequested() = safeBoolean(PREF_ENABLE, false)
 
     @Synchronized fun isEqualizerEnabled() = safeBoolean(PREF_EQ, true)
