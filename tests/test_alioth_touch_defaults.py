@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Execute the real touch-profile Java sources against a FocalTech-range HAL fixture.
+"""Execute the real touch-profile Kotlin sources against a FocalTech-range HAL fixture.
 
-Only javac/java run, in a temporary directory; no Android build commands are used.
+Only host javac/kotlinc/java run, in a temporary directory; no Android build commands are used.
 """
 import argparse
 from pathlib import Path
@@ -14,10 +14,13 @@ parser.add_argument("--jdk", type=Path, required=True)
 args = parser.parse_args()
 repo = Path(__file__).resolve().parents[1]
 files = {
-"android/content/Context.java": "package android.content; public class Context { public Context getApplicationContext(){return this;} public <T> T getSystemService(Class<T> c){return null;} public void startService(Intent i){} }",
+"android/content/res/Resources.java": "package android.content.res;public class Resources {public int getInteger(int id){return 3;}}",
+"org/lineageos/settings/R.java": "package org.lineageos.settings;public class R {public static class integer {public static final int smoothness_max=1;}}",
+
+"android/content/Context.java": "package android.content; public class Context { public Context getApplicationContext(){return this;} public android.content.res.Resources getResources(){return new android.content.res.Resources();} public <T> T getSystemService(Class<T> c){return null;} public void startService(Intent i){} }",
 "android/content/Intent.java": "package android.content; public class Intent {public Intent(Context c,Class<?> t){}}",
 "android/content/SharedPreferences.java": "package android.content; import java.util.*; public class SharedPreferences { public Map<String,Object> values=new HashMap<>(); public String getString(String k,String d){return (String)values.getOrDefault(k,d);} public int getInt(String k,int d){return (int)values.getOrDefault(k,d);} public Editor edit(){return new Editor();} public class Editor {public Editor putString(String k,String v){values.put(k,v);return this;} public Editor putInt(String k,int v){values.put(k,v);return this;} public void apply(){}} }",
-"androidx/preference/PreferenceManager.java": "package androidx.preference; import android.content.*; public class PreferenceManager {public static SharedPreferences prefs=new SharedPreferences(); public static SharedPreferences getDefaultSharedPreferences(Context c){return prefs;}}",
+"org/lineageos/settings/utils/PartsPreferences.java": "package org.lineageos.settings.utils; import android.content.*; public class PartsPreferences {public static SharedPreferences prefs=new SharedPreferences(); public static SharedPreferences getDefaultSharedPreferences(Context c){return prefs;}}",
 "android/os/Build.java": "package android.os; public class Build {public static String DEVICE=\"alioth\";}",
 "android/os/RemoteException.java": "package android.os; public class RemoteException extends Exception {}",
 "android/os/Looper.java": "package android.os; public class Looper {public static Looper getMainLooper(){return new Looper();}}",
@@ -43,13 +46,13 @@ public class ITouchFeature {
  public int resetTouchMode(int m) throws RemoteException{resets.add(m);values.put(m,m>=2&&m<=5?3:0);return 0;}
 }""",
 "org/lineageos/settings/thermal/Test.java": """package org.lineageos.settings.thermal;
-import android.content.*;import android.os.Build;import androidx.preference.PreferenceManager;
+import android.content.*;import android.os.Build;import org.lineageos.settings.utils.PartsPreferences;
 import vendor.xiaomi.hardware.touchfeature.V1_0.ITouchFeature;
 public class Test {
  static void check(boolean ok,String msg){if(!ok)throw new AssertionError(msg);}
  static ITouchFeature apply(String device,String profile){
   Build.DEVICE=device;ITouchFeature.instance=new ITouchFeature();
-  PreferenceManager.prefs=new SharedPreferences();PreferenceManager.prefs.edit().putString("app",profile).apply();
+  PartsPreferences.prefs=new SharedPreferences();PartsPreferences.prefs.edit().putString("app",profile).apply();
   new ThermalUtils(new Context()).setThermalProfile("app");return ITouchFeature.instance;
  }
  public static void main(String[] args) throws Exception{
@@ -72,8 +75,10 @@ with tempfile.TemporaryDirectory(prefix="alioth-touch-test-") as tmp:
         dest = root / name
         dest.parent.mkdir(parents=True, exist_ok=True)
         dest.write_text(content)
-    for name in ["AliothTouchProfile.java", "ThermalUtils.java", "Constants.java"]:
-        dest = root / "org/lineageos/settings/thermal" / name
-        shutil.copy(repo / "parts/src/org/lineageos/settings/thermal" / name, dest)
-    subprocess.run([str(args.jdk / "bin/javac"), "-d", str(root / "classes"), *map(str, root.rglob("*.java"))], check=True)
-    subprocess.run([str(args.jdk / "bin/java"), "-cp", str(root / "classes"), "org.lineageos.settings.thermal.Test"], check=True)
+    from kotlin_fixtures import execute
+    result = execute(root, args.jdk, repo,
+                     ["thermal/AliothTouchProfile.kt", "thermal/ThermalUtils.kt", "thermal/Constants.kt"],
+                     "org.lineageos.settings.thermal.Test")
+    print(result.stdout, end="")
+    if result.returncode:
+        raise RuntimeError(result.stderr)
