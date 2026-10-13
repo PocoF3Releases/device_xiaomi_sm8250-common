@@ -1,0 +1,7 @@
+# Native recovery waits for the QSEE listeners before starting keymaster.
+recovery_only(`
+    get_prop(recovery, vendor_tee_listener_prop)
+    allow recovery vendor_file:dir mounton;
+    allow recovery mnt_vendor_file:dir { getattr search mounton };
+    allow recovery firmware_file:filesystem { mount unmount getattr relabelfrom relabelto };
+')
