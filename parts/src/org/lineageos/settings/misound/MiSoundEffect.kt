@@ -124,7 +124,8 @@ class MiSoundEffect(priority: Int, audioSession: Int) :
     fun setLevel(band: Int, level: Float) {
         require(band in 0 until EQ_BAND_COUNT && level.isFinite())
         checkStatus(
-            setParameter(intArrayOf(2, band), level.toString().toByteArray(Charsets.US_ASCII))
+            // The shipped native setter uses strtof, which requires a C string.
+            setParameter(intArrayOf(2, band), "$level\u0000".toByteArray(Charsets.US_ASCII))
         )
     }
 
