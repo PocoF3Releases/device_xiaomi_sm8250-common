@@ -57,3 +57,10 @@ service recovery-keymaster /vendor/bin/hw/android.hardware.keymaster@4.0-service
 # A subsequent unlock must wait for newly registered QSEE listeners.
 on property:init.svc.recovery-qseecomd=stopped
     setprop vendor.sys.listeners.registered false
+
+# Credential verification only; never enroll or delete Gatekeeper users.
+service recovery-gatekeeper /vendor/bin/hw/android.hardware.gatekeeper@1.0-service-qti
+    interface android.hardware.gatekeeper@1.0::IGatekeeper default
+    disabled
+    user system
+    group system
