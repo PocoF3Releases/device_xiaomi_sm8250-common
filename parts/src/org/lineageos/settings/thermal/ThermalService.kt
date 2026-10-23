@@ -16,6 +16,8 @@ class ThermalService : android.app.Service() {
     private var receiverRegistered = false
     private var listenerRegistered = false
     private var previous = ""
+    private var retryCount = 0
+    private val retry = Runnable { foreground(true) }
     private lateinit var utils: ThermalUtils
     private var tasks: IActivityTaskManager? = null
     private val refresh = Runnable { foreground(false) }
@@ -36,7 +38,7 @@ class ThermalService : android.app.Service() {
                     Intent.ACTION_SCREEN_OFF -> {
                         screenOn = false
                         previous = ""
-                        restoreDefault()
+                        recordApply(restoreDefault())
                     }
                     Intent.ACTION_SCREEN_ON -> {
                         screenOn = true
@@ -81,6 +83,7 @@ class ThermalService : android.app.Service() {
     override fun onDestroy() {
         destroyed = true
         handler.removeCallbacks(refresh)
+        handler.removeCallbacks(retry)
         if (receiverRegistered)
             try {
                 unregisterReceiver(receiver)
@@ -97,9 +100,19 @@ class ThermalService : android.app.Service() {
         super.onDestroy()
     }
 
-    private fun restoreDefault() {
+    private fun restoreDefault(): Boolean {
         utils.resetTouchModes()
-        utils.setDefaultThermalProfile()
+        return utils.setDefaultThermalProfile()
+    }
+
+    private fun recordApply(applied: Boolean) {
+        handler.removeCallbacks(retry)
+        if (applied) {
+            retryCount = 0
+        } else if (!destroyed && retryCount < 3) {
+            retryCount++
+            handler.postDelayed(retry, 1000)
+        }
     }
 
     override fun onConfigurationChanged(newConfig: android.content.res.Configuration) {
@@ -111,7 +124,7 @@ class ThermalService : android.app.Service() {
         if (destroyed) return
         if (!screenOn) {
             previous = ""
-            restoreDefault()
+            recordApply(restoreDefault())
             return
         }
         val packageName =
@@ -120,11 +133,13 @@ class ThermalService : android.app.Service() {
             } catch (error: Exception) {
                 Log.w("ThermalService", "Cannot query foreground", error)
                 previous = ""
-                restoreDefault()
+                recordApply(restoreDefault())
                 return
             }
         if (!force && previous == packageName) return
-        previous = packageName
-        if (packageName.isEmpty()) restoreDefault() else utils.setThermalProfile(packageName)
+        val applied =
+            if (packageName.isEmpty()) restoreDefault() else utils.setThermalProfile(packageName)
+        previous = if (applied) packageName else ""
+        recordApply(applied)
     }
 }

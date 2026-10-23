@@ -59,6 +59,9 @@ class ThermalUtils(context: Context) {
 
         fun isIndiaMapAvailable() = FileUtils.fileExists("/vendor/etc/thermal-map-india.conf")
 
+        fun getCurrentSconfig(): Int? =
+            FileUtils.readOneLine(SCONFIG)?.trim()?.toIntOrNull()?.takeIf { it >= 0 }
+
         fun getSelectedRegion() =
             if (SystemProperties.get(MAP, "") == "india" && isIndiaMapAvailable())
                 ThermalProfiles.REGION_INDIA
@@ -81,6 +84,8 @@ class ThermalUtils(context: Context) {
     private var touchChanged = false
 
     fun setSelectedRegion(region: Int): Boolean {
+        if (region != ThermalProfiles.REGION_GLOBAL && region != ThermalProfiles.REGION_INDIA)
+            return false
         if (region == ThermalProfiles.REGION_INDIA && !isIndiaMapAvailable()) return false
         val value = if (region == ThermalProfiles.REGION_INDIA) "india" else "global"
         try {
@@ -155,24 +160,24 @@ class ThermalUtils(context: Context) {
         return if (index < 0) STATE_DEFAULT else index + 1
     }
 
-    private fun writeThermalState(state: Int) {
-        if (!FileUtils.writeLine(SCONFIG, state.toString()))
-            Log.w("ThermalUtils", "Cannot write thermal state $state")
+    private fun writeThermalState(state: Int): Boolean {
+        val applied = FileUtils.writeLine(SCONFIG, state.toString())
+        if (!applied) Log.w("ThermalUtils", "Cannot write thermal state $state")
+        return applied
     }
 
-    fun setDefaultThermalProfile() {
-        writeThermalState(getBaseSconfig())
-    }
+    fun setDefaultThermalProfile(): Boolean = writeThermalState(getBaseSconfig())
 
-    fun setThermalProfile(packageName: String) {
+    fun setThermalProfile(packageName: String): Boolean {
         val state = getStateForPackage(packageName)
         val target =
             if (state == STATE_DEFAULT) getBaseSconfig()
             else
                 ThermalProfiles.findByStorageState(getSelectedRegion(), state)?.sconfig
                     ?: getBaseSconfig()
-        writeThermalState(target)
+        val applied = writeThermalState(target)
         updateTouchModes(packageName)
+        return applied
     }
 
     private fun updateTouchModes(packageName: String) {
