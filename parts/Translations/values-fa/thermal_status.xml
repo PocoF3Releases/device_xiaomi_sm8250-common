@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="thermal_current_profile_title">انتخاب فعلی نمایه</string>
+    <string name="thermal_current_profile_unavailable">انتخاب نمایه در دسترس نیست</string>
+    <string name="thermal_current_profile_note">انتخاب هسته هنگام باز شدن این صفحه خوانده می‌شود. این مقدار محدودسازی فعال عملکرد را اندازه نمی‌گیرد.</string>
+</resources>

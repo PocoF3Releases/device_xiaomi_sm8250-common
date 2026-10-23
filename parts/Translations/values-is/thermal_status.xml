@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="thermal_current_profile_title">Núverandi prófílval</string>
+    <string name="thermal_current_profile_unavailable">Prófílval er ekki tiltækt</string>
+    <string name="thermal_current_profile_note">Val kjarnans þegar þessi skjár opnast. Þetta mælir ekki virka afkastatakmörkun.</string>
+</resources>

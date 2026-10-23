@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="thermal_current_profile_title">目前選取的設定檔</string>
+    <string name="thermal_current_profile_unavailable">無法取得設定檔選擇</string>
+    <string name="thermal_current_profile_note">開啟此畫面時讀取的核心選擇。此資訊並非實際的效能限制測量結果。</string>
+</resources>

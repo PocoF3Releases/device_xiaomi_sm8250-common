@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="thermal_current_profile_title">Trenutačni odabir profila</string>
+    <string name="thermal_current_profile_unavailable">Odabir profila nije dostupan</string>
+    <string name="thermal_current_profile_note">Odabir jezgre pri otvaranju ovog zaslona. Ovo ne mjeri aktivno ograničavanje performansi.</string>
+</resources>

@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="thermal_current_profile_title">Huidige profielkeuse</string>
+    <string name="thermal_current_profile_unavailable">Profielkeuse is nie beskikbaar nie</string>
+    <string name="thermal_current_profile_note">Kernkeuse wanneer hierdie skerm oopmaak. Dit meet nie aktiewe vertraging nie.</string>
+</resources>

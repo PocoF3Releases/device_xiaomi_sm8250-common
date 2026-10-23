@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="thermal_current_profile_title">Uneko profil-hautapena</string>
+    <string name="thermal_current_profile_unavailable">Profil-hautapena ez dago erabilgarri</string>
+    <string name="thermal_current_profile_note">Kernelaren hautapena pantaila hau irekitzean. Honek ez du errendimenduaren murrizketa aktiboa neurtzen.</string>
+</resources>

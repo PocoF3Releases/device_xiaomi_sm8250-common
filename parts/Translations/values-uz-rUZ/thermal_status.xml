@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="thermal_current_profile_title">Joriy profil tanlovi</string>
+    <string name="thermal_current_profile_unavailable">Profil tanlovi mavjud emas</string>
+    <string name="thermal_current_profile_note">Bu ekran ochilgandagi yadro tanlovi. Bu faol unumdorlik cheklanishini o‘lchamaydi.</string>
+</resources>

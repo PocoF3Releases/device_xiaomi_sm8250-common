@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="thermal_current_profile_title">ການເລືອກໂປຣໄຟລ໌ປັດຈຸບັນ</string>
+    <string name="thermal_current_profile_unavailable">ບໍ່ມີຂໍ້ມູນການເລືອກໂປຣໄຟລ໌</string>
+    <string name="thermal_current_profile_note">ການເລືອກຂອງເຄີເນລເມື່ອເປີດໜ້າຈໍນີ້. ນີ້ບໍ່ໄດ້ວັດແທກການຈຳກັດປະສິດທິພາບທີ່ກຳລັງເຮັດວຽກ.</string>
+</resources>

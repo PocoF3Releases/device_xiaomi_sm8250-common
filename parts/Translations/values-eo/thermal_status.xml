@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="thermal_current_profile_title">Nuna profilelekto</string>
+    <string name="thermal_current_profile_unavailable">Profilelekto ne disponeblas</string>
+    <string name="thermal_current_profile_note">Elekto de la kerno ĉe malfermo de ĉi tiu ekrano. Tio ne mezuras aktivan limigon de rendimento.</string>
+</resources>

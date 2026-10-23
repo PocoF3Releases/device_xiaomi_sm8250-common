@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="thermal_current_profile_title">Pašreizējā profila izvēle</string>
+    <string name="thermal_current_profile_unavailable">Profila izvēle nav pieejama</string>
+    <string name="thermal_current_profile_note">Kodola izvēle, atverot šo ekrānu. Tas nemēra aktīvo veiktspējas ierobežošanu.</string>
+</resources>

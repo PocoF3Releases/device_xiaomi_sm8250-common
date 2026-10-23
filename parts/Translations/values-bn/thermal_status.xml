@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="thermal_current_profile_title">বর্তমান প্রোফাইল নির্বাচন</string>
+    <string name="thermal_current_profile_unavailable">প্রোফাইল নির্বাচন উপলব্ধ নয়</string>
+    <string name="thermal_current_profile_note">এই স্ক্রিন খোলার সময় কার্নেলের নির্বাচন পড়া হয়। এটি সক্রিয় কর্মক্ষমতা সীমিতকরণ পরিমাপ করে না।</string>
+</resources>

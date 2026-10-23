@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="thermal_current_profile_title">ការជ្រើសរើសទម្រង់បច្ចុប្បន្ន</string>
+    <string name="thermal_current_profile_unavailable">មិនមានព័ត៌មានការជ្រើសរើសទម្រង់ទេ</string>
+    <string name="thermal_current_profile_note">ជម្រើសរបស់ខឺណែលនៅពេលបើកអេក្រង់នេះ។ វាមិនវាស់ការកម្រិតសមត្ថភាពដែលកំពុងដំណើរការទេ។</string>
+</resources>

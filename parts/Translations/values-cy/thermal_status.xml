@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="thermal_current_profile_title">Dewis proffil cyfredol</string>
+    <string name="thermal_current_profile_unavailable">Nid yw dewis y proffil ar gael</string>
+    <string name="thermal_current_profile_note">Dewis y cnewyllyn wrth agor y sgrin hon. Nid yw hyn yn mesur cyfyngu gweithredol ar berfformiad.</string>
+</resources>

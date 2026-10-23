@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="thermal_current_profile_title">現在選択されているプロファイル</string>
+    <string name="thermal_current_profile_unavailable">プロファイルの選択情報を取得できません</string>
+    <string name="thermal_current_profile_note">この画面を開いた時点のカーネルの選択です。実際の性能制限を測定するものではありません。</string>
+</resources>

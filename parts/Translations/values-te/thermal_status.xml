@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="thermal_current_profile_title">ప్రస్తుత ప్రొఫైల్ ఎంపిక</string>
+    <string name="thermal_current_profile_unavailable">ప్రొఫైల్ ఎంపిక అందుబాటులో లేదు</string>
+    <string name="thermal_current_profile_note">ఈ స్క్రీన్ తెరిచినప్పుడు కెర్నల్ ఎంపిక చదవబడుతుంది. ఇది క్రియాశీల పనితీరు పరిమితిని కొలవదు.</string>
+</resources>

@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="thermal_current_profile_title">सध्याची प्रोफाइल निवड</string>
+    <string name="thermal_current_profile_unavailable">प्रोफाइल निवड उपलब्ध नाही</string>
+    <string name="thermal_current_profile_note">ही स्क्रीन उघडताना कर्नलची निवड वाचली जाते. हे सक्रिय कार्यक्षमता मर्यादित करणे मोजत नाही.</string>
+</resources>

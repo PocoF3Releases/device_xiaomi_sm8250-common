@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="thermal_current_profile_title">Aktuální výběr profilu</string>
+    <string name="thermal_current_profile_unavailable">Výběr profilu není dostupný</string>
+    <string name="thermal_current_profile_note">Výběr jádra při otevření této obrazovky. Neměří skutečné omezování výkonu.</string>
+</resources>

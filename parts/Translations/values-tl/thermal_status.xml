@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="thermal_current_profile_title">Kasalukuyang napiling profile</string>
+    <string name="thermal_current_profile_unavailable">Hindi available ang pagpili ng profile</string>
+    <string name="thermal_current_profile_note">Pinili ng kernel sa pagbukas ng screen na ito. Hindi nito sinusukat ang aktibong paglilimita sa performance.</string>
+</resources>

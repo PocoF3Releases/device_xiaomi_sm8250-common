@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="thermal_current_profile_title">ಪ್ರಸ್ತುತ ಪ್ರೊಫೈಲ್ ಆಯ್ಕೆ</string>
+    <string name="thermal_current_profile_unavailable">ಪ್ರೊಫೈಲ್ ಆಯ್ಕೆ ಲಭ್ಯವಿಲ್ಲ</string>
+    <string name="thermal_current_profile_note">ಈ ಪರದೆ ತೆರೆದಾಗ ಕರ್ನಲ್ ಆಯ್ಕೆಯನ್ನು ಓದಲಾಗುತ್ತದೆ. ಇದು ಸಕ್ರಿಯ ಕಾರ್ಯಕ್ಷಮತೆ ಮಿತಿಗೊಳಿಸುವಿಕೆಯನ್ನು ಅಳೆಯುವುದಿಲ್ಲ.</string>
+</resources>

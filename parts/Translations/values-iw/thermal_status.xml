@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="thermal_current_profile_title">בחירת הפרופיל הנוכחית</string>
+    <string name="thermal_current_profile_unavailable">בחירת הפרופיל אינה זמינה</string>
+    <string name="thermal_current_profile_note">בחירת הליבה בעת פתיחת המסך הזה. נתון זה אינו מודד הגבלת ביצועים פעילה.</string>
+</resources>

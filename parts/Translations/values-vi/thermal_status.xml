@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="thermal_current_profile_title">Lựa chọn cấu hình hiện tại</string>
+    <string name="thermal_current_profile_unavailable">Không đọc được lựa chọn cấu hình</string>
+    <string name="thermal_current_profile_note">Lựa chọn của nhân khi mở màn hình này. Đây không phải phép đo giới hạn hiệu năng đang hoạt động.</string>
+</resources>
