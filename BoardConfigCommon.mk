@@ -147,6 +147,9 @@ TARGET_ODM_PROP += $(COMMON_PATH)/odm.prop
 TARGET_PRODUCT_PROP += $(COMMON_PATH)/product.prop
 TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
 TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor.prop
+ifneq ($(TARGET_USES_SURFACEFLINGER_WORK_DURATIONS),true)
+TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor_surfaceflinger_phase.prop
+endif
 ifneq ($(TARGET_IS_TABLET),true)
 TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor_phone.prop
 endif
