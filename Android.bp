@@ -62,3 +62,15 @@ install_symlink {
     installed_location: "lib/vndk/libstagefright_omx.so",
     symlink_target: "/vendor/lib/libstagefright_omx.so",
 }
+
+// Recover queued framework UI buffers with Android's cumulative-delay bound.
+aconfig_values {
+    name: "sm8250_ui_recovery_values",
+    package: "android.view.flags",
+    srcs: ["configs/release/buffer_stuffing.textproto"],
+}
+
+aconfig_value_set {
+    name: "sm8250_ui_recovery_flags",
+    values: ["sm8250_ui_recovery_values"],
+}
