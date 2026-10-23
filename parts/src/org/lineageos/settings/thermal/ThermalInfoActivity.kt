@@ -20,6 +20,8 @@ class ThermalInfoActivity : PartsActivity() {
         OnResume { revision++ }
         val region = remember(revision) { ThermalUtils.getSelectedRegion() }
         val profiles = ThermalProfiles.getProfiles(region)
+        val currentSconfig = remember(revision) { ThermalUtils.getCurrentSconfig() }
+        val currentProfile = currentSconfig?.let { ThermalProfiles.findBySconfig(region, it) }
         val profile = profiles.firstOrNull { it.storageState == selected }
         BackHandler(profile != null) { selected = -1 }
         if (profile != null) {
@@ -73,6 +75,26 @@ class ThermalInfoActivity : PartsActivity() {
             }
         } else
             PartsPage(stringResource(R.string.thermal_info_title), { finish() }) {
+                InfoCard(
+                    stringResource(R.string.thermal_current_profile_title),
+                    when {
+                        currentProfile != null ->
+                            stringResource(
+                                R.string.thermal_current_profile_value,
+                                stringResource(currentProfile.titleRes),
+                                currentProfile.sconfig,
+                            )
+                        currentSconfig != null ->
+                            stringResource(R.string.thermal_current_profile_unknown, currentSconfig)
+                        else -> stringResource(R.string.thermal_current_profile_unavailable)
+                    },
+                )
+                Text(
+                    stringResource(R.string.thermal_current_profile_note),
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
+                )
                 SectionTitle(
                     stringResource(
                         R.string.thermal_info_header_title,
