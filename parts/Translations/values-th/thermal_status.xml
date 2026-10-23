@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="thermal_current_profile_title">โปรไฟล์ที่เลือกในปัจจุบัน</string>
+    <string name="thermal_current_profile_unavailable">ไม่สามารถอ่านโปรไฟล์ที่เลือกได้</string>
+    <string name="thermal_current_profile_note">อ่านค่าที่เคอร์เนลเลือกเมื่อเปิดหน้าจอนี้ ค่านี้ไม่ได้วัดการจำกัดประสิทธิภาพที่กำลังทำงาน</string>
+</resources>

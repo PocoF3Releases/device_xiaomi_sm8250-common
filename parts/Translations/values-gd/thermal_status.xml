@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="thermal_current_profile_title">Taghadh na pròifil làithreach</string>
+    <string name="thermal_current_profile_unavailable">Chan eil taghadh na pròifil ri fhaighinn</string>
+    <string name="thermal_current_profile_note">Taghadh na h-eitein nuair a dh’fhosglas an sgrìn seo. Chan eil seo a’ tomhas cuingealachadh gnìomhach air coileanadh.</string>
+</resources>

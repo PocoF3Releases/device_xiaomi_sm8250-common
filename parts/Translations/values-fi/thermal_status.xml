@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="thermal_current_profile_title">Nykyinen profiilivalinta</string>
+    <string name="thermal_current_profile_unavailable">Profiilivalinta ei ole saatavilla</string>
+    <string name="thermal_current_profile_note">Ytimen valinta tätä näkymää avattaessa. Tämä ei mittaa aktiivista suorituskyvyn rajoittamista.</string>
+</resources>

@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="thermal_current_profile_title">პროფილის მიმდინარე არჩევანი</string>
+    <string name="thermal_current_profile_unavailable">პროფილის არჩევანი მიუწვდომელია</string>
+    <string name="thermal_current_profile_note">ბირთვის არჩევანი ამ ეკრანის გახსნისას. ეს არ ზომავს წარმადობის აქტიურ შეზღუდვას.</string>
+</resources>
