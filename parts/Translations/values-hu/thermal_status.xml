@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="thermal_current_profile_title">Jelenlegi profilválasztás</string>
+    <string name="thermal_current_profile_unavailable">A profilválasztás nem érhető el</string>
+    <string name="thermal_current_profile_note">A kernel választása a képernyő megnyitásakor. Ez nem méri az aktív teljesítménykorlátozást.</string>
+</resources>

@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="thermal_current_profile_title">Përzgjedhja aktuale e profilit</string>
+    <string name="thermal_current_profile_unavailable">Përzgjedhja e profilit nuk është e disponueshme</string>
+    <string name="thermal_current_profile_note">Përzgjedhja e kernelit kur hapet ky ekran. Kjo nuk mat kufizimin aktiv të performancës.</string>
+</resources>

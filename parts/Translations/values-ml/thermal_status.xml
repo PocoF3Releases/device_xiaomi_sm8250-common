@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="thermal_current_profile_title">നിലവിലെ പ്രൊഫൈൽ തിരഞ്ഞെടുപ്പ്</string>
+    <string name="thermal_current_profile_unavailable">പ്രൊഫൈൽ തിരഞ്ഞെടുപ്പ് ലഭ്യമല്ല</string>
+    <string name="thermal_current_profile_note">ഈ സ്ക്രീൻ തുറക്കുമ്പോഴുള്ള കേർണലിന്റെ തിരഞ്ഞെടുപ്പ്. ഇത് സജീവമായ പ്രകടന നിയന്ത്രണം അളക്കുന്നില്ല.</string>
+</resources>

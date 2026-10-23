@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="thermal_current_profile_title">ਮੌਜੂਦਾ ਪ੍ਰੋਫਾਈਲ ਚੋਣ</string>
+    <string name="thermal_current_profile_unavailable">ਪ੍ਰੋਫਾਈਲ ਚੋਣ ਉਪਲਬਧ ਨਹੀਂ ਹੈ</string>
+    <string name="thermal_current_profile_note">ਇਹ ਸਕ੍ਰੀਨ ਖੁੱਲ੍ਹਣ ਵੇਲੇ ਕਰਨਲ ਦੀ ਚੋਣ ਪੜ੍ਹੀ ਜਾਂਦੀ ਹੈ। ਇਹ ਸਰਗਰਮ ਕਾਰਗੁਜ਼ਾਰੀ ਸੀਮਾ ਨੂੰ ਨਹੀਂ ਮਾਪਦਾ।</string>
+</resources>

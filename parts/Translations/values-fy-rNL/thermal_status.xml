@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="thermal_current_profile_title">Aktuele profylkar</string>
+    <string name="thermal_current_profile_unavailable">Profylkar is net beskikber</string>
+    <string name="thermal_current_profile_note">Kar fan de kernel by it iepenjen fan dit skerm. Dit mjit gjin aktive prestaasjebeheining.</string>
+</resources>

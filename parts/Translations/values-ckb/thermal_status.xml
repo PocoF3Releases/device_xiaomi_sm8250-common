@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="thermal_current_profile_title">هەڵبژاردنی پڕۆفایلی ئێستا</string>
+    <string name="thermal_current_profile_unavailable">هەڵبژاردنی پڕۆفایل بەردەست نییە</string>
+    <string name="thermal_current_profile_note">هەڵبژاردنی کێرنێڵ لە کاتی کردنەوەی ئەم شاشەیەدا دەخوێنرێتەوە. ئەمە سنووردارکردنی چالاکی کارایی ناپێوێت.</string>
+</resources>

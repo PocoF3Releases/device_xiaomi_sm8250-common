@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="thermal_current_profile_title">လက်ရှိ ပရိုဖိုင် ရွေးချယ်မှု</string>
+    <string name="thermal_current_profile_unavailable">ပရိုဖိုင် ရွေးချယ်မှု မရနိုင်ပါ</string>
+    <string name="thermal_current_profile_note">ဤမျက်နှာပြင်ဖွင့်ချိန်တွင် ကာနယ်၏ ရွေးချယ်မှုကို ဖတ်သည်။ လက်ရှိ စွမ်းဆောင်ရည် ကန့်သတ်မှုကို တိုင်းတာခြင်း မဟုတ်ပါ။</string>
+</resources>

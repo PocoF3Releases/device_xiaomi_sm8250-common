@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="thermal_current_profile_title">Одоогийн профайлын сонголт</string>
+    <string name="thermal_current_profile_unavailable">Профайлын сонголт боломжгүй</string>
+    <string name="thermal_current_profile_note">Энэ дэлгэцийг нээх үеийн цөмийн сонголт. Энэ нь гүйцэтгэлийн идэвхтэй хязгаарлалтыг хэмжихгүй.</string>
+</resources>

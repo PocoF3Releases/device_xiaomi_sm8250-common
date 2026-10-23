@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="thermal_current_profile_title">Huidige profielselectie</string>
+    <string name="thermal_current_profile_unavailable">Profielselectie is niet beschikbaar</string>
+    <string name="thermal_current_profile_note">Kernelselectie bij het openen van dit scherm. Dit meet geen actieve prestatiebeperking.</string>
+</resources>

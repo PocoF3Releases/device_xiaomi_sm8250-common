@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="thermal_current_profile_title">Iphrofayela ekhethiwe manje</string>
+    <string name="thermal_current_profile_unavailable">Ukukhethwa kwephrofayela akutholakali</string>
+    <string name="thermal_current_profile_note">Ukukhetha kwe-kernel lapho kuvulwa lesi sikrini. Lokhu akukali ukukhawulelwa kokusebenza okwenzekayo.</string>
+</resources>

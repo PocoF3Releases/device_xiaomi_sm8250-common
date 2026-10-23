@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="thermal_current_profile_title">የአሁኑ መገለጫ ምርጫ</string>
+    <string name="thermal_current_profile_unavailable">የመገለጫ ምርጫ አይገኝም</string>
+    <string name="thermal_current_profile_note">ይህ ማያ ሲከፈት የከርነሉ ምርጫ ይነበባል። ይህ የአሁኑን የአፈጻጸም ገደብ አይለካም።</string>
+</resources>

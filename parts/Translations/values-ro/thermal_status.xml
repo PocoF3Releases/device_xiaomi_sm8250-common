@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="thermal_current_profile_title">Selecția curentă a profilului</string>
+    <string name="thermal_current_profile_unavailable">Selecția profilului nu este disponibilă</string>
+    <string name="thermal_current_profile_note">Selecția nucleului la deschiderea acestui ecran. Aceasta nu măsoară limitarea activă a performanței.</string>
+</resources>

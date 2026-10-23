@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="thermal_current_profile_title">ବର୍ତ୍ତମାନର ପ୍ରୋଫାଇଲ୍ ଚୟନ</string>
+    <string name="thermal_current_profile_unavailable">ପ୍ରୋଫାଇଲ୍ ଚୟନ ଉପଲବ୍ଧ ନାହିଁ</string>
+    <string name="thermal_current_profile_note">ଏହି ସ୍କ୍ରିନ୍ ଖୋଲିବା ସମୟରେ କର୍ଣ୍ଣେଲ୍‌ର ଚୟନ ପଢ଼ାଯାଏ। ଏହା ସକ୍ରିୟ କାର୍ଯ୍ୟଦକ୍ଷତା ସୀମିତକରଣ ମାପେ ନାହିଁ।</string>
+</resources>

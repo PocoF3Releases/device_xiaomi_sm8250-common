@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="thermal_current_profile_title">Dabartinis profilio pasirinkimas</string>
+    <string name="thermal_current_profile_unavailable">Profilio pasirinkimas nepasiekiamas</string>
+    <string name="thermal_current_profile_note">Branduolio pasirinkimas atidarant šį ekraną. Tai nematuoja aktyvaus našumo ribojimo.</string>
+</resources>

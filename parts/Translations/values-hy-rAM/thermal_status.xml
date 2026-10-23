@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="thermal_current_profile_title">Ընթացիկ պրոֆիլի ընտրություն</string>
+    <string name="thermal_current_profile_unavailable">Պրոֆիլի ընտրությունը հասանելի չէ</string>
+    <string name="thermal_current_profile_note">Միջուկի ընտրությունը՝ այս էկրանը բացելիս։ Սա չի չափում կատարողականի ակտիվ սահմանափակումը։</string>
+</resources>

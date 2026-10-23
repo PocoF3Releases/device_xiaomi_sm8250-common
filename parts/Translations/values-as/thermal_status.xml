@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="thermal_current_profile_title">বৰ্তমান প্ৰফাইল নিৰ্বাচন</string>
+    <string name="thermal_current_profile_unavailable">প্ৰফাইল নিৰ্বাচন উপলব্ধ নহয়</string>
+    <string name="thermal_current_profile_note">এই পৰ্দা খোলাৰ সময়ত কাৰ্নেলৰ নিৰ্বাচন পঢ়া হয়। ই সক্ৰিয় কাৰ্যক্ষমতা সীমিতকৰণ জোখা নাই।</string>
+</resources>

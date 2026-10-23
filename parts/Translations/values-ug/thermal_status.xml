@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="thermal_current_profile_title">نۆۋەتتىكى ئارخىپ تاللىشى</string>
+    <string name="thermal_current_profile_unavailable">ئارخىپ تاللىشىنى ئوقۇغىلى بولمايدۇ</string>
+    <string name="thermal_current_profile_note">بۇ ئېكران ئېچىلغاندا يادرونىڭ تاللىشى ئوقۇلىدۇ. بۇ ئاكتىپ ئىقتىدار چەكلىشىنى ئۆلچىمەيدۇ.</string>
+</resources>

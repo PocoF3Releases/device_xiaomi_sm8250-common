@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="thermal_current_profile_title">Aktuell Profilauswiel</string>
+    <string name="thermal_current_profile_unavailable">Profilauswiel net disponibel</string>
+    <string name="thermal_current_profile_note">Auswiel vum Kernel beim Opmaache vun dësem Bildschierm. Dëst moosst keng aktiv Leeschtungsdrosselung.</string>
+</resources>

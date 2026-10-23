@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="thermal_current_profile_title">Gjeldande profilval</string>
+    <string name="thermal_current_profile_unavailable">Profilvalet er ikkje tilgjengeleg</string>
+    <string name="thermal_current_profile_note">Valet til kjernen når denne skjermen vert opna. Dette måler ikkje aktiv ytingsavgrensing.</string>
+</resources>

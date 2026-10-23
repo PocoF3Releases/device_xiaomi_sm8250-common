@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="thermal_current_profile_title">Бягучы выбар профілю</string>
+    <string name="thermal_current_profile_unavailable">Выбар профілю недаступны</string>
+    <string name="thermal_current_profile_note">Выбар ядра пры адкрыцці гэтага экрана. Гэта не вымярэнне фактычнага абмежавання прадукцыйнасці.</string>
+</resources>

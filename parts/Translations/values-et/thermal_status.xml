@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="thermal_current_profile_title">Praegune profiilivalik</string>
+    <string name="thermal_current_profile_unavailable">Profiilivalik pole saadaval</string>
+    <string name="thermal_current_profile_note">Tuuma valik selle kuva avamisel. See ei mõõda jõudluse aktiivset piiramist.</string>
+</resources>

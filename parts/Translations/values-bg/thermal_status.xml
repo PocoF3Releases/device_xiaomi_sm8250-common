@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="thermal_current_profile_title">Текущ избор на профил</string>
+    <string name="thermal_current_profile_unavailable">Изборът на профил не е достъпен</string>
+    <string name="thermal_current_profile_note">Изборът на ядрото при отваряне на този екран. Това не измерва активното ограничаване на производителността.</string>
+</resources>

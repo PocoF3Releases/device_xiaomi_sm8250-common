@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="thermal_current_profile_title">தற்போதைய சுயவிவரத் தேர்வு</string>
+    <string name="thermal_current_profile_unavailable">சுயவிவரத் தேர்வு கிடைக்கவில்லை</string>
+    <string name="thermal_current_profile_note">இந்தத் திரை திறக்கும்போது கர்னலின் தேர்வு படிக்கப்படும். இது செயலில் உள்ள செயல்திறன் கட்டுப்பாட்டை அளவிடாது.</string>
+</resources>

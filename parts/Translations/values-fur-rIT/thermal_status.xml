@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="thermal_current_profile_title">Selezion atuâl dal profîl</string>
+    <string name="thermal_current_profile_unavailable">La selezion dal profîl no je disponibile</string>
+    <string name="thermal_current_profile_note">Selezion dal nucli ae vierzidure di cheste schermade. No misure la limitazion ative des prestazions.</string>
+</resources>
