@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="thermal_current_profile_title">Current profile selection</string>
+    <string name="thermal_current_profile_value" translatable="false">%1$s · %2$d</string>
+    <string name="thermal_current_profile_unknown" translatable="false">#%1$d</string>
+    <string name="thermal_current_profile_unavailable">Profile selection is unavailable</string>
+    <string name="thermal_current_profile_note">Kernel selection, refreshed when this screen opens. This does not measure active throttling.</string>
+</resources>
