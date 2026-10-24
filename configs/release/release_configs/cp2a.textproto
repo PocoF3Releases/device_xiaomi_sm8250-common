@@ -1,0 +1,2 @@
+name: "cp2a"
+aconfig_value_sets: "//device/xiaomi/sm8250-common:sm8250_ui_recovery_flags"
