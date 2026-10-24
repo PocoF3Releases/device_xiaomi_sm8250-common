@@ -1,0 +1,12 @@
+flag_value {
+  package: "android.view.flags"
+  name: "buffer_stuffing_multi_recovery"
+  state: ENABLED
+  permission: READ_ONLY
+}
+flag_value {
+  package: "android.view.flags"
+  name: "buffer_stuffing_recovery_threshold"
+  state: ENABLED
+  permission: READ_ONLY
+}

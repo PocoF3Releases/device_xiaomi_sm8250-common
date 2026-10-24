@@ -10,6 +10,10 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 # ART
 PRODUCT_DEX_PREOPT_DEFAULT_COMPILER_FILTER := speed
 
+# UI buffer recovery
+PRODUCT_RELEASE_CONFIG_MAPS += \
+    device/xiaomi/sm8250-common/configs/release/release_config_map.textproto
+
 # Add common definitions for Qualcomm
 $(call inherit-product, hardware/qcom-caf/common/common.mk)
 
