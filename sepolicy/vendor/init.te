@@ -4,3 +4,6 @@ set_prop(init, vendor_fingerprint_prop)
 
 # Bind the app-readable FastRPC shell copy over the vendor DSP image.
 allow init adsprpcd_file:file mounton;
+
+# Let system init unmount the SPU partition during shutdown.
+allow init vendor_spunvm_file:filesystem unmount;
