@@ -207,22 +207,29 @@ class MiSoundUtils private constructor(context: Context) {
     private fun updateAudioState() {
         if (serverDown || (sound == null && attempts >= 5)) return
         try {
-            requireEffect()
-            val enabled = effectiveEnabled(isEnabledRequested(), isPauseDuringCallsEnabled())
-            if (appliedEnabled != enabled) {
-                applyEnabled(enabled)
-                publishState()
-            }
+            reconcileEnabledState()
+            publishState()
         } catch (error: RuntimeException) {
             Log.w("MiSoundUtils", "Cannot update communication bypass", error)
             restoreAfterFailure()
         }
     }
 
+    private fun reconcileEnabledState() {
+        val effect = requireEffect()
+        val enabled = effectiveEnabled(isEnabledRequested(), isPauseDuringCallsEnabled())
+        // Control can return after another client changed private native state.
+        // A valid handle and our last write do not prove the current state.
+        if (appliedEnabled != enabled || !effect.hasExpectedEnabledState(enabled) ||
+            effect.getMusic() != (if (enabled) 1 else 0)) {
+            applyEnabled(enabled)
+        }
+    }
+
     @Synchronized
     private fun restore() {
         try {
-            requireEffect()
+            reconcileEnabledState()
             attempts = 0
             handler.removeCallbacks(restoreTask)
             publishState()
@@ -304,11 +311,30 @@ class MiSoundUtils private constructor(context: Context) {
     private fun requireEffect(): MiSoundEffect {
         check(callbacksRegistered) { "Audio callbacks unavailable" }
         check(!serverDown) { "Audio server is down" }
+        sound?.let {
+            check(it.hasControl()) { "MiSound control unavailable" }
+            return it
+        }
         try {
-            sound?.let { if (it.hasControl()) return it }
             releaseEffect()
             val effect = MiSoundEffect(0, 0)
             sound = effect
+            effect.setControlStatusListener { _, granted ->
+                handler.post {
+                    synchronized(this@MiSoundUtils) {
+                        if (sound !== effect || serverDown) return@synchronized
+                        appliedEnabled = null
+                        if (granted) {
+                            attempts = 0
+                            // Another owner may have changed tuning as well as enable state.
+                            releaseEffect()
+                            restore()
+                        } else {
+                            publishState()
+                        }
+                    }
+                }
+            }
             check(effect.hasControl()) { "MiSound control unavailable" }
             applyEnabled(false)
             if (isEnabledRequested()) {
@@ -323,7 +349,7 @@ class MiSoundUtils private constructor(context: Context) {
             }
             return effect
         } catch (error: RuntimeException) {
-            releaseEffect()
+            if (sound?.hasControl() != false) releaseEffect()
             throw error
         }
     }
@@ -403,7 +429,9 @@ class MiSoundUtils private constructor(context: Context) {
 
     @Synchronized
     fun restoreAfterFailure() {
-        releaseEffect()
+        // Keep the listener attached while another client owns the effect.
+        // Its control-regain callback resumes recovery even after bounded retries.
+        if (sound?.hasControl() != false) releaseEffect()
         attempts = 0
         restore()
     }
