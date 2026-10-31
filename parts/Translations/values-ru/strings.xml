@@ -149,4 +149,9 @@
     <string name="misound_pause_calls_title">Приостанавливать во время звонков</string>
     <string name="misound_pause_calls_summary">Временно обходить MiSound во время звонков и голосовой связи, затем автоматически восстанавливать его.</string>
     <string name="misound_paused_for_calls">Приостановлено для голосовой связи</string>
+    <string name="misound_preset_custom">Пользовательский</string>
+    <string name="misound_custom_title">Пользовательский эквалайзер</string>
+    <string name="misound_custom_summary">Настройте собственную семиполосную кривую. Она сохраняется при переключении на другой пресет.</string>
+    <string name="misound_custom_band">Полоса %1$d</string>
+    <string name="misound_custom_gain">%1$+.1f дБ</string>
 </resources>
