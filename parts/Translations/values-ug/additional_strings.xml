@@ -143,4 +143,8 @@
     <string name="alioth_touch_stability_summary">0: مۇقىم دېتالنىڭ سۈكۈتتىكى قىممىتى. 1–5 دەرىجىلەر چېكىش مۇقىملىقىنى تەڭشەيدۇ.</string>
     <string name="alioth_touch_expert">سېزىمچان ئالدىن تەڭشەك</string>
     <string name="alioth_touch_expert_summary">0: ئايرىم كونتروللار. 1–3 ئالدىن تەڭشەكلەر ئىنكاس، سەزگۈرلۈك، نىشانلاش سەزگۈرلۈكى ۋە چېكىش مۇقىملىقىنىڭ ئورنىنى ئالىدۇ؛ گىرۋەك سۈزۈش ئايرىم ساقلىنىدۇ.</string>
+    <string name="misound_preset_custom">ئىختىيارىي</string>
+    <string name="misound_custom_title">ئىختىيارىي تەڭشىگۈچ</string>
+    <string name="misound_custom_summary">ئۆزىڭىزنىڭ يەتتە بەلۋاغلىق ئەگرى سىزىقىنى تۈزۈڭ. باشقا ئالدىن تەڭشەشكە ئالماشتۇرغاندا ساقلىنىدۇ.</string>
+    <string name="misound_custom_band">بەلۋاغ %1$d</string>
 </resources>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<resources>
+    <string name="misound_preset_custom">Personnalisé</string>
+    <string name="misound_custom_title">Égaliseur personnalisé</string>
+    <string name="misound_custom_summary">Créez votre propre courbe à sept bandes. Elle est conservée lorsque vous choisissez un autre préréglage.</string>
+    <string name="misound_custom_band">Bande %1$d</string>
+</resources>

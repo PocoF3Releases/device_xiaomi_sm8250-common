@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<resources>
+    <string name="misound_preset_custom">අභිරුචි</string>
+    <string name="misound_custom_title">අභිරුචි සමකරනය</string>
+    <string name="misound_custom_summary">ඔබගේම කලාප හතක වක්‍රයක් සාදන්න. වෙනත් පෙරසැකසුමකට මාරු වූ විටත් එය සුරැකේ.</string>
+    <string name="misound_custom_band">කලාපය %1$d</string>
+</resources>

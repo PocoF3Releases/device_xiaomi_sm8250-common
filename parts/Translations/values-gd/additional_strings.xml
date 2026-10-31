@@ -154,4 +154,8 @@
     <string name="alioth_touch_stability_summary">0: bun-roghainn an firmware. Atharraichidh ìrean 1–5 seasmhachd tapadh.</string>
     <string name="alioth_touch_expert">Ro-shuidheachadh suathaidh</string>
     <string name="alioth_touch_expert_summary">0: smachdan fa leth. Cuiridh ro-shuidheachaidhean 1–3 freagairt, mothalachd, mothalachd amas agus seasmhachd tapadh nan àite; bidh sìoladh nan oirean air leth.</string>
+    <string name="misound_preset_custom">Gnàthaichte</string>
+    <string name="misound_custom_title">Cothromaiche gnàthaichte</string>
+    <string name="misound_custom_summary">Cruthaich an lùb seachd bann agad fhèin. Thèid a cumail nuair a thaghas tu ro-shuidheachadh eile.</string>
+    <string name="misound_custom_band">Bann %1$d</string>
 </resources>

@@ -143,4 +143,8 @@
     <string name="alioth_touch_stability_summary">0: standardvärde i den fasta programvaran. Nivå 1–5 justerar tryckstabiliteten.</string>
     <string name="alioth_touch_expert">Pekförinställning</string>
     <string name="alioth_touch_expert_summary">0: individuella inställningar. Förinställningarna 1–3 ersätter respons, känslighet, sikteskänslighet och tryckstabilitet; kantfiltrering förblir separat.</string>
+    <string name="misound_preset_custom">Anpassad</string>
+    <string name="misound_custom_title">Anpassad equalizer</string>
+    <string name="misound_custom_summary">Skapa din egen kurva med sju band. Den behålls när du byter till en annan förinställning.</string>
+    <string name="misound_custom_band">Band %1$d</string>
 </resources>

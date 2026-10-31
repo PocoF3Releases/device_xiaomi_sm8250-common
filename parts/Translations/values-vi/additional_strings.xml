@@ -143,4 +143,8 @@
     <string name="alioth_touch_stability_summary">0: mặc định của phần sụn. Các mức 1–5 điều chỉnh độ ổn định khi chạm.</string>
     <string name="alioth_touch_expert">Cấu hình cảm ứng</string>
     <string name="alioth_touch_expert_summary">0: điều khiển riêng lẻ. Cấu hình 1–3 thay thế phản hồi, độ nhạy, độ nhạy khi ngắm và độ ổn định khi chạm; bộ lọc cạnh vẫn độc lập.</string>
+    <string name="misound_preset_custom">Tùy chỉnh</string>
+    <string name="misound_custom_title">Bộ cân bằng tùy chỉnh</string>
+    <string name="misound_custom_summary">Tạo đường cong bảy dải của riêng bạn. Đường cong vẫn được giữ khi chuyển sang cài đặt sẵn khác.</string>
+    <string name="misound_custom_band">Dải %1$d</string>
 </resources>

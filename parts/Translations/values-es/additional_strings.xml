@@ -144,4 +144,8 @@
     <string name="alioth_touch_stability_summary">0: valor predeterminado del firmware. Los niveles 1–5 ajustan la estabilidad de los toques.</string>
     <string name="alioth_touch_expert">Preajuste táctil</string>
     <string name="alioth_touch_expert_summary">0: controles individuales. Los preajustes 1–3 sustituyen la respuesta, la sensibilidad, la sensibilidad al apuntar y la estabilidad de los toques; el filtrado de los bordes sigue separado.</string>
+    <string name="misound_preset_custom">Personalizado</string>
+    <string name="misound_custom_title">Ecualizador personalizado</string>
+    <string name="misound_custom_summary">Crea tu propia curva de siete bandas. Se conserva al cambiar a otro ajuste preestablecido.</string>
+    <string name="misound_custom_band">Banda %1$d</string>
 </resources>

@@ -143,4 +143,8 @@
     <string name="alioth_touch_stability_summary">0: fastvarens standard. Nivå 1–5 justerer trykkstabiliteten.</string>
     <string name="alioth_touch_expert">Berøringsforvalg</string>
     <string name="alioth_touch_expert_summary">0: individuelle innstillinger. Forvalg 1–3 erstatter respons, følsomhet, siktefølsomhet og trykkstabilitet; kantfiltrering forblir separat.</string>
+    <string name="misound_preset_custom">Egendefinert</string>
+    <string name="misound_custom_title">Egendefinert equalizer</string>
+    <string name="misound_custom_summary">Lag din egen kurve med sju bånd. Den beholdes når du velger en annen forhåndsinnstilling.</string>
+    <string name="misound_custom_band">Bånd %1$d</string>
 </resources>

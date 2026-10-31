@@ -143,4 +143,8 @@
     <string name="alioth_touch_stability_summary">0: ഫേംവെയറിന്റെ ഡിഫോൾട്ട് മൂല്യം. 1–5 നിലകൾ ടാപ്പ് സ്ഥിരത ക്രമീകരിക്കുന്നു.</string>
     <string name="alioth_touch_expert">സ്പർശ പ്രീസെറ്റ്</string>
     <string name="alioth_touch_expert_summary">0: വേർതിരിച്ച നിയന്ത്രണങ്ങൾ. പ്രീസെറ്റുകൾ 1–3 പ്രതികരണം, സംവേദനക്ഷമത, ലക്ഷ്യമിടൽ സംവേദനക്ഷമത, ടാപ്പ് സ്ഥിരത എന്നിവയ്ക്ക് പകരമാകും; അരികിലെ ഫിൽട്ടറിംഗ് വേർതിരിച്ച് തുടരും.</string>
+    <string name="misound_preset_custom">ഇഷ്ടാനുസൃതം</string>
+    <string name="misound_custom_title">ഇഷ്ടാനുസൃത ഇക്വലൈസർ</string>
+    <string name="misound_custom_summary">നിങ്ങളുടെ സ്വന്തം ഏഴ്-ബാൻഡ് വക്രം രൂപപ്പെടുത്തുക. മറ്റൊരു പ്രീസെറ്റിലേക്ക് മാറുമ്പോഴും ഇത് നിലനിർത്തും.</string>
+    <string name="misound_custom_band">ബാൻഡ് %1$d</string>
 </resources>

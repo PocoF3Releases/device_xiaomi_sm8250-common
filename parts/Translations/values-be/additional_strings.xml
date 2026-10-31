@@ -143,4 +143,8 @@
     <string name="alioth_touch_stability_summary">0: стандарт прашыўкі. Узроўні 1–5 рэгулююць стабільнасць націсканняў.</string>
     <string name="alioth_touch_expert">Сэнсарны профіль</string>
     <string name="alioth_touch_expert_summary">0: асобныя налады. Профілі 1–3 замяняюць водгук, адчувальнасць, адчувальнасць прыцэльвання і стабільнасць націсканняў; фільтрацыя краёў застаецца асобнай.</string>
+    <string name="misound_preset_custom">Уласны</string>
+    <string name="misound_custom_title">Уласны эквалайзер</string>
+    <string name="misound_custom_summary">Стварыце ўласную сяміпалосную крывую. Яна захаваецца пры выбары іншай перадустаноўкі.</string>
+    <string name="misound_custom_band">Паласа %1$d</string>
 </resources>

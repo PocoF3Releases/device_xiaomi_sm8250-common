@@ -143,4 +143,8 @@
     <string name="alioth_touch_stability_summary">0: ફર્મવેરનું ડિફૉલ્ટ મૂલ્ય. સ્તર 1–5 ટૅપની સ્થિરતા ગોઠવે છે.</string>
     <string name="alioth_touch_expert">સ્પર્શ પ્રીસેટ</string>
     <string name="alioth_touch_expert_summary">0: અલગ નિયંત્રણો. પ્રીસેટ 1–3 પ્રતિસાદ, સંવેદનશીલતા, નિશાન સાધવાની સંવેદનશીલતા અને ટૅપની સ્થિરતાને બદલે છે; કિનારીનું ફિલ્ટરિંગ અલગ રહે છે.</string>
+    <string name="misound_preset_custom">કસ્ટમ</string>
+    <string name="misound_custom_title">કસ્ટમ ઇક્વલાઇઝર</string>
+    <string name="misound_custom_summary">તમારો પોતાનો સાત-બૅન્ડ વક્ર બનાવો. બીજા પ્રીસેટ પર સ્વિચ કરો ત્યારે પણ તે જળવાઈ રહે છે.</string>
+    <string name="misound_custom_band">બૅન્ડ %1$d</string>
 </resources>

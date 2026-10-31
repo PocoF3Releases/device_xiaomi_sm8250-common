@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<resources>
+    <string name="misound_preset_custom">Ыңгайлаштырылган</string>
+    <string name="misound_custom_title">Ыңгайлаштырылган эквалайзер</string>
+    <string name="misound_custom_summary">Өзүңүздүн жети тилкелүү ийри сызыгыңызды түзүңүз. Башка даяр жөндөөгө өткөндө да ал сакталат.</string>
+    <string name="misound_custom_band">Тилке %1$d</string>
+</resources>

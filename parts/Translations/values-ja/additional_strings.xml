@@ -143,4 +143,8 @@
     <string name="alioth_touch_stability_summary">0: ファームウェアの既定値。レベル1–5でタップの安定性を調整します。</string>
     <string name="alioth_touch_expert">タッチプリセット</string>
     <string name="alioth_touch_expert_summary">0: 個別に調整。プリセット1–3は応答、感度、照準感度、タップの安定性を置き換えます。エッジフィルタリングは個別設定のままです。</string>
+    <string name="misound_preset_custom">カスタム</string>
+    <string name="misound_custom_title">カスタムイコライザー</string>
+    <string name="misound_custom_summary">独自の7バンド曲線を作成します。別のプリセットに切り替えても保存されます。</string>
+    <string name="misound_custom_band">バンド %1$d</string>
 </resources>

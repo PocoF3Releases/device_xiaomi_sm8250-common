@@ -143,4 +143,8 @@
     <string name="alioth_touch_stability_summary">0：韌體預設值。1–5 級可調整輕觸穩定性。</string>
     <string name="alioth_touch_expert">觸控預設組合</string>
     <string name="alioth_touch_expert_summary">0：個別調整。預設組合 1–3 會取代反應、靈敏度、瞄準靈敏度及輕觸穩定性設定；邊緣過濾仍個別設定。</string>
+    <string name="misound_preset_custom">自訂</string>
+    <string name="misound_custom_title">自訂等化器</string>
+    <string name="misound_custom_summary">調整自己的七頻段曲線。切換至其他預設時，此曲線仍會保留。</string>
+    <string name="misound_custom_band">頻段 %1$d</string>
 </resources>

@@ -143,4 +143,8 @@
     <string name="alioth_touch_stability_summary">0: ফাৰ্মৱেৰৰ অবিকল্পিত মান। 1–5 স্তৰে টেপৰ স্থিৰতা নিয়ন্ত্ৰণ কৰে।</string>
     <string name="alioth_touch_expert">স্পৰ্শৰ পূৰ্বনিৰ্ধাৰিত ছেটিং</string>
     <string name="alioth_touch_expert_summary">0: পৃথক নিয়ন্ত্ৰণ। 1–3 পূৰ্বনিৰ্ধাৰিত ছেটিঙে সঁহাৰি, সংবেদনশীলতা, নিশানাৰ সংবেদনশীলতা আৰু টেপৰ স্থিৰতা সলনি কৰে; প্ৰান্তৰ ফিল্টাৰ পৃথক থাকে।</string>
+    <string name="misound_preset_custom">নিজৰ মতে</string>
+    <string name="misound_custom_title">নিজৰ মতে ইকুৱেলাইজাৰ</string>
+    <string name="misound_custom_summary">নিজৰ সাত-বেণ্ডৰ বক্ৰৰেখা তৈয়াৰ কৰক। অন্য প্ৰিছেটলৈ সলনি কৰিলেও ই সংৰক্ষিত থাকে।</string>
+    <string name="misound_custom_band">বেণ্ড %1$d</string>
 </resources>

@@ -144,4 +144,8 @@
     <string name="alioth_touch_stability_summary">0: الإعداد الافتراضي للبرنامج الثابت. تضبط المستويات 1–5 ثبات النقر.</string>
     <string name="alioth_touch_expert">إعداد لمس مسبق</string>
     <string name="alioth_touch_expert_summary">0: عناصر تحكم منفصلة. تستبدل الإعدادات المسبقة 1–3 الاستجابة والحساسية وحساسية التصويب وثبات النقر؛ تبقى تصفية الحواف منفصلة.</string>
+    <string name="misound_preset_custom">مخصص</string>
+    <string name="misound_custom_title">معادل مخصص</string>
+    <string name="misound_custom_summary">شكّل منحناك الخاص من سبعة نطاقات. يُحتفظ به عند التبديل إلى إعداد مسبق آخر.</string>
+    <string name="misound_custom_band">النطاق %1$d</string>
 </resources>

@@ -143,4 +143,8 @@
     <string name="alioth_touch_stability_summary">0: ברירת המחדל של הקושחה. רמות 1–5 מתאימות את יציבות ההקשות.</string>
     <string name="alioth_touch_expert">הגדרת מגע קבועה מראש</string>
     <string name="alioth_touch_expert_summary">0: פקדים נפרדים. הגדרות 1–3 מחליפות את התגובה, הרגישות, רגישות הכוונת ויציבות ההקשות; סינון הקצוות נשאר נפרד.</string>
+    <string name="misound_preset_custom">מותאם אישית</string>
+    <string name="misound_custom_title">אקולייזר מותאם אישית</string>
+    <string name="misound_custom_summary">עצבו עקומה משלכם בת שבע רצועות. היא נשמרת כשעוברים להגדרה מוכנה אחרת.</string>
+    <string name="misound_custom_band">רצועה %1$d</string>
 </resources>

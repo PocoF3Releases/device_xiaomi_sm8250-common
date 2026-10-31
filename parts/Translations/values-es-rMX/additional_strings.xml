@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<resources>
+    <string name="misound_preset_custom">Personalizado</string>
+    <string name="misound_custom_title">Ecualizador personalizado</string>
+    <string name="misound_custom_summary">Crea tu propia curva de siete bandas. Se conserva al cambiar a otro ajuste preestablecido.</string>
+    <string name="misound_custom_band">Banda %1$d</string>
+</resources>

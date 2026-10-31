@@ -154,4 +154,8 @@
     <string name="alioth_touch_stability_summary">0: rhagosodiad y cadarnwedd. Mae lefelau 1–5 yn addasu sefydlogrwydd tapiau.</string>
     <string name="alioth_touch_expert">Rhagosodiad cyffwrdd</string>
     <string name="alioth_touch_expert_summary">0: rheolyddion unigol. Mae rhagosodiadau 1–3 yn disodli ymateb, sensitifrwydd, sensitifrwydd anelu a sefydlogrwydd tapiau; mae hidlo’r ymylon yn aros ar wahân.</string>
+    <string name="misound_preset_custom">Personol</string>
+    <string name="misound_custom_title">Cyfartalydd personol</string>
+    <string name="misound_custom_summary">Lluniwch eich cromlin saith band eich hun. Fe’i cedwir wrth newid i ragosodiad arall.</string>
+    <string name="misound_custom_band">Band %1$d</string>
 </resources>

@@ -144,4 +144,8 @@
     <string name="alioth_touch_stability_summary">0 : valeur par défaut du micrologiciel. Les niveaux 1–5 règlent la stabilité des appuis.</string>
     <string name="alioth_touch_expert">Préréglage tactile</string>
     <string name="alioth_touch_expert_summary">0 : réglages individuels. Les préréglages 1–3 remplacent la réponse, la sensibilité, la sensibilité de visée et la stabilité des appuis ; le filtrage des bords reste séparé.</string>
+    <string name="misound_preset_custom">Personnalisé</string>
+    <string name="misound_custom_title">Égaliseur personnalisé</string>
+    <string name="misound_custom_summary">Créez votre propre courbe à sept bandes. Elle est conservée lorsque vous choisissez un autre préréglage.</string>
+    <string name="misound_custom_band">Bande %1$d</string>
 </resources>

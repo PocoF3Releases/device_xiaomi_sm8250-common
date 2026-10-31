@@ -143,4 +143,8 @@
     <string name="alioth_touch_stability_summary">0: privzeta vrednost vdelane programske opreme. Ravni 1–5 prilagodijo stabilnost dotikov.</string>
     <string name="alioth_touch_expert">Prednastavitev dotika</string>
     <string name="alioth_touch_expert_summary">0: posamezne nastavitve. Prednastavitve 1–3 nadomestijo odziv, občutljivost, občutljivost merjenja in stabilnost dotikov; filtriranje robov ostane ločeno.</string>
+    <string name="misound_preset_custom">Po meri</string>
+    <string name="misound_custom_title">Izenačevalnik po meri</string>
+    <string name="misound_custom_summary">Oblikujte lastno sedempasovno krivuljo. Ohrani se ob preklopu na drugo prednastavitev.</string>
+    <string name="misound_custom_band">Pas %1$d</string>
 </resources>

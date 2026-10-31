@@ -143,4 +143,8 @@
     <string name="alioth_touch_stability_summary">0: по подразбиране от фърмуера. Нива 1–5 настройват стабилността на докосването.</string>
     <string name="alioth_touch_expert">Профил за докосване</string>
     <string name="alioth_touch_expert_summary">0: отделни настройки. Профили 1–3 заменят реакцията, чувствителността, чувствителността при прицелване и стабилността на докосването; филтрирането по краищата остава отделно.</string>
+    <string name="misound_preset_custom">Персонализиран</string>
+    <string name="misound_custom_title">Персонализиран еквалайзер</string>
+    <string name="misound_custom_summary">Създайте собствена седемлентова крива. Тя се запазва при избор на друга предварителна настройка.</string>
+    <string name="misound_custom_band">Лента %1$d</string>
 </resources>
