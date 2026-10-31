@@ -40,6 +40,7 @@ data class MiSoundState(
     val scenario: Int = 4,
     val hifi: Boolean = false,
     val supportedHeadsets: List<Int> = emptyList(),
+    val customLevels: List<Float> = List(MiSoundUtils.BAND_COUNT) { 0f },
 )
 
 /** Persistent process-wide owner: activities never own or release the DSP effect. */
@@ -52,6 +53,14 @@ class MiSoundUtils private constructor(context: Context) {
         const val PREF_HIFI = "misound_hifi_pref"
         const val PREF_EQ = "misound_eq_enabled"
         const val PREF_PAUSE = "misound_pause_during_calls"
+        const val PREF_CUSTOM = "misound_custom_levels"
+        /** Stored in PREF_PRESET while the user curve in PREF_CUSTOM is selected. */
+        const val CUSTOM = "custom"
+        const val BAND_COUNT = 7
+        private const val LEGACY_CLASSICAL = "0,0,0,0,3,6,6"
+        private const val STOCK_CLASSICAL = "-3,-3,-3,-3,0,3,3"
+        /** Stock DiracEqualizer: rank -10..10 dB with a level factor of two (0.5 dB steps). */
+        val LEVEL_RANGE = -10f..10f
         private const val FLAT = "0,0,0,0,0,0,0"
         private var instance: MiSoundUtils? = null
 
@@ -62,9 +71,13 @@ class MiSoundUtils private constructor(context: Context) {
 
         private fun parseLevels(preset: String): FloatArray {
             val values = preset.split(',')
-            require(values.size == 7) { "Expected seven MiSound bands" }
+            require(values.size == BAND_COUNT) { "Expected seven MiSound bands" }
             return values
-                .map { it.trim().toFloat().also { level -> require(level.isFinite()) } }
+                .map {
+                    it.trim().toFloat().also { level ->
+                        require(level.isFinite() && level in LEVEL_RANGE) { "Level out of range" }
+                    }
+                }
                 .toFloatArray()
         }
 
@@ -281,6 +294,7 @@ class MiSoundUtils private constructor(context: Context) {
             scenario = getScenario(),
             hifi = getHifiMode(),
             supportedHeadsets = supportedHeadsets,
+            customLevels = parseLevels(getCustomLevels()).toList(),
         )
     }
 
@@ -384,6 +398,12 @@ class MiSoundUtils private constructor(context: Context) {
     @Synchronized
     fun getSavedPreset(): String {
         val preset = safeString(PREF_PRESET, FLAT)
+        if (preset == CUSTOM) return preset
+        // Earlier builds shipped Classical shifted 3 dB above the stock curve.
+        if (preset == LEGACY_CLASSICAL) {
+            preferences.edit().putString(PREF_PRESET, STOCK_CLASSICAL).apply()
+            return STOCK_CLASSICAL
+        }
         return try {
             parseLevels(preset)
             preset
@@ -393,6 +413,22 @@ class MiSoundUtils private constructor(context: Context) {
             FLAT
         }
     }
+
+    @Synchronized
+    fun getCustomLevels(): String {
+        val levels = safeString(PREF_CUSTOM, FLAT)
+        return try {
+            parseLevels(levels)
+            levels
+        } catch (error: IllegalArgumentException) {
+            Log.w("MiSoundUtils", "Discarding invalid custom curve", error)
+            preferences.edit().remove(PREF_CUSTOM).apply()
+            FLAT
+        }
+    }
+
+    private fun levelsFor(preset: String) =
+        parseLevels(if (preset == CUSTOM) getCustomLevels() else preset)
 
     private fun applySettings() {
         sound!!.setHeadsetType(getHeadsetType())
@@ -480,15 +516,31 @@ class MiSoundUtils private constructor(context: Context) {
 
     @Synchronized
     fun setLevel(preset: String) {
-        parseLevels(preset)
+        levelsFor(preset)
         requireEffect()
         applyLevel(preset, isEqualizerEnabled())
         preferences.edit().putString(PREF_PRESET, preset).apply()
     }
 
     private fun applyLevel(preset: String, enabled: Boolean) {
-        val levels = if (enabled) parseLevels(preset) else FloatArray(0)
+        val levels = if (enabled) levelsFor(preset) else FloatArray(0)
         repeat(MiSoundEffect.EQ_BAND_COUNT) { sound!!.setLevel(it, levels.getOrElse(it) { 0f }) }
+    }
+
+    /** Edits the user curve; the DSP only changes while that curve is selected. */
+    @Synchronized
+    fun setCustomLevel(band: Int, level: Float) {
+        require(band in 0 until BAND_COUNT && level in LEVEL_RANGE)
+        val levels = parseLevels(getCustomLevels())
+        levels[band] = Math.round(level * 2f) / 2f
+        val curve = levels.joinToString(",")
+        if (getSavedPreset() == CUSTOM) {
+            requireEffect()
+            if (isEqualizerEnabled()) {
+                repeat(MiSoundEffect.EQ_BAND_COUNT) { sound!!.setLevel(it, levels.getOrElse(it) { 0f }) }
+            }
+        }
+        preferences.edit().putString(PREF_CUSTOM, curve).apply()
     }
 
     @Synchronized
