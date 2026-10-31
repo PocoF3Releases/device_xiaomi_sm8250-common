@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<resources>
+    <string name="misound_preset_custom">Okwenziwe ngokwezifiso</string>
+    <string name="misound_custom_title">Isilinganisi esenziwe ngokwezifiso</string>
+    <string name="misound_custom_summary">Yakha ijika lakho lamabhendi ayisikhombisa. Ligcinwa uma ushintshela kokunye okusethwe ngaphambilini.</string>
+    <string name="misound_custom_band">Ibhendi %1$d</string>
+</resources>

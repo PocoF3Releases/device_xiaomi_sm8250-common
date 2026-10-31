@@ -143,4 +143,8 @@
     <string name="alioth_touch_stability_summary">0: firmware-alapérték. Az 1–5. szint a koppintás stabilitását állítja.</string>
     <string name="alioth_touch_expert">Érintési előbeállítás</string>
     <string name="alioth_touch_expert_summary">0: egyéni beállítások. Az 1–3. előbeállítás felülírja a reakciót, az érzékenységet, a célzási érzékenységet és a koppintás stabilitását; a szélszűrés külön marad.</string>
+    <string name="misound_preset_custom">Egyéni</string>
+    <string name="misound_custom_title">Egyéni hangszínszabályzó</string>
+    <string name="misound_custom_summary">Állíts be saját hétsávos görbét. Másik előbeállításra váltva is megmarad.</string>
+    <string name="misound_custom_band">%1$d. sáv</string>
 </resources>

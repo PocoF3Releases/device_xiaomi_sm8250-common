@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<resources>
+    <string name="misound_preset_custom">Personalizât</string>
+    <string name="misound_custom_title">Ecualizadôr personalizât</string>
+    <string name="misound_custom_summary">Cree la tô curve a siet bandis. E reste salvade cuant che tu passis a une altre preimpostazion.</string>
+    <string name="misound_custom_band">Bande %1$d</string>
+</resources>

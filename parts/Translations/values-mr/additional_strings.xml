@@ -143,4 +143,8 @@
     <string name="alioth_touch_stability_summary">0: फर्मवेअरचे डीफॉल्ट मूल्य. स्तर 1–5 टॅपची स्थिरता समायोजित करतात.</string>
     <string name="alioth_touch_expert">स्पर्श प्रीसेट</string>
     <string name="alioth_touch_expert_summary">0: स्वतंत्र नियंत्रणे. प्रीसेट 1–3 प्रतिसाद, संवेदनशीलता, नेम धरण्याची संवेदनशीलता आणि टॅपची स्थिरता बदलतात; कडांचे फिल्टरिंग स्वतंत्र राहते.</string>
+    <string name="misound_preset_custom">सानुकूल</string>
+    <string name="misound_custom_title">सानुकूल इक्वलायझर</string>
+    <string name="misound_custom_summary">तुमचा स्वतःचा सात-बँड वक्र तयार करा. दुसऱ्या प्रीसेटवर गेल्यावरही तो जतन राहतो.</string>
+    <string name="misound_custom_band">बँड %1$d</string>
 </resources>

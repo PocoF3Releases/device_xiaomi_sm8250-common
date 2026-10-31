@@ -143,4 +143,8 @@
     <string name="alioth_touch_stability_summary">0: vlera e parazgjedhur e firmuerit. Nivelet 1–5 rregullojnë qëndrueshmërinë e prekjeve.</string>
     <string name="alioth_touch_expert">Paracaktim i prekjes</string>
     <string name="alioth_touch_expert_summary">0: kontrolle individuale. Paracaktimet 1–3 zëvendësojnë reagimin, ndjeshmërinë, ndjeshmërinë e shënjestrimit dhe qëndrueshmërinë e prekjeve; filtrimi i skajeve mbetet i veçantë.</string>
+    <string name="misound_preset_custom">I personalizuar</string>
+    <string name="misound_custom_title">Barazues i personalizuar</string>
+    <string name="misound_custom_summary">Krijoni kurbën tuaj me shtatë breza. Ajo ruhet kur kaloni te një paracaktim tjetër.</string>
+    <string name="misound_custom_band">Brezi %1$d</string>
 </resources>

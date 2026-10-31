@@ -154,4 +154,8 @@
     <string name="alioth_touch_stability_summary">0: fermwareverstek. Vlakke 1–5 pas tikstabiliteit aan.</string>
     <string name="alioth_touch_expert">Raakvoorinstelling</string>
     <string name="alioth_touch_expert_summary">0: afsonderlike kontroles. Voorinstellings 1–3 vervang reaksie, sensitiwiteit, miksensitiwiteit en tikstabiliteit; randfiltrering bly afsonderlik.</string>
+    <string name="misound_preset_custom">Pasgemaak</string>
+    <string name="misound_custom_title">Pasgemaakte gelykmaker</string>
+    <string name="misound_custom_summary">Skep jou eie seweband-kurwe. Dit bly behoue wanneer jy na ’n ander voorafinstelling oorskakel.</string>
+    <string name="misound_custom_band">Band %1$d</string>
 </resources>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<resources>
+    <string name="misound_preset_custom">कस्टम</string>
+    <string name="misound_custom_title">कस्टम इक्वलाइज़र</string>
+    <string name="misound_custom_summary">अपना सात-बैंड वाला वक्र बनाएं। दूसरे प्रीसेट पर जाने के बाद भी यह सहेजा रहता है।</string>
+    <string name="misound_custom_band">बैंड %1$d</string>
+</resources>

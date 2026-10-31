@@ -144,4 +144,8 @@
     <string name="alioth_touch_stability_summary">0՝ որոնվածի լռելյայն արժեքը։ 1–5 մակարդակները կարգավորում են հպումների կայունությունը։</string>
     <string name="alioth_touch_expert">Հպման նախադրվածք</string>
     <string name="alioth_touch_expert_summary">0՝ առանձին կարգավորումներ։ 1–3 նախադրվածքները փոխարինում են արձագանքը, զգայունությունը, նշանառության զգայունությունն ու հպումների կայունությունը․ եզրերի զտումը մնում է առանձին։</string>
+    <string name="misound_preset_custom">Անհատական</string>
+    <string name="misound_custom_title">Անհատական հավասարիչ</string>
+    <string name="misound_custom_summary">Ստեղծեք ձեր յոթշերտանի կորը։ Այն պահպանվում է այլ նախադրվածք ընտրելիս։</string>
+    <string name="misound_custom_band">Շերտ %1$d</string>
 </resources>

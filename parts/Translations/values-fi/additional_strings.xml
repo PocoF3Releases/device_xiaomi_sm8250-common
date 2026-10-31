@@ -143,4 +143,8 @@
     <string name="alioth_touch_stability_summary">0: laiteohjelmiston oletus. Tasot 1–5 säätävät napautusten vakautta.</string>
     <string name="alioth_touch_expert">Kosketuksen esiasetus</string>
     <string name="alioth_touch_expert_summary">0: erilliset säädöt. Esiasetukset 1–3 korvaavat vasteen, herkkyyden, tähtäysherkkyyden ja napautusten vakauden; reunasuodatus pysyy erillisenä.</string>
+    <string name="misound_preset_custom">Mukautettu</string>
+    <string name="misound_custom_title">Mukautettu taajuuskorjain</string>
+    <string name="misound_custom_summary">Luo oma seitsemänkaistainen käyrä. Se säilyy, kun vaihdat toiseen esiasetukseen.</string>
+    <string name="misound_custom_band">Kaista %1$d</string>
 </resources>

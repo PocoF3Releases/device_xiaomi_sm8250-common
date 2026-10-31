@@ -143,4 +143,8 @@
     <string name="alioth_touch_stability_summary">0: ফার্মওয়্যারের ডিফল্ট মান। 1–5 স্তর ট্যাপের স্থিতিশীলতা নিয়ন্ত্রণ করে।</string>
     <string name="alioth_touch_expert">স্পর্শের প্রিসেট</string>
     <string name="alioth_touch_expert_summary">0: পৃথক নিয়ন্ত্রণ। প্রিসেট 1–3 প্রতিক্রিয়া, সংবেদনশীলতা, নিশানার সংবেদনশীলতা ও ট্যাপের স্থিতিশীলতা প্রতিস্থাপন করে; প্রান্তের ফিল্টার আলাদা থাকে।</string>
+    <string name="misound_preset_custom">কাস্টম</string>
+    <string name="misound_custom_title">কাস্টম ইকুয়ালাইজার</string>
+    <string name="misound_custom_summary">নিজের সাত-ব্যান্ডের রেখাচিত্র তৈরি করুন। অন্য প্রিসেটে গেলেও এটি সংরক্ষিত থাকে।</string>
+    <string name="misound_custom_band">ব্যান্ড %1$d</string>
 </resources>

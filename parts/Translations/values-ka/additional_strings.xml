@@ -143,4 +143,8 @@
     <string name="alioth_touch_stability_summary">0: მიკროპროგრამის ნაგულისხმევი მნიშვნელობა. დონეები 1–5 არეგულირებს შეხების სტაბილურობას.</string>
     <string name="alioth_touch_expert">შეხების წინასწარი პარამეტრები</string>
     <string name="alioth_touch_expert_summary">0: ცალკეული მართვა. ნაკრებები 1–3 ცვლის რეაქციას, მგრძნობელობას, დამიზნების მგრძნობელობასა და შეხების სტაბილურობას; კიდეების გაფილტვრა ცალკე რჩება.</string>
+    <string name="misound_preset_custom">მორგებული</string>
+    <string name="misound_custom_title">მორგებული ეკვალაიზერი</string>
+    <string name="misound_custom_summary">შექმენით საკუთარი შვიდზოლიანი მრუდი. ის ინახება სხვა წინასწარ პარამეტრზე გადართვისას.</string>
+    <string name="misound_custom_band">ზოლი %1$d</string>
 </resources>

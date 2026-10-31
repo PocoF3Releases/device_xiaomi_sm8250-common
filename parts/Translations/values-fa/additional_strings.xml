@@ -143,4 +143,8 @@
     <string name="alioth_touch_stability_summary">0: پیش‌فرض میان‌افزار. سطح‌های 1–5 پایداری ضربه را تنظیم می‌کنند.</string>
     <string name="alioth_touch_expert">پیش‌تنظیم لمس</string>
     <string name="alioth_touch_expert_summary">0: کنترل‌های جداگانه. پیش‌تنظیم‌های 1–3 جایگزین پاسخ، حساسیت، حساسیت نشانه‌گیری و پایداری ضربه می‌شوند؛ پالایش لبه‌ها جدا می‌ماند.</string>
+    <string name="misound_preset_custom">سفارشی</string>
+    <string name="misound_custom_title">اکولایزر سفارشی</string>
+    <string name="misound_custom_summary">منحنی هفت‌باندی خود را بسازید. با انتخاب پیش‌تنظیم دیگر، این منحنی حفظ می‌شود.</string>
+    <string name="misound_custom_band">باند %1$d</string>
 </resources>

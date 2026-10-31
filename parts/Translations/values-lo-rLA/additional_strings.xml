@@ -144,4 +144,8 @@
     <string name="alioth_touch_stability_summary">0: ຄ່າເລີ່ມຕົ້ນຂອງເຟີມແວ. ລະດັບ 1–5 ປັບຄວາມຄົງທີ່ຂອງການແຕະ.</string>
     <string name="alioth_touch_expert">ຄ່າການສຳຜັດທີ່ຕັ້ງໄວ້</string>
     <string name="alioth_touch_expert_summary">0: ຄວບຄຸມແຍກກັນ. ຄ່າທີ່ຕັ້ງໄວ້ 1–3 ແທນການຕອບສະໜອງ, ຄວາມໄວ, ຄວາມໄວໃນການເລັງ ແລະຄວາມຄົງທີ່ຂອງການແຕະ; ການກັ່ນຕອງຂອບຍັງແຍກຕ່າງຫາກ.</string>
+    <string name="misound_preset_custom">ກຳນົດເອງ</string>
+    <string name="misound_custom_title">ອີຄວອໄລເຊີກຳນົດເອງ</string>
+    <string name="misound_custom_summary">ສ້າງເສັ້ນໂຄ້ງເຈັດແຖບຂອງທ່ານເອງ. ມັນຍັງຄົງຖືກບັນທຶກເມື່ອປ່ຽນໄປໃຊ້ຄ່າຕັ້ງລ່ວງໜ້າອື່ນ.</string>
+    <string name="misound_custom_band">ແຖບ %1$d</string>
 </resources>

@@ -144,4 +144,8 @@
     <string name="alioth_touch_stability_summary">0: valore predefinito del firmware. I livelli 1–5 regolano la stabilità dei tocchi.</string>
     <string name="alioth_touch_expert">Profilo tattile</string>
     <string name="alioth_touch_expert_summary">0: controlli individuali. I profili 1–3 sostituiscono risposta, sensibilità, sensibilità di mira e stabilità dei tocchi; il filtro dei bordi resta separato.</string>
+    <string name="misound_preset_custom">Personalizzato</string>
+    <string name="misound_custom_title">Equalizzatore personalizzato</string>
+    <string name="misound_custom_summary">Crea una curva a sette bande. Viene conservata quando passi a un’altra preimpostazione.</string>
+    <string name="misound_custom_band">Banda %1$d</string>
 </resources>

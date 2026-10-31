@@ -143,4 +143,8 @@
     <string name="alioth_touch_stability_summary">0: valoarea implicită a firmware-ului. Nivelurile 1–5 ajustează stabilitatea atingerilor.</string>
     <string name="alioth_touch_expert">Presetare tactilă</string>
     <string name="alioth_touch_expert_summary">0: comenzi individuale. Presetările 1–3 înlocuiesc răspunsul, sensibilitatea, sensibilitatea țintirii și stabilitatea atingerilor; filtrarea marginilor rămâne separată.</string>
+    <string name="misound_preset_custom">Personalizat</string>
+    <string name="misound_custom_title">Egalizator personalizat</string>
+    <string name="misound_custom_summary">Creează propria curbă cu șapte benzi. Este păstrată când alegi altă presetare.</string>
+    <string name="misound_custom_band">Banda %1$d</string>
 </resources>

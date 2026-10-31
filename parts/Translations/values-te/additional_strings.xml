@@ -143,4 +143,8 @@
     <string name="alioth_touch_stability_summary">0: ఫర్మ్‌వేర్ డిఫాల్ట్ విలువ. 1–5 స్థాయులు ట్యాప్ స్థిరత్వాన్ని సర్దుబాటు చేస్తాయి.</string>
     <string name="alioth_touch_expert">స్పర్శ ప్రీసెట్</string>
     <string name="alioth_touch_expert_summary">0: వేర్వేరు నియంత్రణలు. ప్రీసెట్‌లు 1–3 ప్రతిస్పందన, సున్నితత్వం, గురిపెట్టే సున్నితత్వం, ట్యాప్ స్థిరత్వాన్ని భర్తీ చేస్తాయి; అంచుల ఫిల్టరింగ్ వేరుగా ఉంటుంది.</string>
+    <string name="misound_preset_custom">అనుకూలం</string>
+    <string name="misound_custom_title">అనుకూల ఈక్వలైజర్</string>
+    <string name="misound_custom_summary">మీ స్వంత ఏడు-బ్యాండ్ వక్రాన్ని రూపొందించండి. మరో ప్రీసెట్‌కు మారినా ఇది అలాగే ఉంటుంది.</string>
+    <string name="misound_custom_band">బ్యాండ్ %1$d</string>
 </resources>

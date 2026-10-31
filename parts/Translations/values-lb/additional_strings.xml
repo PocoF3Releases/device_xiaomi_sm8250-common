@@ -154,4 +154,8 @@
     <string name="alioth_touch_stability_summary">0: Standardwäert vun der Firmware. Stufen 1–5 passen d’Tippstabilitéit un.</string>
     <string name="alioth_touch_expert">Touchvirastellung</string>
     <string name="alioth_touch_expert_summary">0: eenzel Astellungen. Virastellungen 1–3 ersetzen d’Reaktioun, d’Empfindlechkeet, d’Zilempfindlechkeet an d’Tippstabilitéit; d’Randfilterung bleift separat.</string>
+    <string name="misound_preset_custom">Benotzerdefinéiert</string>
+    <string name="misound_custom_title">Benotzerdefinéierten Equalizer</string>
+    <string name="misound_custom_summary">Gestalt deng eege Kéier mat siwe Bänner. Si bleift gespäichert wann s du eng aner Virastellung auswiels.</string>
+    <string name="misound_custom_band">Band %1$d</string>
 </resources>

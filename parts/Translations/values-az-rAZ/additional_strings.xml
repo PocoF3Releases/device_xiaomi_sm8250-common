@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<resources>
+    <string name="misound_preset_custom">Fərdi</string>
+    <string name="misound_custom_title">Fərdi ekvalayzer</string>
+    <string name="misound_custom_summary">Öz yeddi zolaqlı əyrinizi yaradın. Başqa hazır ayara keçəndə saxlanılır.</string>
+    <string name="misound_custom_band">Zolaq %1$d</string>
+</resources>

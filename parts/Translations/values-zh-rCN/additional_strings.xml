@@ -143,4 +143,8 @@
     <string name="alioth_touch_stability_summary">0：固件默认值。1–5 级可调整点击稳定性。</string>
     <string name="alioth_touch_expert">触控预设</string>
     <string name="alioth_touch_expert_summary">0：单独调整。预设 1–3 会替代响应、灵敏度、瞄准灵敏度和点击稳定性设置；边缘过滤仍独立设置。</string>
+    <string name="misound_preset_custom">自定义</string>
+    <string name="misound_custom_title">自定义均衡器</string>
+    <string name="misound_custom_summary">调整自己的七段曲线。切换到其他预设时，此曲线仍会保留。</string>
+    <string name="misound_custom_band">频段 %1$d</string>
 </resources>

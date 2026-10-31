@@ -154,4 +154,8 @@
     <string name="alioth_touch_stability_summary">0: بنەڕەتی فێرموێر. ئاستەکانی 1–5 جێگیریی لێدان ڕێک دەخەن.</string>
     <string name="alioth_touch_expert">پێشڕێکخستنی دەستدان</string>
     <string name="alioth_touch_expert_summary">0: کۆنترۆڵە جیاوازەکان. پێشڕێکخستنەکانی 1–3 جێگەی وەڵام، هەستیاری، هەستیاریی نیشانەگرتن و جێگیریی لێدان دەگرنەوە؛ پاڵاوتنی لێوارەکان جیا دەمێنێتەوە.</string>
+    <string name="misound_preset_custom">تایبەت</string>
+    <string name="misound_custom_title">یەکسانکەری تایبەت</string>
+    <string name="misound_custom_summary">چەماوەی حەوت باندی خۆت دروست بکە. کاتێک بۆ پێشڕێکخستنێکی تر دەگۆڕیت، دەپارێزرێت.</string>
+    <string name="misound_custom_band">باندی %1$d</string>
 </resources>

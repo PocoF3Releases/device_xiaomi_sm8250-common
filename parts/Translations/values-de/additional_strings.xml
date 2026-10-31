@@ -144,4 +144,8 @@
     <string name="alioth_touch_stability_summary">0: Firmware-Standard. Stufen 1–5 passen die Tippstabilität an.</string>
     <string name="alioth_touch_expert">Berührungsvoreinstellung</string>
     <string name="alioth_touch_expert_summary">0: einzelne Einstellungen. Voreinstellungen 1–3 ersetzen Reaktion, Empfindlichkeit, Zielempfindlichkeit und Tippstabilität; die Randfilterung bleibt separat.</string>
+    <string name="misound_preset_custom">Benutzerdefiniert</string>
+    <string name="misound_custom_title">Benutzerdefinierter Equalizer</string>
+    <string name="misound_custom_summary">Gestalte deine eigene Sieben-Band-Kurve. Sie bleibt beim Wechsel zu einer anderen Voreinstellung erhalten.</string>
+    <string name="misound_custom_band">Band %1$d</string>
 </resources>

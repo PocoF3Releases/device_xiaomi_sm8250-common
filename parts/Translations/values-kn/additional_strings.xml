@@ -143,4 +143,8 @@
     <string name="alioth_touch_stability_summary">0: ಫರ್ಮ್‌ವೇರ್‌ನ ಡೀಫಾಲ್ಟ್ ಮೌಲ್ಯ. 1–5 ಹಂತಗಳು ಟ್ಯಾಪ್ ಸ್ಥಿರತೆಯನ್ನು ಹೊಂದಿಸುತ್ತವೆ.</string>
     <string name="alioth_touch_expert">ಸ್ಪರ್ಶ ಪೂರ್ವನಿಗದಿ</string>
     <string name="alioth_touch_expert_summary">0: ಪ್ರತ್ಯೇಕ ನಿಯಂತ್ರಣಗಳು. ಪೂರ್ವನಿಗದಿಗಳು 1–3 ಪ್ರತಿಕ್ರಿಯೆ, ಸೂಕ್ಷ್ಮತೆ, ಗುರಿಯಿಡುವ ಸೂಕ್ಷ್ಮತೆ ಮತ್ತು ಟ್ಯಾಪ್ ಸ್ಥಿರತೆಯನ್ನು ಬದಲಿಸುತ್ತವೆ; ಅಂಚಿನ ಫಿಲ್ಟರಿಂಗ್ ಪ್ರತ್ಯೇಕವಾಗಿರುತ್ತದೆ.</string>
+    <string name="misound_preset_custom">ಕಸ್ಟಮ್</string>
+    <string name="misound_custom_title">ಕಸ್ಟಮ್ ಈಕ್ವಲೈಜರ್</string>
+    <string name="misound_custom_summary">ನಿಮ್ಮದೇ ಏಳು-ಬ್ಯಾಂಡ್ ವಕ್ರ ರಚಿಸಿ. ಬೇರೆ ಪೂರ್ವನಿಗದಿಗೆ ಬದಲಿಸಿದರೂ ಇದು ಉಳಿಯುತ್ತದೆ.</string>
+    <string name="misound_custom_band">ಬ್ಯಾಂಡ್ %1$d</string>
 </resources>

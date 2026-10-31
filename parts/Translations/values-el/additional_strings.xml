@@ -143,4 +143,8 @@
     <string name="alioth_touch_stability_summary">0: προεπιλογή υλικολογισμικού. Τα επίπεδα 1–5 ρυθμίζουν τη σταθερότητα πατήματος.</string>
     <string name="alioth_touch_expert">Προεπιλογή αφής</string>
     <string name="alioth_touch_expert_summary">0: μεμονωμένες ρυθμίσεις. Οι προεπιλογές 1–3 αντικαθιστούν την απόκριση, την ευαισθησία, την ευαισθησία στόχευσης και τη σταθερότητα πατήματος· το φιλτράρισμα άκρων παραμένει ξεχωριστό.</string>
+    <string name="misound_preset_custom">Προσαρμοσμένο</string>
+    <string name="misound_custom_title">Προσαρμοσμένος ισοσταθμιστής</string>
+    <string name="misound_custom_summary">Διαμορφώστε τη δική σας καμπύλη επτά ζωνών. Διατηρείται όταν επιλέγετε άλλη προρύθμιση.</string>
+    <string name="misound_custom_band">Ζώνη %1$d</string>
 </resources>

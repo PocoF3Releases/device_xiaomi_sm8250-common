@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<resources>
+    <string name="misound_preset_custom">Өөрийн</string>
+    <string name="misound_custom_title">Өөрийн эквалайзер</string>
+    <string name="misound_custom_summary">Өөрийн долоон зурваст муруйг үүсгэнэ үү. Өөр бэлэн тохиргоо сонгосон ч хадгалагдана.</string>
+    <string name="misound_custom_band">Зурвас %1$d</string>
+</resources>

@@ -154,4 +154,8 @@
     <string name="alioth_touch_stability_summary">0: firmvara defaŭlto. Niveloj 1–5 ĝustigas frapstabilecon.</string>
     <string name="alioth_touch_expert">Tuŝantaŭagordo</string>
     <string name="alioth_touch_expert_summary">0: apartaj regiloj. Antaŭagordoj 1–3 anstataŭigas respondon, sentemon, celsentemon kaj frapstabilecon; randfiltrado restas aparta.</string>
+    <string name="misound_preset_custom">Propra</string>
+    <string name="misound_custom_title">Propra egaligilo</string>
+    <string name="misound_custom_summary">Formu vian propran sep-bendan kurbon. Ĝi restas konservita kiam vi elektas alian antaŭagordon.</string>
+    <string name="misound_custom_band">Bendo %1$d</string>
 </resources>

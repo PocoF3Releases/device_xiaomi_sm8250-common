@@ -144,4 +144,8 @@
     <string name="alioth_touch_stability_summary">0: firmwarestandaard. Niveaus 1–5 passen de tikstabiliteit aan.</string>
     <string name="alioth_touch_expert">Aanraakvoorinstelling</string>
     <string name="alioth_touch_expert_summary">0: afzonderlijke instellingen. Voorinstellingen 1–3 vervangen reactie, gevoeligheid, richtgevoeligheid en tikstabiliteit; randfiltering blijft afzonderlijk.</string>
+    <string name="misound_preset_custom">Aangepast</string>
+    <string name="misound_custom_title">Aangepaste equalizer</string>
+    <string name="misound_custom_summary">Maak je eigen curve met zeven banden. Deze blijft bewaard wanneer je een andere voorinstelling kiest.</string>
+    <string name="misound_custom_band">Band %1$d</string>
 </resources>

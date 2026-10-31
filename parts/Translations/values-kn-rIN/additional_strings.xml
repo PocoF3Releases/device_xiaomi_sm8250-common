@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<resources>
+    <string name="misound_preset_custom">ಕಸ್ಟಮ್</string>
+    <string name="misound_custom_title">ಕಸ್ಟಮ್ ಈಕ್ವಲೈಜರ್</string>
+    <string name="misound_custom_summary">ನಿಮ್ಮದೇ ಏಳು-ಬ್ಯಾಂಡ್ ವಕ್ರ ರಚಿಸಿ. ಬೇರೆ ಪೂರ್ವನಿಗದಿಗೆ ಬದಲಿಸಿದರೂ ಇದು ಉಳಿಯುತ್ತದೆ.</string>
+    <string name="misound_custom_band">ಬ್ಯಾಂಡ್ %1$d</string>
+</resources>
