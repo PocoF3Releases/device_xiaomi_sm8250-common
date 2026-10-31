@@ -6,4 +6,9 @@
     <string name="misound_pause_calls_title">Pause during calls</string>
     <string name="misound_pause_calls_summary">Temporarily bypass MiSound during calls and voice communication, then restore it automatically.</string>
     <string name="misound_paused_for_calls">Paused for voice communication</string>
+    <string name="misound_preset_custom">Custom</string>
+    <string name="misound_custom_title">Custom equalizer</string>
+    <string name="misound_custom_summary">Shape your own seven-band curve. It is kept when you switch to another preset.</string>
+    <string name="misound_custom_band">Band %1$d</string>
+    <string name="misound_custom_gain">%1$+.1f dB</string>
 </resources>

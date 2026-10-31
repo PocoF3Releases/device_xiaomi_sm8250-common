@@ -20,13 +20,19 @@ import android.media.*
 import android.util.Log
 import android.widget.Toast
 import androidx.compose.foundation.layout.*
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Slider
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.semantics.stateDescription
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -91,15 +97,20 @@ class MiSoundActivity : PartsActivity() {
         val available = state.available
         val requested = state.enabled
         val eq = state.equalizer
-        fun apply(action: (MiSoundUtils) -> Unit) {
+        var customEditRevision by remember { mutableIntStateOf(0) }
+        fun apply(onFailure: () -> Unit = {}, action: (MiSoundUtils) -> Unit) {
             val app = applicationContext
             utils.submit(action) {
+                onFailure()
                 Toast.makeText(app, R.string.misound_apply_failed, Toast.LENGTH_SHORT).show()
             }
         }
         val hifiSupported = utils.isHifiSupported()
+        val customSelected = state.preset == MiSoundUtils.CUSTOM
         val headsetOffset = if (headphones) 1 else 0
-        val secondaryRowCount = 4 + headsetOffset + (if (hifiSupported) 1 else 0)
+        val customOffset = if (customSelected) 1 else 0
+        val secondaryRowCount =
+            4 + headsetOffset + customOffset + (if (hifiSupported) 1 else 0)
         PartsPage(stringResource(R.string.misound_title), { finish() }) {
             Row(
                 Modifier.fillMaxWidth().padding(vertical = 12.dp),
@@ -190,7 +201,8 @@ class MiSoundActivity : PartsActivity() {
                 }
             }
             val presetChoices =
-                ResourceChoices(R.array.misound_preset_pref_entries, R.array.misound_preset_pref_values)
+                ResourceChoices(R.array.misound_preset_pref_entries, R.array.misound_preset_pref_values) +
+                    (MiSoundUtils.CUSTOM to stringResource(R.string.misound_preset_custom))
             val presetSymbols =
                 listOf(
                     MiSoundIcons.sliders_vertical,
@@ -211,6 +223,7 @@ class MiSoundActivity : PartsActivity() {
                     MiSoundIcons.treble_reduction,
                     MiSoundIcons.soft_bass,
                     MiSoundIcons.soft_treble,
+                    MiSoundIcons.sliders_vertical,
                 )
             val presetIcons =
                 presetChoices
@@ -229,7 +242,19 @@ class MiSoundActivity : PartsActivity() {
                     apply { it.setLevel(value) }
                 }
             }
-            PreferenceRow(3 + headsetOffset, secondaryRowCount) {
+            if (customSelected)
+                PreferenceRow(3 + headsetOffset, secondaryRowCount) {
+                    CustomEqualizerCard(
+                        state.customLevels,
+                        available && requested && eq,
+                        customEditRevision,
+                    ) {
+                        band,
+                        level ->
+                        apply(onFailure = { customEditRevision++ }) { it.setCustomLevel(band, level) }
+                    }
+                }
+            PreferenceRow(3 + headsetOffset + customOffset, secondaryRowCount) {
                 ChoiceCard(
                     stringResource(R.string.music_headset_scenario_select),
                     state.scenario.toString(),
@@ -254,7 +279,7 @@ class MiSoundActivity : PartsActivity() {
                 }
             }
             if (hifiSupported)
-                PreferenceRow(4 + headsetOffset, secondaryRowCount) {
+                PreferenceRow(4 + headsetOffset + customOffset, secondaryRowCount) {
                     ToggleCard(
                         stringResource(R.string.misound_hifi_title),
                         stringResource(R.string.misound_hifi_summary),
@@ -264,6 +289,68 @@ class MiSoundActivity : PartsActivity() {
                         apply { it.setHifiMode(if (enabled) 1 else 0) }
                     }
                 }
+        }
+    }
+}
+
+/** Stock-equivalent custom curve: seven bands, -10..10 dB in 0.5 dB steps. */
+@Composable
+private fun CustomEqualizerCard(
+    levels: List<Float>,
+    enabled: Boolean,
+    resetRevision: Int,
+    change: (Int, Float) -> Unit,
+) {
+    val haptics = rememberPartsHaptics()
+    Card(
+        Modifier.fillMaxWidth(),
+        shape = LocalPreferenceShape.current,
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceBright),
+    ) {
+        Column(Modifier.padding(horizontal = 20.dp, vertical = 16.dp)) {
+            Text(
+                stringResource(R.string.misound_custom_title),
+                style = MaterialTheme.typography.titleMedium,
+            )
+            Text(
+                stringResource(R.string.misound_custom_summary),
+                style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                modifier = Modifier.padding(top = 4.dp, bottom = 8.dp),
+            )
+            levels.forEachIndexed { band, saved ->
+                var draft by remember(band, saved, resetRevision) { mutableFloatStateOf(saved) }
+                val label = stringResource(R.string.misound_custom_band, band + 1)
+                val value = stringResource(R.string.misound_custom_gain, draft)
+                Row(
+                    Modifier.fillMaxWidth().padding(top = 4.dp),
+                    verticalAlignment = Alignment.CenterVertically,
+                ) {
+                    Text(label, style = MaterialTheme.typography.labelLarge, modifier = Modifier.weight(1f))
+                    Text(
+                        value,
+                        style = MaterialTheme.typography.labelLarge,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    )
+                }
+                Slider(
+                    value = draft,
+                    onValueChange = {
+                        val level = Math.round(it * 2f) / 2f
+                        if (level != draft) haptics.detent()
+                        draft = level
+                    },
+                    onValueChangeFinished = { change(band, draft) },
+                    valueRange = MiSoundUtils.LEVEL_RANGE,
+                    steps = 39,
+                    enabled = enabled,
+                    modifier =
+                        Modifier.semantics {
+                            contentDescription = label
+                            stateDescription = value
+                        },
+                )
+            }
         }
     }
 }
