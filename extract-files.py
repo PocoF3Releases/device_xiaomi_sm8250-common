@@ -20,6 +20,10 @@ from extract_utils.fixups_lib import (
 blob_fixups: blob_fixups_user_type = {
     'system/framework/WfdCommon.jar': blob_fixup()
         .apktool_patch('blob-patches/WfdCommon.patch'),
+    # Only the 64-bit WFD executable is packaged by this tree.
+    'system_ext/etc/init/wfdservice.rc': blob_fixup()
+        .regex_replace(r'service wfdservice /system_ext/bin/wfdservice\n(?:    [^\n]*\n)+\n', '')
+        .regex_replace(r'on property:vendor\.wfdservice=(?:enable|disable)\n    (?:start|stop) wfdservice\n\n', ''),
     'system_ext/lib64/libwfdservice.so': blob_fixup()
         .replace_needed('android.media.audio.common.types-V4-cpp.so', 'android.media.audio.common.types-V5-cpp.so'),
     # SM8250 builds RMNET into the kernel; stock GKI module hooks cannot work.
@@ -27,8 +31,20 @@ blob_fixups: blob_fixups_user_type = {
         .regex_replace(r'    #Load rmnet_core driver\n(?:    exec [^\n]*modprobe[^\n]*\n)+',
                        '    # RMNET drivers are built into the SM8250 kernel.\n')
         .regex_replace(r'\non property:persist\.vendor\.data\.(?:shs|perf|offload)_ko_load=[0-3]\n(?:    exec [^\n]*modprobe[^\n]*\n)+', ''),
+    'vendor/etc/init/android.hardware.neuralnetworks@1.3-service-qti.rc': blob_fixup()
+        .regex_replace(r'writepid /dev/stune/nnapi-hal/tasks', 'task_profiles NNApiHALPerformance'),
+    'vendor/etc/init/vendor.qti.media.c2@1.0-service.rc': blob_fixup()
+        .regex_replace(r'writepid /dev/cpuset/foreground/tasks', 'task_profiles ProcessCapacityHigh'),
+    'vendor/etc/init/android.hardware.drm@1.3-service.widevine.rc': blob_fixup()
+        .regex_replace(r'writepid /dev/cpuset/foreground/tasks', 'task_profiles ProcessCapacityHigh')
+        # The stock MIUI migration script is not present in this ROM.
+        .regex_replace(r'    start vendor\.move_data_sh\n', '')
+        .regex_replace(r'service vendor\.move_data_sh /system/bin/move_widevine_data\.sh\n(?:    [^\n]*\n)+\n', ''),
     'vendor/etc/init/init.mi_thermald.rc': blob_fixup()
         .regex_replace('.*seclabel u:r:mi_thermald:s0\n', ''),
+    'vendor/etc/init/vendor.xiaomi.hardware.touchfeature@1.0-service.rc': blob_fixup()
+        .regex_replace(r'(service toucheventcheck /vendor/bin/toucheventcheck\n)(?!    disabled)',
+                       r'\1    disabled\n'),
     'vendor/etc/seccomp_policy/atfwd@2.0.policy': blob_fixup()
         .add_line_if_missing('gettid: 1'),
     'vendor/lib64/libril-qc-hal-qmi.so': blob_fixup()
