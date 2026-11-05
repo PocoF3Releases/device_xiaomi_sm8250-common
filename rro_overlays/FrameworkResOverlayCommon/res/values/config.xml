@@ -167,7 +167,7 @@
 
     <!-- Vibrator pattern for feedback when selecting an hour/minute tick of a Clock -->
     <integer-array name="config_clockTickVibePattern">
-        <item>125</item>
+        <item>0</item>
         <item>30</item>
     </integer-array>
 
