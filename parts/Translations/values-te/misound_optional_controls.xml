@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="misound_surround_title">3D సరౌండ్</string>
+    <string name="misound_surround_summary">అనుకూల హెడ్‌ఫోన్‌లను ఉపయోగిస్తున్నప్పుడు సరౌండ్ ప్రభావాన్ని జోడించండి.</string>
+    <string name="misound_supported_headphones_required">ఈ సెట్టింగ్‌ను ఉపయోగించడానికి అనుకూల హెడ్‌ఫోన్‌లను కనెక్ట్ చేయండి.</string>
+    <string name="misound_ear_compensation_title">వాల్యూమ్ సర్దుబాటు</string>
+    <string name="misound_ear_compensation_summary">వయస్సు ఆధారిత ప్రీసెట్‌తో హెడ్‌ఫోన్ ధ్వనిని సర్దుబాటు చేయండి.</string>
+    <string name="misound_ear_compensation_preset_title">సిస్టమ్ ప్రీసెట్‌లు</string>
+    <string name="misound_ear_compensation_under_30">30 ఏళ్ల కంటే తక్కువ వయస్సు</string>
+    <string name="misound_ear_compensation_30_to_60">30–60 ఏళ్ల వయస్సు</string>
+    <string name="misound_ear_compensation_over_60">60 ఏళ్ల కంటే ఎక్కువ వయస్సు</string>
+</resources>

@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="thermal_current_profile_title">Gjeldende profilvalg</string>
+    <string name="thermal_current_profile_unavailable">Profilvalget er ikke tilgjengelig</string>
+    <string name="thermal_current_profile_note">Kjernens valg når denne skjermen åpnes. Dette måler ikke aktiv ytelsesbegrensning.</string>
+</resources>

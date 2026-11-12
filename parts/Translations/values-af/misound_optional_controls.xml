@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<resources>
+    <string name="misound_surround_title">3D-omringklank</string>
+    <string name="misound_surround_summary">Voeg \'n omringklankeffek by wanneer jy versoenbare oorfone gebruik.</string>
+    <string name="misound_supported_headphones_required">Verbind versoenbare oorfone om hierdie instelling te gebruik.</string>
+    <string name="misound_ear_compensation_title">Volume-aanpassing</string>
+    <string name="misound_ear_compensation_summary">Pas die klank van oorfone aan met \'n ouderdomsgebaseerde voorafinstelling.</string>
+    <string name="misound_ear_compensation_preset_title">Stelselvoorafinstellings</string>
+    <string name="misound_ear_compensation_under_30">Jonger as 30 jaar</string>
+    <string name="misound_ear_compensation_30_to_60">30–60 jaar oud</string>
+    <string name="misound_ear_compensation_over_60">Ouer as 60 jaar</string>
+</resources>

@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="thermal_current_profile_title">Учурдагы профиль тандоосу</string>
+    <string name="thermal_current_profile_unavailable">Профиль тандоосу жеткиликсиз</string>
+    <string name="thermal_current_profile_note">Бул экран ачылгандагы ядронун тандоосу. Бул өндүрүмдүүлүктүн активдүү чектелишин өлчөбөйт.</string>
+</resources>

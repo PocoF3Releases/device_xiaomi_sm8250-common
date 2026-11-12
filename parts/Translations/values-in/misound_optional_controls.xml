@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<resources>
+    <string name="misound_surround_title">Suara surround 3D</string>
+    <string name="misound_surround_summary">Tambahkan efek surround saat menggunakan headphone yang kompatibel.</string>
+    <string name="misound_supported_headphones_required">Hubungkan headphone yang kompatibel untuk menggunakan setelan ini.</string>
+    <string name="misound_ear_compensation_title">Pengaturan volume</string>
+    <string name="misound_ear_compensation_summary">Sesuaikan suara headphone menggunakan preset berdasarkan usia.</string>
+    <string name="misound_ear_compensation_preset_title">Preset sistem</string>
+    <string name="misound_ear_compensation_under_30">Di bawah 30 tahun</string>
+    <string name="misound_ear_compensation_30_to_60">30–60 tahun</string>
+    <string name="misound_ear_compensation_over_60">Di atas 60 tahun</string>
+</resources>

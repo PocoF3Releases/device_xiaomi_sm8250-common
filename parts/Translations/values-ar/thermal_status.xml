@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="thermal_current_profile_title">اختيار الملف الحالي</string>
+    <string name="thermal_current_profile_unavailable">اختيار الملف غير متاح</string>
+    <string name="thermal_current_profile_note">اختيار النواة عند فتح هذه الشاشة. لا يقيس خفض الأداء الفعلي.</string>
+</resources>

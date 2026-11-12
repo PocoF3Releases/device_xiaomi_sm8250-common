@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="misound_surround_title">Umsindo ozungezayo we-3D</string>
+    <string name="misound_surround_summary">Engeza umphumela womsindo ozungezayo uma usebenzisa ama-headphone ahambisanayo.</string>
+    <string name="misound_supported_headphones_required">Xhuma ama-headphone ahambisanayo ukuze usebenzise lesi silungiselelo.</string>
+    <string name="misound_ear_compensation_title">Ukulungisa ivolumu</string>
+    <string name="misound_ear_compensation_summary">Lungisa umsindo wama-headphone usebenzisa isilungiselelo esisethwe ngaphambilini ngokuya ngeminyaka yobudala.</string>
+    <string name="misound_ear_compensation_preset_title">Izilungiselelo zesistimu ezisethwe ngaphambilini</string>
+    <string name="misound_ear_compensation_under_30">Ngaphansi kweminyaka engama-30</string>
+    <string name="misound_ear_compensation_30_to_60">Iminyaka engama-30–60</string>
+    <string name="misound_ear_compensation_over_60">Ngaphezu kweminyaka engama-60</string>
+</resources>

@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="thermal_current_profile_title">Pilihan profil saat ini</string>
+    <string name="thermal_current_profile_unavailable">Pilihan profil tidak tersedia</string>
+    <string name="thermal_current_profile_note">Pilihan kernel saat layar ini dibuka. Ini tidak mengukur pembatasan kinerja yang sedang aktif.</string>
+</resources>

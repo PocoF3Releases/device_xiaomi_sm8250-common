@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<resources>
+    <string name="misound_surround_title">3D-ruumheli</string>
+    <string name="misound_surround_summary">Lisa ruumheliefekt, kui kasutad ühilduvaid kõrvaklappe.</string>
+    <string name="misound_supported_headphones_required">Selle seade kasutamiseks ühenda ühilduvad kõrvaklapid.</string>
+    <string name="misound_ear_compensation_title">Helitugevuse reguleerimine</string>
+    <string name="misound_ear_compensation_summary">Reguleeri kõrvaklappide heli vanusepõhise eelseadega.</string>
+    <string name="misound_ear_compensation_preset_title">Süsteemi eelseaded</string>
+    <string name="misound_ear_compensation_under_30">Alla 30 aasta</string>
+    <string name="misound_ear_compensation_30_to_60">30–60 aastat</string>
+    <string name="misound_ear_compensation_over_60">Üle 60 aasta</string>
+</resources>

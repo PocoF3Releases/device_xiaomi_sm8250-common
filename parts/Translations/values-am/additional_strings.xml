@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<resources>
+    <string name="misound_preset_custom">ብጁ</string>
+    <string name="misound_custom_title">ብጁ ኢኳላይዘር</string>
+    <string name="misound_custom_summary">የራስዎን ባለሰባት ባንድ ኩርባ ይፍጠሩ። ወደ ሌላ ቅድመ ቅንብር ሲቀይሩም ይቀመጣል።</string>
+    <string name="misound_custom_band">ባንድ %1$d</string>
+</resources>

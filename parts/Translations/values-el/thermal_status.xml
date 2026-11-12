@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="thermal_current_profile_title">Τρέχουσα επιλογή προφίλ</string>
+    <string name="thermal_current_profile_unavailable">Η επιλογή προφίλ δεν είναι διαθέσιμη</string>
+    <string name="thermal_current_profile_note">Επιλογή του πυρήνα κατά το άνοιγμα αυτής της οθόνης. Δεν μετρά τον ενεργό περιορισμό απόδοσης.</string>
+</resources>

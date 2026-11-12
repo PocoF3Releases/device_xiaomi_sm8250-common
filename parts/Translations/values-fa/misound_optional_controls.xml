@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<resources>
+    <string name="misound_surround_title">صدای فراگیر 3D</string>
+    <string name="misound_surround_summary">هنگام استفاده از هدفون‌های سازگار، جلوهٔ صدای فراگیر اضافه کنید.</string>
+    <string name="misound_supported_headphones_required">برای استفاده از این تنظیم، هدفون سازگار وصل کنید.</string>
+    <string name="misound_ear_compensation_title">تنظیم صدا</string>
+    <string name="misound_ear_compensation_summary">صدای هدفون را با پیش‌تنظیمی بر پایهٔ سن تنظیم کنید.</string>
+    <string name="misound_ear_compensation_preset_title">پیش‌تنظیمات سیستم</string>
+    <string name="misound_ear_compensation_under_30">کمتر از 30 سال</string>
+    <string name="misound_ear_compensation_30_to_60">30–60 سال</string>
+    <string name="misound_ear_compensation_over_60">بیش از 60 سال</string>
+</resources>

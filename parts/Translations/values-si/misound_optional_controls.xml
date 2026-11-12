@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="misound_surround_title">3D සරවුන්ඩ් ශබ්දය</string>
+    <string name="misound_surround_summary">ගැළපෙන හෙඩ්ෆෝන් භාවිත කරන විට සරවුන්ඩ් ශබ්ද ප්‍රයෝගයක් එක් කරන්න.</string>
+    <string name="misound_supported_headphones_required">මෙම සැකසුම භාවිත කිරීමට ගැළපෙන හෙඩ්ෆෝන් සම්බන්ධ කරන්න.</string>
+    <string name="misound_ear_compensation_title">ශබ්ද මට්ටම සකස් කිරීම</string>
+    <string name="misound_ear_compensation_summary">වයස මත පදනම් වූ පෙර සැකසුමක් භාවිත කර හෙඩ්ෆෝන් ශබ්දය සකසන්න.</string>
+    <string name="misound_ear_compensation_preset_title">පද්ධති පෙර සැකසුම්</string>
+    <string name="misound_ear_compensation_under_30">වයස අවුරුදු 30ට අඩු</string>
+    <string name="misound_ear_compensation_30_to_60">වයස අවුරුදු 30–60</string>
+    <string name="misound_ear_compensation_over_60">වයස අවුරුදු 60ට වැඩි</string>
+</resources>

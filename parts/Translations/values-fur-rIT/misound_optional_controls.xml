@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<resources>
+    <string name="misound_surround_title">Sun surround 3D</string>
+    <string name="misound_surround_summary">Zonte un efiet surround cuant che tu dopris scufis compatibilis.</string>
+    <string name="misound_supported_headphones_required">Coleghe scufis compatibilis par doprâ cheste impostazion.</string>
+    <string name="misound_ear_compensation_title">Regolazion dal volum</string>
+    <string name="misound_ear_compensation_summary">Regole il sun des scufis cuntune preimpostazion basade su l\'etât.</string>
+    <string name="misound_ear_compensation_preset_title">Preimpostazions di sisteme</string>
+    <string name="misound_ear_compensation_under_30">Mancul di 30 agns</string>
+    <string name="misound_ear_compensation_30_to_60">30–60 agns</string>
+    <string name="misound_ear_compensation_over_60">Plui di 60 agns</string>
+</resources>

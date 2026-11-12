@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="misound_surround_title">3D ئورالما ئاۋاز</string>
+    <string name="misound_surround_summary">ماس كېلىدىغان تىڭشىغۇچ ئىشلەتكەندە ئورالما ئاۋاز ئۈنۈمى قوشۇڭ.</string>
+    <string name="misound_supported_headphones_required">بۇ تەڭشەكنى ئىشلىتىش ئۈچۈن ماس كېلىدىغان تىڭشىغۇچ ئۇلاڭ.</string>
+    <string name="misound_ear_compensation_title">ئاۋاز مىقدارىنى تەڭشەش</string>
+    <string name="misound_ear_compensation_summary">ياشقا ئاساسەن ئالدىن بېكىتىلگەن تەڭشەك ئارقىلىق تىڭشىغۇچ ئاۋازىنى تەڭشەڭ.</string>
+    <string name="misound_ear_compensation_preset_title">سىستېما ئالدىن بېكىتكەن تەڭشەكلەر</string>
+    <string name="misound_ear_compensation_under_30">30 ياشتىن كىچىك</string>
+    <string name="misound_ear_compensation_30_to_60">30–60 ياش</string>
+    <string name="misound_ear_compensation_over_60">60 ياشتىن چوڭ</string>
+</resources>

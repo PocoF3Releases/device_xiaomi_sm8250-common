@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="misound_surround_title">3D 环绕声</string>
+    <string name="misound_surround_summary">使用兼容的耳机时添加环绕音效。</string>
+    <string name="misound_supported_headphones_required">连接兼容的耳机以使用此设置。</string>
+    <string name="misound_ear_compensation_title">音量调节</string>
+    <string name="misound_ear_compensation_summary">使用基于年龄的预设来调整耳机声音。</string>
+    <string name="misound_ear_compensation_preset_title">系统预设</string>
+    <string name="misound_ear_compensation_under_30">未满 30 岁</string>
+    <string name="misound_ear_compensation_30_to_60">30–60 岁</string>
+    <string name="misound_ear_compensation_over_60">超过 60 岁</string>
+</resources>

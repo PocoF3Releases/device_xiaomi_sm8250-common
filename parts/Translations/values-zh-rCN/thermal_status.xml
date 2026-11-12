@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="thermal_current_profile_title">当前选择的配置</string>
+    <string name="thermal_current_profile_unavailable">无法获取配置选择</string>
+    <string name="thermal_current_profile_note">打开此页面时读取的内核选择。此信息不代表实际的性能限制测量结果。</string>
+</resources>

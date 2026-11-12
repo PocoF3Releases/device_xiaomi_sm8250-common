@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<resources>
+    <string name="misound_surround_title">3D-tilaääni</string>
+    <string name="misound_surround_summary">Lisää tilaäänitehoste yhteensopivia kuulokkeita käytettäessä.</string>
+    <string name="misound_supported_headphones_required">Yhdistä yhteensopivat kuulokkeet, jotta voit käyttää tätä asetusta.</string>
+    <string name="misound_ear_compensation_title">Äänenvoimakkuuden säätö</string>
+    <string name="misound_ear_compensation_summary">Säädä kuulokkeiden ääntä ikään perustuvalla esiasetuksella.</string>
+    <string name="misound_ear_compensation_preset_title">Järjestelmän esiasetukset</string>
+    <string name="misound_ear_compensation_under_30">Alle 30-vuotiaat</string>
+    <string name="misound_ear_compensation_30_to_60">30–60-vuotiaat</string>
+    <string name="misound_ear_compensation_over_60">Yli 60-vuotiaat</string>
+</resources>

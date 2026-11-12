@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="misound_surround_title">Dźwięk przestrzenny 3D</string>
+    <string name="misound_surround_summary">Dodaj efekt dźwięku przestrzennego podczas korzystania ze zgodnych słuchawek.</string>
+    <string name="misound_supported_headphones_required">Aby użyć tego ustawienia, podłącz zgodne słuchawki.</string>
+    <string name="misound_ear_compensation_title">Dostosowanie głośności</string>
+    <string name="misound_ear_compensation_summary">Dostosuj dźwięk słuchawek za pomocą ustawienia wstępnego dobranego do wieku.</string>
+    <string name="misound_ear_compensation_preset_title">Systemowe ustawienia wstępne</string>
+    <string name="misound_ear_compensation_under_30">Poniżej 30 lat</string>
+    <string name="misound_ear_compensation_30_to_60">30–60 lat</string>
+    <string name="misound_ear_compensation_over_60">Powyżej 60 lat</string>
+</resources>

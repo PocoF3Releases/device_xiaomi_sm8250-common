@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="thermal_current_profile_title">हालको प्रोफाइल चयन</string>
+    <string name="thermal_current_profile_unavailable">प्रोफाइल चयन उपलब्ध छैन</string>
+    <string name="thermal_current_profile_note">यो स्क्रिन खुल्दा कर्नेलको चयन पढिन्छ। यसले सक्रिय कार्यसम्पादन सीमितकरण मापन गर्दैन।</string>
+</resources>

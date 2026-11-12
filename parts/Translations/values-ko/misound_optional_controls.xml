@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="misound_surround_title">3D 서라운드</string>
+    <string name="misound_surround_summary">호환되는 헤드폰을 사용할 때 서라운드 효과를 추가합니다.</string>
+    <string name="misound_supported_headphones_required">이 설정을 사용하려면 호환되는 헤드폰을 연결하세요.</string>
+    <string name="misound_ear_compensation_title">볼륨 조절</string>
+    <string name="misound_ear_compensation_summary">연령별 프리셋으로 헤드폰 사운드를 조정합니다.</string>
+    <string name="misound_ear_compensation_preset_title">시스템 프리셋</string>
+    <string name="misound_ear_compensation_under_30">30세 미만</string>
+    <string name="misound_ear_compensation_30_to_60">30–60세</string>
+    <string name="misound_ear_compensation_over_60">60세 초과</string>
+</resources>

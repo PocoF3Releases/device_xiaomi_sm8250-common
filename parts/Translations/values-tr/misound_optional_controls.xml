@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="misound_surround_title">3D çevresel ses</string>
+    <string name="misound_surround_summary">Uyumlu kulaklık kullanırken çevresel ses efekti ekleyin.</string>
+    <string name="misound_supported_headphones_required">Bu ayarı kullanmak için uyumlu kulaklık bağlayın.</string>
+    <string name="misound_ear_compensation_title">Ses ayarı</string>
+    <string name="misound_ear_compensation_summary">Kulaklık sesini yaşa göre belirlenmiş bir ön ayarla düzenleyin.</string>
+    <string name="misound_ear_compensation_preset_title">Sistem ön ayarları</string>
+    <string name="misound_ear_compensation_under_30">30 yaşından küçük</string>
+    <string name="misound_ear_compensation_30_to_60">30–60 yaş</string>
+    <string name="misound_ear_compensation_over_60">60 yaşından büyük</string>
+</resources>

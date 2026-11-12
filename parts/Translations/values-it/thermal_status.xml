@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="thermal_current_profile_title">Selezione attuale del profilo</string>
+    <string name="thermal_current_profile_unavailable">La selezione del profilo non è disponibile</string>
+    <string name="thermal_current_profile_note">Selezione del kernel all’apertura di questa schermata. Non misura la limitazione attiva delle prestazioni.</string>
+</resources>

@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="thermal_current_profile_title">Geçerli profil seçimi</string>
+    <string name="thermal_current_profile_unavailable">Profil seçimi kullanılamıyor</string>
+    <string name="thermal_current_profile_note">Bu ekran açıldığında çekirdeğin seçimi okunur. Bu, etkin performans kısıtlamasını ölçmez.</string>
+</resources>

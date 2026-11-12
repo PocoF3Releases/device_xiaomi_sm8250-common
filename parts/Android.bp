@@ -7,22 +7,21 @@
 android_app {
     name: "XiaomiParts",
 
-    srcs: ["src/**/*.java"],
-    resource_dirs: ["res"],
+    srcs: ["src/**/*.kt"],
+    resource_dirs: ["res", "Translations"],
     certificate: "platform",
     platform_apis: true,
     system_ext_specific: true,
     privileged: true,
 
     static_libs: [
-        "org.lineageos.settings.resources",
-        "SettingsLib",
+        "SettingsLibTile",
+        "androidx.activity_activity-compose",
+        "androidx.compose.material3_material3",
+        "androidx.compose.runtime_runtime",
+        "androidx.lifecycle_lifecycle-runtime-compose",
         "//hardware/xiaomi:vendor.xiaomi.hardware.touchfeature-V1.0-java",
     ],
-
-    optimize: {
-        proguard_flags_files: ["proguard.flags"],
-    },
 
     required: [
         "privapp_whitelist_org.lineageos.settings.xml",

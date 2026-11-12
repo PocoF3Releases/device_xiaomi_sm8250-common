@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="thermal_current_profile_title">Uteuzi wa sasa wa wasifu</string>
+    <string name="thermal_current_profile_unavailable">Uteuzi wa wasifu haupatikani</string>
+    <string name="thermal_current_profile_note">Uteuzi wa kernel wakati skrini hii inafunguliwa. Hii haipimi upunguzaji unaoendelea wa utendaji.</string>
+</resources>

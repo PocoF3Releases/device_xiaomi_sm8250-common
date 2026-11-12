@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="misound_surround_title">Об’ємний звук 3D</string>
+    <string name="misound_surround_summary">Додайте ефект об’ємного звучання під час використання сумісних навушників.</string>
+    <string name="misound_supported_headphones_required">Під’єднайте сумісні навушники, щоб користуватися цим налаштуванням.</string>
+    <string name="misound_ear_compensation_title">Налаштування гучності</string>
+    <string name="misound_ear_compensation_summary">Налаштуйте звук у навушниках за допомогою готового профілю відповідно до віку.</string>
+    <string name="misound_ear_compensation_preset_title">Системні попередні налаштування</string>
+    <string name="misound_ear_compensation_under_30">Молодше 30 років</string>
+    <string name="misound_ear_compensation_30_to_60">30–60 років</string>
+    <string name="misound_ear_compensation_over_60">Старше 60 років</string>
+</resources>

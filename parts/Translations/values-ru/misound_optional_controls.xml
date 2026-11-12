@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="misound_surround_title">Объёмный звук 3D</string>
+    <string name="misound_surround_summary">Добавьте эффект объёмного звучания при использовании совместимых наушников.</string>
+    <string name="misound_supported_headphones_required">Подключите совместимые наушники, чтобы использовать этот параметр.</string>
+    <string name="misound_ear_compensation_title">Регулировка громкости</string>
+    <string name="misound_ear_compensation_summary">Настройте звук в наушниках с помощью предустановки для вашего возраста.</string>
+    <string name="misound_ear_compensation_preset_title">Системные предустановки</string>
+    <string name="misound_ear_compensation_under_30">Младше 30 лет</string>
+    <string name="misound_ear_compensation_30_to_60">30–60 лет</string>
+    <string name="misound_ear_compensation_over_60">Старше 60 лет</string>
+</resources>
