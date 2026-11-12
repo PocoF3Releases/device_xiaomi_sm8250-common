@@ -430,6 +430,7 @@ fun ChoiceCard(
     change: (String) -> Unit,
 ) {
     var opened by rememberSaveable(title) { mutableStateOf(false) }
+    LaunchedEffect(enabled) { if (!enabled) opened = false }
     val haptics = rememberPartsHaptics()
     val selected = choices.firstOrNull { it.first == value }?.second ?: value
     Card(
@@ -493,7 +494,7 @@ fun ChoiceCard(
                 )
         }
     }
-    if (opened)
+    if (opened && enabled)
         AlertDialog(
             onDismissRequest = { opened = false },
             modifier = Modifier.widthIn(max = 560.dp).fillMaxWidth().padding(horizontal = 24.dp),
@@ -506,6 +507,7 @@ fun ChoiceCard(
                             Modifier.fillMaxWidth()
                                 .selectable(
                                     selected = value == id,
+                                    enabled = enabled,
                                     role = Role.RadioButton,
                                     onClick = {
                                         haptics.selection()
