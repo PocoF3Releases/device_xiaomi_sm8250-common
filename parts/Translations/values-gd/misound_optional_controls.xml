@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<resources>
+    <string name="misound_surround_title">Fuaim chuairteach 3D</string>
+    <string name="misound_surround_summary">Cuir buaidh chuairteach ris nuair a chleachdas tu fònaichean-cluaise co-chòrdail.</string>
+    <string name="misound_supported_headphones_required">Ceangail fònaichean-cluaise co-chòrdail gus an roghainn seo a chleachdadh.</string>
+    <string name="misound_ear_compensation_title">Atharrachadh àirde na fuaime</string>
+    <string name="misound_ear_compensation_summary">Atharraich fuaim nam fònaichean-cluaise le ro-shuidheachadh stèidhichte air aois.</string>
+    <string name="misound_ear_compensation_preset_title">Ro-shuidheachaidhean an t-siostaim</string>
+    <string name="misound_ear_compensation_under_30">Fo 30 bliadhna a dh\'aois</string>
+    <string name="misound_ear_compensation_30_to_60">30–60 bliadhna a dh\'aois</string>
+    <string name="misound_ear_compensation_over_60">Os cionn 60 bliadhna a dh\'aois</string>
+</resources>

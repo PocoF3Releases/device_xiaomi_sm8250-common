@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="misound_surround_title">3D-surround</string>
+    <string name="misound_surround_summary">Legg til ein surroundeffekt når du bruker kompatible hovudtelefonar.</string>
+    <string name="misound_supported_headphones_required">Kople til kompatible hovudtelefonar for å bruke denne innstillinga.</string>
+    <string name="misound_ear_compensation_title">Volumjustering</string>
+    <string name="misound_ear_compensation_summary">Juster lyden i hovudtelefonane med ei aldersbasert førehandsinnstilling.</string>
+    <string name="misound_ear_compensation_preset_title">Førehandsinnstillingar for systemet</string>
+    <string name="misound_ear_compensation_under_30">Under 30 år</string>
+    <string name="misound_ear_compensation_30_to_60">30–60 år</string>
+    <string name="misound_ear_compensation_over_60">Over 60 år</string>
+</resources>

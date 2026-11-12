@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="thermal_current_profile_title">Roghnú reatha próifíle</string>
+    <string name="thermal_current_profile_unavailable">Níl roghnú próifíle ar fáil</string>
+    <string name="thermal_current_profile_note">Roghnú an eithne nuair a osclaítear an scáileán seo. Ní thomhaiseann sé seo srianadh gníomhach feidhmíochta.</string>
+</resources>

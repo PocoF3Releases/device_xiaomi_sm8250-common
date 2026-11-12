@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="thermal_current_profile_title">Cari profil seçimi</string>
+    <string name="thermal_current_profile_unavailable">Profil seçimi əlçatan deyil</string>
+    <string name="thermal_current_profile_note">Bu ekran açılanda nüvənin seçimi oxunur. Bu, aktiv performans məhdudlaşdırılmasını ölçmür.</string>
+</resources>

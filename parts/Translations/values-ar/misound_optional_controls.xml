@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<resources>
+    <string name="misound_surround_title">صوت محيطي 3D</string>
+    <string name="misound_surround_summary">أضف تأثير صوت محيطي عند استخدام سماعات رأس متوافقة.</string>
+    <string name="misound_supported_headphones_required">وصّل سماعات رأس متوافقة لاستخدام هذا الإعداد.</string>
+    <string name="misound_ear_compensation_title">التحكم في مستوى الصوت</string>
+    <string name="misound_ear_compensation_summary">اضبط صوت سماعات الرأس باستخدام إعداد مسبق يعتمد على العمر.</string>
+    <string name="misound_ear_compensation_preset_title">إعدادات النظام</string>
+    <string name="misound_ear_compensation_under_30">أقل من 30 سنة</string>
+    <string name="misound_ear_compensation_30_to_60">30–60 سنة</string>
+    <string name="misound_ear_compensation_over_60">أكبر من 60 سنة</string>
+</resources>

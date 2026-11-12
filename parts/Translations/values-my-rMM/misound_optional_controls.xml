@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="misound_surround_title">3D ပတ်လည်အသံ</string>
+    <string name="misound_surround_summary">လိုက်ဖက်သော နားကြပ်များကို အသုံးပြုသည့်အခါ ပတ်လည်အသံ အထူးပြုလုပ်ချက်ကို ထည့်ပါ။</string>
+    <string name="misound_supported_headphones_required">ဤဆက်တင်ကို အသုံးပြုရန် လိုက်ဖက်သော နားကြပ်များကို ချိတ်ဆက်ပါ။</string>
+    <string name="misound_ear_compensation_title">အသံညှိခြင်း</string>
+    <string name="misound_ear_compensation_summary">အသက်အရွယ်အလိုက် ကြိုတင်သတ်မှတ်ချက်ကို အသုံးပြုပြီး နားကြပ်အသံကို ချိန်ညှိပါ။</string>
+    <string name="misound_ear_compensation_preset_title">စနစ်ကြိုသတ်မှတ်ချက်များ</string>
+    <string name="misound_ear_compensation_under_30">အသက် 30 နှစ်အောက်</string>
+    <string name="misound_ear_compensation_30_to_60">အသက် 30–60 နှစ်</string>
+    <string name="misound_ear_compensation_over_60">အသက် 60 နှစ်ကျော်</string>
+</resources>

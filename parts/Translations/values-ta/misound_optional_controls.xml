@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="misound_surround_title">3D சரவுண்ட்</string>
+    <string name="misound_surround_summary">இணக்கமான ஹெட்ஃபோன்களைப் பயன்படுத்தும்போது சரவுண்ட் ஒலி விளைவைச் சேர்க்கவும்.</string>
+    <string name="misound_supported_headphones_required">இந்த அமைப்பைப் பயன்படுத்த இணக்கமான ஹெட்ஃபோன்களை இணைக்கவும்.</string>
+    <string name="misound_ear_compensation_title">ஒலியளவு சரிசெய்தல்</string>
+    <string name="misound_ear_compensation_summary">வயது அடிப்படையிலான முன்னமைவைப் பயன்படுத்தி ஹெட்ஃபோன் ஒலியைச் சரிசெய்யவும்.</string>
+    <string name="misound_ear_compensation_preset_title">சிஸ்டம் முன்னமைவுகள்</string>
+    <string name="misound_ear_compensation_under_30">30 வயதுக்குக் குறைவானவர்கள்</string>
+    <string name="misound_ear_compensation_30_to_60">30–60 வயது</string>
+    <string name="misound_ear_compensation_over_60">60 வயதுக்கு மேற்பட்டவர்கள்</string>
+</resources>

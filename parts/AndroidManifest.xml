@@ -21,22 +21,39 @@
     android:versionName="1.0"
     android:sharedUserId="android.uid.system">
 
-    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_ROUTING" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-    <!-- Permissions Whitelist -->
-    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS"/>
-    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL" />
+    <uses-permission android:name="android.permission.MANAGE_ACTIVITY_TASKS" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent>
+    </queries>
 
     <application
+        android:name=".PartsApplication"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/device_settings_app_name"
         android:persistent="true"
-        android:theme="@style/Theme.SubSettingsBase"
+        android:supportsRtl="true"
+        android:resizeableActivity="true"
+        android:theme="@style/Theme.XiaomiParts"
         android:defaultToDeviceProtectedStorage="true"
         android:directBootAware="true">
+
+        <provider
+            android:name=".SoundEnhancementsProvider"
+            android:authorities="org.lineageos.settings.sound_enhancements"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.android.settings.action.IA_SETTINGS" />
+            </intent-filter>
+        </provider>
 
         <receiver
             android:name=".BootCompletedReceiver"
@@ -48,29 +65,36 @@
         </receiver>
 
         <activity
-            android:name=".dirac.DiracActivity"
+            android:name=".misound.MiSoundActivity"
             android:exported="false"
-            android:label="@string/dirac_title"
-            android:theme="@style/Theme.SubSettingsBase">
+            android:label="@string/misound_title"
+            android:theme="@style/Theme.XiaomiParts">
             <intent-filter>
                 <action android:name="com.android.settings.action.IA_SETTINGS" />
             </intent-filter>
+            <meta-data android:name="com.android.settings.group_key"
+                       android:value="xiaomi_audio_enhancements" />
             <meta-data android:name="com.android.settings.category"
                        android:value="com.android.settings.category.ia.sound" />
             <meta-data android:name="com.android.settings.summary"
-                       android:resource="@string/dirac_summary" />
+                       android:resource="@string/misound_summary" />
         </activity>
+
+        <!-- Preserve existing shortcuts to the renamed MiSound screen. -->
+        <activity-alias
+            android:name=".dirac.DiracActivity"
+            android:targetActivity=".misound.MiSoundActivity"
+            android:exported="false" />
 
         <service
             android:name=".thermal.ThermalService"
-            android:exported="true"
-            android:permission="ThermalService" />
+            android:exported="false" />
 
         <service
-            android:name=".dirac.DiracTileService"
+            android:name=".misound.MiSoundTileService"
             android:exported="true"
             android:icon="@drawable/ic_headphone"
-            android:label="@string/dirac_title"
+            android:label="@string/misound_title"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
             <intent-filter>
                 <action android:name="android.service.quicksettings.action.QS_TILE"/>
@@ -79,11 +103,31 @@
             android:value="true" />
         </service>
 
+        <!-- Preserve previously pinned tiles; new tiles use the MiSound component. -->
+        <service
+            android:name=".dirac.DiracTileService"
+            android:exported="true"
+            android:icon="@drawable/ic_headphone"
+            android:label="@string/misound_title"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+            <meta-data android:name="android.service.quicksettings.TOGGLEABLE_TILE"
+                       android:value="true" />
+        </service>
+
+        <activity
+            android:name=".thermal.ThermalInfoActivity"
+            android:exported="false"
+            android:label="@string/thermal_info_title"
+            android:theme="@style/Theme.XiaomiParts" />
+
         <activity
             android:name=".thermal.ThermalActivity"
             android:exported="false"
             android:label="@string/thermal_title"
-            android:theme="@style/Theme.SubSettingsBase_v31">
+            android:theme="@style/Theme.XiaomiParts">
             <intent-filter>
                 <action android:name="com.android.settings.action.IA_SETTINGS" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -120,7 +164,7 @@
             android:name=".refreshrate.RefreshActivity"
             android:label="@string/refresh_title"
             android:exported="false"
-            android:theme="@style/Theme.SubSettingsBase_v31">
+            android:theme="@style/Theme.XiaomiParts">
             <intent-filter>
                 <action android:name="com.android.settings.action.IA_SETTINGS" />
             </intent-filter>
@@ -134,14 +178,13 @@
 
         <service
             android:name=".refreshrate.RefreshService"
-            android:exported="true"
-            android:permission="RefreshService">
+            android:exported="false">
         </service>
 
         <activity
             android:name=".touchsampling.TouchSamplingSettingsActivity"
             android:label="@string/htsr_enable_title"
-            android:theme="@style/Theme.SubSettingsBase"
+            android:theme="@style/Theme.XiaomiParts"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.android.settings.action.IA_SETTINGS" />
@@ -161,6 +204,8 @@
             <intent-filter>
                 <action android:name="com.android.settings.action.IA_SETTINGS" />
             </intent-filter>
+            <meta-data android:name="com.android.settings.group_key"
+                       android:value="xiaomi_audio_enhancements" />
             <meta-data
                 android:name="com.android.settings.category"
                 android:value="com.android.settings.category.ia.sound" />
@@ -173,7 +218,7 @@
             android:name=".display.DisplaySettingsActivity"
             android:label="@string/display_settings_title"
             android:exported="false"
-            android:theme="@style/Theme.SubSettingsBase">
+            android:theme="@style/Theme.XiaomiParts">
             <intent-filter>
                 <action android:name="com.android.settings.action.IA_SETTINGS" />
             </intent-filter>
@@ -196,6 +241,9 @@
                 <action
                     android:name="android.service.quicksettings.action.QS_TILE"/>
             </intent-filter>
+            <meta-data
+                android:name="android.service.quicksettings.TOGGLEABLE_TILE"
+                android:value="true" />
         </service>
 
         <service
@@ -208,6 +256,9 @@
                 <action
                     android:name="android.service.quicksettings.action.QS_TILE"/>
             </intent-filter>
+            <meta-data
+                android:name="android.service.quicksettings.TOGGLEABLE_TILE"
+                android:value="true" />
         </service>
 
     </application>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<resources>
+    <string name="misound_surround_title">צליל היקפי 3D</string>
+    <string name="misound_surround_summary">הוספת אפקט צליל היקפי בעת שימוש באוזניות תואמות.</string>
+    <string name="misound_supported_headphones_required">יש לחבר אוזניות תואמות כדי להשתמש בהגדרה זו.</string>
+    <string name="misound_ear_compensation_title">כיוונון עוצמת שמע</string>
+    <string name="misound_ear_compensation_summary">התאמת צליל האוזניות באמצעות הגדרה קבועה מראש המבוססת על גיל.</string>
+    <string name="misound_ear_compensation_preset_title">הגדרות מערכת קבועות מראש</string>
+    <string name="misound_ear_compensation_under_30">מתחת לגיל 30</string>
+    <string name="misound_ear_compensation_30_to_60">גיל 30–60</string>
+    <string name="misound_ear_compensation_over_60">מעל גיל 60</string>
+</resources>

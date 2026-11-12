@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="thermal_current_profile_title">දැනට තෝරාගත් පැතිකඩ</string>
+    <string name="thermal_current_profile_unavailable">පැතිකඩ තේරීම නොමැත</string>
+    <string name="thermal_current_profile_note">මෙම තිරය විවෘත කරන විට කර්නලයේ තේරීම කියවනු ලැබේ. මෙය සක්‍රිය කාර්යසාධන සීමා කිරීම මනින්නේ නැත.</string>
+</resources>

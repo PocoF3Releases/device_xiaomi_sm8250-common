@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="thermal_current_profile_title">Ағымдағы профиль таңдауы</string>
+    <string name="thermal_current_profile_unavailable">Профиль таңдауы қолжетімсіз</string>
+    <string name="thermal_current_profile_note">Осы экран ашылған кездегі ядро таңдауы. Бұл өнімділіктің белсенді шектелуін өлшемейді.</string>
+</resources>

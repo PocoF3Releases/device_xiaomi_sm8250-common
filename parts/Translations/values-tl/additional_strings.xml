@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<resources>
+    <string name="misound_preset_custom">Custom</string>
+    <string name="misound_custom_title">Custom na equalizer</string>
+    <string name="misound_custom_summary">Gumawa ng sarili mong kurbang may pitong band. Nananatili itong naka-save kapag lumipat ka sa ibang preset.</string>
+    <string name="misound_custom_band">Band %1$d</string>
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<resources>
+    <string name="misound_surround_title">3D ಸರೌಂಡ್</string>
+    <string name="misound_surround_summary">ಹೊಂದಾಣಿಕೆಯ ಹೆಡ್‌ಫೋನ್‌ಗಳನ್ನು ಬಳಸುವಾಗ ಸರೌಂಡ್ ಪರಿಣಾಮವನ್ನು ಸೇರಿಸಿ.</string>
+    <string name="misound_supported_headphones_required">ಈ ಸೆಟ್ಟಿಂಗ್ ಬಳಸಲು ಹೊಂದಾಣಿಕೆಯ ಹೆಡ್‌ಫೋನ್‌ಗಳನ್ನು ಸಂಪರ್ಕಿಸಿ.</string>
+    <string name="misound_ear_compensation_title">ವಾಲ್ಯೂಮ್‌ ಹೊಂದಾಣಿಕೆಗಳು</string>
+    <string name="misound_ear_compensation_summary">ವಯಸ್ಸಿನ ಆಧಾರದ ಪೂರ್ವನಿಗದಿಯನ್ನು ಬಳಸಿ ಹೆಡ್‌ಫೋನ್ ಧ್ವನಿಯನ್ನು ಹೊಂದಿಸಿ.</string>
+    <string name="misound_ear_compensation_preset_title">ಸಿಸ್ಟಂ ಪ್ರಿಸೆಟ್‌ಗಳು</string>
+    <string name="misound_ear_compensation_under_30">30 ವರ್ಷಕ್ಕಿಂತ ಕಡಿಮೆ ವಯಸ್ಸು</string>
+    <string name="misound_ear_compensation_30_to_60">30–60 ವರ್ಷ ವಯಸ್ಸು</string>
+    <string name="misound_ear_compensation_over_60">60 ವರ್ಷಕ್ಕಿಂತ ಹೆಚ್ಚು ವಯಸ್ಸು</string>
+</resources>

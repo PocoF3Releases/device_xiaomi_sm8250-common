@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<resources>
+    <string name="misound_surround_title">3D térhatású hang</string>
+    <string name="misound_surround_summary">Adjon térhatást a hanghoz kompatibilis fejhallgató használatakor.</string>
+    <string name="misound_supported_headphones_required">A beállítás használatához csatlakoztasson kompatibilis fejhallgatót.</string>
+    <string name="misound_ear_compensation_title">Hangerő-beállítás</string>
+    <string name="misound_ear_compensation_summary">Állítsa be a fejhallgató hangját életkoron alapuló előbeállítással.</string>
+    <string name="misound_ear_compensation_preset_title">Rendszer-előbeállítások</string>
+    <string name="misound_ear_compensation_under_30">30 év alatt</string>
+    <string name="misound_ear_compensation_30_to_60">30–60 éves kor</string>
+    <string name="misound_ear_compensation_over_60">60 év felett</string>
+</resources>

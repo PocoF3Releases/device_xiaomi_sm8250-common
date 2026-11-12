@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<resources>
+    <string name="misound_surround_title">3D soinu inguratzailea</string>
+    <string name="misound_surround_summary">Gehitu soinu inguratzailearen efektua entzungailu bateragarriak erabiltzean.</string>
+    <string name="misound_supported_headphones_required">Konektatu entzungailu bateragarriak ezarpen hau erabiltzeko.</string>
+    <string name="misound_ear_compensation_title">Bolumenaren doiketa</string>
+    <string name="misound_ear_compensation_summary">Doitu entzungailuen soinua adinean oinarritutako aurrezarpen batekin.</string>
+    <string name="misound_ear_compensation_preset_title">Sistemaren aurrez ezarritakoak</string>
+    <string name="misound_ear_compensation_under_30">30 urtetik behera</string>
+    <string name="misound_ear_compensation_30_to_60">30–60 urte</string>
+    <string name="misound_ear_compensation_over_60">60 urtetik gora</string>
+</resources>

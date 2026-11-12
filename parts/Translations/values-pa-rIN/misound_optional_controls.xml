@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="misound_surround_title">3D ਸਰਾਊਂਡ</string>
+    <string name="misound_surround_summary">ਅਨੁਕੂਲ ਹੈੱਡਫ਼ੋਨ ਵਰਤਦੇ ਸਮੇਂ ਸਰਾਊਂਡ ਪ੍ਰਭਾਵ ਸ਼ਾਮਲ ਕਰੋ।</string>
+    <string name="misound_supported_headphones_required">ਇਹ ਸੈਟਿੰਗ ਵਰਤਣ ਲਈ ਅਨੁਕੂਲ ਹੈੱਡਫ਼ੋਨ ਕਨੈਕਟ ਕਰੋ।</string>
+    <string name="misound_ear_compensation_title">ਵੌਲਿਉਮ ਅਨੁਕੂਲਨ</string>
+    <string name="misound_ear_compensation_summary">ਉਮਰ ਅਧਾਰਿਤ ਪ੍ਰੀਸੈੱਟ ਵਰਤ ਕੇ ਹੈੱਡਫ਼ੋਨ ਦੀ ਆਵਾਜ਼ ਅਨੁਕੂਲ ਕਰੋ।</string>
+    <string name="misound_ear_compensation_preset_title">ਸਿਸਟਮ ਪ੍ਰੀਸੈੱਟ</string>
+    <string name="misound_ear_compensation_under_30">30 ਸਾਲ ਤੋਂ ਘੱਟ ਉਮਰ</string>
+    <string name="misound_ear_compensation_30_to_60">30–60 ਸਾਲ ਦੀ ਉਮਰ</string>
+    <string name="misound_ear_compensation_over_60">60 ਸਾਲ ਤੋਂ ਵੱਧ ਉਮਰ</string>
+</resources>

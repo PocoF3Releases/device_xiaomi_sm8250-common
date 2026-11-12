@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<resources>
+    <string name="misound_surround_title">3D umhverfishljóð</string>
+    <string name="misound_surround_summary">Bættu við umhverfishljóðáhrifum þegar samhæf heyrnartól eru notuð.</string>
+    <string name="misound_supported_headphones_required">Tengdu samhæf heyrnartól til að nota þessa stillingu.</string>
+    <string name="misound_ear_compensation_title">Stilling hljóðstyrks</string>
+    <string name="misound_ear_compensation_summary">Stilltu hljóð heyrnartóla með forstillingu sem byggir á aldri.</string>
+    <string name="misound_ear_compensation_preset_title">Forstillingar kerfis</string>
+    <string name="misound_ear_compensation_under_30">Yngri en 30 ára</string>
+    <string name="misound_ear_compensation_30_to_60">30–60 ára</string>
+    <string name="misound_ear_compensation_over_60">Eldri en 60 ára</string>
+</resources>

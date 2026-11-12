@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="misound_surround_title">Sunet surround 3D</string>
+    <string name="misound_surround_summary">Adăugați un efect surround când utilizați căști compatibile.</string>
+    <string name="misound_supported_headphones_required">Conectați căști compatibile pentru a utiliza această setare.</string>
+    <string name="misound_ear_compensation_title">Reglare volum</string>
+    <string name="misound_ear_compensation_summary">Reglați sunetul căștilor folosind o presetare bazată pe vârstă.</string>
+    <string name="misound_ear_compensation_preset_title">Presetări de sistem</string>
+    <string name="misound_ear_compensation_under_30">Sub 30 de ani</string>
+    <string name="misound_ear_compensation_30_to_60">30–60 de ani</string>
+    <string name="misound_ear_compensation_over_60">Peste 60 de ani</string>
+</resources>

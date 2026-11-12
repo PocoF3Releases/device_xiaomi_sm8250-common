@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<resources>
+    <string name="misound_surround_title">دەنگی دەوروبەری 3D</string>
+    <string name="misound_surround_summary">کاتێک گوێگرە گونجاوەکان بەکاردەهێنیت، کاریگەری دەنگی دەوروبەر زیاد بکە.</string>
+    <string name="misound_supported_headphones_required">بۆ بەکارهێنانی ئەم ڕێکخستنە، گوێگرە گونجاوەکان پەیوەست بکە.</string>
+    <string name="misound_ear_compensation_title">ڕێکخستنی بەرزی دەنگ</string>
+    <string name="misound_ear_compensation_summary">دەنگی گوێگرەکان بە بەکارهێنانی پێشڕێکخستنێک بەپێی تەمەن ڕێک بخە.</string>
+    <string name="misound_ear_compensation_preset_title">پێشڕێکخستنەکانی سیستەم</string>
+    <string name="misound_ear_compensation_under_30">کەمتر لە 30 ساڵ</string>
+    <string name="misound_ear_compensation_30_to_60">30–60 ساڵ</string>
+    <string name="misound_ear_compensation_over_60">زیاتر لە 60 ساڵ</string>
+</resources>

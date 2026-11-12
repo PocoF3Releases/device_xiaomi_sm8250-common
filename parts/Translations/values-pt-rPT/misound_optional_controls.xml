@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="misound_surround_title">Som surround 3D</string>
+    <string name="misound_surround_summary">Adicione um efeito surround ao utilizar auscultadores compatíveis.</string>
+    <string name="misound_supported_headphones_required">Ligue auscultadores compatíveis para utilizar esta definição.</string>
+    <string name="misound_ear_compensation_title">Ajuste de volume</string>
+    <string name="misound_ear_compensation_summary">Ajuste o som dos auscultadores com uma predefinição baseada na idade.</string>
+    <string name="misound_ear_compensation_preset_title">Predefinições do sistema</string>
+    <string name="misound_ear_compensation_under_30">Menos de 30 anos</string>
+    <string name="misound_ear_compensation_30_to_60">30–60 anos</string>
+    <string name="misound_ear_compensation_over_60">Mais de 60 anos</string>
+</resources>

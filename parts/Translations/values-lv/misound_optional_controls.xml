@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="misound_surround_title">3D telpiskais skanējums</string>
+    <string name="misound_surround_summary">Pievienojiet telpiskās skaņas efektu, izmantojot saderīgas austiņas.</string>
+    <string name="misound_supported_headphones_required">Lai izmantotu šo iestatījumu, pievienojiet saderīgas austiņas.</string>
+    <string name="misound_ear_compensation_title">Skaļuma pielāgošana</string>
+    <string name="misound_ear_compensation_summary">Pielāgojiet austiņu skaņu, izmantojot vecumam atbilstošu priekšiestatījumu.</string>
+    <string name="misound_ear_compensation_preset_title">Sistēmas priekšiestatījumi</string>
+    <string name="misound_ear_compensation_under_30">Jaunāki par 30 gadiem</string>
+    <string name="misound_ear_compensation_30_to_60">30–60 gadi</string>
+    <string name="misound_ear_compensation_over_60">Vecāki par 60 gadiem</string>
+</resources>

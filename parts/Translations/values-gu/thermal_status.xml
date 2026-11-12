@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="thermal_current_profile_title">વર્તમાન પ્રોફાઇલ પસંદગી</string>
+    <string name="thermal_current_profile_unavailable">પ્રોફાઇલ પસંદગી ઉપલબ્ધ નથી</string>
+    <string name="thermal_current_profile_note">આ સ્ક્રીન ખોલતી વખતે કર્નલની પસંદગી વાંચવામાં આવે છે. આ સક્રિય કાર્યક્ષમતા મર્યાદાને માપતું નથી.</string>
+</resources>

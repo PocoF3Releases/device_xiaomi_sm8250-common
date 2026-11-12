@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="misound_surround_title">3D опкружувачки звук</string>
+    <string name="misound_surround_summary">Додајте ефект на опкружувачки звук кога користите компатибилни слушалки.</string>
+    <string name="misound_supported_headphones_required">Поврзете компатибилни слушалки за да ја користите оваа поставка.</string>
+    <string name="misound_ear_compensation_title">Прилагодување на јачината на звукот</string>
+    <string name="misound_ear_compensation_summary">Прилагодете го звукот на слушалките со однапред поставен профил според возраста.</string>
+    <string name="misound_ear_compensation_preset_title">Системски профили</string>
+    <string name="misound_ear_compensation_under_30">Помлади од 30 години</string>
+    <string name="misound_ear_compensation_30_to_60">30–60 години</string>
+    <string name="misound_ear_compensation_over_60">Постари од 60 години</string>
+</resources>

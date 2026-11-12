@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="misound_surround_title">3D hajmli ovoz</string>
+    <string name="misound_surround_summary">Mos quloqchinlardan foydalanganda hajmli ovoz effektini qo‘shing.</string>
+    <string name="misound_supported_headphones_required">Bu sozlamadan foydalanish uchun mos quloqchinlarni ulang.</string>
+    <string name="misound_ear_compensation_title">Ovoz balandligini sozlash</string>
+    <string name="misound_ear_compensation_summary">Yoshga asoslangan tayyor sozlama yordamida quloqchin ovozini sozlang.</string>
+    <string name="misound_ear_compensation_preset_title">Tizimning tayyor sozlamalari</string>
+    <string name="misound_ear_compensation_under_30">30 yoshdan kichik</string>
+    <string name="misound_ear_compensation_30_to_60">30–60 yosh</string>
+    <string name="misound_ear_compensation_over_60">60 yoshdan katta</string>
+</resources>
