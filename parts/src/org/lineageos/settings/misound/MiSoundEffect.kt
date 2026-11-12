@@ -129,6 +129,11 @@ class MiSoundEffect(priority: Int, audioSession: Int) :
         )
     }
 
+    /** Stock headphone 3D ABI; no native getter or DSP acknowledgement is available. */
+    fun setSurroundEnabled(enabled: Boolean) {
+        checkStatus(setParameter(20, if (enabled) 1 else 0))
+    }
+
     fun setHifiMode(mode: Int) {
         require(mode in 0..1)
         checkStatus(setParameter(8, mode))

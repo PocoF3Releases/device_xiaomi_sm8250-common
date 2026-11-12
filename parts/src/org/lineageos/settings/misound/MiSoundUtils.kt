@@ -41,6 +41,9 @@ data class MiSoundState(
     val hifi: Boolean = false,
     val supportedHeadsets: List<Int> = emptyList(),
     val customLevels: List<Float> = List(MiSoundUtils.BAND_COUNT) { 0f },
+    val surroundSupported: Boolean = false,
+    val surroundAvailable: Boolean = false,
+    val surroundRequested: Boolean = false,
 )
 
 /** Persistent process-wide owner: activities never own or release the DSP effect. */
@@ -54,6 +57,7 @@ class MiSoundUtils private constructor(context: Context) {
         const val PREF_EQ = "misound_eq_enabled"
         const val PREF_PAUSE = "misound_pause_during_calls"
         const val PREF_CUSTOM = "misound_custom_levels"
+        const val PREF_SURROUND = "misound_surround_enabled"
         /** Stored in PREF_PRESET while the user curve in PREF_CUSTOM is selected. */
         const val CUSTOM = "custom"
         const val BAND_COUNT = 7
@@ -81,6 +85,21 @@ class MiSoundUtils private constructor(context: Context) {
                 .toFloatArray()
         }
 
+        /** A connection notification alone does not establish the media route. */
+        internal fun isHeadphoneRouteEligible(
+            types: List<Int>,
+            usb: Boolean,
+            bluetooth: Boolean,
+        ): Boolean = types.size == 1 && types.all {
+            when (it) {
+                AudioDeviceInfo.TYPE_WIRED_HEADSET,
+                AudioDeviceInfo.TYPE_WIRED_HEADPHONES -> true
+                AudioDeviceInfo.TYPE_USB_HEADSET -> usb
+                AudioDeviceInfo.TYPE_BLUETOOTH_A2DP -> bluetooth
+                else -> false
+            }
+        }
+
         private fun cleanup(failure: RuntimeException, action: () -> Unit) {
             try {
                 action()
@@ -106,6 +125,25 @@ class MiSoundUtils private constructor(context: Context) {
     private var serverDown = false
     private var communicationActive = false
     private var appliedEnabled: Boolean? = null
+    private var appliedSurround: Boolean? = null
+    private var routeCallbacksRegistered = false
+    private var routeCallbackAttempts = 0
+    private var routeKnown = false
+    private var eligibleHeadphones = false
+    private var platformSpatializerSupported = true
+    private val mediaAttributes = AudioAttributes.Builder().setUsage(AudioAttributes.USAGE_MEDIA).build()
+    private val routeListener = AudioManager.OnDevicesForAttributesChangedListener { _, _ ->
+        scheduleAudioUpdate()
+    }
+    private val devices = object : AudioDeviceCallback() {
+        override fun onAudioDevicesAdded(addedDevices: Array<AudioDeviceInfo>) = scheduleAudioUpdate()
+        override fun onAudioDevicesRemoved(removedDevices: Array<AudioDeviceInfo>) = scheduleAudioUpdate()
+    }
+    private val routeCallbackTask = Runnable {
+        registerRouteCallbacks()
+        if (callbacksRegistered && !serverDown && sound?.hasControl() == true) updateAudioState()
+        else publishState()
+    }
     private var sound: MiSoundEffect? = null
     private var attempts = 0
     private val restoreTask = Runnable { restore() }
@@ -161,6 +199,9 @@ class MiSoundUtils private constructor(context: Context) {
                             serverDown = true
                             handler.removeCallbacks(restoreTask)
                             handler.removeCallbacks(audioTask)
+                            handler.removeCallbacks(routeCallbackTask)
+                            routeKnown = false
+                            eligibleHeadphones = false
                             releaseEffect()
                             publishState()
                         }
@@ -169,6 +210,7 @@ class MiSoundUtils private constructor(context: Context) {
                         synchronized(this@MiSoundUtils) {
                             serverDown = false
                             attempts = 0
+                            registerRouteCallbacks()
                             restore()
                         }
                 },
@@ -189,7 +231,50 @@ class MiSoundUtils private constructor(context: Context) {
             publishState()
             return
         }
+        registerRouteCallbacks()
         restore()
+    }
+
+    /** Optional route observation must not take down the existing effect owner. */
+    private fun registerRouteCallbacks() {
+        if (routeCallbacksRegistered || serverDown) return
+        try {
+            audio.registerAudioDeviceCallback(devices, handler)
+            audio.addOnDevicesForAttributesChangedListener(mediaAttributes, executor, routeListener)
+            routeCallbacksRegistered = true
+            routeCallbackAttempts = 0
+            handler.removeCallbacks(routeCallbackTask)
+        } catch (failure: RuntimeException) {
+            cleanup(failure) { audio.unregisterAudioDeviceCallback(devices) }
+            cleanup(failure) { audio.removeOnDevicesForAttributesChangedListener(routeListener) }
+            routeKnown = false
+            eligibleHeadphones = false
+            platformSpatializerSupported = true
+            Log.w("MiSoundUtils", "Cannot observe headphone route", failure)
+            if (++routeCallbackAttempts < 5) handler.postDelayed(routeCallbackTask, 1000)
+        }
+    }
+
+    private fun refreshRouteState() {
+        routeKnown = false
+        eligibleHeadphones = false
+        if (!routeCallbacksRegistered || serverDown) return
+        try {
+            // Stock excludes legacy 3D whenever the platform supports spatialization,
+            // including when that spatializer is currently disabled or unavailable.
+            platformSpatializerSupported =
+                audio.spatializer.immersiveAudioLevel != Spatializer.SPATIALIZER_IMMERSIVE_LEVEL_NONE
+            val types = audio.getDevicesForAttributes(mediaAttributes).map { it.type }
+            eligibleHeadphones = isHeadphoneRouteEligible(
+                types,
+                SystemProperties.getBoolean("ro.vendor.audio.soundfx.usb", false),
+                SystemProperties.getBoolean("ro.vendor.audio.misound.bluetooth.enable", false),
+            )
+            routeKnown = true
+        } catch (error: RuntimeException) {
+            platformSpatializerSupported = true
+            Log.w("MiSoundUtils", "Cannot query headphone route", error)
+        }
     }
 
     @Synchronized
@@ -237,6 +322,8 @@ class MiSoundUtils private constructor(context: Context) {
             effect.getMusic() != (if (enabled) 1 else 0)) {
             applyEnabled(enabled)
         }
+        refreshRouteState()
+        applySurround(effect, enabled)
     }
 
     @Synchronized
@@ -259,8 +346,11 @@ class MiSoundUtils private constructor(context: Context) {
     fun requestRefresh() {
         handler.post {
             attempts = 0
-            if (callbacksRegistered) restore()
-            else {
+            if (callbacksRegistered) {
+                routeCallbackAttempts = 0
+                registerRouteCallbacks()
+                restore()
+            } else {
                 callbackAttempts = 0
                 handler.removeCallbacks(callbackTask)
                 registerCallbacks()
@@ -295,6 +385,9 @@ class MiSoundUtils private constructor(context: Context) {
             hifi = getHifiMode(),
             supportedHeadsets = supportedHeadsets,
             customLevels = parseLevels(getCustomLevels()).toList(),
+            surroundSupported = isSurroundConfigured() && !platformSpatializerSupported,
+            surroundAvailable = isSurroundAvailable(),
+            surroundRequested = isSurroundRequested(),
         )
     }
 
@@ -305,15 +398,11 @@ class MiSoundUtils private constructor(context: Context) {
         appliedEnabled = null
         if (previous == null) return
         try {
-            if (!serverDown && previous.hasControl())
-                try {
-                    previous.setEnabled(false)
-                } finally {
-                    previous.setMusic(0)
-                }
+            if (!serverDown && previous.hasControl()) bypassOwnedEffect(previous)
         } catch (error: RuntimeException) {
             Log.w("MiSoundUtils", "Cannot bypass MiSound before release", error)
         } finally {
+            appliedSurround = null
             try {
                 previous.release()
             } catch (error: RuntimeException) {
@@ -338,6 +427,7 @@ class MiSoundUtils private constructor(context: Context) {
                     synchronized(this@MiSoundUtils) {
                         if (sound !== effect || serverDown) return@synchronized
                         appliedEnabled = null
+                        appliedSurround = null
                         if (granted) {
                             attempts = 0
                             // Another owner may have changed tuning as well as enable state.
@@ -437,25 +527,79 @@ class MiSoundUtils private constructor(context: Context) {
         applyHifi(getHifiMode())
     }
 
+    private fun isSurroundConfigured() =
+        (SystemProperties.getInt("ro.vendor.audio.feature.spatial", 0) and 2) != 0
+
+    private fun isSurroundAvailable() =
+        isSurroundConfigured() && routeKnown && eligibleHeadphones && !platformSpatializerSupported
+
+    @Synchronized
+    fun isSurroundRequested() = safeBoolean(PREF_SURROUND, false)
+
+    private fun applySurround(
+        effect: MiSoundEffect,
+        enable: Boolean,
+        requested: Boolean = isSurroundRequested(),
+        force: Boolean = false,
+    ) {
+        // Never probe optional ABI support from an ACK: unknown IDs can return success.
+        if (!isSurroundConfigured() && appliedSurround == null) return
+        val active = enable && requested && isSurroundAvailable()
+        if (force || appliedSurround != active) {
+            effect.setSurroundEnabled(active)
+            appliedSurround = active
+        }
+    }
+
+    @Synchronized
+    fun setSurroundEnabled(enabled: Boolean) {
+        refreshRouteState()
+        check(isSurroundConfigured()) { "Headphone 3D is not configured" }
+        check(!enabled || (isEnabledRequested() && isSurroundAvailable())) {
+            "Headphone 3D route unavailable"
+        }
+        val effect = requireEffect()
+        applySurround(
+            effect,
+            effectiveEnabled(isEnabledRequested(), isPauseDuringCallsEnabled()),
+            requested = enabled,
+            force = true,
+        )
+        preferences.edit().putBoolean(PREF_SURROUND, enabled).apply()
+    }
+
+    /** Clear independent headphone DSP gates even if a later core bypass write fails. */
+    private fun bypassOwnedEffect(effect: MiSoundEffect) {
+        var failure: RuntimeException? = null
+        try {
+            applySurround(effect, false)
+        } catch (error: RuntimeException) {
+            failure = error
+        }
+        try {
+            check(effect.setEnabled(false) == AudioEffect.SUCCESS)
+        } catch (error: RuntimeException) {
+            if (failure == null) failure = error
+            else if (failure !== error) failure.addSuppressed(error)
+        }
+        try {
+            effect.setMusic(0)
+        } catch (error: RuntimeException) {
+            if (failure == null) failure = error
+            else if (failure !== error) failure.addSuppressed(error)
+        }
+        failure?.let { throw it }
+    }
+
     private fun applyEnabled(enable: Boolean) {
         val effect = checkNotNull(sound)
         if (enable) {
+            refreshRouteState()
+            applySurround(effect, true)
             effect.setMusic(1)
             check(effect.setEnabled(true) == AudioEffect.SUCCESS)
         } else {
-            var failure: RuntimeException? = null
-            try {
-                check(effect.setEnabled(false) == AudioEffect.SUCCESS)
-            } catch (error: RuntimeException) {
-                failure = error
-            }
-            try {
-                effect.setMusic(0)
-            } catch (error: RuntimeException) {
-                if (failure == null) failure = error
-                else if (failure !== error) failure.addSuppressed(error)
-            }
-            failure?.let { throw it }
+            bypassOwnedEffect(effect)
         }
         check(effect.hasExpectedEnabledState(enable) && effect.getMusic() == if (enable) 1 else 0) {
             "MiSound enable state did not apply"

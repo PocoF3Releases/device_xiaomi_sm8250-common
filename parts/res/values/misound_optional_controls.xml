@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<resources>
+    <string name="misound_surround_title">3D surround</string>
+    <string name="misound_surround_summary">Add a surround effect when using compatible headphones.</string>
+    <string name="misound_supported_headphones_required">Connect compatible headphones to use this setting.</string>
+</resources>

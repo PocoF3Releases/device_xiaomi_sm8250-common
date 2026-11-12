@@ -109,8 +109,9 @@ class MiSoundActivity : PartsActivity() {
         val customSelected = state.preset == MiSoundUtils.CUSTOM
         val headsetOffset = if (headphones) 1 else 0
         val customOffset = if (customSelected) 1 else 0
+        val surroundOffset = if (state.surroundSupported) 1 else 0
         val secondaryRowCount =
-            4 + headsetOffset + customOffset + (if (hifiSupported) 1 else 0)
+            4 + headsetOffset + customOffset + surroundOffset + (if (hifiSupported) 1 else 0)
         PartsPage(stringResource(R.string.misound_title), { finish() }) {
             Row(
                 Modifier.fillMaxWidth().padding(vertical = 12.dp),
@@ -278,8 +279,20 @@ class MiSoundActivity : PartsActivity() {
                     apply { it.setScenario(value.toInt()) }
                 }
             }
-            if (hifiSupported)
+            if (state.surroundSupported)
                 PreferenceRow(4 + headsetOffset + customOffset, secondaryRowCount) {
+                    ToggleCard(
+                        stringResource(R.string.misound_surround_title),
+                        stringResource(if (state.surroundAvailable) R.string.misound_surround_summary
+                            else R.string.misound_supported_headphones_required),
+                        state.surroundRequested,
+                        available && requested && (state.surroundAvailable || state.surroundRequested),
+                    ) { enabled ->
+                        apply { it.setSurroundEnabled(enabled) }
+                    }
+                }
+            if (hifiSupported)
+                PreferenceRow(4 + headsetOffset + customOffset + surroundOffset, secondaryRowCount) {
                     ToggleCard(
                         stringResource(R.string.misound_hifi_title),
                         stringResource(R.string.misound_hifi_summary),
