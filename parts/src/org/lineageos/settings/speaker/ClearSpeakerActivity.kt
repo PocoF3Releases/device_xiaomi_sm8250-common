@@ -89,6 +89,7 @@ class ClearSpeakerActivity : PartsActivity() {
             val request =
                 AudioFocusRequest.Builder(AudioManager.AUDIOFOCUS_GAIN_TRANSIENT)
                     .setAudioAttributes(attributes)
+                    .setWillPauseWhenDucked(true)
                     .setOnAudioFocusChangeListener(
                         { change -> if (change != AudioManager.AUDIOFOCUS_GAIN) stopPlaying() },
                         handler,
