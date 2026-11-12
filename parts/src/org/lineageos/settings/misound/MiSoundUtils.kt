@@ -792,8 +792,8 @@ class MiSoundUtils private constructor(context: Context) {
 
     private fun applyHifi(enabled: Boolean) {
         if (isHifiSupported()) {
-            sound!!.setHifiMode(if (enabled) 1 else 0)
             audio.setParameters("hifi_mode=$enabled")
+            sound!!.setHifiMode(if (enabled) 1 else 0)
         }
     }
 
