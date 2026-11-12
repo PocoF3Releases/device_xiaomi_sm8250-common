@@ -121,7 +121,7 @@
     <string name="thermal_temperature_range">%1$d–%2$d°C</string>
     <string name="thermal_control_low_battery_value">5% SOC</string>
     <string name="thermal_control_wireless_value">20°C and 60°C</string>
-    <string name="thermal_sensor_model">CPU/GPU triggers reference VIRTUAL-SENSOR0. The Normal-family configs define it from quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 and charger_therm0 with weights 362, 229, 108, -111, -224, 734 and -159 (sum 1000, compensation 2169).</string>
+    <string name="thermal_sensor_model">CPU/GPU triggers reference VIRTUAL-SENSOR0. The Normal-family configs define it from quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 and charger_therm0 with weights 362, 229, 108, -111, -224, 734 and -159 (sum 939, compensation 2169).</string>
     <string name="thermal_sensor_defined">This config contains the VIRTUAL-SENSOR0 definition.</string>
     <string name="thermal_sensor_referenced">This config references the active VIRTUAL-SENSOR0 definition.</string>
 

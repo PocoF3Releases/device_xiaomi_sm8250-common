@@ -23,6 +23,10 @@ class ThermalService : android.app.Service() {
     private val refresh = Runnable { foreground(false) }
     private val listener =
         object : TaskStackListener() {
+            override fun onTaskFocusChanged(taskId: Int, focused: Boolean) {
+                if (focused) onTaskStackChanged()
+            }
+
             override fun onTaskStackChanged() {
                 if (!destroyed) {
                     handler.removeCallbacks(refresh)
@@ -133,7 +137,8 @@ class ThermalService : android.app.Service() {
             } catch (error: Exception) {
                 Log.w("ThermalService", "Cannot query foreground", error)
                 previous = ""
-                recordApply(restoreDefault())
+                restoreDefault()
+                recordApply(false)
                 return
             }
         if (!force && previous == packageName) return
