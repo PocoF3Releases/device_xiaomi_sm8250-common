@@ -4,10 +4,14 @@
  */
 package org.lineageos.settings
 
+import android.database.ContentObserver
 import android.hardware.display.DisplayManager
+import android.os.Handler
+import android.os.Looper
 import android.provider.Settings
 import android.service.quicksettings.Tile
 import android.service.quicksettings.TileService
+import android.util.Log
 import android.view.Display
 import android.widget.Toast
 import java.util.Locale
@@ -16,6 +20,13 @@ import org.lineageos.settings.refreshrate.RefreshUtils
 
 class RefreshRateTileService : TileService() {
     private var rates = emptyList<Float>()
+    private var listening = false
+    private val observer =
+        object : ContentObserver(Handler(Looper.getMainLooper())) {
+            override fun onChange(selfChange: Boolean) {
+                if (listening) update()
+            }
+        }
 
     override fun onCreate() {
         super.onCreate()
@@ -38,7 +49,9 @@ class RefreshRateTileService : TileService() {
                 .sorted()
     }
 
-    private fun nearest(value: Float) = rates.indices.minByOrNull { abs(rates[it] - value) } ?: -1
+    private fun nearest(value: Float) =
+        if (value.isInfinite()) rates.lastIndex
+        else rates.indices.minByOrNull { abs(rates[it] - value) } ?: -1
 
     private fun read(key: String, fallback: Float) =
         Settings.System.getFloat(contentResolver, key, fallback)
@@ -77,8 +90,34 @@ class RefreshRateTileService : TileService() {
 
     override fun onStartListening() {
         super.onStartListening()
+        if (!listening) {
+            listening = true
+            try {
+                contentResolver.registerContentObserver(
+                    Settings.System.getUriFor(Settings.System.MIN_REFRESH_RATE), false, observer
+                )
+                contentResolver.registerContentObserver(
+                    Settings.System.getUriFor(Settings.System.PEAK_REFRESH_RATE), false, observer
+                )
+            } catch (error: RuntimeException) {
+                stopObserving()
+                Log.w("RefreshRateTile", "Cannot observe refresh rate settings", error)
+            }
+        }
         if (rates.isEmpty()) loadRates()
         update()
+    }
+
+    private fun stopObserving() {
+        if (listening) {
+            listening = false
+            contentResolver.unregisterContentObserver(observer)
+        }
+    }
+
+    override fun onStopListening() {
+        stopObserving()
+        super.onStopListening()
     }
 
     override fun onClick() {

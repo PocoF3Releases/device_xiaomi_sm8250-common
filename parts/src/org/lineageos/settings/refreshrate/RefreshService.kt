@@ -29,6 +29,10 @@ class RefreshService : android.app.Service() {
                     handler.post(refresh)
                 }
             }
+
+            override fun onTaskFocusChanged(taskId: Int, focused: Boolean) {
+                if (focused) onTaskStackChanged()
+            }
         }
     private val receiver =
         object : BroadcastReceiver() {
@@ -123,7 +127,8 @@ class RefreshService : android.app.Service() {
             } catch (error: Exception) {
                 Log.w("RefreshService", "Cannot query foreground", error)
                 previous = null
-                recordApply(utils.restoreDefaultRates())
+                utils.restoreDefaultRates()
+                recordApply(false)
                 return
             }
         if (!force && previous == packageName) return
