@@ -20,7 +20,9 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.rotate
+import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 import org.lineageos.settings.R
 import org.lineageos.settings.compose.*
@@ -42,6 +44,8 @@ class ThermalActivity : PartsActivity() {
             TouchScreen(selectedPackage, selectedLabel) { selectedPackage = "" }
             return
         }
+        val expandedRotation =
+            if (LocalLayoutDirection.current == LayoutDirection.Rtl) -90f else 90f
         val region = remember(revision) { ThermalUtils.getSelectedRegion() }
         val profiles = ThermalProfiles.getProfiles(region)
         val choices =
@@ -75,7 +79,7 @@ class ThermalActivity : PartsActivity() {
                 ) {
                     val expansionRotation by
                         animateFloatAsState(
-                            if (expanded) 90f else 0f,
+                            if (expanded) expandedRotation else 0f,
                             spring(
                                 dampingRatio = Spring.DampingRatioNoBouncy,
                                 stiffness = Spring.StiffnessMediumLow,
@@ -91,10 +95,10 @@ class ThermalActivity : PartsActivity() {
                         modifier = Modifier.fillMaxWidth(),
                         shape =
                             RoundedCornerShape(
-                                topStart = 24.dp,
-                                topEnd = 24.dp,
-                                bottomStart = if (expanded) 4.dp else 24.dp,
-                                bottomEnd = if (expanded) 4.dp else 24.dp,
+                                topStart = 20.dp,
+                                topEnd = 20.dp,
+                                bottomStart = if (expanded) 4.dp else 20.dp,
+                                bottomEnd = if (expanded) 4.dp else 20.dp,
                             ),
                         colors =
                             CardDefaults.cardColors(

@@ -20,6 +20,9 @@ import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.clearAndSetSemantics
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
 import androidx.core.graphics.drawable.toBitmap
 import java.text.Collator
@@ -27,7 +30,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.lineageos.settings.R
 
-data class PartsApp(val packageName: String, val label: String)
+data class PartsApp(val packageName: String, val label: String, val iconRevision: Int = 0)
 
 @Composable
 fun rememberLauncherApps(): List<PartsApp> {
@@ -51,8 +54,9 @@ fun rememberLauncherApps(): List<PartsApp> {
         context.registerReceiver(receiver, filter, Context.RECEIVER_NOT_EXPORTED)
         onDispose { context.unregisterReceiver(receiver) }
     }
+    val loadRevision = revision
     val apps by
-        produceState(emptyList<PartsApp>(), context, revision) {
+        produceState(emptyList<PartsApp>(), context, loadRevision) {
             value =
                 withContext(Dispatchers.IO) {
                     val pm = context.packageManager
@@ -65,6 +69,7 @@ fun rememberLauncherApps(): List<PartsApp> {
                             PartsApp(
                                 it.activityInfo.packageName,
                                 it.activityInfo.applicationInfo.loadLabel(pm).toString(),
+                                iconRevision = loadRevision,
                             )
                         }
                         .distinctBy { it.packageName }
@@ -84,6 +89,7 @@ fun AppListPage(
     row: @Composable (PartsApp) -> Unit,
 ) {
     var search by rememberSaveable { mutableStateOf("") }
+    val searchLabel = stringResource(R.string.parts_search_apps)
     val apps =
         rememberLauncherApps().filter {
             it.label.contains(search, true) || it.packageName.contains(search, true)
@@ -98,9 +104,12 @@ fun AppListPage(
                     value = search,
                     onValueChange = { search = it },
                     singleLine = true,
-                    placeholder = { Text(stringResource(R.string.parts_search_apps)) },
+                    placeholder = { Text(searchLabel, Modifier.clearAndSetSemantics {}) },
                     shape = RoundedCornerShape(42.dp),
-                    modifier = Modifier.fillMaxWidth().padding(16.dp),
+                    modifier =
+                        Modifier.fillMaxWidth().padding(16.dp).semantics {
+                            contentDescription = searchLabel
+                        },
                 )
                 LazyColumn(
                     Modifier.fillMaxSize(),
@@ -122,7 +131,7 @@ fun AppIcon(app: PartsApp) {
     val context = LocalContext.current
     val size = with(LocalDensity.current) { 40.dp.roundToPx() }
     val icon by
-        produceState<ImageBitmap?>(null, app.packageName, size) {
+        produceState<ImageBitmap?>(null, app.packageName, size, app.iconRevision) {
             value =
                 withContext(Dispatchers.IO) {
                     try {

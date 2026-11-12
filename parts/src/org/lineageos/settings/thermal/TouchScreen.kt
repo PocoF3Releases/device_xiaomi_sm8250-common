@@ -23,10 +23,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.semantics.stateDescription
+import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 import kotlin.math.roundToInt
 import org.lineageos.settings.R
@@ -120,6 +122,8 @@ fun TouchScreen(packageName: String, appName: String, back: () -> Unit) {
     var help by rememberSaveable(packageName) { mutableStateOf(false) }
     var reset by rememberSaveable(packageName) { mutableStateOf(false) }
     var fineExpanded by rememberSaveable(packageName) { mutableStateOf(false) }
+    val expandedRotation =
+        if (LocalLayoutDirection.current == LayoutDirection.Rtl) -90f else 90f
     OnResume {
         controls.reload()
         revision++
@@ -234,7 +238,7 @@ fun TouchScreen(packageName: String, appName: String, back: () -> Unit) {
                 if (controls.alioth) {
                     val rotation by
                         androidx.compose.animation.core.animateFloatAsState(
-                            if (fineExpanded) 90f else 0f,
+                            if (fineExpanded) expandedRotation else 0f,
                             spring(
                                 dampingRatio = Spring.DampingRatioNoBouncy,
                                 stiffness = Spring.StiffnessMediumLow,

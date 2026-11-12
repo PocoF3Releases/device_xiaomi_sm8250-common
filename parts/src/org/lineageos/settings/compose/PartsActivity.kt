@@ -1,6 +1,9 @@
 /* SPDX-License-Identifier: Apache-2.0 */
 package org.lineageos.settings.compose
 
+import android.app.Activity
+import android.content.Context
+import android.content.ContextWrapper
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -29,6 +32,8 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
+import androidx.compose.ui.semantics.heading
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
@@ -244,6 +249,13 @@ fun OnResume(refresh: () -> Unit) {
     }
 }
 
+private tailrec fun Context.findActivity(): Activity? =
+    when (this) {
+        is Activity -> this
+        is ContextWrapper -> baseContext.findActivity()
+        else -> null
+    }
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun PartsScaffold(
@@ -252,6 +264,9 @@ fun PartsScaffold(
     actions: @Composable RowScope.() -> Unit = {},
     content: @Composable (PaddingValues) -> Unit,
 ) {
+    val context = LocalContext.current
+    val activity = remember(context) { context.findActivity() }
+    SideEffect { if (activity?.title != title) activity?.title = title }
     val colors = MaterialTheme.colorScheme
     Scaffold(
         topBar = {
@@ -260,6 +275,7 @@ fun PartsScaffold(
                     Text(
                         title,
                         style = MaterialTheme.typography.titleLarge,
+                        modifier = Modifier.semantics { heading() },
                         maxLines = 2,
                         overflow = TextOverflow.Ellipsis,
                     )
@@ -562,17 +578,17 @@ fun rememberPartsHaptics(): PartsHaptics {
 }
 
 /** Adjacent preferences share the Settings first/middle/last row geometry. */
-val LocalPreferenceShape = staticCompositionLocalOf { RoundedCornerShape(24.dp) }
+val LocalPreferenceShape = staticCompositionLocalOf { RoundedCornerShape(20.dp) }
 
 @Composable
 fun PreferenceRow(index: Int, count: Int, content: @Composable () -> Unit) {
     CompositionLocalProvider(
         LocalPreferenceShape provides
             RoundedCornerShape(
-                topStart = if (index == 0) 24.dp else 4.dp,
-                topEnd = if (index == 0) 24.dp else 4.dp,
-                bottomStart = if (index == count - 1) 24.dp else 4.dp,
-                bottomEnd = if (index == count - 1) 24.dp else 4.dp,
+                topStart = if (index == 0) 20.dp else 4.dp,
+                topEnd = if (index == 0) 20.dp else 4.dp,
+                bottomStart = if (index == count - 1) 20.dp else 4.dp,
+                bottomEnd = if (index == count - 1) 20.dp else 4.dp,
             ),
         content = content,
     )
