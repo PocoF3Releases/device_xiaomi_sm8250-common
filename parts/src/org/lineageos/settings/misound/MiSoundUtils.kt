@@ -292,8 +292,9 @@ class MiSoundUtils private constructor(context: Context) {
     }
 
     private fun effectiveEnabled(requested: Boolean, pause: Boolean): Boolean {
+        val mode = audio.mode
         communicationActive =
-            audio.mode != AudioManager.MODE_NORMAL && audio.mode != AudioManager.MODE_RINGTONE
+            mode != AudioManager.MODE_NORMAL && mode != AudioManager.MODE_RINGTONE
         if (!communicationActive)
             communicationActive =
                 audio.activePlaybackConfigurations.any {
