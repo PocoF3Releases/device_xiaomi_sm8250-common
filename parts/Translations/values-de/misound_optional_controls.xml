@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<resources>
+    <string name="misound_surround_title">3D-Surround-Sound</string>
+    <string name="misound_surround_summary">Füge bei Verwendung kompatibler Kopfhörer einen Surround-Effekt hinzu.</string>
+    <string name="misound_supported_headphones_required">Verbinde kompatible Kopfhörer, um diese Einstellung zu verwenden.</string>
+    <string name="misound_ear_compensation_title">Lautstärkeeinstellung</string>
+    <string name="misound_ear_compensation_summary">Passe den Kopfhörerklang mit einer altersbasierten Voreinstellung an.</string>
+    <string name="misound_ear_compensation_preset_title">Systemvoreinstellungen</string>
+    <string name="misound_ear_compensation_under_30">Unter 30 Jahre</string>
+    <string name="misound_ear_compensation_30_to_60">30–60 Jahre</string>
+    <string name="misound_ear_compensation_over_60">Über 60 Jahre</string>
+</resources>

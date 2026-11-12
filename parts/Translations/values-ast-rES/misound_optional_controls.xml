@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<resources>
+    <string name="misound_surround_title">Soníu envolvente 3D</string>
+    <string name="misound_surround_summary">Amiesta un efeutu de soníu envolvente al usar auriculares compatibles.</string>
+    <string name="misound_supported_headphones_required">Conecta auriculares compatibles pa usar esti axuste.</string>
+    <string name="misound_ear_compensation_title">Axuste del volume</string>
+    <string name="misound_ear_compensation_summary">Axusta\'l soníu de los auriculares con un preaxuste basáu na edá.</string>
+    <string name="misound_ear_compensation_preset_title">Preaxustes del sistema</string>
+    <string name="misound_ear_compensation_under_30">Menos de 30 años</string>
+    <string name="misound_ear_compensation_30_to_60">30–60 años</string>
+    <string name="misound_ear_compensation_over_60">Más de 60 años</string>
+</resources>

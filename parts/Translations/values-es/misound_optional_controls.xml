@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<resources>
+    <string name="misound_surround_title">Sonido envolvente 3D</string>
+    <string name="misound_surround_summary">Añade un efecto envolvente al usar auriculares compatibles.</string>
+    <string name="misound_supported_headphones_required">Conecta auriculares compatibles para usar este ajuste.</string>
+    <string name="misound_ear_compensation_title">Ajuste de volumen</string>
+    <string name="misound_ear_compensation_summary">Ajusta el sonido de los auriculares con un preajuste basado en la edad.</string>
+    <string name="misound_ear_compensation_preset_title">Preajustes del sistema</string>
+    <string name="misound_ear_compensation_under_30">Menos de 30 años</string>
+    <string name="misound_ear_compensation_30_to_60">30–60 años</string>
+    <string name="misound_ear_compensation_over_60">Más de 60 años</string>
+</resources>

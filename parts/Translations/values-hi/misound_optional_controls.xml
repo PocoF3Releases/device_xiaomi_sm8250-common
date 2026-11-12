@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<resources>
+    <string name="misound_surround_title">3D सराउंड</string>
+    <string name="misound_surround_summary">संगत हेडफ़ोन का उपयोग करते समय सराउंड प्रभाव जोड़ें।</string>
+    <string name="misound_supported_headphones_required">इस सेटिंग का उपयोग करने के लिए संगत हेडफ़ोन कनेक्ट करें।</string>
+    <string name="misound_ear_compensation_title">वॉल्यूम समायोजन</string>
+    <string name="misound_ear_compensation_summary">उम्र पर आधारित प्रीसेट से हेडफ़ोन की आवाज़ समायोजित करें।</string>
+    <string name="misound_ear_compensation_preset_title">सिस्टम प्रीसेट</string>
+    <string name="misound_ear_compensation_under_30">30 वर्ष से कम उम्र</string>
+    <string name="misound_ear_compensation_30_to_60">30–60 वर्ष की उम्र</string>
+    <string name="misound_ear_compensation_over_60">60 वर्ष से अधिक उम्र</string>
+</resources>

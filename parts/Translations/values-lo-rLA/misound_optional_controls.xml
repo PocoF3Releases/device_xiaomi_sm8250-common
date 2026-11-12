@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="misound_surround_title">ສຽງຮອບທິດທາງ 3D</string>
+    <string name="misound_surround_summary">ເພີ່ມເອັບເຟັກສຽງຮອບທິດທາງເມື່ອໃຊ້ຫູຟັງທີ່ເຂົ້າກັນໄດ້.</string>
+    <string name="misound_supported_headphones_required">ເຊື່ອມຕໍ່ຫູຟັງທີ່ເຂົ້າກັນໄດ້ເພື່ອໃຊ້ການຕັ້ງຄ່ານີ້.</string>
+    <string name="misound_ear_compensation_title">ການປັບລະດັບສຽງ</string>
+    <string name="misound_ear_compensation_summary">ປັບສຽງຫູຟັງໂດຍໃຊ້ຄ່າທີ່ຕັ້ງໄວ້ລ່ວງໜ້າຕາມອາຍຸ.</string>
+    <string name="misound_ear_compensation_preset_title">ຄ່າທີ່ລະບົບຕັ້ງໄວ້</string>
+    <string name="misound_ear_compensation_under_30">ອາຍຸຕ່ຳກວ່າ 30 ປີ</string>
+    <string name="misound_ear_compensation_30_to_60">ອາຍຸ 30–60 ປີ</string>
+    <string name="misound_ear_compensation_over_60">ອາຍຸຫຼາຍກວ່າ 60 ປີ</string>
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<resources>
+    <string name="misound_surround_title">3D prostorový zvuk</string>
+    <string name="misound_surround_summary">Přidejte prostorový efekt při použití kompatibilních sluchátek.</string>
+    <string name="misound_supported_headphones_required">Chcete-li použít toto nastavení, připojte kompatibilní sluchátka.</string>
+    <string name="misound_ear_compensation_title">Nastavení hlasitosti</string>
+    <string name="misound_ear_compensation_summary">Upravte zvuk sluchátek pomocí přednastavení podle věku.</string>
+    <string name="misound_ear_compensation_preset_title">Systémová přednastavení</string>
+    <string name="misound_ear_compensation_under_30">Mladší 30 let</string>
+    <string name="misound_ear_compensation_30_to_60">30–60 let</string>
+    <string name="misound_ear_compensation_over_60">Starší než 60 let</string>
+</resources>

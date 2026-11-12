@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="misound_surround_title">3D ସରାଉଣ୍ଡ</string>
+    <string name="misound_surround_summary">ସୁସଙ୍ଗତ ହେଡଫୋନ୍ ବ୍ୟବହାର କରିବା ସମୟରେ ସରାଉଣ୍ଡ ପ୍ରଭାବ ଯୋଡ଼ନ୍ତୁ।</string>
+    <string name="misound_supported_headphones_required">ଏହି ସେଟିଂ ବ୍ୟବହାର କରିବାକୁ ସୁସଙ୍ଗତ ହେଡଫୋନ୍ ସଂଯୋଗ କରନ୍ତୁ।</string>
+    <string name="misound_ear_compensation_title">ଭଲ୍ୟୁମ୍ ସମଯୋଜନ</string>
+    <string name="misound_ear_compensation_summary">ବୟସ ଆଧାରିତ ପ୍ରିସେଟ୍ ବ୍ୟବହାର କରି ହେଡଫୋନ୍ ଶବ୍ଦ ସମଯୋଜନ କରନ୍ତୁ।</string>
+    <string name="misound_ear_compensation_preset_title">ସିଷ୍ଟମ୍ ପ୍ରିସେଟ୍</string>
+    <string name="misound_ear_compensation_under_30">30 ବର୍ଷରୁ କମ୍ ବୟସ</string>
+    <string name="misound_ear_compensation_30_to_60">30–60 ବର୍ଷ</string>
+    <string name="misound_ear_compensation_over_60">60 ବର୍ଷରୁ ଅଧିକ ବୟସ</string>
+</resources>

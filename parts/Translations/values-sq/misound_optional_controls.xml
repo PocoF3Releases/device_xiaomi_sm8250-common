@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="misound_surround_title">Tingull rrethues 3D</string>
+    <string name="misound_surround_summary">Shtoni një efekt rrethues kur përdorni kufje të përputhshme.</string>
+    <string name="misound_supported_headphones_required">Lidhni kufje të përputhshme për të përdorur këtë cilësim.</string>
+    <string name="misound_ear_compensation_title">Rregullimi i volumit</string>
+    <string name="misound_ear_compensation_summary">Rregulloni tingullin e kufjeve me një paracaktim sipas moshës.</string>
+    <string name="misound_ear_compensation_preset_title">Paracaktime të sistemit</string>
+    <string name="misound_ear_compensation_under_30">Nën 30 vjeç</string>
+    <string name="misound_ear_compensation_30_to_60">30–60 vjeç</string>
+    <string name="misound_ear_compensation_over_60">Mbi 60 vjeç</string>
+</resources>

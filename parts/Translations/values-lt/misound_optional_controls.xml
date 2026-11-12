@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="misound_surround_title">3D erdvinis garsas</string>
+    <string name="misound_surround_summary">Pridėkite erdvinio garso efektą naudodami suderinamas ausines.</string>
+    <string name="misound_supported_headphones_required">Norėdami naudoti šį nustatymą, prijunkite suderinamas ausines.</string>
+    <string name="misound_ear_compensation_title">Garsumo derinimas</string>
+    <string name="misound_ear_compensation_summary">Pakoreguokite ausinių garsą naudodami pagal amžių parinktą išankstinę nuostatą.</string>
+    <string name="misound_ear_compensation_preset_title">Sistemos išankstiniai nustatymai</string>
+    <string name="misound_ear_compensation_under_30">Jaunesniems nei 30 metų</string>
+    <string name="misound_ear_compensation_30_to_60">30–60 metų</string>
+    <string name="misound_ear_compensation_over_60">Vyresniems nei 60 metų</string>
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<resources>
+    <string name="misound_surround_title">Fuaim thimpeallach 3D</string>
+    <string name="misound_surround_summary">Cuir éifeacht thimpeallach leis agus cluasáin chomhoiriúnacha á n-úsáid.</string>
+    <string name="misound_supported_headphones_required">Ceangail cluasáin chomhoiriúnacha chun an socrú seo a úsáid.</string>
+    <string name="misound_ear_compensation_title">Coigeartú airde fuaime</string>
+    <string name="misound_ear_compensation_summary">Coigeartaigh fuaim na gcluasán le réamhshocrú bunaithe ar aois.</string>
+    <string name="misound_ear_compensation_preset_title">Réamhshocruithe an chórais</string>
+    <string name="misound_ear_compensation_under_30">Faoi bhun 30 bliain d\'aois</string>
+    <string name="misound_ear_compensation_30_to_60">30–60 bliain d\'aois</string>
+    <string name="misound_ear_compensation_over_60">Os cionn 60 bliain d\'aois</string>
+</resources>

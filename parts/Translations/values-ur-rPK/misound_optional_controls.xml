@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="misound_surround_title">3D سراؤنڈ</string>
+    <string name="misound_surround_summary">مطابقت رکھنے والے ہیڈفون استعمال کرتے وقت سراؤنڈ اثر شامل کریں۔</string>
+    <string name="misound_supported_headphones_required">اس ترتیب کو استعمال کرنے کے لیے مطابقت رکھنے والے ہیڈفون جوڑیں۔</string>
+    <string name="misound_ear_compensation_title">والیوم ایڈجسٹمنٹ</string>
+    <string name="misound_ear_compensation_summary">عمر پر مبنی پری سیٹ کے ذریعے ہیڈفون کی آواز کو ایڈجسٹ کریں۔</string>
+    <string name="misound_ear_compensation_preset_title">سسٹم پری سیٹ</string>
+    <string name="misound_ear_compensation_under_30">30 سال سے کم عمر</string>
+    <string name="misound_ear_compensation_30_to_60">30–60 سال کی عمر</string>
+    <string name="misound_ear_compensation_over_60">60 سال سے زیادہ عمر</string>
+</resources>

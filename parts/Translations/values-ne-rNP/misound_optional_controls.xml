@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="misound_surround_title">3D सराउन्ड</string>
+    <string name="misound_surround_summary">मिल्दो हेडफोन प्रयोग गर्दा सराउन्ड प्रभाव थप्नुहोस्।</string>
+    <string name="misound_supported_headphones_required">यो सेटिङ प्रयोग गर्न मिल्दो हेडफोन जडान गर्नुहोस्।</string>
+    <string name="misound_ear_compensation_title">भोल्युम समायोजन</string>
+    <string name="misound_ear_compensation_summary">उमेरमा आधारित प्रिसेट प्रयोग गरी हेडफोनको ध्वनि मिलाउनुहोस्।</string>
+    <string name="misound_ear_compensation_preset_title">सिस्टम प्रिसेट</string>
+    <string name="misound_ear_compensation_under_30">30 वर्षभन्दा कम उमेर</string>
+    <string name="misound_ear_compensation_30_to_60">30–60 वर्षको उमेर</string>
+    <string name="misound_ear_compensation_over_60">60 वर्षभन्दा बढी उमेर</string>
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<resources>
+    <string name="misound_surround_title">3D સરાઉન્ડ</string>
+    <string name="misound_surround_summary">સુસંગત હેડફોનનો ઉપયોગ કરતી વખતે સરાઉન્ડ અસર ઉમેરો.</string>
+    <string name="misound_supported_headphones_required">આ સેટિંગનો ઉપયોગ કરવા માટે સુસંગત હેડફોન કનેક્ટ કરો.</string>
+    <string name="misound_ear_compensation_title">વૉલ્યૂમ સમાયોજન</string>
+    <string name="misound_ear_compensation_summary">ઉંમર આધારિત પ્રિસેટ વડે હેડફોનનો અવાજ ગોઠવો.</string>
+    <string name="misound_ear_compensation_preset_title">સિસ્ટમ પ્રિસેટ</string>
+    <string name="misound_ear_compensation_under_30">30 વર્ષથી ઓછી ઉંમર</string>
+    <string name="misound_ear_compensation_30_to_60">30–60 વર્ષની ઉંમર</string>
+    <string name="misound_ear_compensation_over_60">60 વર્ષથી વધુ ઉંમર</string>
+</resources>

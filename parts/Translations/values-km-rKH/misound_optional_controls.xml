@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<resources>
+    <string name="misound_surround_title">សំឡេងជុំវិញ 3D</string>
+    <string name="misound_surround_summary">បន្ថែមបែបផែនសំឡេងជុំវិញ នៅពេលប្រើកាសដែលឆបគ្នា។</string>
+    <string name="misound_supported_headphones_required">ភ្ជាប់កាសដែលឆបគ្នា ដើម្បីប្រើការកំណត់នេះ។</string>
+    <string name="misound_ear_compensation_title">ការកែតម្រូវកម្រិតសំឡេង</string>
+    <string name="misound_ear_compensation_summary">កែតម្រូវសំឡេងកាស ដោយប្រើការកំណត់ជាមុនផ្អែកលើអាយុ។</string>
+    <string name="misound_ear_compensation_preset_title">ការកំណត់ប្រព័ន្ធជាមុន</string>
+    <string name="misound_ear_compensation_under_30">អាយុក្រោម 30 ឆ្នាំ</string>
+    <string name="misound_ear_compensation_30_to_60">អាយុ 30–60 ឆ្នាំ</string>
+    <string name="misound_ear_compensation_over_60">អាយុលើសពី 60 ឆ្នាំ</string>
+</resources>

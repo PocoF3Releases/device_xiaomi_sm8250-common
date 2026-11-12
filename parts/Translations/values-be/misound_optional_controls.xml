@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<resources>
+    <string name="misound_surround_title">Аб\'ёмны 3D-гук</string>
+    <string name="misound_surround_summary">Дадайце эфект аб\'ёмнага гуку пры выкарыстанні сумяшчальных навушнікаў.</string>
+    <string name="misound_supported_headphones_required">Падключыце сумяшчальныя навушнікі, каб карыстацца гэтай наладай.</string>
+    <string name="misound_ear_compensation_title">Рэгуляванне гучнасці</string>
+    <string name="misound_ear_compensation_summary">Наладзьце гук навушнікаў з дапамогай прадвызначанай налады паводле ўзросту.</string>
+    <string name="misound_ear_compensation_preset_title">Прадвызначаныя налады сістэмы</string>
+    <string name="misound_ear_compensation_under_30">Маладзейшыя за 30 гадоў</string>
+    <string name="misound_ear_compensation_30_to_60">30–60 гадоў</string>
+    <string name="misound_ear_compensation_over_60">Старэйшыя за 60 гадоў</string>
+</resources>

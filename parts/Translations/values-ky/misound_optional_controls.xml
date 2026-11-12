@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="misound_surround_title">3D көлөмдүү үн</string>
+    <string name="misound_surround_summary">Шайкеш кулакчындарды колдонгондо көлөмдүү үн эффектин кошот.</string>
+    <string name="misound_supported_headphones_required">Бул жөндөөнү колдонуу үчүн шайкеш кулакчындарды туташтырыңыз.</string>
+    <string name="misound_ear_compensation_title">Үндүн деңгээлин жөндөө</string>
+    <string name="misound_ear_compensation_summary">Кулакчындын үнүн жаш курак боюнча алдын ала жөндөө аркылуу тууралаңыз.</string>
+    <string name="misound_ear_compensation_preset_title">Системалык алдын ала жөндөөлөр</string>
+    <string name="misound_ear_compensation_under_30">30 жаштан кичүү</string>
+    <string name="misound_ear_compensation_30_to_60">30–60 жаш</string>
+    <string name="misound_ear_compensation_over_60">60 жаштан улуу</string>
+</resources>

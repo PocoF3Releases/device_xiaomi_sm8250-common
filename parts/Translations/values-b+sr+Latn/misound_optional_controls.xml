@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<resources>
+    <string name="misound_surround_title">3D prostorni zvuk</string>
+    <string name="misound_surround_summary">Dodajte efekat prostornog zvuka kada koristite kompatibilne slušalice.</string>
+    <string name="misound_supported_headphones_required">Povežite kompatibilne slušalice da biste koristili ovo podešavanje.</string>
+    <string name="misound_ear_compensation_title">Podešavanje jačine zvuka</string>
+    <string name="misound_ear_compensation_summary">Podesite zvuk slušalica pomoću unapred podešenog profila za starosnu grupu.</string>
+    <string name="misound_ear_compensation_preset_title">Sistemske predefinisane postavke</string>
+    <string name="misound_ear_compensation_under_30">Mlađi od 30 godina</string>
+    <string name="misound_ear_compensation_30_to_60">30–60 godina</string>
+    <string name="misound_ear_compensation_over_60">Stariji od 60 godina</string>
+</resources>

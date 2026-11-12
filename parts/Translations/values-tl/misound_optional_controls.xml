@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="misound_surround_title">3D surround</string>
+    <string name="misound_surround_summary">Magdagdag ng surround effect kapag gumagamit ng mga katugmang headphone.</string>
+    <string name="misound_supported_headphones_required">Ikonekta ang mga katugmang headphone para magamit ang setting na ito.</string>
+    <string name="misound_ear_compensation_title">Pagsasaayos ng volume</string>
+    <string name="misound_ear_compensation_summary">Ayusin ang tunog ng headphone gamit ang preset batay sa edad.</string>
+    <string name="misound_ear_compensation_preset_title">Mga preset ng system</string>
+    <string name="misound_ear_compensation_under_30">Wala pang 30 taong gulang</string>
+    <string name="misound_ear_compensation_30_to_60">30–60 taong gulang</string>
+    <string name="misound_ear_compensation_over_60">Higit sa 60 taong gulang</string>
+</resources>

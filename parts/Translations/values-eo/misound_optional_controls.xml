@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<resources>
+    <string name="misound_surround_title">3D-ĉirkaŭsono</string>
+    <string name="misound_surround_summary">Aldonu ĉirkaŭsonan efikon dum uzado de kongruaj kapaŭskultiloj.</string>
+    <string name="misound_supported_headphones_required">Konektu kongruajn kapaŭskultilojn por uzi ĉi tiun agordon.</string>
+    <string name="misound_ear_compensation_title">Alĝustigo de laŭteco</string>
+    <string name="misound_ear_compensation_summary">Alĝustigu la sonon de la kapaŭskultiloj per aĝbazita antaŭagordo.</string>
+    <string name="misound_ear_compensation_preset_title">Sistemaj antaŭagordoj</string>
+    <string name="misound_ear_compensation_under_30">Malpli ol 30 jaroj</string>
+    <string name="misound_ear_compensation_30_to_60">30–60 jaroj</string>
+    <string name="misound_ear_compensation_over_60">Pli ol 60 jaroj</string>
+</resources>

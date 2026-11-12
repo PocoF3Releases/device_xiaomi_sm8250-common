@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="misound_surround_title">เสียงรอบทิศทาง 3D</string>
+    <string name="misound_surround_summary">เพิ่มเอฟเฟกต์เสียงรอบทิศทางเมื่อใช้หูฟังที่รองรับ</string>
+    <string name="misound_supported_headphones_required">เชื่อมต่อหูฟังที่รองรับเพื่อใช้การตั้งค่านี้</string>
+    <string name="misound_ear_compensation_title">การปรับระดับเสียง</string>
+    <string name="misound_ear_compensation_summary">ปรับเสียงหูฟังโดยใช้ค่าที่ตั้งไว้ตามช่วงอายุ</string>
+    <string name="misound_ear_compensation_preset_title">ค่าที่ระบบตั้งไว้</string>
+    <string name="misound_ear_compensation_under_30">อายุต่ำกว่า 30 ปี</string>
+    <string name="misound_ear_compensation_30_to_60">อายุ 30–60 ปี</string>
+    <string name="misound_ear_compensation_over_60">อายุมากกว่า 60 ปี</string>
+</resources>

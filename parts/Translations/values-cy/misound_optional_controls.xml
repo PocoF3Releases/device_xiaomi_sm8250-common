@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<resources>
+    <string name="misound_surround_title">Sain amgylchynol 3D</string>
+    <string name="misound_surround_summary">Ychwanegwch effaith sain amgylchynol wrth ddefnyddio clustffonau cydnaws.</string>
+    <string name="misound_supported_headphones_required">Cysylltwch glustffonau cydnaws i ddefnyddio\'r gosodiad hwn.</string>
+    <string name="misound_ear_compensation_title">Addasu lefel y sain</string>
+    <string name="misound_ear_compensation_summary">Addaswch sain y clustffonau gan ddefnyddio rhagosodiad ar sail oedran.</string>
+    <string name="misound_ear_compensation_preset_title">Rhagosodiadau\'r system</string>
+    <string name="misound_ear_compensation_under_30">O dan 30 oed</string>
+    <string name="misound_ear_compensation_30_to_60">30–60 oed</string>
+    <string name="misound_ear_compensation_over_60">Dros 60 oed</string>
+</resources>

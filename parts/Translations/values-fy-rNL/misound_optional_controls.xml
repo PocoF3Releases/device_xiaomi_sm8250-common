@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<resources>
+    <string name="misound_surround_title">3D-surroundlûd</string>
+    <string name="misound_surround_summary">Foegje in surround-effekt ta by it brûken fan kompatibele koptelefoans.</string>
+    <string name="misound_supported_headphones_required">Ferbine in kompatibele koptelefoan om dizze ynstelling te brûken.</string>
+    <string name="misound_ear_compensation_title">Folume-oanpassing</string>
+    <string name="misound_ear_compensation_summary">Pas it lûd fan de koptelefoan oan mei in foarynstelling op basis fan leeftyd.</string>
+    <string name="misound_ear_compensation_preset_title">Systeemfoarynstellingen</string>
+    <string name="misound_ear_compensation_under_30">Jonger as 30 jier</string>
+    <string name="misound_ear_compensation_30_to_60">30–60 jier</string>
+    <string name="misound_ear_compensation_over_60">Âlder as 60 jier</string>
+</resources>

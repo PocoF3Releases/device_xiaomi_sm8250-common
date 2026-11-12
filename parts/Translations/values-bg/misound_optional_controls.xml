@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<resources>
+    <string name="misound_surround_title">3D съраунд звук</string>
+    <string name="misound_surround_summary">Добавете съраунд ефект, когато използвате съвместими слушалки.</string>
+    <string name="misound_supported_headphones_required">Свържете съвместими слушалки, за да използвате тази настройка.</string>
+    <string name="misound_ear_compensation_title">Регулиране силата на звука</string>
+    <string name="misound_ear_compensation_summary">Настройте звука на слушалките с предварителна настройка според възрастта.</string>
+    <string name="misound_ear_compensation_preset_title">Фабрично зададени настройки</string>
+    <string name="misound_ear_compensation_under_30">Под 30 години</string>
+    <string name="misound_ear_compensation_30_to_60">30–60 години</string>
+    <string name="misound_ear_compensation_over_60">Над 60 години</string>
+</resources>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="misound_surround_title">Âm thanh vòm 3D</string>
+    <string name="misound_surround_summary">Thêm hiệu ứng âm thanh vòm khi dùng tai nghe tương thích.</string>
+    <string name="misound_supported_headphones_required">Kết nối tai nghe tương thích để dùng chế độ cài đặt này.</string>
+    <string name="misound_ear_compensation_title">Điều chỉnh âm lượng</string>
+    <string name="misound_ear_compensation_summary">Điều chỉnh âm thanh tai nghe bằng chế độ cài đặt sẵn theo độ tuổi.</string>
+    <string name="misound_ear_compensation_preset_title">Cài đặt sẵn hệ thống</string>
+    <string name="misound_ear_compensation_under_30">Dưới 30 tuổi</string>
+    <string name="misound_ear_compensation_30_to_60">30–60 tuổi</string>
+    <string name="misound_ear_compensation_over_60">Trên 60 tuổi</string>
+</resources>

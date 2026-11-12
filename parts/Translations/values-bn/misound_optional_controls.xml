@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<resources>
+    <string name="misound_surround_title">3D সারাউন্ড সাউন্ড</string>
+    <string name="misound_surround_summary">সামঞ্জস্যপূর্ণ হেডফোন ব্যবহার করার সময় সারাউন্ড প্রভাব যোগ করুন।</string>
+    <string name="misound_supported_headphones_required">এই সেটিং ব্যবহার করতে সামঞ্জস্যপূর্ণ হেডফোন সংযুক্ত করুন।</string>
+    <string name="misound_ear_compensation_title">ভলিউম ঠিকঠাক করুন</string>
+    <string name="misound_ear_compensation_summary">বয়সভিত্তিক প্রিসেট ব্যবহার করে হেডফোনের শব্দ ঠিক করুন।</string>
+    <string name="misound_ear_compensation_preset_title">সিস্টেম প্রিসেট</string>
+    <string name="misound_ear_compensation_under_30">30 বছরের কম</string>
+    <string name="misound_ear_compensation_30_to_60">30–60 বছর বয়স</string>
+    <string name="misound_ear_compensation_over_60">60 বছরের বেশি</string>
+</resources>

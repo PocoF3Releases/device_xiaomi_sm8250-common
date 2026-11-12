@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="misound_surround_title">3D-Surround</string>
+    <string name="misound_surround_summary">Füügt e Surround-Effekt bäi, wann Dir kompatibel Kopfhörer benotzt.</string>
+    <string name="misound_supported_headphones_required">Verbannt kompatibel Kopfhörer, fir dës Astellung ze benotzen.</string>
+    <string name="misound_ear_compensation_title">Lautstäerktupassung</string>
+    <string name="misound_ear_compensation_summary">Passt de Klang vun de Kopfhörer mat enger Virastellung nom Alter un.</string>
+    <string name="misound_ear_compensation_preset_title">Systemvirastellungen</string>
+    <string name="misound_ear_compensation_under_30">Ënner 30 Joer</string>
+    <string name="misound_ear_compensation_30_to_60">30–60 Joer</string>
+    <string name="misound_ear_compensation_over_60">Iwwer 60 Joer</string>
+</resources>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="misound_surround_title">Sauti inayozingira ya 3D</string>
+    <string name="misound_surround_summary">Ongeza athari ya sauti inayozingira unapotumia vipokea sauti vinavyooana.</string>
+    <string name="misound_supported_headphones_required">Unganisha vipokea sauti vinavyooana ili kutumia mpangilio huu.</string>
+    <string name="misound_ear_compensation_title">Marekebisho ya sauti</string>
+    <string name="misound_ear_compensation_summary">Rekebisha sauti ya vipokea sauti kwa kutumia mpangilio uliowekwa mapema kulingana na umri.</string>
+    <string name="misound_ear_compensation_preset_title">Mipangilio iliyowekwa mapema ya mfumo</string>
+    <string name="misound_ear_compensation_under_30">Chini ya miaka 30</string>
+    <string name="misound_ear_compensation_30_to_60">Miaka 30–60</string>
+    <string name="misound_ear_compensation_over_60">Zaidi ya miaka 60</string>
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<resources>
+    <string name="misound_surround_title">So envoltant 3D</string>
+    <string name="misound_surround_summary">Afegeix un efecte de so envoltant quan facis servir auriculars compatibles.</string>
+    <string name="misound_supported_headphones_required">Connecta auriculars compatibles per fer servir aquest ajust.</string>
+    <string name="misound_ear_compensation_title">Ajust de volum</string>
+    <string name="misound_ear_compensation_summary">Ajusta el so dels auriculars amb un preajust basat en l\'edat.</string>
+    <string name="misound_ear_compensation_preset_title">Presets del sistema</string>
+    <string name="misound_ear_compensation_under_30">Menys de 30 anys</string>
+    <string name="misound_ear_compensation_30_to_60">30–60 anys</string>
+    <string name="misound_ear_compensation_over_60">Més de 60 anys</string>
+</resources>

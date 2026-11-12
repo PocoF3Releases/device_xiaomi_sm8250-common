@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<resources>
+    <string name="misound_surround_title">3D পৰিবেষ্টিত শব্দ</string>
+    <string name="misound_surround_summary">সামঞ্জস্যপূৰ্ণ হেডফোন ব্যৱহাৰ কৰাৰ সময়ত পৰিবেষ্টিত শব্দৰ প্ৰভাৱ যোগ কৰক।</string>
+    <string name="misound_supported_headphones_required">এই ছেটিং ব্যৱহাৰ কৰিবলৈ সামঞ্জস্যপূৰ্ণ হেডফোন সংযোগ কৰক।</string>
+    <string name="misound_ear_compensation_title">ভলিউম সমাযোজন</string>
+    <string name="misound_ear_compensation_summary">বয়সভিত্তিক পূৰ্বনিৰ্ধাৰিত ছেট ব্যৱহাৰ কৰি হেডফোনৰ শব্দ সমাযোজন কৰক।</string>
+    <string name="misound_ear_compensation_preset_title">ছিষ্টেমৰ পূৰ্বনিৰ্ধাৰিত ছেটসমূহ</string>
+    <string name="misound_ear_compensation_under_30">30 বছৰতকৈ কম</string>
+    <string name="misound_ear_compensation_30_to_60">30–60 বছৰ</string>
+    <string name="misound_ear_compensation_over_60">60 বছৰতকৈ বেছি</string>
+</resources>
