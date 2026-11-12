@@ -134,6 +134,16 @@ class MiSoundEffect(priority: Int, audioSession: Int) :
         checkStatus(setParameter(20, if (enabled) 1 else 0))
     }
 
+    fun setEarCompensationEnabled(enabled: Boolean) {
+        checkStatus(setParameter(9, if (enabled) 1 else 0))
+    }
+
+    /** Stock system presets are selected in the DSP; no calibration gains are synthesized. */
+    fun setEarCompensationPreset(preset: Int) {
+        require(preset in 1..3)
+        checkStatus(setParameter(14, preset))
+    }
+
     fun setHifiMode(mode: Int) {
         require(mode in 0..1)
         checkStatus(setParameter(8, mode))

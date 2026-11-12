@@ -44,6 +44,10 @@ data class MiSoundState(
     val surroundSupported: Boolean = false,
     val surroundAvailable: Boolean = false,
     val surroundRequested: Boolean = false,
+    val earCompensationSupported: Boolean = false,
+    val earCompensationAvailable: Boolean = false,
+    val earCompensationRequested: Boolean = false,
+    val earCompensationPreset: Int = 1,
 )
 
 /** Persistent process-wide owner: activities never own or release the DSP effect. */
@@ -58,6 +62,8 @@ class MiSoundUtils private constructor(context: Context) {
         const val PREF_PAUSE = "misound_pause_during_calls"
         const val PREF_CUSTOM = "misound_custom_levels"
         const val PREF_SURROUND = "misound_surround_enabled"
+        const val PREF_EAR_COMPENSATION = "misound_ear_compensation_enabled"
+        const val PREF_EAR_PRESET = "misound_ear_compensation_preset"
         /** Stored in PREF_PRESET while the user curve in PREF_CUSTOM is selected. */
         const val CUSTOM = "custom"
         const val BAND_COUNT = 7
@@ -126,6 +132,8 @@ class MiSoundUtils private constructor(context: Context) {
     private var communicationActive = false
     private var appliedEnabled: Boolean? = null
     private var appliedSurround: Boolean? = null
+    private var appliedEarCompensation: Boolean? = null
+    private var appliedEarPreset: Int? = null
     private var routeCallbacksRegistered = false
     private var routeCallbackAttempts = 0
     private var routeKnown = false
@@ -324,6 +332,7 @@ class MiSoundUtils private constructor(context: Context) {
         }
         refreshRouteState()
         applySurround(effect, enabled)
+        applyEarCompensation(effect, enabled)
     }
 
     @Synchronized
@@ -388,6 +397,10 @@ class MiSoundUtils private constructor(context: Context) {
             surroundSupported = isSurroundConfigured() && !platformSpatializerSupported,
             surroundAvailable = isSurroundAvailable(),
             surroundRequested = isSurroundRequested(),
+            earCompensationSupported = isEarCompensationConfigured(),
+            earCompensationAvailable = isEarCompensationAvailable(),
+            earCompensationRequested = isEarCompensationRequested(),
+            earCompensationPreset = getEarCompensationPreset(),
         )
     }
 
@@ -403,6 +416,8 @@ class MiSoundUtils private constructor(context: Context) {
             Log.w("MiSoundUtils", "Cannot bypass MiSound before release", error)
         } finally {
             appliedSurround = null
+            appliedEarCompensation = null
+            appliedEarPreset = null
             try {
                 previous.release()
             } catch (error: RuntimeException) {
@@ -428,6 +443,8 @@ class MiSoundUtils private constructor(context: Context) {
                         if (sound !== effect || serverDown) return@synchronized
                         appliedEnabled = null
                         appliedSurround = null
+                        appliedEarCompensation = null
+                        appliedEarPreset = null
                         if (granted) {
                             attempts = 0
                             // Another owner may have changed tuning as well as enable state.
@@ -568,6 +585,73 @@ class MiSoundUtils private constructor(context: Context) {
         preferences.edit().putBoolean(PREF_SURROUND, enabled).apply()
     }
 
+    private fun isEarCompensationConfigured() =
+        SystemProperties.getBoolean("ro.vendor.audio.sfx.earadj", false)
+
+    private fun isEarCompensationAvailable() =
+        isEarCompensationConfigured() && routeKnown && eligibleHeadphones
+
+    @Synchronized
+    fun isEarCompensationRequested() = safeBoolean(PREF_EAR_COMPENSATION, false)
+
+    @Synchronized
+    fun getEarCompensationPreset() = safeInt(PREF_EAR_PRESET, 1, 1..3)
+
+    private fun applyEarCompensation(
+        effect: MiSoundEffect,
+        enable: Boolean,
+        requested: Boolean = isEarCompensationRequested(),
+        preset: Int = getEarCompensationPreset(),
+        forceEnabled: Boolean = false,
+        forcePreset: Boolean = false,
+    ) {
+        if (!isEarCompensationConfigured() && appliedEarCompensation == null) return
+        val active = enable && requested && isEarCompensationAvailable()
+        if ((active || forcePreset) && (forcePreset || appliedEarPreset != preset)) {
+            effect.setEarCompensationPreset(preset)
+            appliedEarPreset = preset
+        }
+        if (forceEnabled || appliedEarCompensation != active) {
+            effect.setEarCompensationEnabled(active)
+            appliedEarCompensation = active
+        }
+    }
+
+    @Synchronized
+    fun setEarCompensationEnabled(enabled: Boolean) {
+        refreshRouteState()
+        check(isEarCompensationConfigured()) { "Headphone volume adjustment is not configured" }
+        check(!enabled || (isEnabledRequested() && isEarCompensationAvailable())) {
+            "Headphone volume adjustment route unavailable"
+        }
+        val effect = requireEffect()
+        applyEarCompensation(
+            effect,
+            effectiveEnabled(isEnabledRequested(), isPauseDuringCallsEnabled()),
+            requested = enabled,
+            forceEnabled = true,
+        )
+        preferences.edit().putBoolean(PREF_EAR_COMPENSATION, enabled).apply()
+    }
+
+    @Synchronized
+    fun setEarCompensationPreset(preset: Int) {
+        require(preset in 1..3)
+        refreshRouteState()
+        check(isEnabledRequested() && isEarCompensationRequested() && isEarCompensationAvailable()) {
+            "Headphone volume adjustment unavailable"
+        }
+        val effect = requireEffect()
+        applyEarCompensation(
+            effect,
+            effectiveEnabled(isEnabledRequested(), isPauseDuringCallsEnabled()),
+            preset = preset,
+            forceEnabled = true,
+            forcePreset = true,
+        )
+        preferences.edit().putString(PREF_EAR_PRESET, preset.toString()).apply()
+    }
+
     /** Clear independent headphone DSP gates even if a later core bypass write fails. */
     private fun bypassOwnedEffect(effect: MiSoundEffect) {
         var failure: RuntimeException? = null
@@ -575,6 +659,12 @@ class MiSoundUtils private constructor(context: Context) {
             applySurround(effect, false)
         } catch (error: RuntimeException) {
             failure = error
+        }
+        try {
+            applyEarCompensation(effect, false)
+        } catch (error: RuntimeException) {
+            if (failure == null) failure = error
+            else if (failure !== error) failure.addSuppressed(error)
         }
         try {
             check(effect.setEnabled(false) == AudioEffect.SUCCESS)
@@ -596,6 +686,7 @@ class MiSoundUtils private constructor(context: Context) {
         if (enable) {
             refreshRouteState()
             applySurround(effect, true)
+            applyEarCompensation(effect, true)
             effect.setMusic(1)
             check(effect.setEnabled(true) == AudioEffect.SUCCESS)
         } else {

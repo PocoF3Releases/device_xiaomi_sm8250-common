@@ -110,8 +110,9 @@ class MiSoundActivity : PartsActivity() {
         val headsetOffset = if (headphones) 1 else 0
         val customOffset = if (customSelected) 1 else 0
         val surroundOffset = if (state.surroundSupported) 1 else 0
-        val secondaryRowCount =
-            4 + headsetOffset + customOffset + surroundOffset + (if (hifiSupported) 1 else 0)
+        val earCompensationOffset = if (state.earCompensationSupported) 2 else 0
+        val secondaryRowCount = 4 + headsetOffset + customOffset + surroundOffset +
+            earCompensationOffset + (if (hifiSupported) 1 else 0)
         PartsPage(stringResource(R.string.misound_title), { finish() }) {
             Row(
                 Modifier.fillMaxWidth().padding(vertical = 12.dp),
@@ -291,8 +292,39 @@ class MiSoundActivity : PartsActivity() {
                         apply { it.setSurroundEnabled(enabled) }
                     }
                 }
-            if (hifiSupported)
+            if (state.earCompensationSupported) {
                 PreferenceRow(4 + headsetOffset + customOffset + surroundOffset, secondaryRowCount) {
+                    ToggleCard(
+                        stringResource(R.string.misound_ear_compensation_title),
+                        stringResource(if (state.earCompensationAvailable)
+                            R.string.misound_ear_compensation_summary
+                            else R.string.misound_supported_headphones_required),
+                        state.earCompensationRequested,
+                        available && requested &&
+                            (state.earCompensationAvailable || state.earCompensationRequested),
+                    ) { enabled ->
+                        apply { it.setEarCompensationEnabled(enabled) }
+                    }
+                }
+                PreferenceRow(5 + headsetOffset + customOffset + surroundOffset, secondaryRowCount) {
+                    ChoiceCard(
+                        stringResource(R.string.misound_ear_compensation_preset_title),
+                        state.earCompensationPreset.toString(),
+                        ResourceChoices(R.array.misound_ear_compensation_pref_entries,
+                            R.array.misound_ear_compensation_pref_values),
+                        available && requested && state.earCompensationRequested &&
+                            state.earCompensationAvailable,
+                        choiceIcon = { _, selected ->
+                            ChoiceIcon(DialogSymbols.headphones, selected)
+                        },
+                    ) { value ->
+                        apply { it.setEarCompensationPreset(value.toInt()) }
+                    }
+                }
+            }
+            if (hifiSupported)
+                PreferenceRow(4 + headsetOffset + customOffset + surroundOffset +
+                    earCompensationOffset, secondaryRowCount) {
                     ToggleCard(
                         stringResource(R.string.misound_hifi_title),
                         stringResource(R.string.misound_hifi_summary),
