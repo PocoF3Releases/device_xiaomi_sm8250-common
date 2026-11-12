@@ -86,7 +86,7 @@
     <string name="thermal_temperature_range">"%1$d–%2$d°C"</string>
     <string name="thermal_control_low_battery_value">"5% SOC"</string>
     <string name="thermal_control_wireless_value">"20°C και 60°C"</string>
-    <string name="thermal_sensor_model">"Οι ενεργοποιητές CPU/GPU αναφέρονται στο VIRTUAL-SENSOR0. Οι διαμορφώσεις της οικογένειας Normal το ορίζουν από τα quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 και charger_therm0 με βάρη 362, 229, 108, -111, -224, 734 και -159 (άθροισμα 1000, αντιστάθμιση 2169)."</string>
+    <string name="thermal_sensor_model">"Οι ενεργοποιητές CPU/GPU αναφέρονται στο VIRTUAL-SENSOR0. Οι διαμορφώσεις της οικογένειας Normal το ορίζουν από τα quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 και charger_therm0 με βάρη 362, 229, 108, -111, -224, 734 και -159 (άθροισμα 939, αντιστάθμιση 2169)."</string>
     <string name="thermal_sensor_defined">"Αυτή η διαμόρφωση περιέχει τον ορισμό VIRTUAL-SENSOR0."</string>
     <string name="thermal_sensor_referenced">"Αυτή η διαμόρφωση αναφέρεται στον ενεργό ορισμό VIRTUAL-SENSOR0."</string>
     <string name="refresh_rate_tile_title">"Ρυθμός ανανέωσης"</string>

@@ -87,7 +87,7 @@
     <string name="thermal_temperature_range">"%1$d–%2$d°C"</string>
     <string name="thermal_control_low_battery_value">"5% SOC"</string>
     <string name="thermal_control_wireless_value">"20°C နှင့် 60°C"</string>
-    <string name="thermal_sensor_model">"CPU/GPU trigger များသည် VIRTUAL-SENSOR0 ကို ကိုးကားသည်။ Normal မိသားစု ဖွဲ့စည်းမှုများက quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 နှင့် charger_therm0 တို့မှ အလေးချိန် 362, 229, 108, -111, -224, 734 နှင့် -159 (စုစုပေါင်း 1000, compensation 2169) ဖြင့် သတ်မှတ်သည်။"</string>
+    <string name="thermal_sensor_model">"CPU/GPU trigger များသည် VIRTUAL-SENSOR0 ကို ကိုးကားသည်။ Normal မိသားစု ဖွဲ့စည်းမှုများက quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 နှင့် charger_therm0 တို့မှ အလေးချိန် 362, 229, 108, -111, -224, 734 နှင့် -159 (စုစုပေါင်း 939, compensation 2169) ဖြင့် သတ်မှတ်သည်။"</string>
     <string name="thermal_sensor_defined">"ဤဖွဲ့စည်းမှုတွင် VIRTUAL-SENSOR0 အဓိပ္ပာယ်သတ်မှတ်ချက် ပါဝင်သည်။"</string>
     <string name="thermal_sensor_referenced">"ဤဖွဲ့စည်းမှုသည် လက်ရှိအသုံးပြုနေသော VIRTUAL-SENSOR0 အဓိပ္ပာယ်သတ်မှတ်ချက်ကို ကိုးကားသည်။"</string>
     <string name="refresh_rate_tile_title">"ပြန်လည်ဆန်းသစ်နှုန်း"</string>

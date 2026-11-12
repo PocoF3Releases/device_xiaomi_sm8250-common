@@ -87,7 +87,7 @@
     <string name="thermal_temperature_range">"%1$d–%2$d°C"</string>
     <string name="thermal_control_low_battery_value">"5% SOC"</string>
     <string name="thermal_control_wireless_value">"20°C ແລະ 60°C"</string>
-    <string name="thermal_sensor_model">"ຕົວກະຕຸ້ນ CPU/GPU ອ້າງອີງ VIRTUAL-SENSOR0. ການກຳນົດຄ່າຕະກູນ Normal ກຳນົດມັນຈາກ quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 ແລະ charger_therm0 ດ້ວຍນ້ຳໜັກ 362, 229, 108, -111, -224, 734 ແລະ -159 (ລວມ 1000, ຊົດເຊີຍ 2169)."</string>
+    <string name="thermal_sensor_model">"ຕົວກະຕຸ້ນ CPU/GPU ອ້າງອີງ VIRTUAL-SENSOR0. ການກຳນົດຄ່າຕະກູນ Normal ກຳນົດມັນຈາກ quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 ແລະ charger_therm0 ດ້ວຍນ້ຳໜັກ 362, 229, 108, -111, -224, 734 ແລະ -159 (ລວມ 939, ຊົດເຊີຍ 2169)."</string>
     <string name="thermal_sensor_defined">"ການກຳນົດຄ່ານີ້ມີນິຍາມ VIRTUAL-SENSOR0."</string>
     <string name="thermal_sensor_referenced">"ການກຳນົດຄ່ານີ້ອ້າງອີງນິຍາມ VIRTUAL-SENSOR0 ທີ່ໃຊ້ງານຢູ່."</string>
     <string name="refresh_rate_tile_title">"ອັດຕາຣີເຟຣຊ"</string>

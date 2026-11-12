@@ -86,7 +86,7 @@
     <string name="thermal_temperature_range">"%1$d–%2$d°C"</string>
     <string name="thermal_control_low_battery_value">"5% SOC"</string>
     <string name="thermal_control_wireless_value">"20°C og 60°C"</string>
-    <string name="thermal_sensor_model">"CPU/GPU-udløsere refererer til VIRTUAL-SENSOR0. Konfigurationerne i Normal-familien definerer den ud fra quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 og charger_therm0 med vægtene 362, 229, 108, -111, -224, 734 og -159 (sum 1000, kompensation 2169)."</string>
+    <string name="thermal_sensor_model">"CPU/GPU-udløsere refererer til VIRTUAL-SENSOR0. Konfigurationerne i Normal-familien definerer den ud fra quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 og charger_therm0 med vægtene 362, 229, 108, -111, -224, 734 og -159 (sum 939, kompensation 2169)."</string>
     <string name="thermal_sensor_defined">"Denne konfiguration indeholder definitionen af VIRTUAL-SENSOR0."</string>
     <string name="thermal_sensor_referenced">"Denne konfiguration refererer til den aktive definition af VIRTUAL-SENSOR0."</string>
     <string name="refresh_rate_tile_title">"Opdateringshastighed"</string>

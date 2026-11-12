@@ -86,7 +86,7 @@
     <string name="thermal_temperature_range">"%1$d–%2$d°C"</string>
     <string name="thermal_control_low_battery_value">"5% SOC"</string>
     <string name="thermal_control_wireless_value">"20°C a 60°C"</string>
-    <string name="thermal_sensor_model">"Spúšťače CPU/GPU odkazujú na VIRTUAL-SENSOR0. Konfigurácie rodiny Normal ho definujú z quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 a charger_therm0 s váhami 362, 229, 108, -111, -224, 734 a -159 (súčet 1000, kompenzácia 2169)."</string>
+    <string name="thermal_sensor_model">"Spúšťače CPU/GPU odkazujú na VIRTUAL-SENSOR0. Konfigurácie rodiny Normal ho definujú z quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 a charger_therm0 s váhami 362, 229, 108, -111, -224, 734 a -159 (súčet 939, kompenzácia 2169)."</string>
     <string name="thermal_sensor_defined">"Táto konfigurácia obsahuje definíciu VIRTUAL-SENSOR0."</string>
     <string name="thermal_sensor_referenced">"Táto konfigurácia odkazuje na aktívnu definíciu VIRTUAL-SENSOR0."</string>
     <string name="refresh_rate_tile_title">"Obnovovacia frekvencia"</string>

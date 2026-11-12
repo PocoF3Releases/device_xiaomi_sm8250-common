@@ -97,7 +97,7 @@
     <string name="thermal_temperature_range">"%1$d–%2$d°C"</string>
     <string name="thermal_control_low_battery_value">"5% SOC"</string>
     <string name="thermal_control_wireless_value">"20°C و 60°C"</string>
-    <string name="thermal_sensor_model">"دەستپێکەرەکانی CPU/GPU ئاماژە بە VIRTUAL-SENSOR0 دەکەن. ڕێکخستنەکانی خێزانی Normal لە quiet_therm، cpu_therm، battery، wifi_therm، pa_therm0، pa_therm1 و charger_therm0 بە کێشەکانی 362، 229، 108، -111، -224، 734 و -159 (کۆ 1000، جێگرەوە 2169) پێناسەی دەکەن."</string>
+    <string name="thermal_sensor_model">"دەستپێکەرەکانی CPU/GPU ئاماژە بە VIRTUAL-SENSOR0 دەکەن. ڕێکخستنەکانی خێزانی Normal لە quiet_therm، cpu_therm، battery، wifi_therm، pa_therm0، pa_therm1 و charger_therm0 بە کێشەکانی 362، 229، 108، -111، -224، 734 و -159 (کۆ 939، جێگرەوە 2169) پێناسەی دەکەن."</string>
     <string name="thermal_sensor_defined">"ئەم ڕێکخستنە پێناسەی VIRTUAL-SENSOR0 لەخۆدەگرێت."</string>
     <string name="thermal_sensor_referenced">"ئەم ڕێکخستنە ئاماژە بە پێناسەی چالاکی VIRTUAL-SENSOR0 دەکات."</string>
     <string name="refresh_rate_tile_title">"نرخی نوێکردنەوە"</string>

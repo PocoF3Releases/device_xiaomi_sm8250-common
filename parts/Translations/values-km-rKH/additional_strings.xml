@@ -87,7 +87,7 @@
     <string name="thermal_temperature_range">"%1$d–%2$d°C"</string>
     <string name="thermal_control_low_battery_value">"5% SOC"</string>
     <string name="thermal_control_wireless_value">"20°C និង 60°C"</string>
-    <string name="thermal_sensor_model">"កត្តាបង្ក CPU/GPU យោងទៅ VIRTUAL-SENSOR0។ ការកំណត់ត្រកូល Normal កំណត់វាពី quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 និង charger_therm0 ជាមួយទម្ងន់ 362, 229, 108, -111, -224, 734 និង -159 (សរុប 1000, សំណង 2169)។"</string>
+    <string name="thermal_sensor_model">"កត្តាបង្ក CPU/GPU យោងទៅ VIRTUAL-SENSOR0។ ការកំណត់ត្រកូល Normal កំណត់វាពី quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 និង charger_therm0 ជាមួយទម្ងន់ 362, 229, 108, -111, -224, 734 និង -159 (សរុប 939, សំណង 2169)។"</string>
     <string name="thermal_sensor_defined">"ការកំណត់នេះមាននិយមន័យ VIRTUAL-SENSOR0។"</string>
     <string name="thermal_sensor_referenced">"ការកំណត់នេះយោងទៅនិយមន័យ VIRTUAL-SENSOR0 ដែលកំពុងសកម្ម។"</string>
     <string name="refresh_rate_tile_title">"អត្រាធ្វើឱ្យស្រស់"</string>

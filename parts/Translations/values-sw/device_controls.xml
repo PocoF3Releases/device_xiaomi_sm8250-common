@@ -131,7 +131,7 @@
     <string name="thermal_region_india">"India"</string>
     <string name="thermal_search_apps">"Tafuta programu"</string>
     <string name="thermal_sensor_defined">"Usanidi huu una ufafanuzi wa VIRTUAL-SENSOR0."</string>
-    <string name="thermal_sensor_model">"Vichochezi vya CPU/GPU vinarejelea VIRTUAL-SENSOR0. Usanidi wa familia ya Normal huiunda kutoka quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 na charger_therm0 kwa uzani 362, 229, 108, -111, -224, 734 na -159 (jumla 1000, fidia 2169)."</string>
+    <string name="thermal_sensor_model">"Vichochezi vya CPU/GPU vinarejelea VIRTUAL-SENSOR0. Usanidi wa familia ya Normal huiunda kutoka quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 na charger_therm0 kwa uzani 362, 229, 108, -111, -224, 734 na -159 (jumla 939, fidia 2169)."</string>
     <string name="thermal_sensor_referenced">"Usanidi huu unarejelea ufafanuzi unaotumika wa VIRTUAL-SENSOR0."</string>
     <string name="thermal_summary">"Sera za joto za Xiaomi za mfumo na za kila programu"</string>
     <string name="thermal_sustained_gaming">"Michezo ya muda mrefu"</string>

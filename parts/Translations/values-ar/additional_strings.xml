@@ -87,7 +87,7 @@
     <string name="thermal_temperature_range">"%1$d–%2$d°C"</string>
     <string name="thermal_control_low_battery_value">"5% SOC"</string>
     <string name="thermal_control_wireless_value">"20°C و60°C"</string>
-    <string name="thermal_sensor_model">"تشير مشغّلات CPU/GPU إلى VIRTUAL-SENSOR0. تعرّف إعدادات عائلة Normal هذا المستشعر بالاعتماد على quiet_therm وcpu_therm وbattery وwifi_therm وpa_therm0 وpa_therm1 وcharger_therm0 بأوزان 362 و229 و108 و-111 و-224 و734 و-159 (المجموع 1000، والتعويض 2169)."</string>
+    <string name="thermal_sensor_model">"تشير مشغّلات CPU/GPU إلى VIRTUAL-SENSOR0. تعرّف إعدادات عائلة Normal هذا المستشعر بالاعتماد على quiet_therm وcpu_therm وbattery وwifi_therm وpa_therm0 وpa_therm1 وcharger_therm0 بأوزان 362 و229 و108 و-111 و-224 و734 و-159 (المجموع 939، والتعويض 2169)."</string>
     <string name="thermal_sensor_defined">"يحتوي هذا الإعداد على تعريف VIRTUAL-SENSOR0."</string>
     <string name="thermal_sensor_referenced">"يشير هذا الإعداد إلى تعريف VIRTUAL-SENSOR0 النشط."</string>
     <string name="refresh_rate_tile_title">"معدل التحديث"</string>

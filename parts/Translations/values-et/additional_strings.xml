@@ -86,7 +86,7 @@
     <string name="thermal_temperature_range">"%1$d–%2$d°C"</string>
     <string name="thermal_control_low_battery_value">"5% SOC"</string>
     <string name="thermal_control_wireless_value">"20°C ja 60°C"</string>
-    <string name="thermal_sensor_model">"CPU/GPU päästikud viitavad VIRTUAL-SENSOR0-le. Normal-perekonna konfiguratsioonid määratlevad selle allikatest quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 ja charger_therm0 kaaludega 362, 229, 108, -111, -224, 734 ja -159 (summa 1000, kompensatsioon 2169)."</string>
+    <string name="thermal_sensor_model">"CPU/GPU päästikud viitavad VIRTUAL-SENSOR0-le. Normal-perekonna konfiguratsioonid määratlevad selle allikatest quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 ja charger_therm0 kaaludega 362, 229, 108, -111, -224, 734 ja -159 (summa 939, kompensatsioon 2169)."</string>
     <string name="thermal_sensor_defined">"See konfiguratsioon sisaldab VIRTUAL-SENSOR0 määratlust."</string>
     <string name="thermal_sensor_referenced">"See konfiguratsioon viitab aktiivsele VIRTUAL-SENSOR0 määratlusele."</string>
     <string name="refresh_rate_tile_title">"Värskendussagedus"</string>

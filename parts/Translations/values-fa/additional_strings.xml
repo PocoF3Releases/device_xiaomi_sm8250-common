@@ -86,7 +86,7 @@
     <string name="thermal_temperature_range">"%1$d–%2$d°C"</string>
     <string name="thermal_control_low_battery_value">"5% SOC"</string>
     <string name="thermal_control_wireless_value">"20°C و 60°C"</string>
-    <string name="thermal_sensor_model">"محرک‌های CPU/GPU به VIRTUAL-SENSOR0 ارجاع می‌دهند. پیکربندی‌های خانواده Normal آن را از quiet_therm، cpu_therm، battery، wifi_therm، pa_therm0، pa_therm1 و charger_therm0 با وزن‌های 362، 229، 108، -111، -224، 734 و -159 (جمع 1000، جبران 2169) تعریف می‌کنند."</string>
+    <string name="thermal_sensor_model">"محرک‌های CPU/GPU به VIRTUAL-SENSOR0 ارجاع می‌دهند. پیکربندی‌های خانواده Normal آن را از quiet_therm، cpu_therm، battery، wifi_therm، pa_therm0، pa_therm1 و charger_therm0 با وزن‌های 362، 229، 108، -111، -224، 734 و -159 (جمع 939، جبران 2169) تعریف می‌کنند."</string>
     <string name="thermal_sensor_defined">"این پیکربندی شامل تعریف VIRTUAL-SENSOR0 است."</string>
     <string name="thermal_sensor_referenced">"این پیکربندی به تعریف فعال VIRTUAL-SENSOR0 ارجاع می‌دهد."</string>
     <string name="refresh_rate_tile_title">"نرخ تازه‌سازی"</string>

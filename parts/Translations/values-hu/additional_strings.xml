@@ -86,7 +86,7 @@
     <string name="thermal_temperature_range">"%1$d–%2$d°C"</string>
     <string name="thermal_control_low_battery_value">"5% SOC"</string>
     <string name="thermal_control_wireless_value">"20°C és 60°C"</string>
-    <string name="thermal_sensor_model">"A CPU/GPU eseményindítók a VIRTUAL-SENSOR0-ra hivatkoznak. A Normal család konfigurációi a quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 és charger_therm0 értékeiből határozzák meg, 362, 229, 108, -111, -224, 734 és -159 súlyokkal (összeg 1000, kompenzáció 2169)."</string>
+    <string name="thermal_sensor_model">"A CPU/GPU eseményindítók a VIRTUAL-SENSOR0-ra hivatkoznak. A Normal család konfigurációi a quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 és charger_therm0 értékeiből határozzák meg, 362, 229, 108, -111, -224, 734 és -159 súlyokkal (összeg 939, kompenzáció 2169)."</string>
     <string name="thermal_sensor_defined">"Ez a konfiguráció tartalmazza a VIRTUAL-SENSOR0 definícióját."</string>
     <string name="thermal_sensor_referenced">"Ez a konfiguráció az aktív VIRTUAL-SENSOR0 definícióra hivatkozik."</string>
     <string name="refresh_rate_tile_title">"Frissítési gyakoriság"</string>

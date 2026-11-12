@@ -86,7 +86,7 @@
     <string name="thermal_temperature_range">"%1$d–%2$d°C"</string>
     <string name="thermal_control_low_battery_value">"5% SOC"</string>
     <string name="thermal_control_wireless_value">"20°C и 60°C"</string>
-    <string name="thermal_sensor_model">"Тригерите на CPU/GPU използват VIRTUAL-SENSOR0. Конфигурациите от семейството Normal го дефинират чрез quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 и charger_therm0 с тегла 362, 229, 108, -111, -224, 734 и -159 (сума 1000, компенсация 2169)."</string>
+    <string name="thermal_sensor_model">"Тригерите на CPU/GPU използват VIRTUAL-SENSOR0. Конфигурациите от семейството Normal го дефинират чрез quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 и charger_therm0 с тегла 362, 229, 108, -111, -224, 734 и -159 (сума 939, компенсация 2169)."</string>
     <string name="thermal_sensor_defined">"Тази конфигурация съдържа дефиницията на VIRTUAL-SENSOR0."</string>
     <string name="thermal_sensor_referenced">"Тази конфигурация използва активната дефиниция на VIRTUAL-SENSOR0."</string>
     <string name="refresh_rate_tile_title">"Честота на опресняване"</string>

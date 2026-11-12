@@ -97,7 +97,7 @@
     <string name="thermal_temperature_range">"%1$d–%2$d°C"</string>
     <string name="thermal_control_low_battery_value">"5% SOC"</string>
     <string name="thermal_control_wireless_value">"20°C en 60°C"</string>
-    <string name="thermal_sensor_model">"CPU/GPU-snellers verwys na VIRTUAL-SENSOR0. Die Normal-familie-konfigurasies definieer dit uit quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 en charger_therm0 met gewigte 362, 229, 108, -111, -224, 734 en -159 (som 1000, kompensasie 2169)."</string>
+    <string name="thermal_sensor_model">"CPU/GPU-snellers verwys na VIRTUAL-SENSOR0. Die Normal-familie-konfigurasies definieer dit uit quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 en charger_therm0 met gewigte 362, 229, 108, -111, -224, 734 en -159 (som 939, kompensasie 2169)."</string>
     <string name="thermal_sensor_defined">"Hierdie konfigurasie bevat die VIRTUAL-SENSOR0-definisie."</string>
     <string name="thermal_sensor_referenced">"Hierdie konfigurasie verwys na die aktiewe VIRTUAL-SENSOR0-definisie."</string>
     <string name="refresh_rate_tile_title">"Verfristempo"</string>

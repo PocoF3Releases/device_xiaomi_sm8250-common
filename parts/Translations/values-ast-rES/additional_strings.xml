@@ -97,7 +97,7 @@
     <string name="thermal_temperature_range">"%1$d–%2$d°C"</string>
     <string name="thermal_control_low_battery_value">"5% SOC"</string>
     <string name="thermal_control_wireless_value">"20°C y 60°C"</string>
-    <string name="thermal_sensor_model">"Los disparadores de CPU/GPU faen referencia a VIRTUAL-SENSOR0. Les configuraciones de la familia Normal defínenlu a partir de quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 y charger_therm0 con pesos 362, 229, 108, -111, -224, 734 y -159 (suma 1000, compensación 2169)."</string>
+    <string name="thermal_sensor_model">"Los disparadores de CPU/GPU faen referencia a VIRTUAL-SENSOR0. Les configuraciones de la familia Normal defínenlu a partir de quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 y charger_therm0 con pesos 362, 229, 108, -111, -224, 734 y -159 (suma 939, compensación 2169)."</string>
     <string name="thermal_sensor_defined">"Esta configuración contién la definición de VIRTUAL-SENSOR0."</string>
     <string name="thermal_sensor_referenced">"Esta configuración fai referencia a la definición activa de VIRTUAL-SENSOR0."</string>
     <string name="refresh_rate_tile_title">"Tasa de refrescu"</string>

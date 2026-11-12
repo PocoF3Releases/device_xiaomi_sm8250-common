@@ -86,7 +86,7 @@
     <string name="thermal_temperature_range">"%1$d–%2$d°C"</string>
     <string name="thermal_control_low_battery_value">"5% SOC"</string>
     <string name="thermal_control_wireless_value">"20°C 與 60°C"</string>
-    <string name="thermal_sensor_model">"CPU/GPU 觸發器會參照 VIRTUAL-SENSOR0。Normal 系列設定使用 quiet_therm、cpu_therm、battery、wifi_therm、pa_therm0、pa_therm1 與 charger_therm0，並以 362、229、108、-111、-224、734 與 -159 的權重定義它（總和 1000，補償 2169）。"</string>
+    <string name="thermal_sensor_model">"CPU/GPU 觸發器會參照 VIRTUAL-SENSOR0。Normal 系列設定使用 quiet_therm、cpu_therm、battery、wifi_therm、pa_therm0、pa_therm1 與 charger_therm0，並以 362、229、108、-111、-224、734 與 -159 的權重定義它（總和 939，補償 2169）。"</string>
     <string name="thermal_sensor_defined">"此設定包含 VIRTUAL-SENSOR0 定義。"</string>
     <string name="thermal_sensor_referenced">"此設定參照目前作用中的 VIRTUAL-SENSOR0 定義。"</string>
     <string name="refresh_rate_tile_title">"更新率"</string>

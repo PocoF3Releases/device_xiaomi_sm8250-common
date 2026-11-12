@@ -131,7 +131,7 @@
     <string name="thermal_region_india">"India"</string>
     <string name="thermal_search_apps">"Колдонмолорду издөө"</string>
     <string name="thermal_sensor_defined">"Бул конфигурацияда VIRTUAL-SENSOR0 аныктамасы бар."</string>
-    <string name="thermal_sensor_model">"CPU/GPU триггерлери VIRTUAL-SENSOR0 сенсоруна таянат. Normal үй-бүлөсүнүн конфигурациялары аны quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 жана charger_therm0 сенсорлорунан 362, 229, 108, -111, -224, 734 жана -159 салмактары менен аныктайт (суммасы 1000, компенсация 2169)."</string>
+    <string name="thermal_sensor_model">"CPU/GPU триггерлери VIRTUAL-SENSOR0 сенсоруна таянат. Normal үй-бүлөсүнүн конфигурациялары аны quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 жана charger_therm0 сенсорлорунан 362, 229, 108, -111, -224, 734 жана -159 салмактары менен аныктайт (суммасы 939, компенсация 2169)."</string>
     <string name="thermal_sensor_referenced">"Бул конфигурация VIRTUAL-SENSOR0 активдүү аныктамасына таянат."</string>
     <string name="thermal_summary">"Система жана ар бир колдонмо үчүн Xiaomi жылуулук саясаттары"</string>
     <string name="thermal_sustained_gaming">"Узакка оюн ойноо"</string>

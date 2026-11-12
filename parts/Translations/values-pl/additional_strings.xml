@@ -83,7 +83,7 @@
     <string name="thermal_control_none">"Brak dodatkowych mechanizmów w tej konfiguracji."</string>
     <string name="thermal_control_low_battery_value">"5% naładowania"</string>
     <string name="thermal_control_wireless_value">"20°C i 60°C"</string>
-    <string name="thermal_sensor_model">"Progi CPU/GPU odwołują się do VIRTUAL-SENSOR0. Konfiguracje rodziny Normal definiują go na podstawie quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 i charger_therm0 z wagami 362, 229, 108, -111, -224, 734 i -159 (suma 1000, kompensacja 2169)."</string>
+    <string name="thermal_sensor_model">"Progi CPU/GPU odwołują się do VIRTUAL-SENSOR0. Konfiguracje rodziny Normal definiują go na podstawie quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 i charger_therm0 z wagami 362, 229, 108, -111, -224, 734 i -159 (suma 939, kompensacja 2169)."</string>
     <string name="thermal_sensor_defined">"Ta konfiguracja zawiera definicję VIRTUAL-SENSOR0."</string>
     <string name="thermal_sensor_referenced">"Ta konfiguracja odwołuje się do aktywnej definicji VIRTUAL-SENSOR0."</string>
     <string name="refresh_rate_tile_title">"Częstotliwość odświeżania"</string>

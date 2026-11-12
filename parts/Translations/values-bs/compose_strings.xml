@@ -3,15 +3,15 @@
 <resources>
     <string name="parts_back">Nazad</string>
     <string name="parts_search_apps">Pretraži aplikacije</string>
-    <string name="touch_controls_active_summary">Applied while this app is in the foreground. Napuštanje aplikacije ili isključivanje ekrana vraća normalno ponašanje dodira.</string>
-    <string name="touch_controls_active_title">Per-app tuning is enabled</string>
+    <string name="touch_controls_active_summary">Primjenjuje se dok je ova aplikacija u prvom planu. Izlaskom iz aplikacije ili isključivanjem ekrana vraća se uobičajeno ponašanje dodira.</string>
+    <string name="touch_controls_active_title">Podešavanje po aplikaciji je uključeno</string>
     <string name="touch_controls_advanced_group">Ručni način rada · fina podešavanja</string>
     <string name="touch_controls_aim_summary">Podesite osjetljivost pokreta ciljanja samo ako je potrebno. Vrijednost 0 vraća zadanu postavku firmvera.</string>
-    <string name="touch_controls_edge_group">Independent · edge protection</string>
-    <string name="touch_controls_edge_summary">0 disables edge filtering; nivoi 1-3 povećavaju zaštitu od slučajnih dodira ivica. Jače filtriranje može otežati namjerne dodire rubova.</string>
-    <string name="touch_controls_global_summary">The global responsiveness option takes priority. Your per-app settings are saved but paused. Tap here to manage the global option.</string>
+    <string name="touch_controls_edge_group">Nezavisno · zaštita ivica</string>
+    <string name="touch_controls_edge_summary">0 isključuje filtriranje ivica; nivoi 1–3 povećavaju zaštitu od slučajnih dodira uz ivice. Jače filtriranje može otežati namjerne dodire uz ivice.</string>
+    <string name="touch_controls_global_summary">Globalna opcija odziva ima prednost. Postavke pojedinačnih aplikacija su sačuvane, ali privremeno neaktivne. Dodirnite ovdje da promijenite globalnu opciju.</string>
     <string name="touch_controls_global_title">Globalno nadjačavanje dodira je aktivno</string>
-    <string name="touch_controls_help">Start with manual defaults. Enable tuning only for apps that need it.\n\nUnaprijed postavljena i ručna podešavanja su alternative, a ne efekti za slaganje. Presets 1–3 are firmware profiles; nisu ocjene kvaliteta.\n\nU ručnom načinu rada, 0 vraća zadanu vrijednost firmvera. Viši nivoi mijenjaju ponašanje dodira i mogu se osjećati lošije u nekim igrama. Prvo podesite odziv ili osetljivost; use aim and stability only for finer tuning.\n\nEdge filtering is independent. Jača zaštita takođe može odbiti namerne dodire blizu ivice ekrana.\n\nOpcija globalnog odziva ima prioritet nad podešavanjem po aplikaciji. Ove kontrole ne mijenjaju brzinu osvježavanja ekrana.</string>
+    <string name="touch_controls_help">Počnite sa zadanim postavkama ručnog podešavanja. Uključite podešavanje samo za aplikacije kojima je potrebno.\n\nUnaprijed zadani profili i ručna podešavanja su alternative i ne primjenjuju se zajedno. Profili 1–3 su profili firmvera, a ne ocjene kvaliteta.\n\nU ručnom načinu rada, vrijednost 0 vraća zadanu postavku firmvera. Viši nivoi mijenjaju ponašanje dodira i u nekim igrama mogu dati lošiji osjećaj. Najprije podesite odziv ili osjetljivost; podešavanje ciljanja i stabilnosti koristite samo za finija podešavanja.\n\nFiltriranje ivica je nezavisno. Jača zaštita može odbiti i namjerne dodire blizu ivice ekrana.\n\nGlobalna opcija odziva ima prednost nad podešavanjem po aplikaciji. Ove kontrole ne mijenjaju brzinu osvježavanja ekrana.</string>
     <string name="touch_controls_help_title">Kako funkcioniše podešavanje dodira</string>
     <string name="touch_controls_manual">Ručni način rada · počnite sa zadanim postavkama firmvera</string>
     <string name="touch_controls_manual_group">Ručni način rada · glavna podešavanja</string>

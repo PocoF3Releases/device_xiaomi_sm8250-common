@@ -87,7 +87,7 @@
     <string name="thermal_temperature_range">"%1$d–%2$d°C"</string>
     <string name="thermal_control_low_battery_value">"5% SOC"</string>
     <string name="thermal_control_wireless_value">"20°C және 60°C"</string>
-    <string name="thermal_sensor_model">"CPU/GPU триггерлері VIRTUAL-SENSOR0-ге сілтеме жасайды. Normal тобының конфигурациялары оны quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 және charger_therm0 арқылы 362, 229, 108, -111, -224, 734 және -159 салмақтарымен анықтайды (қосындысы 1000, өтемі 2169)."</string>
+    <string name="thermal_sensor_model">"CPU/GPU триггерлері VIRTUAL-SENSOR0-ге сілтеме жасайды. Normal тобының конфигурациялары оны quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 және charger_therm0 арқылы 362, 229, 108, -111, -224, 734 және -159 салмақтарымен анықтайды (қосындысы 939, өтемі 2169)."</string>
     <string name="thermal_sensor_defined">"Бұл конфигурацияда VIRTUAL-SENSOR0 анықтамасы бар."</string>
     <string name="thermal_sensor_referenced">"Бұл конфигурация белсенді VIRTUAL-SENSOR0 анықтамасына сілтеме жасайды."</string>
     <string name="refresh_rate_tile_title">"Жаңарту жиілігі"</string>

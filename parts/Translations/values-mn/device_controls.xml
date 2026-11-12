@@ -131,7 +131,7 @@
     <string name="thermal_region_india">"India"</string>
     <string name="thermal_search_apps">"Апп хайх"</string>
     <string name="thermal_sensor_defined">"Энэ тохиргоо VIRTUAL-SENSOR0 тодорхойлолтыг агуулна."</string>
-    <string name="thermal_sensor_model">"CPU/GPU өдөөгчид VIRTUAL-SENSOR0-г заана. Normal бүлгийн тохиргоонууд үүнийг quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 болон charger_therm0-оос 362, 229, 108, -111, -224, 734 болон -159 жинтэйгээр тодорхойлно (нийлбэр 1000, нөхөн олговор 2169)."</string>
+    <string name="thermal_sensor_model">"CPU/GPU өдөөгчид VIRTUAL-SENSOR0-г заана. Normal бүлгийн тохиргоонууд үүнийг quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 болон charger_therm0-оос 362, 229, 108, -111, -224, 734 болон -159 жинтэйгээр тодорхойлно (нийлбэр 939, нөхөн олговор 2169)."</string>
     <string name="thermal_sensor_referenced">"Энэ тохиргоо VIRTUAL-SENSOR0-ийн идэвхтэй тодорхойлолтыг заана."</string>
     <string name="thermal_summary">"Систем болон апп тус бүрийн Xiaomi дулааны бодлого"</string>
     <string name="thermal_sustained_gaming">"Удаан хугацааны тоглоом"</string>

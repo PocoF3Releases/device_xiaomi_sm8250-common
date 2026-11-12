@@ -83,7 +83,7 @@
     <string name="thermal_control_none">"Geen extra regelingen in deze configuratie."</string>
     <string name="thermal_control_low_battery_value">"5% batterijlading"</string>
     <string name="thermal_control_wireless_value">"20°C en 60°C"</string>
-    <string name="thermal_sensor_model">"CPU-/GPU-drempels verwijzen naar VIRTUAL-SENSOR0. De configuraties van de Normal-familie definiëren deze uit quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 en charger_therm0 met gewichten 362, 229, 108, -111, -224, 734 en -159 (som 1000, compensatie 2169)."</string>
+    <string name="thermal_sensor_model">"CPU-/GPU-drempels verwijzen naar VIRTUAL-SENSOR0. De configuraties van de Normal-familie definiëren deze uit quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 en charger_therm0 met gewichten 362, 229, 108, -111, -224, 734 en -159 (som 939, compensatie 2169)."</string>
     <string name="thermal_sensor_defined">"Deze configuratie bevat de definitie van VIRTUAL-SENSOR0."</string>
     <string name="thermal_sensor_referenced">"Deze configuratie verwijst naar de actieve definitie van VIRTUAL-SENSOR0."</string>
     <string name="refresh_rate_tile_title">"Verversingssnelheid"</string>

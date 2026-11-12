@@ -86,7 +86,7 @@
     <string name="thermal_temperature_range">"%1$d–%2$d°C"</string>
     <string name="thermal_control_low_battery_value">"5% SOC"</string>
     <string name="thermal_control_wireless_value">"20°Cと60°C"</string>
-    <string name="thermal_sensor_model">"CPU/GPUトリガーはVIRTUAL-SENSOR0を参照します。Normal系設定では、quiet_therm、cpu_therm、battery、wifi_therm、pa_therm0、pa_therm1、charger_therm0を重み362、229、108、-111、-224、734、-159（合計1000、補正2169）で使用して定義します。"</string>
+    <string name="thermal_sensor_model">"CPU/GPUトリガーはVIRTUAL-SENSOR0を参照します。Normal系設定では、quiet_therm、cpu_therm、battery、wifi_therm、pa_therm0、pa_therm1、charger_therm0を重み362、229、108、-111、-224、734、-159（合計939、補正2169）で使用して定義します。"</string>
     <string name="thermal_sensor_defined">"この設定にはVIRTUAL-SENSOR0の定義が含まれます。"</string>
     <string name="thermal_sensor_referenced">"この設定は有効なVIRTUAL-SENSOR0の定義を参照します。"</string>
     <string name="refresh_rate_tile_title">"リフレッシュレート"</string>

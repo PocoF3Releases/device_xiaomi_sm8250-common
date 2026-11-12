@@ -83,7 +83,7 @@
     <string name="thermal_control_none">"Nessun controllo aggiuntivo in questa configurazione."</string>
     <string name="thermal_control_low_battery_value">"5% di carica"</string>
     <string name="thermal_control_wireless_value">"20°C e 60°C"</string>
-    <string name="thermal_sensor_model">"Le soglie CPU/GPU fanno riferimento a VIRTUAL-SENSOR0. Le configurazioni della famiglia Normal lo definiscono usando quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 e charger_therm0 con pesi 362, 229, 108, -111, -224, 734 e -159 (somma 1000, compensazione 2169)."</string>
+    <string name="thermal_sensor_model">"Le soglie CPU/GPU fanno riferimento a VIRTUAL-SENSOR0. Le configurazioni della famiglia Normal lo definiscono usando quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 e charger_therm0 con pesi 362, 229, 108, -111, -224, 734 e -159 (somma 939, compensazione 2169)."</string>
     <string name="thermal_sensor_defined">"Questa configurazione contiene la definizione di VIRTUAL-SENSOR0."</string>
     <string name="thermal_sensor_referenced">"Questa configurazione fa riferimento alla definizione attiva di VIRTUAL-SENSOR0."</string>
     <string name="refresh_rate_tile_title">"Frequenza di aggiornamento"</string>

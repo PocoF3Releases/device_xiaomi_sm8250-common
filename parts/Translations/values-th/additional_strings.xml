@@ -86,7 +86,7 @@
     <string name="thermal_temperature_range">"%1$d–%2$d°C"</string>
     <string name="thermal_control_low_battery_value">"5% SOC"</string>
     <string name="thermal_control_wireless_value">"20°C และ 60°C"</string>
-    <string name="thermal_sensor_model">"ทริกเกอร์ CPU/GPU อ้างอิง VIRTUAL-SENSOR0 การกำหนดค่าตระกูล Normal กำหนดค่านี้จาก quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 และ charger_therm0 ด้วยน้ำหนัก 362, 229, 108, -111, -224, 734 และ -159 (รวม 1000, ค่าชดเชย 2169)"</string>
+    <string name="thermal_sensor_model">"ทริกเกอร์ CPU/GPU อ้างอิง VIRTUAL-SENSOR0 การกำหนดค่าตระกูล Normal กำหนดค่านี้จาก quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 และ charger_therm0 ด้วยน้ำหนัก 362, 229, 108, -111, -224, 734 และ -159 (รวม 939, ค่าชดเชย 2169)"</string>
     <string name="thermal_sensor_defined">"การกำหนดค่านี้มีคำจำกัดความ VIRTUAL-SENSOR0"</string>
     <string name="thermal_sensor_referenced">"การกำหนดค่านี้อ้างอิงคำจำกัดความ VIRTUAL-SENSOR0 ที่ใช้งานอยู่"</string>
     <string name="refresh_rate_tile_title">"อัตรารีเฟรช"</string>

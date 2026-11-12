@@ -86,7 +86,7 @@
     <string name="thermal_temperature_range">"%1$d–%2$d°C"</string>
     <string name="thermal_control_low_battery_value">"5% SOC"</string>
     <string name="thermal_control_wireless_value">"20°C eta 60°C"</string>
-    <string name="thermal_sensor_model">"CPU/GPU abiarazleek VIRTUAL-SENSOR0 erabiltzen dute erreferentzia gisa. Normal familiako konfigurazioek quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 eta charger_therm0 erabiliz definitzen dute, 362, 229, 108, -111, -224, 734 eta -159 pisuekin (batura 1000, konpentsazioa 2169)."</string>
+    <string name="thermal_sensor_model">"CPU/GPU abiarazleek VIRTUAL-SENSOR0 erabiltzen dute erreferentzia gisa. Normal familiako konfigurazioek quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 eta charger_therm0 erabiliz definitzen dute, 362, 229, 108, -111, -224, 734 eta -159 pisuekin (batura 939, konpentsazioa 2169)."</string>
     <string name="thermal_sensor_defined">"Konfigurazio honek VIRTUAL-SENSOR0 definizioa dauka."</string>
     <string name="thermal_sensor_referenced">"Konfigurazio honek VIRTUAL-SENSOR0 definizio aktiboa aipatzen du."</string>
     <string name="refresh_rate_tile_title">"Freskatze-maiztasuna"</string>

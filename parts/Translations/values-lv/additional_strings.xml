@@ -86,7 +86,7 @@
     <string name="thermal_temperature_range">"%1$d–%2$d°C"</string>
     <string name="thermal_control_low_battery_value">"5% SOC"</string>
     <string name="thermal_control_wireless_value">"20°C un 60°C"</string>
-    <string name="thermal_sensor_model">"CPU/GPU trigeri atsaucas uz VIRTUAL-SENSOR0. Normal saimes konfigurācijas to definē no quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 un charger_therm0 ar svariem 362, 229, 108, -111, -224, 734 un -159 (summa 1000, kompensācija 2169)."</string>
+    <string name="thermal_sensor_model">"CPU/GPU trigeri atsaucas uz VIRTUAL-SENSOR0. Normal saimes konfigurācijas to definē no quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 un charger_therm0 ar svariem 362, 229, 108, -111, -224, 734 un -159 (summa 939, kompensācija 2169)."</string>
     <string name="thermal_sensor_defined">"Šī konfigurācija satur VIRTUAL-SENSOR0 definīciju."</string>
     <string name="thermal_sensor_referenced">"Šī konfigurācija atsaucas uz aktīvo VIRTUAL-SENSOR0 definīciju."</string>
     <string name="refresh_rate_tile_title">"Atsvaidzes intensitāte"</string>

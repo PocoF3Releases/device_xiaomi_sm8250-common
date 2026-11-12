@@ -86,7 +86,7 @@
     <string name="thermal_temperature_range">"%1$d–%2$d°C"</string>
     <string name="thermal_control_low_battery_value">"5% SOC"</string>
     <string name="thermal_control_wireless_value">"20°C və 60°C"</string>
-    <string name="thermal_sensor_model">"CPU/GPU triggerləri VIRTUAL-SENSOR0-a istinad edir. Normal ailəsi konfiqurasiyaları onu quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 və charger_therm0 əsasında 362, 229, 108, -111, -224, 734 və -159 çəkiləri ilə müəyyən edir (cəm 1000, kompensasiya 2169)."</string>
+    <string name="thermal_sensor_model">"CPU/GPU triggerləri VIRTUAL-SENSOR0-a istinad edir. Normal ailəsi konfiqurasiyaları onu quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 və charger_therm0 əsasında 362, 229, 108, -111, -224, 734 və -159 çəkiləri ilə müəyyən edir (cəm 939, kompensasiya 2169)."</string>
     <string name="thermal_sensor_defined">"Bu konfiqurasiya VIRTUAL-SENSOR0 tərifini ehtiva edir."</string>
     <string name="thermal_sensor_referenced">"Bu konfiqurasiya aktiv VIRTUAL-SENSOR0 tərifinə istinad edir."</string>
     <string name="refresh_rate_tile_title">"Yeniləmə tezliyi"</string>

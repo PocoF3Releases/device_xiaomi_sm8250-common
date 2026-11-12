@@ -131,7 +131,7 @@
     <string name="thermal_region_india">"India"</string>
     <string name="thermal_search_apps">"Sesha izinhlelo zokusebenza"</string>
     <string name="thermal_sensor_defined">"Lokhu kulungiselelwa kuqukethe incazelo ye-VIRTUAL-SENSOR0."</string>
-    <string name="thermal_sensor_model">"Izimbangela ze-CPU/GPU zibhekisela ku-VIRTUAL-SENSOR0. Ukulungiselelwa komndeni we-Normal kuyichaza nge-quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 ne-charger_therm0 ngezilinganiso 362, 229, 108, -111, -224, 734 kanye no -159 (isamba 1000, isinxephezelo 2169)."</string>
+    <string name="thermal_sensor_model">"Izimbangela ze-CPU/GPU zibhekisela ku-VIRTUAL-SENSOR0. Ukulungiselelwa komndeni we-Normal kuyichaza nge-quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 ne-charger_therm0 ngezilinganiso 362, 229, 108, -111, -224, 734 kanye no -159 (isamba 939, isinxephezelo 2169)."</string>
     <string name="thermal_sensor_referenced">"Lokhu kulungiselelwa kubhekisela encazelweni esebenzayo ye-VIRTUAL-SENSOR0."</string>
     <string name="thermal_summary">"Izinqubomgomo zokushisa ze-Xiaomi zesistimu nezohlelo ngalunye"</string>
     <string name="thermal_sustained_gaming">"Ukudlala okuqhubekayo"</string>

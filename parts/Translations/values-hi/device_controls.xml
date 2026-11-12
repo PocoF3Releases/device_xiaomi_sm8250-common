@@ -131,7 +131,7 @@
     <string name="thermal_region_india">"India"</string>
     <string name="thermal_search_apps">"ऐप्लिकेशन खोजें"</string>
     <string name="thermal_sensor_defined">"इस कॉन्फ़िगरेशन में VIRTUAL-SENSOR0 की परिभाषा शामिल है."</string>
-    <string name="thermal_sensor_model">"CPU/GPU ट्रिगर VIRTUAL-SENSOR0 को संदर्भित करते हैं. Normal समूह के कॉन्फ़िगरेशन इसे quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 और charger_therm0 से 362, 229, 108, -111, -224, 734 और -159 भार के साथ परिभाषित करते हैं (योग 1000, क्षतिपूर्ति 2169)."</string>
+    <string name="thermal_sensor_model">"CPU/GPU ट्रिगर VIRTUAL-SENSOR0 को संदर्भित करते हैं. Normal समूह के कॉन्फ़िगरेशन इसे quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 और charger_therm0 से 362, 229, 108, -111, -224, 734 और -159 भार के साथ परिभाषित करते हैं (योग 939, क्षतिपूर्ति 2169)."</string>
     <string name="thermal_sensor_referenced">"यह कॉन्फ़िगरेशन VIRTUAL-SENSOR0 की सक्रिय परिभाषा को संदर्भित करता है."</string>
     <string name="thermal_summary">"सिस्टम और हर ऐप्लिकेशन के लिए Xiaomi की तापीय नीतियाँ"</string>
     <string name="thermal_sustained_gaming">"लंबे समय तक गेमिंग"</string>

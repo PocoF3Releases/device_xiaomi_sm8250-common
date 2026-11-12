@@ -97,7 +97,7 @@
     <string name="thermal_temperature_range">"%1$d–%2$d°C"</string>
     <string name="thermal_control_low_battery_value">"5% SOC"</string>
     <string name="thermal_control_wireless_value">"20°C a 60°C"</string>
-    <string name="thermal_sensor_model">"Mae sbardunau CPU/GPU yn cyfeirio at VIRTUAL-SENSOR0. Mae cyfluniadau teulu Normal yn ei ddiffinio o quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 a charger_therm0 gyda phwysau 362, 229, 108, -111, -224, 734 a -159 (cyfanswm 1000, iawndal 2169)."</string>
+    <string name="thermal_sensor_model">"Mae sbardunau CPU/GPU yn cyfeirio at VIRTUAL-SENSOR0. Mae cyfluniadau teulu Normal yn ei ddiffinio o quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 a charger_therm0 gyda phwysau 362, 229, 108, -111, -224, 734 a -159 (cyfanswm 939, iawndal 2169)."</string>
     <string name="thermal_sensor_defined">"Mae'r cyfluniad hwn yn cynnwys diffiniad VIRTUAL-SENSOR0."</string>
     <string name="thermal_sensor_referenced">"Mae'r cyfluniad hwn yn cyfeirio at y diffiniad VIRTUAL-SENSOR0 gweithredol."</string>
     <string name="refresh_rate_tile_title">"Cyfradd adnewyddu"</string>

@@ -87,7 +87,7 @@
     <string name="thermal_temperature_range">"%1$d–%2$d°C"</string>
     <string name="thermal_control_low_battery_value">"5% SOC"</string>
     <string name="thermal_control_wireless_value">"20°C र 60°C"</string>
-    <string name="thermal_sensor_model">"CPU/GPU ट्रिगरहरूले VIRTUAL-SENSOR0 सन्दर्भ गर्छन्। Normal परिवारका कन्फिगरेसनहरूले quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 र charger_therm0 बाट 362, 229, 108, -111, -224, 734 र -159 तौलसहित यसलाई परिभाषित गर्छन् (जम्मा 1000, compensation 2169)।"</string>
+    <string name="thermal_sensor_model">"CPU/GPU ट्रिगरहरूले VIRTUAL-SENSOR0 सन्दर्भ गर्छन्। Normal परिवारका कन्फिगरेसनहरूले quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 र charger_therm0 बाट 362, 229, 108, -111, -224, 734 र -159 तौलसहित यसलाई परिभाषित गर्छन् (जम्मा 939, compensation 2169)।"</string>
     <string name="thermal_sensor_defined">"यस कन्फिगरेसनमा VIRTUAL-SENSOR0 परिभाषा समावेश छ।"</string>
     <string name="thermal_sensor_referenced">"यो कन्फिगरेसनले सक्रिय VIRTUAL-SENSOR0 परिभाषा सन्दर्भ गर्छ।"</string>
     <string name="refresh_rate_tile_title">"रिफ्रेस रेट"</string>

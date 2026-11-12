@@ -97,7 +97,7 @@
     <string name="thermal_temperature_range">"%1$d–%2$d°C"</string>
     <string name="thermal_control_low_battery_value">"5% SOC"</string>
     <string name="thermal_control_wireless_value">"20°C kaj 60°C"</string>
-    <string name="thermal_sensor_model">"CPU/GPU-ellasiloj referencas VIRTUAL-SENSOR0. La agordoj de la Normal-familio difinas ĝin el quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 kaj charger_therm0 kun pezoj 362, 229, 108, -111, -224, 734 kaj -159 (sumo 1000, kompenso 2169)."</string>
+    <string name="thermal_sensor_model">"CPU/GPU-ellasiloj referencas VIRTUAL-SENSOR0. La agordoj de la Normal-familio difinas ĝin el quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 kaj charger_therm0 kun pezoj 362, 229, 108, -111, -224, 734 kaj -159 (sumo 939, kompenso 2169)."</string>
     <string name="thermal_sensor_defined">"Ĉi tiu agordo enhavas la difinon VIRTUAL-SENSOR0."</string>
     <string name="thermal_sensor_referenced">"Ĉi tiu agordo referencas la aktivan difinon VIRTUAL-SENSOR0."</string>
     <string name="refresh_rate_tile_title">"Refreŝiga ofteco"</string>

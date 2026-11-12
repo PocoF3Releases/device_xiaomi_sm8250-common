@@ -86,7 +86,7 @@
     <string name="thermal_temperature_range">"%1$d–%2$d°C"</string>
     <string name="thermal_control_low_battery_value">"5% SOC"</string>
     <string name="thermal_control_wireless_value">"20°C და 60°C"</string>
-    <string name="thermal_sensor_model">"CPU/GPU ტრიგერები მიუთითებს VIRTUAL-SENSOR0-ზე. Normal ოჯახის კონფიგურაციები მას განსაზღვრავს quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 და charger_therm0 წყაროებიდან წონებით 362, 229, 108, -111, -224, 734 და -159 (ჯამი 1000, კომპენსაცია 2169)."</string>
+    <string name="thermal_sensor_model">"CPU/GPU ტრიგერები მიუთითებს VIRTUAL-SENSOR0-ზე. Normal ოჯახის კონფიგურაციები მას განსაზღვრავს quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 და charger_therm0 წყაროებიდან წონებით 362, 229, 108, -111, -224, 734 და -159 (ჯამი 939, კომპენსაცია 2169)."</string>
     <string name="thermal_sensor_defined">"ეს კონფიგურაცია შეიცავს VIRTUAL-SENSOR0-ის განსაზღვრებას."</string>
     <string name="thermal_sensor_referenced">"ეს კონფიგურაცია მიუთითებს VIRTUAL-SENSOR0-ის აქტიურ განსაზღვრებაზე."</string>
     <string name="refresh_rate_tile_title">"განახლების სიხშირე"</string>

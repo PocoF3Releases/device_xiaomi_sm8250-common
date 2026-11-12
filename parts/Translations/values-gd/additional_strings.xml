@@ -97,7 +97,7 @@
     <string name="thermal_temperature_range">"%1$d–%2$d°C"</string>
     <string name="thermal_control_low_battery_value">"5% SOC"</string>
     <string name="thermal_control_wireless_value">"20°C agus 60°C"</string>
-    <string name="thermal_sensor_model">"Tha brosnachaidhean CPU/GPU a' toirt iomradh air VIRTUAL-SENSOR0. Tha rèiteachaidhean teaghlach Normal ga mhìneachadh bho quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 agus charger_therm0 le cuideaman 362, 229, 108, -111, -224, 734 agus -159 (suim 1000, dìoladh 2169)."</string>
+    <string name="thermal_sensor_model">"Tha brosnachaidhean CPU/GPU a' toirt iomradh air VIRTUAL-SENSOR0. Tha rèiteachaidhean teaghlach Normal ga mhìneachadh bho quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 agus charger_therm0 le cuideaman 362, 229, 108, -111, -224, 734 agus -159 (suim 939, dìoladh 2169)."</string>
     <string name="thermal_sensor_defined">"Tha mìneachadh VIRTUAL-SENSOR0 san rèiteachadh seo."</string>
     <string name="thermal_sensor_referenced">"Tha an rèiteachadh seo a' toirt iomradh air mìneachadh gnìomhach VIRTUAL-SENSOR0."</string>
     <string name="refresh_rate_tile_title">"Reat ùrachaidh"</string>

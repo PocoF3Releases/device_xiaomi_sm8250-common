@@ -83,7 +83,7 @@
     <string name="thermal_control_none">"Tidak ada kontrol tambahan dalam konfigurasi ini."</string>
     <string name="thermal_control_low_battery_value">"Daya baterai 5%"</string>
     <string name="thermal_control_wireless_value">"20°C dan 60°C"</string>
-    <string name="thermal_sensor_model">"Ambang CPU/GPU mengacu pada VIRTUAL-SENSOR0. Konfigurasi keluarga Normal menentukannya dari quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 dan charger_therm0 dengan bobot 362, 229, 108, -111, -224, 734 dan -159 (jumlah 1000, kompensasi 2169)."</string>
+    <string name="thermal_sensor_model">"Ambang CPU/GPU mengacu pada VIRTUAL-SENSOR0. Konfigurasi keluarga Normal menentukannya dari quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 dan charger_therm0 dengan bobot 362, 229, 108, -111, -224, 734 dan -159 (jumlah 939, kompensasi 2169)."</string>
     <string name="thermal_sensor_defined">"Konfigurasi ini memuat definisi VIRTUAL-SENSOR0."</string>
     <string name="thermal_sensor_referenced">"Konfigurasi ini mengacu pada definisi VIRTUAL-SENSOR0 yang aktif."</string>
     <string name="refresh_rate_tile_title">"Kecepatan refresh"</string>

@@ -86,7 +86,7 @@
     <string name="thermal_temperature_range">"%1$d–%2$d°C"</string>
     <string name="thermal_control_low_battery_value">"5% SOC"</string>
     <string name="thermal_control_wireless_value">"20°C আৰু 60°C"</string>
-    <string name="thermal_sensor_model">"CPU/GPU ট্ৰিগাৰে VIRTUAL-SENSOR0-ক উল্লেখ কৰে। Normal পৰিয়ালৰ কনফিগাৰেচনে quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 আৰু charger_therm0-ৰ পৰা 362, 229, 108, -111, -224, 734 আৰু -159 ওজনেৰে ইয়াক সংজ্ঞায়িত কৰে (মুঠ 1000, compensation 2169)।"</string>
+    <string name="thermal_sensor_model">"CPU/GPU ট্ৰিগাৰে VIRTUAL-SENSOR0-ক উল্লেখ কৰে। Normal পৰিয়ালৰ কনফিগাৰেচনে quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 আৰু charger_therm0-ৰ পৰা 362, 229, 108, -111, -224, 734 আৰু -159 ওজনেৰে ইয়াক সংজ্ঞায়িত কৰে (মুঠ 939, compensation 2169)।"</string>
     <string name="thermal_sensor_defined">"এই কনফিগাৰেচনত VIRTUAL-SENSOR0-ৰ সংজ্ঞা আছে।"</string>
     <string name="thermal_sensor_referenced">"এই কনফিগাৰেচনে সক্ৰিয় VIRTUAL-SENSOR0 সংজ্ঞা উল্লেখ কৰে।"</string>
     <string name="refresh_rate_tile_title">"ৰিফ্ৰেছ ৰেট"</string>

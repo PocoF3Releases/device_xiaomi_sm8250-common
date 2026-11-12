@@ -83,7 +83,7 @@
     <string name="thermal_control_none">"Bu yapılandırmada ek denetim yok."</string>
     <string name="thermal_control_low_battery_value">"%5 şarj"</string>
     <string name="thermal_control_wireless_value">"20°C ve 60°C"</string>
-    <string name="thermal_sensor_model">"CPU/GPU eşikleri VIRTUAL-SENSOR0’ı temel alır. Normal ailesindeki yapılandırmalar bunu quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 ve charger_therm0 üzerinden 362, 229, 108, -111, -224, 734 ve -159 ağırlıklarıyla tanımlar (toplam 1000, telafi 2169)."</string>
+    <string name="thermal_sensor_model">"CPU/GPU eşikleri VIRTUAL-SENSOR0’ı temel alır. Normal ailesindeki yapılandırmalar bunu quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 ve charger_therm0 üzerinden 362, 229, 108, -111, -224, 734 ve -159 ağırlıklarıyla tanımlar (toplam 939, telafi 2169)."</string>
     <string name="thermal_sensor_defined">"Bu yapılandırma VIRTUAL-SENSOR0 tanımını içerir."</string>
     <string name="thermal_sensor_referenced">"Bu yapılandırma etkin VIRTUAL-SENSOR0 tanımını kullanır."</string>
     <string name="refresh_rate_tile_title">"Yenileme hızı"</string>

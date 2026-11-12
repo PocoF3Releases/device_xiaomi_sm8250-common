@@ -86,7 +86,7 @@
     <string name="thermal_temperature_range">"%1$d–%2$d°C"</string>
     <string name="thermal_control_low_battery_value">"5% SOC"</string>
     <string name="thermal_control_wireless_value">"20°C și 60°C"</string>
-    <string name="thermal_sensor_model">"Declanșatoarele CPU/GPU fac referire la VIRTUAL-SENSOR0. Configurațiile familiei Normal îl definesc din quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 și charger_therm0 cu ponderile 362, 229, 108, -111, -224, 734 și -159 (sumă 1000, compensare 2169)."</string>
+    <string name="thermal_sensor_model">"Declanșatoarele CPU/GPU fac referire la VIRTUAL-SENSOR0. Configurațiile familiei Normal îl definesc din quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 și charger_therm0 cu ponderile 362, 229, 108, -111, -224, 734 și -159 (sumă 939, compensare 2169)."</string>
     <string name="thermal_sensor_defined">"Această configurație conține definiția VIRTUAL-SENSOR0."</string>
     <string name="thermal_sensor_referenced">"Această configurație face referire la definiția VIRTUAL-SENSOR0 activă."</string>
     <string name="refresh_rate_tile_title">"Rată de reîmprospătare"</string>

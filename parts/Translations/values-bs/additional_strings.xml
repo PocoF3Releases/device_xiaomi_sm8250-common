@@ -87,7 +87,7 @@
     <string name="thermal_temperature_range">"%1$d–%2$d°C"</string>
     <string name="thermal_control_low_battery_value">"5% SOC"</string>
     <string name="thermal_control_wireless_value">"20°C i 60°C"</string>
-    <string name="thermal_sensor_model">"CPU/GPU okidači koriste VIRTUAL-SENSOR0. Konfiguracije obitelji Normal definiraju ga iz quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 i charger_therm0 s težinama 362, 229, 108, -111, -224, 734 i -159 (zbir 1000, kompenzacija 2169)."</string>
+    <string name="thermal_sensor_model">"CPU/GPU okidači koriste VIRTUAL-SENSOR0. Konfiguracije obitelji Normal definiraju ga iz quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 i charger_therm0 s težinama 362, 229, 108, -111, -224, 734 i -159 (zbir 939, kompenzacija 2169)."</string>
     <string name="thermal_sensor_defined">"Ova konfiguracija sadrži definiciju VIRTUAL-SENSOR0."</string>
     <string name="thermal_sensor_referenced">"Ova konfiguracija koristi aktivnu definiciju VIRTUAL-SENSOR0."</string>
     <string name="refresh_rate_tile_title">"Brzina osvježavanja"</string>

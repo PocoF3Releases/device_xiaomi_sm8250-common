@@ -131,7 +131,7 @@
     <string name="thermal_region_india">"India"</string>
     <string name="thermal_search_apps">"መተግበሪያዎችን ፈልግ"</string>
     <string name="thermal_sensor_defined">"ይህ ውቅር የVIRTUAL-SENSOR0 ትርጓሜን ይዟል።"</string>
-    <string name="thermal_sensor_model">"የCPU/GPU ቀስቃሾች VIRTUAL-SENSOR0ን ይጠቀማሉ። የNormal ቤተሰብ ውቅሮች ከquiet_therm፣ cpu_therm፣ battery፣ wifi_therm፣ pa_therm0፣ pa_therm1 እና charger_therm0 በ362፣ 229፣ 108፣ -111፣ -224፣ 734 እና -159 ክብደቶች ይገልጹታል (ድምር 1000፣ ማካካሻ 2169)።"</string>
+    <string name="thermal_sensor_model">"የCPU/GPU ቀስቃሾች VIRTUAL-SENSOR0ን ይጠቀማሉ። የNormal ቤተሰብ ውቅሮች ከquiet_therm፣ cpu_therm፣ battery፣ wifi_therm፣ pa_therm0፣ pa_therm1 እና charger_therm0 በ362፣ 229፣ 108፣ -111፣ -224፣ 734 እና -159 ክብደቶች ይገልጹታል (ድምር 939፣ ማካካሻ 2169)።"</string>
     <string name="thermal_sensor_referenced">"ይህ ውቅር ንቁውን የVIRTUAL-SENSOR0 ትርጓሜ ይጠቀማል።"</string>
     <string name="thermal_summary">"የስርዓት እና የእያንዳንዱ መተግበሪያ የXiaomi ሙቀት ፖሊሲዎች"</string>
     <string name="thermal_sustained_gaming">"የረጅም ጊዜ ጨዋታ"</string>

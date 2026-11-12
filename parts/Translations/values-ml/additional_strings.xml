@@ -86,7 +86,7 @@
     <string name="thermal_temperature_range">"%1$d–%2$d°C"</string>
     <string name="thermal_control_low_battery_value">"5% SOC"</string>
     <string name="thermal_control_wireless_value">"20°Cയും 60°Cയും"</string>
-    <string name="thermal_sensor_model">"CPU/GPU ട്രിഗറുകൾ VIRTUAL-SENSOR0-നെ സൂചിപ്പിക്കുന്നു. Normal കുടുംബത്തിലെ കോൺഫിഗറേഷനുകൾ quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1, charger_therm0 എന്നിവയിൽ നിന്ന് 362, 229, 108, -111, -224, 734, -159 എന്നീ ഭാരങ്ങളോടെ ഇത് നിർവചിക്കുന്നു (ആകെ 1000, compensation 2169)."</string>
+    <string name="thermal_sensor_model">"CPU/GPU ട്രിഗറുകൾ VIRTUAL-SENSOR0-നെ സൂചിപ്പിക്കുന്നു. Normal കുടുംബത്തിലെ കോൺഫിഗറേഷനുകൾ quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1, charger_therm0 എന്നിവയിൽ നിന്ന് 362, 229, 108, -111, -224, 734, -159 എന്നീ ഭാരങ്ങളോടെ ഇത് നിർവചിക്കുന്നു (ആകെ 939, compensation 2169)."</string>
     <string name="thermal_sensor_defined">"ഈ കോൺഫിഗറേഷനിൽ VIRTUAL-SENSOR0 നിർവചനം ഉൾപ്പെടുന്നു."</string>
     <string name="thermal_sensor_referenced">"ഈ കോൺഫിഗറേഷൻ സജീവമായ VIRTUAL-SENSOR0 നിർവചനത്തെ സൂചിപ്പിക്കുന്നു."</string>
     <string name="refresh_rate_tile_title">"റിഫ്രഷ് നിരക്ക്"</string>

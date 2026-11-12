@@ -86,7 +86,7 @@
     <string name="thermal_temperature_range">"%1$d–%2$d°C"</string>
     <string name="thermal_control_low_battery_value">"5% SOC"</string>
     <string name="thermal_control_wireless_value">"20°C এবং 60°C"</string>
-    <string name="thermal_sensor_model">"CPU/GPU ট্রিগার VIRTUAL-SENSOR0-কে নির্দেশ করে। Normal পরিবারের কনফিগারেশনগুলো quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 এবং charger_therm0 থেকে 362, 229, 108, -111, -224, 734 ও -159 ওজন দিয়ে এটি নির্ধারণ করে (মোট 1000, compensation 2169)।"</string>
+    <string name="thermal_sensor_model">"CPU/GPU ট্রিগার VIRTUAL-SENSOR0-কে নির্দেশ করে। Normal পরিবারের কনফিগারেশনগুলো quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 এবং charger_therm0 থেকে 362, 229, 108, -111, -224, 734 ও -159 ওজন দিয়ে এটি নির্ধারণ করে (মোট 939, compensation 2169)।"</string>
     <string name="thermal_sensor_defined">"এই কনফিগারেশনে VIRTUAL-SENSOR0-এর সংজ্ঞা রয়েছে।"</string>
     <string name="thermal_sensor_referenced">"এই কনফিগারেশন সক্রিয় VIRTUAL-SENSOR0 সংজ্ঞাকে নির্দেশ করে।"</string>
     <string name="refresh_rate_tile_title">"রিফ্রেশ রেট"</string>

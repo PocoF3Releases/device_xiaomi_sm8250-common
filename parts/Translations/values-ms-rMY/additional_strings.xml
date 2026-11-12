@@ -87,7 +87,7 @@
     <string name="thermal_temperature_range">"%1$d–%2$d°C"</string>
     <string name="thermal_control_low_battery_value">"5% SOC"</string>
     <string name="thermal_control_wireless_value">"20°C dan 60°C"</string>
-    <string name="thermal_sensor_model">"Pencetus CPU/GPU merujuk VIRTUAL-SENSOR0. Konfigurasi keluarga Normal mentakrifkannya daripada quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 dan charger_therm0 dengan wajaran 362, 229, 108, -111, -224, 734 dan -159 (jumlah 1000, pampasan 2169)."</string>
+    <string name="thermal_sensor_model">"Pencetus CPU/GPU merujuk VIRTUAL-SENSOR0. Konfigurasi keluarga Normal mentakrifkannya daripada quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 dan charger_therm0 dengan wajaran 362, 229, 108, -111, -224, 734 dan -159 (jumlah 939, pampasan 2169)."</string>
     <string name="thermal_sensor_defined">"Konfigurasi ini mengandungi takrif VIRTUAL-SENSOR0."</string>
     <string name="thermal_sensor_referenced">"Konfigurasi ini merujuk takrif VIRTUAL-SENSOR0 yang aktif."</string>
     <string name="refresh_rate_tile_title">"Kadar segar semula"</string>

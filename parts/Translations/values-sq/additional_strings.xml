@@ -86,7 +86,7 @@
     <string name="thermal_temperature_range">"%1$d–%2$d°C"</string>
     <string name="thermal_control_low_battery_value">"5% SOC"</string>
     <string name="thermal_control_wireless_value">"20°C dhe 60°C"</string>
-    <string name="thermal_sensor_model">"Nxitësit CPU/GPU i referohen VIRTUAL-SENSOR0. Konfigurimet e familjes Normal e përcaktojnë nga quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 dhe charger_therm0 me peshat 362, 229, 108, -111, -224, 734 dhe -159 (shuma 1000, kompensimi 2169)."</string>
+    <string name="thermal_sensor_model">"Nxitësit CPU/GPU i referohen VIRTUAL-SENSOR0. Konfigurimet e familjes Normal e përcaktojnë nga quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 dhe charger_therm0 me peshat 362, 229, 108, -111, -224, 734 dhe -159 (shuma 939, kompensimi 2169)."</string>
     <string name="thermal_sensor_defined">"Ky konfigurim përmban përkufizimin VIRTUAL-SENSOR0."</string>
     <string name="thermal_sensor_referenced">"Ky konfigurim i referohet përkufizimit aktiv VIRTUAL-SENSOR0."</string>
     <string name="refresh_rate_tile_title">"Shpejtësia e rifreskimit"</string>

@@ -131,7 +131,7 @@
     <string name="thermal_region_india">"India"</string>
     <string name="thermal_search_apps">"Cîr aplicazions"</string>
     <string name="thermal_sensor_defined">"Cheste configurazion e conten la definizion VIRTUAL-SENSOR0."</string>
-    <string name="thermal_sensor_model">"I events CPU/GPU a fasin riferiment a VIRTUAL-SENSOR0. Lis configurazions de famee Normal lu definissin di quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 e charger_therm0 cui pês 362, 229, 108, -111, -224, 734 e -159 (sume 1000, compensazion 2169)."</string>
+    <string name="thermal_sensor_model">"I events CPU/GPU a fasin riferiment a VIRTUAL-SENSOR0. Lis configurazions de famee Normal lu definissin di quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 e charger_therm0 cui pês 362, 229, 108, -111, -224, 734 e -159 (sume 939, compensazion 2169)."</string>
     <string name="thermal_sensor_referenced">"Cheste configurazion e fâs riferiment ae definizion ative VIRTUAL-SENSOR0."</string>
     <string name="thermal_summary">"Politichis termichis Xiaomi di sisteme e par aplicazion"</string>
     <string name="thermal_sustained_gaming">"Zûc prolungjât"</string>

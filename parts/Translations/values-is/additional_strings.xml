@@ -97,7 +97,7 @@
     <string name="thermal_temperature_range">"%1$d–%2$d°C"</string>
     <string name="thermal_control_low_battery_value">"5% SOC"</string>
     <string name="thermal_control_wireless_value">"20°C og 60°C"</string>
-    <string name="thermal_sensor_model">"CPU/GPU-kveikjur vísa í VIRTUAL-SENSOR0. Stillingar Normal-fjölskyldunnar skilgreina hann út frá quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 og charger_therm0 með vægi 362, 229, 108, -111, -224, 734 og -159 (summa 1000, leiðrétting 2169)."</string>
+    <string name="thermal_sensor_model">"CPU/GPU-kveikjur vísa í VIRTUAL-SENSOR0. Stillingar Normal-fjölskyldunnar skilgreina hann út frá quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 og charger_therm0 með vægi 362, 229, 108, -111, -224, 734 og -159 (summa 939, leiðrétting 2169)."</string>
     <string name="thermal_sensor_defined">"Þessi stilling inniheldur skilgreiningu VIRTUAL-SENSOR0."</string>
     <string name="thermal_sensor_referenced">"Þessi stilling vísar í virka skilgreiningu VIRTUAL-SENSOR0."</string>
     <string name="refresh_rate_tile_title">"Endurnýjunartíðni"</string>

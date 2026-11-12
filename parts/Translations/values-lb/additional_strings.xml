@@ -97,7 +97,7 @@
     <string name="thermal_temperature_range">"%1$d–%2$d°C"</string>
     <string name="thermal_control_low_battery_value">"5% SOC"</string>
     <string name="thermal_control_wireless_value">"20°C an 60°C"</string>
-    <string name="thermal_sensor_model">"CPU/GPU-Trigger referenzéieren VIRTUAL-SENSOR0. D'Konfiguratioune vun der Normal-Famill definéieren en aus quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 an charger_therm0 mat Gewiichter 362, 229, 108, -111, -224, 734 an -159 (Zomm 1000, Kompensatioun 2169)."</string>
+    <string name="thermal_sensor_model">"CPU/GPU-Trigger referenzéieren VIRTUAL-SENSOR0. D'Konfiguratioune vun der Normal-Famill definéieren en aus quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 an charger_therm0 mat Gewiichter 362, 229, 108, -111, -224, 734 an -159 (Zomm 939, Kompensatioun 2169)."</string>
     <string name="thermal_sensor_defined">"Dës Konfiguratioun enthält d'Definitioun vu VIRTUAL-SENSOR0."</string>
     <string name="thermal_sensor_referenced">"Dës Konfiguratioun referenzéiert déi aktiv Definitioun vu VIRTUAL-SENSOR0."</string>
     <string name="refresh_rate_tile_title">"Erfrëschungsrate"</string>

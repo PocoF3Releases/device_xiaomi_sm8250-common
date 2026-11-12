@@ -131,7 +131,7 @@
     <string name="thermal_region_india">"Indija"</string>
     <string name="thermal_search_apps">"Pretraži aplikacije"</string>
     <string name="thermal_sensor_defined">"Ova konfiguracija sadrži definiciju VIRTUAL-SENSOR0."</string>
-    <string name="thermal_sensor_model">"CPU/GPU okidači koriste VIRTUAL-SENSOR0. Konfiguracije porodice Normal ga definišu iz quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 i charger_therm0 sa težinama 362, 229, 108, -111, -224, 734 i -159 (zbir 1000, kompenzacija 2169)."</string>
+    <string name="thermal_sensor_model">"CPU/GPU okidači koriste VIRTUAL-SENSOR0. Konfiguracije porodice Normal ga definišu iz quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 i charger_therm0 sa težinama 362, 229, 108, -111, -224, 734 i -159 (zbir 939, kompenzacija 2169)."</string>
     <string name="thermal_sensor_referenced">"Ova konfiguracija koristi aktivnu definiciju VIRTUAL-SENSOR0."</string>
     <string name="thermal_summary">"Xiaomi termalna pravila sistema i po aplikacijama"</string>
     <string name="thermal_sustained_gaming">"Produženo igranje"</string>

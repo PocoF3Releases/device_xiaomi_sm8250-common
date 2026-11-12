@@ -131,7 +131,7 @@
     <string name="thermal_region_india">"India"</string>
     <string name="thermal_search_apps">"යෙදුම් සොයන්න"</string>
     <string name="thermal_sensor_defined">"මෙම වින්‍යාසය තුළ VIRTUAL-SENSOR0 අර්ථදැක්වීම ඇත."</string>
-    <string name="thermal_sensor_model">"CPU/GPU ප්‍රේරක VIRTUAL-SENSOR0 වෙත යොමු වේ. Normal කාණ්ඩයේ වින්‍යාස එය quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 සහ charger_therm0 වෙතින් 362, 229, 108, -111, -224, 734 සහ -159 බර සමඟ අර්ථදක්වයි (එකතුව 1000, වන්දි අගය 2169)."</string>
+    <string name="thermal_sensor_model">"CPU/GPU ප්‍රේරක VIRTUAL-SENSOR0 වෙත යොමු වේ. Normal කාණ්ඩයේ වින්‍යාස එය quiet_therm, cpu_therm, battery, wifi_therm, pa_therm0, pa_therm1 සහ charger_therm0 වෙතින් 362, 229, 108, -111, -224, 734 සහ -159 බර සමඟ අර්ථදක්වයි (එකතුව 939, වන්දි අගය 2169)."</string>
     <string name="thermal_sensor_referenced">"මෙම වින්‍යාසය ක්‍රියාකාරී VIRTUAL-SENSOR0 අර්ථදැක්වීම වෙත යොමු වේ."</string>
     <string name="thermal_summary">"පද්ධතිය සහ එක් එක් යෙදුම සඳහා Xiaomi තාප ප්‍රතිපත්ති"</string>
     <string name="thermal_sustained_gaming">"දිගුකාලීන ක්‍රීඩා"</string>
