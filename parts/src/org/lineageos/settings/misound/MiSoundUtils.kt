@@ -688,6 +688,7 @@ class MiSoundUtils private constructor(context: Context) {
             applySurround(effect, true)
             applyEarCompensation(effect, true)
             effect.setMusic(1)
+            effect.setScenario(getScenario())
             check(effect.setEnabled(true) == AudioEffect.SUCCESS)
         } else {
             bypassOwnedEffect(effect)
