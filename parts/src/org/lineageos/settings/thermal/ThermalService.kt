@@ -105,8 +105,9 @@ class ThermalService : android.app.Service() {
     }
 
     private fun restoreDefault(): Boolean {
-        utils.resetTouchModes()
-        return utils.setDefaultThermalProfile()
+        val touchApplied = utils.resetTouchModes()
+        val thermalApplied = utils.setDefaultThermalProfile()
+        return touchApplied && thermalApplied
     }
 
     private fun recordApply(applied: Boolean) {
@@ -121,7 +122,7 @@ class ThermalService : android.app.Service() {
 
     override fun onConfigurationChanged(newConfig: android.content.res.Configuration) {
         super.onConfigurationChanged(newConfig)
-        if (!destroyed) utils.updateTouchRotation()
+        if (!destroyed && !utils.updateTouchRotation()) recordApply(false)
     }
 
     private fun foreground(force: Boolean) {

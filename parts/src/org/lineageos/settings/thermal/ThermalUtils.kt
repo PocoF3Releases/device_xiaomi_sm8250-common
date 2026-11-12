@@ -82,6 +82,8 @@ class ThermalUtils(context: Context) {
         app.getSystemService(DisplayManager::class.java)?.getDisplay(Display.DEFAULT_DISPLAY)
     private var hal = touchFeature()
     private var touchChanged = false
+    // A recreated service cannot assume the kernel is at defaults.
+    private var touchNeedsReset = AliothTouchProfile.isSupported()
 
     fun setSelectedRegion(region: Int): Boolean {
         if (region != ThermalProfiles.REGION_GLOBAL && region != ThermalProfiles.REGION_INDIA)
@@ -176,78 +178,106 @@ class ThermalUtils(context: Context) {
                 ThermalProfiles.findByStorageState(getSelectedRegion(), state)?.sconfig
                     ?: getBaseSconfig()
         val applied = writeThermalState(target)
-        updateTouchModes(packageName)
-        return applied
+        val touchApplied = updateTouchModes(packageName)
+        return applied && touchApplied
     }
 
-    private fun updateTouchModes(packageName: String) {
-        if (AliothTouchProfile.isSupported() && TouchSamplingUtils.isEnabled(app)) {
+    private fun updateTouchModes(packageName: String): Boolean {
+        val alioth = AliothTouchProfile.isSupported()
+        if (alioth && TouchSamplingUtils.isEnabled(app)) {
             touchChanged = false
-            return
+            touchNeedsReset = true
+            return true
         }
+        if (!resetTouchModes()) return false
         val saved = prefs.getString(packageName, null)
-        resetTouchModes()
-        if (saved.isNullOrEmpty()) return
+        if (saved.isNullOrEmpty()) return true
         val values = saved.split(',').map { it.toIntOrNull() }
-        if (values.size != 4 || values.any { it == null }) return
-        if (hal == null) hal = touchFeature()
-        val touch = hal ?: return
+        if (values.size != 4 || values.any { it == null }) return true
         val game = values[0]!!
+        if (alioth && game != 1) return true
+        if (hal == null) hal = touchFeature()
+        val touch = hal ?: return false
         val response = values[1]!!
         val sensitivity = values[2]!!
         val edge = values[3]!!
-        val active =
-            if (AliothTouchProfile.isSupported()) game
-            else if (response != 0 && sensitivity != 0 && edge != 0) 1 else 0
+        val active = if (alioth) game else if (response != 0 && sensitivity != 0 && edge != 0) 1 else 0
         try {
-            if (AliothTouchProfile.isSupported()) {
-                AliothTouchProfile.applyMode(touch, Constants.MODE_TOUCH_TOLERANCE, sensitivity)
-                AliothTouchProfile.applyMode(touch, Constants.MODE_TOUCH_UP_THRESHOLD, response)
-            } else {
-                touch.setTouchMode(Constants.MODE_TOUCH_TOLERANCE, sensitivity)
-                touch.setTouchMode(Constants.MODE_TOUCH_UP_THRESHOLD, response)
+            val mainApplied =
+                if (alioth)
+                    AliothTouchProfile.applyMode(touch, Constants.MODE_TOUCH_TOLERANCE, sensitivity) &&
+                        AliothTouchProfile.applyMode(touch, Constants.MODE_TOUCH_UP_THRESHOLD, response)
+                else
+                    touch.setTouchMode(Constants.MODE_TOUCH_TOLERANCE, sensitivity) == 0 &&
+                        touch.setTouchMode(Constants.MODE_TOUCH_UP_THRESHOLD, response) == 0
+            val applied =
+                mainApplied &&
+                    touch.setTouchMode(Constants.MODE_TOUCH_EDGE_FILTER, edge) == 0 &&
+                    touch.setTouchMode(Constants.MODE_TOUCH_GAME_MODE, game) == 0 &&
+                    touch.setTouchMode(Constants.MODE_TOUCH_ACTIVE_MODE, active) == 0 &&
+                    (game != 1 || AliothTouchProfile.apply(touch, prefs, packageName))
+            if (!applied) {
+                touchNeedsReset = true
+                resetBestEffort()
+                return false
             }
-            touch.setTouchMode(Constants.MODE_TOUCH_EDGE_FILTER, edge)
-            touch.setTouchMode(Constants.MODE_TOUCH_GAME_MODE, game)
-            touch.setTouchMode(Constants.MODE_TOUCH_ACTIVE_MODE, active)
-            if (game == 1) AliothTouchProfile.apply(touch, prefs, packageName)
             touchChanged = true
-            updateTouchRotation()
+            return updateTouchRotation()
         } catch (error: RemoteException) {
             Log.w("ThermalUtils", "Cannot apply touch profile", error)
+            touchNeedsReset = true
             resetBestEffort()
             hal = null
-            touchChanged = false
+            return false
         }
     }
 
-    private fun resetBestEffort() {
-        val modes = mutableListOf(0, 1, 2, 3, 7, 8)
-        if (AliothTouchProfile.isSupported()) modes.addAll(listOf(4, 5, 6))
+    private fun resetBestEffort(): Boolean {
+        if (hal == null) hal = touchFeature()
+        val touch = hal ?: return false
+        // Alioth reset 0 restores modes 0..7 and preserves orientation and gesture/power modes.
+        val modes = if (AliothTouchProfile.isSupported()) listOf(0) else listOf(0, 1, 2, 3, 7, 8)
+        var applied = true
         modes.forEach {
             try {
-                hal?.resetTouchMode(it)
+                if (touch.resetTouchMode(it) != 0) applied = false
             } catch (error: RemoteException) {
                 Log.d("ThermalUtils", "Cannot reset touch mode $it", error)
+                applied = false
+                hal = null
             }
         }
+        return applied
     }
 
-    fun resetTouchModes() {
-        if (!touchChanged) return
-        if (!(AliothTouchProfile.isSupported() && TouchSamplingUtils.isEnabled(app)))
-            resetBestEffort()
-        touchChanged = false
+    fun resetTouchModes(): Boolean {
+        if (AliothTouchProfile.isSupported() && TouchSamplingUtils.isEnabled(app)) {
+            touchChanged = false
+            touchNeedsReset = true
+            return true
+        }
+        if (!touchChanged && !touchNeedsReset) return true
+        val applied = resetBestEffort()
+        if (applied) {
+            touchChanged = false
+            touchNeedsReset = false
+        }
+        return applied
     }
 
-    fun updateTouchRotation() {
-        if (!touchChanged || display == null || hal == null) return
-        try {
-            hal?.setTouchMode(Constants.MODE_TOUCH_ROTATION, display.rotation)
+    fun updateTouchRotation(): Boolean {
+        if (AliothTouchProfile.isSupported() && TouchSamplingUtils.isEnabled(app)) return true
+        if (!touchChanged || display == null) return true
+        val touch = hal ?: return false
+        return try {
+            (touch.setTouchMode(Constants.MODE_TOUCH_ROTATION, display.rotation) == 0).also {
+                if (!it) touchNeedsReset = true
+            }
         } catch (error: RemoteException) {
             Log.w("ThermalUtils", "Cannot update touch rotation", error)
+            touchNeedsReset = true
             hal = null
-            touchChanged = false
+            false
         }
     }
 }
